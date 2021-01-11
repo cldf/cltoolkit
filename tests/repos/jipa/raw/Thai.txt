@@ -1,0 +1,63 @@
+﻿# Reference:
+10.1017/S0025100300004746
+
+# Language:
+Thai
+
+#ISO Code:
+tha
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, k, kʰ, ʔ, m, n, ŋ, f, s, h, tɕ, tɕʰ, r(r, ɾ), j, w, l
+
+# Vowel Inventory:
+i(i, í, ī, ì, ǐ, î), iː(iː, íː, īː, ìː, ǐː, îː), e(e, é, ē, è, ě, ê), eː(eː, éː, ēː, èː, ěː, êː) ,
+ɛ(ɛ, ɛ́, ɛ̄, ɛ̀, ɛ̌, ɛ̂), ɛː(ɛː, ɛ́ː, ɛ̄ː, ɛ̀ː, ɛ̌ː, ɛ̂ː), a(a, á, ā, à, ǎ, â), 
+aː(aː, áː, āː, àː, ǎː, âː), ɔ(ɔ, ɔ́, ɔ̄, ɔ̀, ɔ̌, ɔ̂), ɔː(ɔː, ɔ́ː, ɔ̄ː, ɔ̀ː, ɔ̌ː, ɔ̂ː), 
+o(o, ó, ō, ò, ǒ, ô), oː(oː, óː, ōː, òː, ǒː, ôː), u(u, ú, ū, ù, ǔ, û), 
+uː(uː, úː, ūː, ùː, ǔː, ûː), ɤ(ɤ, ɤ́, ɤ̄, ɤ̀, ɤ̌, ɤ̂), ɤː(ɤː, ɤ́ː, ɤ̄ː, ɤ̀ː, ɤ̌ː, ɤ̂ː), 
+ɯ(ɯ, ɯ́, ɯ̄, ɯ̀, ɯ̌, ɯ̂), ɯː(ɯː, ɯ́ː, ɯ̄ː, ɯ̀ː, ɯ̌ː, ɯ̂ː), ia(ia, ía, īa, ìa, ǐa, îa), 
+ɯa(ɯa, ɯ́a, ɯ̄a, ɯ̀a, ɯ̌a, ɯ̂a), ua(ua, úa, ūa, ùa, ǔa, ûa)
+
+# Toneme Inventory:
+V́(í, íː, é, éː, ɛ́, ɛ́ː, á, áː, ɔ́, ɔ́ː, ó, óː, ú, úː, ɤ́, ɤ́ː, ɯ́, ɯ́ː, ía, ɯ́a, úa),
+V̄(ī, īː, ē, ēː, ɛ̄, ɛ̄ː, ā, āː, ɔ̄, ɔ̄ː, ō, ōː, ū, ūː, ɤ̄, ɤ̄ː, ɯ̄, ɯ̄ː, īa, ɯ̄a, ūa),
+V̀(ì, ìː, è, èː, ɛ̀, ɛ̀ː, à, àː, ɔ̀, ɔ̀ː, ò, òː, ù, ùː, ɤ̀, ɤ̀ː, ɯ̀, ɯ̀ː, ìa, ɯ̀a, ùa),
+V̌(ǐ, ǐː, ě, ěː, ɛ̌, ɛ̌ː, ǎ, ǎː, ɔ̌, ɔ̌ː, ǒ, ǒː, ǔ, ǔː, ɤ̌, ɤ̌ː, ɯ̌, ɯ̌ː, ǐa, ɯ̌a, ǔa),
+V̂(î, îː, ê, êː, ɛ̂, ɛ̂ː, â, âː, ɔ̂, ɔ̂ː, ô, ôː, û, ûː, ɤ̂, ɤ̂ː, ɯ̂, ɯ̂ː, îa, ɯ̂a, ûa)
+
+# Phoneme inventory size:
+47
+
+# Length of NWS audio file:
+1.02min.sec
+
+# Audio:
+62
+
+# Minimal pairs:
+/p~pʰ~b~m/ /t~tʰ~d/ /r~l/ /tɕ~tɕʰ/ /k~kʰ/
+/ì~ìː/ /ē~ēː/ /ɛ́~ɛ́ː/ /ǎ~ǎː/ /ɔ́~ɔ́ː/ /ô~ôː/ /ù~ùː/ /iā~ɯ̄a~ūa/
+
+# Minimal pair examples:
+/pâː~pʰâː~bâː~māː/ /tām~tʰām~dām/ /rák~lák/ /tɕāːm~tɕʰāːm/ /kâːŋ~kʰâːŋ/
+/krìt~krìːt/ /ʔēn~ʔēːn/ /pʰɛ́ʔ~pʰɛ́ː/ /fǎn~fǎːn/ /klɔ́ŋ~klɔ́ːŋ/ /kʰôn~kʰôːn/ /sùt~sùːt/ 
+/riān~rɯ̄an~rūan/
+
+
+# Transcript:
+kʰāˈnàʔ tʰî ˌlōmˈnɯ̌a lɛ́ ˌpʰráʔāˈtʰít | kāmˈlāŋ ˈtʰiǎŋ kān ˈwâː | ˈkʰrāj tɕā ˈmīː
+pʰāˈlāŋ ˈmâːk kwǎ ˈkān | kɔ̂ ˈmīː ˈnákˌdɤ̄ːnˈtʰāːŋ ˈpʰûː ˈnɯ̀ŋ ˈdɤ̄ːn ˈpʰàːn ˈmāː |
+ˈsàj ˈsɯ̂aˌkānˈnǎːw ‖ ˌlōmˈnɯ̌a lɛ́ ˌpʰráʔāˈtʰít ˈtɕɯ̄ŋ ˌtòkˈlōŋ kān ˈwâː | ˈkʰrāj tʰî
+ˌsǎːˈmâːt ˈtʰām hâj ˈnákˌdɤ̄ːnˈtʰāːŋ ˈpʰûː ˈníː | ˈtʰɔ̀ːt ˈsɯ̂aˌkānˈǎːw ʔɔ̀k ˈdâːj
+ˌsamˈrèt ˈkɔ̀ːn | tɕā ˈtʰɯ̌ː ˈwâː | pēn ˈpʰûː tʰî ˈmīː pʰāˈlāŋ ˈmâːk ˈkawàː || ˈlɛ́ʔ ˈlɛ́ːw |
+ ˌlómˈnɯ̌a kɔ̂ krāˈpʰɯ̄ː ˈpʰát ˈjàːŋ ˈsùt ˈrɛ̄ːŋ || tɛ̀ ˈjîŋ ˈpʰát ˈrɛ̄ːŋ ˈmâːk ˈkʰɯ̂n ˈpʰīaŋ
+ ˈdāj | ˈnákˌdɤ̄ːnˈtʰāːŋ kɔ̂ ˈjîŋ ˈdɯ̄ŋ ˈsɯ̂aˌkānˈnǎːw ˈhâj krāˈtɕʰáp kàp ˈtūa ˈmâːk
+ ˈkʰɯ̂n ˈpʰīaŋ ˈnán || ˈlɛ́ʔ ˈnāj tʰî ˈsùt | ˌlōmˈnɯ̌a kɔ̂ ˈlɤ̌ːk ˈlóm ˈkʰwāːm
+ pʰājāˈjāːm || ˈtɕàːk ˈnán | ˌpʰráʔāˈtʰít tɕɯ̄ŋ ˈsàːt ˈsɛ́ːŋ ʔān ˈrɔ́ːn ˈrɛ̄ːŋ ʔɔ̀k ˈmāː ||
+ ˈnákˌdɤ̄ːnˈtʰāːŋ kɔ̂ ˈtʰɔ̀ːt ˈsɯ̂aˌkānˈnǎːw ˈʔɔ̀ːk ˈtʰān ˈtʰīː || ˈnāj tʰî ˈsùt | ˌlōmˈnɯ̌a
+ tɕɯ̄ŋ ˈtɕām ˈtɔ̂ŋ ˈjɔ̄ːm ˈráp ˈwâː | ˌpʰráʔāˈtʰít mīː pʰāˈlāŋ ˈmâːk ˈkwàː ˈtōn ||
+
+
+# Notes:
+There are five tones in Standard Thai: high /  ́/, mid /  ̄/, low /  ̀ /, rising /  ̌ /, and falling /  ̂ /.

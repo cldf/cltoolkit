@@ -1,0 +1,55 @@
+﻿# Reference:
+10.1017/S0025100303001208
+
+# Language:
+Standard Chinese (Beijing)
+
+#ISO Code:
+cmn
+
+# Consonant Inventory:
+p(p, b), pʰ, t(t, d), tʰ(tʰ, dʱ), k(k, g), kʰ, ts, tsʰ, tʃ̺(tʃ̺,dʒ̺), tʃ̺ʰ, tɕ, tɕʰ, m, n, ŋ, f, s, ʃ̺(ʃ̺, ʒ̺), ɕ, x, 
+w(w, ʋ), ɹ̺, j, l, ɹ̩
+
+# Vowel Inventory:
+i, y, a, ə(ə, ɚ), u, ɤ, ai, au(au, a˞u˞), ou, uo, ei, ye, ie, ia, ua, uə, iu, iau, uai, iou, uei
+
+# Toneme Inventory:
+˥, ˧, ˩
+
+# Phoneme inventory size:
+49
+
+# Length of NWS audio file:
+48sec
+
+# Audio:
+48
+
+# Minimal pairs:
+/p~pʰ~f/ /t~tʰ/ /m~n/ /s~ts~tsʰ/ /ʃ̺~tʃ̺~tʃ̺/ /ɕ~tɕ~tɕʰ/ /k~kʰ~x/ /w~j/
+
+
+# Minimal pair examples:
+/pa˥~pʰa˥~fa˥/ /ta˥~tʰa˥/ /ma˥~na˥˩/ /sa˥~tsa˥~tsʰa˥/ /ʃ̺a˥~tʃ̺a˥~tʃ̺a˥/ /ɕia˥~tɕia˥~tɕʰia˥/ /kɤ˥~kʰɤ˥~xɤ˥/ /wa˥~ja˥/
+
+# Transcript:
+iou˧˩i˥ xuei˧˥ | pei˧˩ fəŋ˥ kən˥ tʰai˥˩ iaŋ˩ tʃ̺əŋ˥ tsai˥˧ naɚ˥˩ tʃ̺əŋ˥ luən˥˩ ʃ̺ei˧˥ də˥
+pən˧˥liŋ˧˩ ta˥˩ || ʃ̺uo˥ dʒ̺ə˧˩ ʃ̺uo˥ tʃ̺ə˧˩ | lai˧˥ lə˥ i˥ kə˧˩ kuo˥˥˧ lu˥˩ tə˩ | ʃ̺ən˥
+ʃ̺aŋ˧˩ tʃ̺ʰuan˥ lə˧˩ i˥ tɕien˥ xou˥˩ pʰau˧˥ tsɹ̩˥˩ || tʰa˥ mən˧˩ liaŋ˧˩ tɕiou˧ ʃ̺aŋ˥
+liaŋ˧˩ xau˧˩ lə˧ | ʃ̺uo˥ | ʃ̺ei˧˥ nəŋ˧˥ ɕien˥ tɕiau˥˩ gə˩ kuo˥˧ lu˥˩ tə˩ pa˧˩ dʱa˥
+tə˧˩ pʰau˧˥˥ tsɹ̩˥ tʰuo˥ ɕia˥˩ lai˧˥ | tɕiou˥ suan˥˩ ʒ̺ɹ̩˩ tʰa˥ də˧˩ pən˧˥ liŋ˧˩˩ ta˥˩ ||
+pei˧˩ fəŋ˥ tɕiou˥˩ mau˧˩ tsu˧˥ lə˥ tɕiɚ˥˩ | pʰin˥ miŋ˥˩ də˩ tʃ̺ʰuei˥ || kʰɤ˧˩ ʃ̺ɹ̩˥˩ | tʰa˥
+tʃ̺ʰuei˥ də˧˩ ye˥˧ li˥˩ xai˩ | nei˥˩ gə˩ ɹ̺ən˧˥ tɕiou˥˩ ba˧˩ tʰa˥ də˧˩ pʰau˧˥ tsɹ̩˥˩
+kuo˧˩ də˧ ye˥˩ tɕin˧˩ || tau˥ muo˥˩ lia˞u˞˧˩˧ | pei˧˩ fəŋ˥˥mei˧˥ tʃ̺ɤ˧˥ le˥˩ | tʃ̺ɹ̩˧˥ xau˧˩
+tɕiou˧ suan˥˩ lə˩ || i˥ xuəɚ˥˩ | tʰai˥˩ iaŋ˩ tʃ̺ʰu˥ lai˧˩ i˧ ʃ̺ai˥˩  | nei˥˩ gə˩
+ɹ̺ən˧˥ ma˧˩ ʃ̺aŋ˥˩ tɕiou˧ ba˧˩ pʰau˧˥ tsɹ̩˥ tʰuo˥ lə˧˩ ɕia˥˩ lai˩ || suo˧˥ i˧˩ | pei˧˩
+fəŋ˥ pu˥˩ də˩ pu˥˩ tʃ̺ʰəŋ˧˥ ɹ̺ən˥˩ | xai˧˥ ʃ̺ɹ̩˥ tʰai˥˩ iaŋ˩ pi˧˩ tʰa˥ də˧˩ pən˧˥ liŋ˧˩ ta˥˩ ||
+
+# Notes:
+Minimal pair examples from JIPA paper.
+Four citation forms for tones: high [˥], mid to high rising [˧˥], mid to low to mid dipping [˧˩˧], 
+high to low falling [˥˩].
+
+# Errors:
+/e/ in transcript. Not discussed in paper.

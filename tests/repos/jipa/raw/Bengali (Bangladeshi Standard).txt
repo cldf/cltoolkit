@@ -1,0 +1,44 @@
+﻿# Reference:
+10.1017/S0025100310000071
+
+# Language:
+Bengali (Bangladeshi Standard)
+
+#ISO Code:
+ben
+
+# Consonant Inventory:
+p, b, bʱ, t̪, d̪, t̪ʰ, d̪ʱ, t, d, tʰ, dʱ, k, g, kʰ, gʱ, t̠ɕ, d̠ʑ, t̠ɕʰ, d̠ʑʱ, 
+m, n, ŋ, f, s, ʃ, h, ɹ(ɹ, ɾ, ɻ, ɾ̥, ɹ̥), l, pː, bː, bʱː, t̪ː, d̪ː, t̪ʰː, d̪ʱː, tː, dː, tʰː, 
+dʱː, kː, gː, kʰː, gʱː, t̠ɕː, t̠ɕʰː, d̠ʑː, d̠ʑʱː, mː, nː, ŋː, fː, sː, ʃː, hː, 
+ɹː, lː 
+
+# Vowel Inventory:
+i, e(e, e̯), ɛ, a, ɔ, o(o, o̯), u, 
+iw, ej, ew, ɛe̯, ɛo̯, aj, ae̯, aw, ao̯, ɔe̯, ɔo̯, oj, oe̯, ow, oo̯, uj 
+
+# Phoneme inventory size:
+79
+
+# Length of NWS audio file:
+52sec
+
+# Audio:
+52
+
+# Transcript:
+ɛk d̪in ut̪ːoɹ hao̯a eboŋ ʃuɹd̠ʑo t̪ɔɹt̠ɕʰilo t̪ad̪eɹ mod̪ʱːe ke beʃi ʃokt̪iman.
+ʃej muhuɹt̪e bʱaɹi t̠ɕad̪oɹ pɔɹa ɛkd̠ʑon pot̪ʰik t̪ad̪eɹ d̪ike hete aʃe. hao̯a aɹ
+ʃuɹd̠ʑo ɹad̠ʑi hɔe̯ t̪ad̪eɹ mod̪ʱːe d̠ʑe ʃej pot̪ʰikeɹ gaeɹ kʰolat̪e paɾe, t̪akej
+beʃi ʃokt̪iman d̪ʱaɹd̠ʑo kɔɹa hɔbe. eɹ pɔɹ ut̪ːoɹ hao̯a t̪aɹ ʃɔb ʃokt̪i d̪ie bojt̪e
+ʃuɹu kɔɹe, kint̪u ʃe d̠ʑɔt̪oj d̠ʑoɹe bɔe̯ t̪ɔt̪oj pot̪ʰik t̪aɹ t̠ɕad̪oɹ t̠ɕepe d̪ʱoɹe ɹakʰe.
+bɛɹt̪ʰo hoe hao̯a t̪aɹ t̠ɕeʃta bɔnd̪ʱo kɔɹe. eɹ pɔɹ ʃuɹd̠ʑeɹ pala. ʃuɹd̠ʑo t̪aɹ gɔɹom
+t̪ap t̠ɕʰɔɹae̯. pot̪ʰikti ʃɔŋge ʃɔŋge t̪aɹ gaeɹ ʃalti kʰule fɛle. ɔboʃeʃe ut̪ːoɾ hao̯a
+mene nit̪e bad̪ʱːo holo d̠ʑe t̪ad̪eɹ d̪ud̠ʑoneɹ mod̪ʱːe ʃuɹd̠ʑoj beʃi ʃokt̪iman.
+
+# Notes: 
+Allophones non-problematic. 
+
+# Errors:
+/ae/ is in transcript, not in inventory. Occurs in two instances of the words [gaeɹ]. Probably missing non-syllabic diacritic off ‘e’ (i.e. should be [ae̯]). 
+/oe/ is in transcript, not in inventory. Probably missing non-syllabic diacritic off ‘e’ (i.e. should be [oe̯]). 

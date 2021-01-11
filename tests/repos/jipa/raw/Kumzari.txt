@@ -1,0 +1,41 @@
+# Reference:
+10.1017/S0025100311000314
+
+# Language:
+Kumzari
+
+#ISO Code:
+zum
+
+# Consonant Inventory:
+p(p, pː), b(b, β, bː), t(t, tᵊ, t̚, tʰ), d, tˠ, k(k, k̚, kʰ, kᵊ), g, q, ʔ, tʃ, dʒ, 
+m(m, m̥), n, f, s(s, sᵊ), sˠ, zˠ, ʃ(ʃ, ʃᵊ), χ, ʁ, ħ, ɦ, ɻ(ɻ, ɾ, ɽ, r) , j, w(w, wː), l(l, l̥) 
+
+# Vowel Inventory:
+iː(iː, iˑ, iḭ), eː(eː, eːː, ɛ, e, eˑ), ɪ̽(ɪ̽, ɪ̥, ɪ̃, ə̃, ɪ̽ˑ), ɐ̟(ɐ̟, ɐ̟ːʷ, ʷɐ̟, ɑ, ɐ, ɐ̟ʷ, ɐ̰:), 
+aː(aː, ɑ:, aˑ), ʊ̽(ʊ̽, ʊ̽ʷ), uː(uː, uːː, ṵ:, ṵ:::, ṵ), 
+oː(oː, oːʷ, o̥, o, õ, ɔ, oˑ, ɔɔ̰)
+
+
+# Transcript:
+ˌtaːˈɻoːzˠ | ˈħeːmqʊ̽ ˌɐ̟ŋgɐ̟ ˈgɪ̽dɪ̽n ‖ naː χˈjoːʷ ‖ w ɪ̽nˈtaːfo | ˌkiyɐ̟ ɐ̟ɻ ˈqɐ̟wiˌtɐ̟ɽɪ̽jɛ ‖
+dgiːn ˈmɐ̟ nɐ̟ te ˈʔaːdɪ̽mɪ̽ ˈdʒiːɻɪ̽n ˈaːmɪ̽ˈseːː meːʃ tᵊˈkɐ̟ːʷ | tχot saːfɐ̟ɻ | mʷɐ̟ ˌnɐ̟t̚
+ˈʔɐ̟nɐ̟ʷ ˌamɐ̟sᵊ ˈyɐ̟k̚ | ˌko’tʊ̽ bɛ j ˌdʒaːkɪ̽tɐ̟ ˈgɐ̟pːm̥ ‖ ˈɐ̟ɻ ˈɻaːjɐ̟ kʊ̽ ˈdʒaːk ˌteːlɐ̟
+ˈdʒaːkʰtʰ χoː keːˌnɐ̟ːʷ | jɪ̽ˈqɐ̟wiˌtɐ̟ɻe ‖ ˌʔaːmɐ̟d uːː ˈdgin ˌdʒwɑ:ne | ˈɻa:tˠɪ̽ ˌbuːɻɪ̽n
+bɐ̟ ˈɪ̽ntʃɐ̟ ‖ ˌʔaːmɐ̟d naːʃˈjoːʷ ṵ: ˌkɐ̟wlɪ̽ ˌgɐ̟p kɪ̽n ˈβaː χo ‖ ˌkɐ̟wlɪ̽ ˌgɐ̟p kɪ̽n ˈβa
+χo: bjɐ̟ ˌa:dɪ̽mij ɐ̟ɻ | tʃot ˌsa:fɐ̟ɻɐ̟ ʊ̽ʷ | ˈʔn̩tʃᵊ ˌdʒaːkʰtʰ χo lɐ̟βjɐ̟ tkɐ̟ baː χoː
+ˈχɛjtɐ̟ɻ ‖ ʔɐ̟bniˑdɪ̽ʃ j ˈbaː χʊ̽ ˌχɐ̟jtɐ̟ ˈlɐ̟wjɐ̟ χo̥ kn̩ n̩dɐ̟ ˌdʒaːkᵊt χo ˈχejtɐ̟ɻ ‖ ˌbaːɻ
+χo ˈdaːɻɪ̽ʃ | ˌbaːɻ χo ˈdaːɻɪ̽ʃ | ˈʔaːn ˈtʃɐ̟ ˈlɐ̟wjɐ̟ χʊ̽ tkɐ̟ ˈdʒaːkᵊt χo ‖ dgin ˈχɐ̟lasˠ
+| ˈma nɐ̟ tiḭ | ʔɪ̥stɐ̟sl̥ɐ̟mɐ̟ ˈgɪ̽dɪ̽ʃ ‖ ˈqɐ̟rɐ̟ ɣɪ̽dɪ̽ go m ˌɻaːjʊ̽m nɐ̟ ‖ bjʊ̽ ɪ̽ntaːˈfoːʷ
+ṵ::: | ʔɪ̃õ χ kə̃ ˈχejtɐ̟ɻ | ˈʃɐ̟bːɐ χo kn̩ ‖ ˈgɐ̟ɻm χo kn̩ ˌgɐ̟ɻm kn̩ ˌgɐ̟ɻm kn̩ ˌgɐ̟ɻm
+kn̩ ˈaˑn ˌgɐ̟ɻmɐ̟ wɑˈbʊ̽ɻ ṵ ˈbjoː ṵ ˌkɔt χo ˈgɔpʊ̽ kɐ̟n pe χo̥ ‖ ˌkɔt χo ˈgoˑpo kɐ̟n
+ˌpeˑ χo̥ ˈbeˑwː | bjʊ̽ naʃjop dgo ˈχɐ̟lɐ̟sˠ ‖ ɻaːjəm nɐ | ˈqɐ̟rɐ̟ʷ ˌgɪ̽dɪ̽ˑʃ | ˈna χalɐ̟sˠ
+ɻaːjə̃ | ˈʔʊ̽nɐ̟ɐ̰: | ˈn̩ˈtaːfɔɔ̰ | ˈqawiˌtɐ̟ɻɪ̽ ˌpej
+
+# Notes:
+There is no mention in the text of many phonetic symbols that appear in the transcription. 
+The symbol <y> appears to be being used as a
+palatal approximant rather than a vowel.  I have not included it in the consonant inventory.
+The only allophones discussed in the paper are those for /ɻ/.  I have assigned all the other allophones,
+to account for all sounds and therefore their status as allophones is questionable.   
+  

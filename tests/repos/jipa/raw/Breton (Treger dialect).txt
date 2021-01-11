@@ -1,0 +1,38 @@
+# Reference:
+10.1017/S0025100300001766
+
+# Language:
+Breton (Treger dialect)
+
+#ISO Code:
+bre
+
+# Consonant Inventory:
+w, l, n, t(t, t̬), z, g, b, p, h, r, d(d, d̜, d̥), ʒ, f, k, v, m, ɲ, nː, lː, h, s
+
+# Vowel Inventory:
+a, e(e, ë, ẽ), ɛ, i, ə, a(a, ä, äʳ, ã), ɵ(ɵ, ɵʳ), y, o, ø, œ, ɔ, ɑ̃, ɪ, u
+
+# Other Symbols:
+/ˈ/
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+ˈawël n antërˈnoz ag n ˈɛwəl wa taˈbytäl, ˈpini wa äʳhrẽã, pä wa
+ˈdød ɵʳ beˈaʒur o ˈfonː, ˈpakëd nɵʳ ˈvantël ˈdom. nom ˈglɛwëd ë
+ˈwaɲ, n ini ˈkentã ä laˈkefe äʳ beˈaʒur dä ˈdenːã i ˈvantël, hẽz,
+nœhe, viʒe ˈgwelːd̜ ˈkrẽɔh wid iˈgile. a ˈsety ˈawël n antërˈnoz dä
+ˈhwezã ˈgwasã mä ˈhalːe, mɛt̬ ˈwasɔh ä ˈze ˈhweze, ˈstartɔh ä ˈze
+ˈpake äʳ beˈaʒur i ˈvantël inˈdro ˈdɵɑ̃, ag äˈbenː äʳ ˈfɪn da poˈwezëd
+ˈawël n antërˈnoz dä ˈglask ˈobër. a ˈnœhe n ɛwəl ˈtom dä ˈbarã
+ˈwarnɑ̃, ag äʳ beˈaʒur dysˈty dä ˈdenːã i ˈvantël, a viˈse w ˈret̬
+ˈmat d̥ä ˈawël n antërˈnoz ˈɑ̃zav wa ˈkrẽɔh n ˈɛwəl ˈwitɑ̃.
+ 
+# Notes:
+Whole paper consists of a single page.  A single paragraph of notes, and the transcription.
+Louise has worked out phonemes and allophones based on combination of notes and transcript. 

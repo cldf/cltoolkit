@@ -1,0 +1,56 @@
+﻿# Reference:
+10.1017/S0025100309990193
+
+# Language:
+Palula
+
+#ISO Code:
+phl
+
+# Consonant Inventory:
+p(p, pʰ), b(b, bʰ), t(t, tʰ), d(d, dʰ), ʈ(ʈ, ʈʰ), ɖ, k(k, kʰ), g, q, m(m, mʰ), n(n, ŋ), 
+ɳ, ts, ʈʂ, tɕ(tɕ, tɕʰ), 
+f(f, pʰ), s, z(z, zʰ), ʂ, ʐ(ʐ, ɖʐ), ɕ, ʑ(ʑ, ʑʰ, dʑ), x, ɣ, h, ɾ, ɽ, w(w, β̞, ʋ, wʰ), 
+j(j, jʰ), l(l, lʰ)
+
+# Vowel Inventory:
+iː(iː, íː), i(i, í), eː(eː, éː), e(e, é) , a(a, á), aː(aː, áː), 
+uː(uː, úː), u(u, ú), oː(oː, óː), o(o, ó) 
+
+# Phoneme inventory size:
+40
+
+# Length of NWS audio file:
+54sec
+
+# Audio:
+54
+
+# Minimal pairs:
+/ɾ~t~s~ʂ/ /l~d/ /ʈ~ɖ/ /k~x/
+/i~íː/ /a~aː~oː/
+
+# Minimal pair examples:
+/ɾeːtí~téːti~seːtí~ʂéːti/ /léːdi~déːdi/ /ʈaːká~ɖaːká/ /katí~xatí/
+/giɾ~gíːɾ/ /ʈáka~ʈaːká~ʈoːká/
+
+
+# Transcript:
+áːk musaːfáɾ gáɾum ɕukʰáːw ʑaní pajláː jʰíː de ta, ɕumaːlí húːɕijeː súːɾi ʂéːtim ki, 
+ɾanáːm maʑí kʰajáːk zjáːt taːqatwáɾ tʰaní. taním aní beːtí ʑʰulí itifáːq tʰíːli ki, kʰajáːk
+muʂʈú ɽaʂaːwáː ɕukʰáːw gaɖí galajníː kaːmjáːb bʰílu, so dúja díː taːqatwáɾ tasawúɾ bʰíː.  
+tʰéː ba ɕumaːlí húːɕi bíːɖi zjáːt téːz bʰe nikʰéːti, mágam kanáː húːɕi ajáːt bʰíː de, eːndáː
+so musaːfáɾ ɕukʰáːw teːɳíː huʑutí pʰaɾé pajlóː de; aːxéːɾ ɕumaːlí húːɕi teːɳíː koːɕíɕ
+uɽigéːli. tʰéː ba súːɾi teːɳíː taːpjeːlí sangí nikʰéːti, atɕaːnák se musaːfaɾá teːɳíː ɕukʰáːw 
+gaɖí géːlu. tʰéː ɕumaːlí húːɕi qabúl tʰíːlu, ki, súːɾi ɽanáːm dʰujím maʑí taːqatwáɾ de.
+
+
+# Notes:
+Vowel length in the JIPA paper is indicated by doubling of the symbol. Here I have used
+the length symbol for consistency.
+Aspiration is considered a property of the lexical stem. Therefore has been explained here
+in terms of being an allophone of phonemes.
+Palula is a pitch accent language. 1. high level (or falling) on a short vowel [ ́] 
+2. rising on a long vowel [ ̌] or 3. falling on a long vowel [ ̂].
+Both a narrow and broad transcription are provided in th JIPA paper. I have just included the 
+broad transcription here.

@@ -1,0 +1,40 @@
+# Reference:
+ 10.1017/S0025100302000178
+
+# Language:
+Keo
+
+#ISO Code:
+xxk
+
+
+# Consonant Inventory:
+p, b(b, β, v), t, d, k, g, ʔ, ʔb, ʔd, mb, nd, ŋg, tʃ, dʒ, m, n, ŋ(ŋ, ɲ), f, s, x, h, r, w, j, l
+
+# Vowel Inventory:
+ i, e(e, ei, eː), ə, a(a, ai), o(o, oː), u
+ 
+# Phoneme inventory size:
+31
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+ʔaŋi βala neʔe mata dəra papa ʔbejo sai ta soʔo təŋgo
+ŋara datu kita ʔata ta mbana rada rasa kətei neʔe ŋgai βai salimu ‖
+ʔimu rua satudʒu kei sai ta doːʔe doʔe ŋada tau kita ʔata kei buka ʔdoa salimu ʔimu
+kei ʔimu soʔo təŋgo ‖ ʔaŋi βala nde pəpa ka meːre mere ‖
+ʔbodo ŋe mere ʔimu pəpa ŋe təŋgo kita ʔata nde ŋgai wəki ʔimu neʔe salimu ‖
+ʔaŋi βala nde simba dʒuʔu ka ‖ nexa kei mata dəra nde suda ka neʔe pətu wadi reʔe reʔe ‖ 
+mona eʔbo kita ʔata nde βədu ʔdoa salimu ʔimu ‖
+ʔuru ʔbida kei ʔaŋi βala soʔdo kei mata dəra soʔo təŋgo puʔu əna ʔimu ‖
+
+# Notes:
+
+Combinations of glottal stop plus voiced stops (ie. /ʔb/, /ʔd/) represent pre-glottalised consonants. 
+
+

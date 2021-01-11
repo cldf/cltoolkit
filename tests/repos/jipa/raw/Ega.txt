@@ -1,0 +1,53 @@
+﻿# Reference:
+ 10.1017/S002510030200018X
+
+# Language:
+Ega
+
+# ISO Code:
+ega
+
+# Consonant Inventory:
+p(p, pʷ), b, t, d, c, ɟ, k, g, kp, gb, ɓ, ɗ, ʄ, ɠ, ɠɓ, m, n, ɲ, ŋ(ŋ, ŋʷ), f, v, s, z, x(x, h, ɣ), j, w,
+ l(l, l̰)   
+
+# Vowel Inventory:
+a(a, á, ā, à, àː, â, âː), i(i, í, ī, ì, íː), e(e, é, ē, è), o(o, ó, ō, ò, òːːː), u(u, ú, ū, ù), 
+ɪ(ɪ,ɪ́, ɪ̄, ɪ̀), 
+ɛ(ɛ, ɛ́, ɛ̄, ɛ̀), ʊ(ʊ, ʊ́, ʊ̄, ʊ̀, ʊ́ːːːː), ɔ(ɔ, ɔ́, ɔ̄, ɔ̀, ɔ̄ː, ɔ̂) 
+
+# Toneme Inventory:
+V́(á, í, é, ó, ú, ɪ́, ɛ́, ʊ́, ɔ́),
+V̄(ā, ī, ē, ō, ū, ɪ̄, ɛ̄, ʊ̄, ɔ̄),
+V̀(à, ì, è, ò, ù, ɪ̀, ɛ̀, ʊ̀, ɔ̀)
+
+# Phoneme inventory size:
+39
+
+# Length of NWS audio file:
+47sec
+
+# Audio
+47
+
+# Transcript:
+mɔ̄ wàː ‖ ēsīēkpè té lɪ̄ xɛ̄lɪ́ īŋwūl̰ī ŋwè ‖ kánɔ̄tɔ̄ pʷɪ́ɔ́gbɪ̀ ‖
+māʔ ɔ̄ɲá másɛ́á | līwɪ́nā | ká lɪ̄ kàbɔ̄ ‖
+kálɪ̄ kɔ̀ ábɔ́júŋné | lɪ̄ kɔ̄ máāgɔ̄ |
+ɔ̄ɲámɪ̄jímō òːːː klɪ́ɓɪ̄ā tʊ́ːːːː | ɔ̄sɪ̄ɛ̄ tʊ́ːːːː ‖
+ká ésūōkpè | té ká lɪ́ ɲnē ‖ 
+āpūté ésɪ̄ōkpè | té ɲɛ̄náwà gànɛ́gbɪ̀ ɗò sɪ̄ā ‖
+āí lɪ́ wlɪ̄ ɣɔ̄ːɲâ | tɔ̄ːvlà lɪ̄ vláíː zɛ́ā ‖ lɪ́ kɔ̀ wā ɪ̀gàː ‖
+kɪ̄ nɔ̄ ɲâː ‖ nɔ́ kɔ́ wɔ̂tɔ̀ māgɔ́ ‖
+nɔ́ wāwā málōfó ‖
+nɔ́ sɪ̄ā wé sā tʊ́ːːːː ‖ nɔ̂ sɪ́ tɔ̂ wɪ́ ‖
+ɔ̄ɲá má jɔ́ ɠɛ̄ tʊ́ sɪ́ā ésūōkpè | tɔ́ ā vlàì vlá já ɣínū gâ ‖
+áí ɣā klɔ́ ‖ áɗɪ̄ɔ̄ ɪ́sɔ̀à | ā ɗɪ̀āɓɪ́ jáɣ úgbògōtū sɪ́ ɔ̄nɪ̀gbɪ̀ jōfì ‖
+
+# Notes:
+"Ega is a register tone language with three basic level tones, High (H) [represented by diacritic ́ on vowels], Mid (M) 
+[represented by diacritic  ̄ on vowels] and Low (L) [represented by diacritic  ̀  on vowels]" p102
+No mention was made in the discussion of vowel length, and so I have included long vowels as allophones.
+
+# Errors:
+/ʔ/ no mention found in paper, but present in narrow phonetic transcription.

@@ -1,0 +1,47 @@
+﻿# Reference:
+10.1017/S0025100314000395
+
+# Language:
+Russian
+
+#ISO Code:
+rus
+
+# Consonant Inventory:
+p, b, pʲ, bʲ, t(t, tsʲ), d(d, dsʲ) , tʲ, dʲ, k, g, kʲ, gʲ, ts(ts, dz) , tʃʲ(tʃʲ, dʒʲ), 
+m, mʲ, n, nʲ, r, rʲ(rʲ, ɾʲ), f, v, fʲ, vʲ, s(s, ʃʲ), z, sʲ, zʲ, ʃ, ʒ, ʃʲː 
+x(x, ɣ, ɣʲ), xʲ, j, l, lʲ
+
+# Vowel Inventory:
+i, ɨ, u, e, o(o, ɔ), a
+
+# Phoneme inventory size:
+42
+
+# Length of NWS audio file:
+37sec
+
+# Audio:
+37
+
+# Minimal pairs:
+/p~pʲ/ /m~mʲ/ /t~tʲ/ /n~nʲ/ /l~lʲ/ /r~rʲ~s/ /ʃ~ʒ/ /k~g/  
+
+# Minimal pair examples:
+/palʲtsɨ~pʲalʲtsɨ/ /mala~mʲala/ /tapka~tʲapka/ /nos~nʲos/ /lot~lʲot/ /rat~rʲat~sat/ /ʃar~ʒar/   /kot~got/  
+
+
+# Transcript:
+aˈdnaʒdɨ ˈsʲevʲirnɨj ˈvʲetʲir i ˈsɔntsɨ paˈsporʲilʲi | ˈkto izʲ ˈnʲix sʲiˈlʲnʲeji || kak ˈras ˈveta
+ˈvrʲemʲa | aˈmʲi zaˈmʲetʲilʲi zaˈkutanava ˈfplaʃʲː ˈputʲnʲika | kaˈtorɨj ˈʃol pa daˈrogʲi | i rʲiˈʃɨlʲi | 
+ˈʃto ˈtot ɨz ˈnʲix ˈbudʲit ʃʲːiˈtatsa ˈsamɨm ˈsʲilʲnɨm | kaˈmu ˈranʲʃɨ uˈdastsa zaˈstavʲitʲ ˈputʲnʲika  
+ˈsʲnʲatʲ ˈplaʃʲː || ˈtut ˈsʲevʲirnɨj ˈvʲetʲir ˈprʲinʲilsʲa ˈdutʲ iza ˈfsʲex ˈsʲil || ˈno ˈtʃʲem sʲiˈlʲnʲeji 
+ˈon ˈdul | ˈtʲem sʲiˈlʲnʲeji ˈkutalsʲa ˈputʲnʲik ˈfsvoj ˈplaʃʲː || ˈtak ˈʃto fkanˈtse kanˈtsof 
+| ˈsʲevʲirnɨj ˈvʲetʲir ˈdolʒɨn ˈbɨl atkaˈzatsa at svaˈjej zaˈtʲeji ‖ taˈgda zasʲiˈjala ˈsolnɨʃka
+|| ˈputʲnʲik panʲiˈmnogu ataˈgrʲelsʲa | i ˈfskorʲi ˈsʲnʲal ˈ svoj ˈplaʃʲː || taˈkʲim ˈobrazam
+ˈsʲevʲirnɨj ˈvʲetʲir ˈvɨnuʒdʲin ˈbɨl prʲiˈnatʲ | ˈʃto ˈsontsɨ sʲiˈlʲnʲeji jiˈvo
+
+
+# Notes:
+All non-palatised consonants are realised with velarisation, but this is not marked.
+There was a broad and narrow transcription in the JIPA paper. Here the broad transcriptionhas been used.

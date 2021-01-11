@@ -1,0 +1,58 @@
+﻿# Reference:
+10.1017/S0025100311000168
+
+# Language:
+Kera
+
+#ISO Code:
+ker
+
+# Consonant Inventory:
+p, b, t, d, tʃ, dʒ, k, g, ʔ, f, v, s, z, h, ɓ, ɗ, m, n, ŋ, ⱱ, ɾ, l, w, j
+
+# Vowel Inventory:
+i(i, í, ī, ì), ɨ(ɨ, ɨ́, ɨ̄, ɨ̀), u(u, ú, ū, ù), ɛ(ɛ, ɛ̄, ɛ́, ɛ̀, ɛ́ː, ɛ̄ː, ɛ̀ː, é, è, ē), 
+a(a, ə, à, á, ā, ə́, ə̄, ə̀), o(o, ɔ, ó, ō, ò, ɔ́, ɔ̄, ɔ̀), 
+iː(iː, íː, īː, ìː), ɨː(ɨː, ɨ́ː, ɨ̄ː, ɨ̀ː), uː(uː, úː, ūː, ùː), 
+ɛː(ɛː, ɛ́ː, ɛ̄ː, ɛ̀ː), aː(aː, áː, āː, àː), ɔː(ɔː, ɔ́ː, ɔ̄ː, ɔ̀ː), 
+ɨ̃, ɛ̃, ã, ɔ̃, ĩː
+
+# Phoneme inventory size:
+41
+
+# Length of NWS audio file:
+1.16min.sec
+
+# Audio:
+76
+
+# Other Symbols:
+/ ́/ tone
+/ ̄/ tone
+/ ̀/ tone
+
+# Transcript:
+də̀jàŋ hɔ̃j àn tʃə́wáŋ dɨ̀ káŋkāw ɨ́sɨ́ŋ bɨ̀ nèlɛ̀ː jɨ̄ ásáŋ hùlùm tʃāw jɨ̄ː ɨ́sɨ́ŋ
+bɨ̀ wáːtɛ́ː hùlùm tʃāw dàŋ dɨ̀ dɨ̀mɨ̀ːmɨ̀ dɨ̀ súrúŋ hàʔàŋ áŋ gɔ̀l làː míndí ɓít 
+dɨ̀mɨ̀ːmɨ̀ mɔ̄ː míndí ɓít dɨ̀mɨ̀ːmɨ̀ŋ wɨ̄r sār hùlmàː mɔ̀ː áŋ gɔ̀l lɨ̀ gɨ̀m mɔ̀ː
+kə́jáː káŋkāw míntí tɛ́ː sə̄ɓākī káŋkāw kɔ́ːrɔ́ŋ fāɗī bɨ̀ ɗē ā ɓít dɨ̀mɨ̀ːmɨ̀ŋ wɨ̄
+hāŋ dɨ̀ sə̄ɓākī gík kīk kík kík ... míntí tɛ́s ɓít dɨ̀mɨ̀ːmɨ̀ núːtúː ɓáʔ ɓáʔ ɓáʔ ɓáʔ ...
+fāɗì̄ kə̄jāː káŋkāw gə̀jàŋ gə̀jàŋ gə̀jàŋ gə̀jàŋ ... kās dʒíː wɨ̄ nə́káŋ bɨ̀ fɛ́l dɨ̀mɨ̀ːmɨ̀
+bàː kə̄jāː tʃə́wáŋ kólɔ́ŋ dɨ̀ gɨ̀m dàː tʃə̄wāŋ kólɔ́ŋ gàj dàŋ à dʒɨ̀màŋ pɨ́ŋɨ́ŋ
+kə̄jāː à dɔ̀ɔ tʃə́wáː sár hùlmà fāɗī hùlùm ɗɛ́ŋ gɔ̀l kə̄jāː wɨ̄ míntíː káj kɔ̄ŋ
+húɓúŋ ɗɛ́ː kɔ̄ŋ húɓúŋ áblàw wɨ́sɨ́ŋ kə̄jāː wɨ̄ fɔ́ktɔ́ŋ dɨ̀mɨ̀ːmɨ̀ wə̄rāː fə̄kát
+fə̄kát fə̄kát ... fāɗī tʃə́wáŋ háráŋ ānkāj dàŋ ā míntí káŋkāw àŋ gɔ̀s kɔ́l lɨ̀
+kɨ́m tāŋ míntí míndì ɓɨ̀tɨ́ŋ dɨ̀mɨ̀ːmɨ̀ kás hùlmà hãaː mɔ̀ː kə̄jāː káŋkāw kɛ̄l
+tə́wáŋ bɨ̀dɔ́ːnà fāɗī káŋkāw sénɛ́ŋ wārnā kúj náː fāɗī
+
+# Notes:
+Long vowels in original paper represented by double symbol.  Here replaced with length symbol.
+Three tone types on vowels are used, which are expressed as allophones.  
+The symbol < ́> represents high tones; the symbol < ̄> represents mid tones; the symbol
+< ̀> represents low tones.  The three tones combine within words to create 7 possible melodies
+in nouns and 3 possible melodies in verbs.     
+
+# Errors:
+/r/ not in phoneme inventory or discussed, but present in transcription. Possibly author has used this symbol instead of the tap symbol in the phoneme inventory.
+
+

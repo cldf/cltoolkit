@@ -1,0 +1,51 @@
+﻿# Reference:
+10.1017/S0025100313000388
+
+# Language:
+Tashlhiyt Berber
+
+#ISO Code:
+shi
+
+# Consonant Inventory:
+b, t, d, tˤ, dˤ, k, g, kʷ, gʷ, q, qʷ, m, n, nˤ, r, rˤ, f, s, z, 
+sˤ, zˤ, ʃ, ʒ, ʃˤ, ʒˤ, χ, ʁ, χʷ, ʁʷ, ʜ, ʕ, h, l, lˤ, j, w, bː, 
+tː, tˤː, dː, dˤː, kː, kʷː, gː, gʷː, qː, fː, sː, sˤː, zː, zˤː, 
+ʃː, ʒː, ʒˤː, χː, χʷː, ʁː, ʁʷː, mː, nː, lː, lˤː, rˤː, ʜː, ʕː, hː
+
+# Vowel Inventory:
+i, a(a, aː), u(u, uː)
+
+# Phoneme inventory size:
+69
+
+# Length of NWS audio file:
+39sec
+
+# Audio:
+39
+
+# Minimal pairs:
+/t~tː/ /d~dː/ /k~kː/ /g~gː/ /gʷ~gʷː/ /f~fː/ /s~sː/ /z~zˤ/  /ʒː~ʒˤː/ /ʁʷ~ʁʷː/ /n~nː/ /lː~l/
+
+# Minimal pair examples:
+/tut~tːut/ /tidi~tidːi/ /ks~kːs/ /gr~gːr/ /igʷra~igʷːra/ /juf~jufː/ /ifis~ifisː/ 
+/izi~izˤi/  /ʒːu~ʒˤːu/ /ʁʷi~ʁʷːi/ /inas~inːas/ /ilːas~ilas/
+
+
+# Transcript:
+adˤu d tafukt mːaʁn krajgatː jan gitːsn ar itːini masdː ntːan ad iʃqːan kːin imikː zˤrn jan urgaz ar
+iftːu ilsa ahdːun gnː taʁnːant ngratːsn wad
+nːa izdˤarn adas ikːs ahdːun ntːan ad iʃqːan
+ibdu uadˤu ar ikːat s kuːu mad dars igan
+ʒːʜd maʃː ʁiknːa sa ikaːat arnː bzːaf izdaj urgaz d
+uhdːun ns irˤmi uadˤu ur izdˤar adast
+ikːs tbdu tafukt ar tsmirqːij ikː lʜal imikː siʁ
+irʁa urgaz ikːs ahdːun ns ʁinː adʁ isːn
+uadˤu izd tafukt ad iʃqːan
+
+
+# Notes:
+In the JIPA paper both a phonemic and narrow transcription are provided. Here the phonemic transcription has been used. 
+
+“Unlike consonants, these vowels do not contrast in length at the underlying level, though long vowels exist at the surface level.” p214 Based on this I’ve assigned both long vowels as allophones in the phoneme inventory.

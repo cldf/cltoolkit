@@ -1,0 +1,57 @@
+﻿# Reference:
+10.1017/S002510031100017X
+
+# Language:
+Standard Malay (Brunei)
+
+#ISO Code:
+zsm
+
+# Consonant Inventory:
+p(p, p̚, pʰ), b(b, p), t(t, t̚, tʰ), d(d, t), tʃ, dʒ, k(k, q, ʔ, k̚, kʰ), 
+g(g, k), ʔ, f(f, p), v(v, b), s, z(z, s, dʒ), ʃ(ʃ, s), x(x, h, χ, k), h, 
+m, n, ɲ, ŋ, r(r, ɾ, ɾ̩), j, w, l
+
+# Vowel Inventory:
+i(i, ɪ, e, ɛ), e(e. ɛ), ə(ə, ə̆, ə̘), a(a, ɐ, ɐ̝, aː), o, u(u, ʊ, o, ɒ, uː)
+
+# Phoneme inventory size:
+30
+
+# Length of NWS audio file:
+47sec
+
+# Audio:
+47
+
+# Transcript - phonetic:
+kʰətikʰa aŋɪn utaɾa dan matɐhaɾi sədaŋ bɾ̩təŋkʰar ↗ | məŋənɛʔi sjapa jaŋ
+lɐbɪ kʰwat̚ ↗ ‖ dataŋ sɒʔɔɾaŋ pʰə̆ŋə̆mbaɾa jaŋ məmakʰaj dʒubah ↘ ‖
+kʰəduaɲɐ bɾ̩studʒʊ ↘ ‖ bhawa sjapa jaŋ bɾ̩dʒaja məɲəbapkʰan pəŋəmbaɾɐ
+tɾ̩səbʊt ↗ ‖ mənaŋgalkʰan dʒubahɲɐ ↗ ‖ akan diʔaŋgap ləbɪh kʰwat̚
+↘ ‖ laluː aŋɪn utaɾa pʊn məniʊp̚ skwat̚ɲɐ ↗ ‖ namʊn sə̆makʰɪn kʰwat̚
+aŋ̩n bɾ̩tiʊp̚ ↗ ‖ smakʰɪn rapat̚ pʰulɐ pəŋəmbaɾɐ təɾsəbʊt̚ ↗ | məməlʊq
+dʒubahɲɐ ↗ ‖ səhɪŋgɐ ahirɲɐ̝ ↗ ‖ aŋɪn utaɾa pʰʊn məŋalah ↗ ‖ kʰəmudjan
+matahaɾi məmaɲtʃaɾkʰan sinarɲaː ↘ ‖ dan də̘ŋan səgra ↗ ‖ pəŋəmbaɾa
+tə̆ɾsəbʊt̚ ↗  mənaŋgalkʰan dʒubahɲɐː ↘ ‖ ahirɲa aŋɪn utaɾa təɾpaksɐ̝
+məŋakʰu ↘ ‖ bɐhawɐ matɐhaɾi ↘ | ləbɪh kʰwat̚ ↗ | daɾipadaɲɐː ↘
+
+# Transcript:
+kətika aŋin utara dan matahari sədaŋ bərtəŋkar məŋənai siapa jaŋ
+ləbih kuat ‖ dataŋ səoraŋ pəŋəmbara jaŋ məmakaj dʒubah || kəduaɲa
+bərsətudʒu || bahawa siapa jaŋ bərdʒaja məɲəbabkan pəŋəmbara tərsəbut
+‖ mənaŋgalkan dʒubahɲa ‖ akan diaŋgap lebih kuat || lalu aŋin utara
+pun məniup səkuatɲa ‖ namun səmakin kuat aŋin bərtiup || səmakin rapat
+pula pəŋəmbara tərsəbut məməluk dʒubahɲa || səhiŋga ahirɲa || aŋin utara
+pun məŋalah || kəmudian matahari məmaŋtʃarkan sinarɲa || dan dəŋan
+səgəra ‖ pəŋəmbara tərsəbut mənaŋgalkan dʒubahɲa || ahirɲa aŋin utara
+tərpaksa məŋaku || bahawa matahari ləbih kuat daripadaɲa
+
+
+# Notes:
+There is both a phonemic and phonetic transcription. 
+Several sounds present in the transcription, such as long vowels and raised or advance vowels 
+are not discussed in the paper, but as a Malay speaker I'm confident I've allocated them to the 
+correct phonemes.  
+
+Transcript is phonemic inventory.

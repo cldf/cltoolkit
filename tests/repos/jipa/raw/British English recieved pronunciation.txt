@@ -1,0 +1,50 @@
+﻿# Reference:
+10.1017/S0025100304001768
+
+# Language:
+British English: Received Pronunciation
+
+#ISO Code:
+eng
+
+# Consonant Inventory:
+p, b, t, d, k, g, tʃ, dʒ, m, n(n, n̩), ŋ, f, v, θ, ð, s, z, ʃ, ʒ, h, w, r(r, r̩), j, l
+
+# Vowel Inventory:
+ɪ, e, æ, ʌ, ɒ, ʊ, ə, iː, ɑː, ɔː, uː, ɛː, eɪ, aɪ, ɔi, əʊ, aʊ, ɪə, eə, ʊə, i, u
+
+# Phoneme inventory size:
+46
+
+# Length of NWS audio file:
+40sec
+
+# Audio:
+40
+
+# Minimal pairs:
+/p~b/ /t~d/ /k~g/ /f~v/ /θ~ð/ /s~z/ /t͡ʃ~d͡ʒ/ /m~n? /l~r/ /j~w/
+/ɪ~e~æ/ /ʌ, ɒ, ʊ/ /eɪ, aɪ, ɔi/ /əʊ, aʊ/
+
+# Minimal pair examples:
+<pea~bee> <toe~doe> <cap~gap> <fat~vat> <thing~this> <sip~zip>  <chin~gin> <map~nap> 
+<led~red> <yet~wet>
+<pit~pet~pat> <pot~put> <bay~buy~boy> <go~cow>
+
+# Transcript:
+ðə ˈnɔːθ ˈwɪnd ən ðə ˈsʌn wə dɪˈspjuːtɪŋ ˈwɪtʃ wəz ðə ˈstrɒŋgə, wen ə ˈtrævlə ˌkeɪm əˌlɒŋ ˈræpt ɪn ə ˈwɔːm 
+ˈkləʊk. ðeɪ əˈgriːd ðət ðə ˈwʌn hu ˈfɛːst səkˈsɪːdɪd ɪn ˈmeɪkɪŋ ðə ˈtrævlə ˌteɪk hɪz ˈkləʊk ɒf ʃʊd bi kənˌsɪdəd 
+ˈstrɒŋgə ðən ði ˈʌðə. ðen ðə ˌnɔːθ wɪnd ˈbluː əz ˈhɑːd əz i ˈkʊd, bət ðə ˈmɔː hi ˈbluː ðə ˌmɔː ˈkləʊsli dɪd 
+ðə ˈtrævlə ˈfəʊld hɪz kləʊk əˈraʊnd hɪm, ænd ət ˈlɑːst ðə ˈnɔːθ wɪnd geɪv ˈʌp ði əˈtempt. ˈðen ðəˈsʌn ˌʃɒn 
+aʊt ˈwɔːmli, ænd əˈmiːdiətli ðə ˈtrævlə ˈtʊk ɒf ɪz kləʊk. n̩ ˈsəʊ ðə ˈnɔːθ ˈsɪn wəz əˈblaɪdʒd tʊ kəɪnˈfes ðət 
+ðə ˈsʌn wəz ðə ˈstrɒŋgr̩ əv ðə ˈtuː.
+
+
+# Notes:
+Minimal pairs taken from JIPA article.
+Both a phonemic and allophonic transcription were provided. The transcription here is the phonemic one, because 
+allophonic variation was not discussed in the paper. 
+
+# Errors:
+/ɪː/ is in the transcription, but not discussed in the paper.
+

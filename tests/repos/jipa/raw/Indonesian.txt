@@ -1,0 +1,40 @@
+﻿# Reference:
+10.1017/S0025100308003320
+
+# Language:
+Indonesian
+
+#ISO Code:
+ind
+
+# Consonant Inventory:
+p, b(b, p), t̪, d(d, t̪), tʃ, dʒ, k(k, ʔ, x), g(g, k), ʔ, m, n, ɲ, ŋ, 
+r(r, ɾ), f(f, p), s, z, ʃ, h, w, j, l 
+
+# Vowel Inventory:
+ i(i, ɪ), e(e, ɛ), a, u(u, ʊ), o(o, ɔ), ə, aj, aw, oj
+ 
+# Phoneme inventory size:
+31
+
+# Length of NWS audio file:
+1.25min.sec
+
+# Audio:
+85
+
+# Transcript:
+saŋ ˈaŋin uˈt̪aɾa dan saŋ mat̪aˈhaɾi səˈdaŋ bəɾdəˈbat̪ t̪ənˈt̪aŋ siˈapa dianˈt̪aɾa məˈreka jaŋ 
+ˈpaliŋ ˈhebat̪ ‖ kəˈt̪ika məlinˈt̪aslah səˈoɾaŋ pəˈlantʃoŋ | jaŋ t̪ərˈbuŋkus ˈdeŋan ˈdʒubah 
+haˈŋat̪ɲa ‖ məˈɾeka səˈt̪udʒu | ˈdʒika saŋˈaŋin uˈt̪aɾa | bərˈhasil | məmˈbuat̪ si pəˈlantʃoŋ 
+t̪əɾsəˈbut̪ məmˈbuka dʒuˈbahɲa | ˈmaka ˈdialah jaŋ mənˈdʒadi t̪əɾˈhebat̪ dianˈt̪aɾa məˈɾeka ‖ dan | 
+saŋ ˈaŋin uˈt̪aɾa pun | bərˈt̪iup səˈkuat̪ ˈmuŋkin ‖ ˈnamun | səˈmakin ˈkuat̪ ia bərˈt̪iup | 
+sə,makin eˈrat̪ | puˈlalah | si pəˈlantʃoŋ məməˈluʔ dʒuˈbahɲa ‖ səˈhiŋga ˈpada aˈxiɾɲa | 
+saŋ ˈaŋin uˈt̪aɾa ˈit̪u | məɲəˈrahlah ‖ səˈkaɾaŋ | t̪iˈbalah giˈliɾan saŋ mat̪aˈhari | ˈunt̪uʔ | 
+bərˈsinar ˈdeŋan haˈŋat̪ɲa ‖ dan ˈsaʔat̪ ˈit̪u pun si pəˈlantʃoŋ məmˈbuka dʒuˈbahɲa | 
+səˈhiŋga | məmˈbuat̪ saŋ ˈaŋin uˈt̪aɾa ˈhaɾus məˈŋakui ‖ ˈbahwa | saŋ mat̪ahaˈɾilah | jaŋ 
+ləˈbih ˈhebat̪ | daɾiˈpada saŋ ˈaŋin uˈt̪aɾa ˈit̪u sənˈdiɾi. 
+
+
+# Notes:
+ 

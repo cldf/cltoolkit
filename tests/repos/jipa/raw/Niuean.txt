@@ -1,0 +1,46 @@
+﻿# Reference:
+10.1017/S0025100317000500
+
+# Language:
+Niuean
+
+#ISO Code:
+niu
+
+# Consonant Inventory:
+p, t(t, s, ts), k(k, x), f, v, h, m, n, ŋ, l 
+
+# Vowel Inventory:
+i, iː, e, eː, a, aː, o, oː, u, uː
+
+# Phoneme inventory size:
+20
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Other symbols:
+/ˈ/
+/./
+
+
+
+# Transcript:
+ko e feˈiŋa e maˈtaŋi tokeˈlau mo e laˈaː he faː e taufeˈtoko ko hai ha laˈua ne mua ˈatu e
+maloˈloː he maŋaˈaho ne ˈhoko mai ai e taˈŋata ˈfano feˈnoŋa ne tui paˈleu maˈfana. kua
+taˈlia ai e laˈua ke feˈtoko ke kiˈsia ko hai ha laˈua ne mua ˈatu e maloˈloː. ko e ˈpatu ne
+mua atu e maloˈloː mai ha laˈua niː ka maˈeke ke fakalaŋaˈlaŋa e taˈŋata ˈfano feˈnoŋa 
+ke aˈaki e haˈana a peleˈue maˈfana. kua uˈulo he maˈtaŋi tokeˈlau ke he fakaosiˈaŋa
+he haˈana a tau uˈulo ke ˈlali ke fakalaŋaˈlaŋa e taˈŋata ˈfano feˈnoŋa ke aˈaki e haˈana
+a peleˈue maˈfana ka e au ˈatu ni e taˈofi he taˈŋata ˈfano feˈnoŋa e haˈana a peleˈue
+maˈfana ˈasi fiu tuˈai ni e maˈtaŋi tokeˈlau si fakaˈosi e tau uˈulo haˈana. na kaˈmata ni
+e laˈaː ke kiˈkila si aˈaki aŋaˈtaha ni he taˈŋata ˈfano feˈnoŋa e haˈana a peleˈue maˈfana,
+asi talaˈhau ai ni he maˈtaŋi tokeˈlau mo e haˈana a ˈnutu ko e laˈaː ne maloˈloː mai ha
+laˈua.
+
+# Notes:
+
+

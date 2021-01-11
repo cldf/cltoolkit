@@ -1,0 +1,58 @@
+﻿# Reference:
+10.1017/S0025100314000231
+
+# Language:
+Murcian Spanish
+
+#ISO Code:
+spa
+
+# Consonant Inventory:
+p, b(b, β̞), t, d(d, ð̞), ɟ(ɟ, ʝ, j), k, g(g, ɣ̞), tʃ, m(m, ɱ), n(n, n̪), ɲ, ɾ, r, f, θ, s, x, l(l, l̪), ʎ
+
+
+# Vowel Inventory:
+i, e, ɛ, æ, a, ɔ, o(o, o̯), u, ei, ɛi, æi, ai, au, oi
+
+# Phoneme inventory size:
+33
+
+# Length of NWS audio file:
+38sec
+
+# Audio:
+38
+
+# Other Symbols:
+/ŋ/ mentioned in paper as being “the only surviving element” in word final position p234, but not phonemic, and how it should be treated is far from clear.  
+
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+
+
+# Transcript:
+‖ el ˈβ̞jen̪to ˈnoɾte jeɾ ˈsɔ | poɾˈfjaβ̞an soβ̞ɾe ˈkwal de ˈɛʝɔ ˈeɾa el ˈmæf ˈfweɾte | kwan̪do
+aθeɾˈto a paˈsæ ˈum bjaˈxeɾo emˈbwelto en ˈantʃa ˈkapa ‖ kombiˈnjeɾon eŋ ke kjɛn ˈæn̪tɛl
+loˈɣ̞ɾaɾa obliˈɣ̞æ al β̞jaˈxeɾo̯ a kitˈtasse la ˈkapa | seˈɾia konsið̞eˈɾao ˈmæp podeˈɾoso ‖ el 
+ˈβ̞jen̪to ˈnoɾte soˈplo koŋ ˈgɾaɱ ˈfuɾja | peɾo kwan̪to ˈmæ soˈplaβ̞a | ˈmæ se areβ̞uˈxaβ̞a en
+su ˈkapa el β̞jaˈxeɾo ‖ poɾ ˈfin | el ˈβ̞en̪to ˈnoɾte aβ̞an̪doˈno la emˈpɾesa ‖ en̪ˈton̪θɛ | briˈʝo
+eɾ ˈsɔ kon aɾˈðɔ | e immedjˈatamen̪te | se deppoˈxo de su ˈkapa el β̞jaˈxeɾo ‖ pol lo kel 
+ˈβ̞en̪to ˈnoɾte ˈuβ̞o ð̞e rekonoˈθɛ la supeɾjoriˈð̞æ ð̞eɾ ˈsɔ ‖
+
+# Notes:
+Some phonetic features present in the transcription are not discussed in the text. 
+This includes non-syllablic marking on vowels, and dental marking on consonants. 
+They are treated as allophones of their unmarked counterpart. I have treated the labio-dental
+nasal as an allophone of the bilabial nasal. 
+
+There are three narrative recordings. The first an exerpt from a longer narrative by a 63 year old woman (not presented here),
+and two versions of the North Wind and Sun, as told by a man and a woman. The transcribed version is that from the woman's recording. 
+ 
+ 
+# Errors:
+/ð/ missing diacritic in transcription, probably author’s typo.
+/w/ not discussed in paper, but present in transcription.

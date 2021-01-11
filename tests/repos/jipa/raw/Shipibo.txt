@@ -1,0 +1,71 @@
+﻿# Reference:
+10.1017/S0025100301002109
+
+# Language:
+Shipibo
+
+#ISO Code:
+shp
+
+# Consonant Inventory:
+p, t, k(k, ɣ), ʔ, ts, tʃ, m, n, β(β, b, bβ, β̞), s, ʃ, ʂ, h, w(w, ŋʷ, ɥ, ɰ), 
+r(r, ɹ̠, ʐ, ɾ, d̠z̠, d̠ɹ̠, ɻ, ɽ), j(j, ɲ)
+
+# Vowel Inventory:
+i(i, i̥, i̯), a, o(o, o̯, o̥), ɯ(ɯ, ɨ, ɯ̥, ɯ̯), ĩ, ã, õ, ɯ̃ 
+
+# Phoneme inventory size:
+24
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Other Symbols:
+/"/ Quotation marks. Punctuation to be ignored in analysis.
+/{/ used to indicate false starts in the transcription. Punctuation to be ignored in analysis.
+/}/ used to indicate false starts in the transcription. Punctuation to be ignored in analysis.
+
+# Minimal pairs:
+/p~t~k-~ts/ /m~n/ /β~ʃ/
+
+# Minimal pair examples:
+/ˈpopo~toˈto~ˈkoko-~ˈtsotso-/ /ˈmomo~ˈnono/ /ˈβoko~ˈʃoko/
+
+
+# Transcript:
+wɯsˈtioɻa ˈnɯtɯɻõɣi iˈkaɣi || joˈtã βɯˈtã ˈβadʐi ˈnoko̯anani. || ha noˈko̯aanaʂki |
+ˈjojo ikana iɣi ˈhãĩ. || hatĩãɣi | βaˈdʐĩ | ˈjoija iɣi "{ɯaɻa ˈkoʃi iɣi} ɯaɻa kˈkin
+ˈkoʃiki ˈmia iɣi" aɣĩ. || tĩã hasˈkakɯtĩãɣi ˈjotamã ˈjoija "ɯaɻa ˈkoʃiɽiβi ɣi". ||
+hatĩãki ˈhãĩ oˈnãtima ika iɣi | {ˈtsõʃamãkĩ} || ˈtsoaʃamãɣi̥ ki̥kĩ ˈkoʃi iɣi iˈʂõ. ||
+hatĩã hasˈkaɣɯtĩãɣi || {ha} haˈĩ | ˈsinaɣanãi tʃãˈkaɣɯ̃βiɣi || ˈho̯a iɣi
+wɯsˈtioɽa ˈhoni. || ˈho̯ai ˈʔõĩkanaɣi iˈɣa iɣi, wɯsˈti̯oɽa ˈhoni || ki̥ˈkĩ kɯʂˈto tʃoˈpa
+saˈwɯja. || hatĩã ˈhaskaɻa ˈõĩtaanãɣi, || ˈjotamãɣi ˈβaɻi aˈka iɣi || "ˈdʐama nɯno
+nõ oˈnãti aɣɯ ˈtsoɣajarĩ kõ ˈkoʃi iɣi iˈʂõ. ‖ ˈtsõki o̯a ˈhoni | kɯʂˈto tʃoˈpa |
+hoˈpɯmai, | ˈhaɻa iɣi kiˈkĩ ˈkoʃi ˈhoni" iɣi iˈka iɣi, || joˈtã. || hatiã βaˈɽĩ "ˈtananõ
+aˈwɯ" aɣĩ aˈka iɣi. ||
+jãĩ ha joˈtã | ʔiˈkĩ || koˈʃĩdɻaβiˈkĩ | ˈhãpari ˈpɯoai. || ˈhaĩʂõ kiˈkiãɣĩ ˈʂõ aˈka iɣi,
+haˈwɯ̃ || ˈkɯɯ̃ ˈsɯ̃nawɯ̃ koʃi ˈsɯ̃na {aɣa iɣi} kiˈki̯ãɣĩ ˈʂõ aɣĩ. ‖ ha ˈʂõ aɣaɣi
+iˈka iɣi ˈhoni, || ha maˈtsĩ aˈkaɣi | haˈti̯ãkaja ˈkikini ˈʂɯ̯ikikaini̯awɯn tʃoˈpãβi, |
+maˈtsĩʔ aˈka. || ˈhaskatai ˈoĩtaanaɣi || moa joˈtã iˈka iɣi moa maˈsaβira ʃiˈnãkĩ
+ˈjotamaa moa ˈhaskati | ˈʂɯ̯iβainaitiã. || {tiã} ˈhaĩɻo || ˈβaɻi jo̯i ʃokoa iɣi "ɯna 
+ma | ʔatiˈpãjamaɣɯ, | ˈdɻama ˈmĩ | ˈtanaʃoɣota" ˈaɣin. ‖
+hasˈkaɣɯtiãɣi | βaˈdʐĩ | aˈka iɣi | hawɯ̃ βɯɻo tʃoˈpɯɣĩ, || hawɯ̃ ˈβɯro
+tʃoppɯ aˈkõʃamãtʃĩ ˈoĩkĩ. || ha moa ˈβɯɻo ˈtʃopɯaĩɽiβi | koʃiˈaĩɽiβi moa ˈkĩɣĩ
+ˈʂanai | ˈtɯnaitiãɽõɣi iˈka iɣi | ˈ honiɣi ˈkikini ˈonitsai. || ha ˈonitsaɣĩɣi ʂaˈnã
+aˈkaɣi, ha ˈonitsaɣĩ aˈka iɣi ha | kɯ̥ʂˈto tʃo̥pa ˈpotaɣĩ. || ha kɯʂˈto tʃopa ˈpotai
+ˈointaanãɣi, || ˈmatsi iˈka iɣi, || haĩ ˈ jojo iɣi ˈiˈkõ ɻiɣi mia ˈkoʃi iɣi | βaˈɽĩ, |
+ɽamaparira ɯ̃ mi ikoãɣɯ ˈkoʃi" | ikiɣi iˈka iɣi, || "ˈjoˈtã, | joˈtã."
+
+
+# Notes:
+The glottal stop does not appear to be phonemic, but is phonetically predictable. The author
+has included it in the phoneme inventory in brackets with a note about it. Because it appears in
+the transcription I have included it as a phoneme, because I wasn't sure what else to do with it.
+
+
+# Errors:
+/d/ [dʐ] not mentioned in paper, probably an allophone of /r/.
+

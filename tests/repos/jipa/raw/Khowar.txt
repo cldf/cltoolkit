@@ -1,0 +1,47 @@
+﻿# Reference:
+10.1017/S0025100316000220
+
+# Language:
+Khowar
+
+#ISO Code:
+khw
+
+# Consonant Inventory:
+p, b, pʰ, t, d, tʰ, ʈ, ɖ, ʈʰ, k, g, kʰ, q, m, n, ts, dz, tsʰ, ʈʂ, ɖʐ, ʈʂʰ, tɕ, 
+dʑ, tɕʰ, f, s, z, ʂ, ʐ, ɕ, ʑ, x, ɣ, h, ɾ, ʋ, j, ɫ, l
+
+# Vowel Inventory:
+i, ɛ, ɑ, ɔ, u
+
+# Phoneme inventory size:
+44
+
+# Length of NWS audio file:
+46
+
+# Audio:
+46
+
+# Other symbols:
+/◌ˈ/
+
+
+# Transcript:
+ɕuˈmɑlɔ gɑn ʋɑ jɔɾ dʑɑnˈdʑɑl kɔˈɾɑʋ ɔˈɕɔni, hɑˈsɛ dʑɑnˈdʑɑl bɔ sɑxt ɔˈɕɔj,
+ˈkjɑʋɑt ki musɑˈfɛɾ hɑj bɔsk ɕɔˈqɔ ˈkɑɫi pɛˈtsʰi, hɑˈtɛt hɑˈjɑ ˈluɔ ˈpɾɑni ki,
+kɑ ki hɛ musɑfɛˈɾɔ ʈʂɑˈkɛ ɕɔˈqɔ ki pɛˈtsʰɛtɑj, hɑˈsɛ dʑit bɔj, ʋɑ hɑʂ dʑɔˈɔnu
+bɔj ki, hɑˈsɛ bɔ tɑqɑtˈdɑɾ. ɾɛ tʰɛ hɑˈsɛ ɕuˈmɑlɔ gɑn ˈhɑni pin hɔj ki, kɑnˈduɾi
+ki hɑˈtɔ ʋɑsɑ hɔj. ˈmɑgɑm musɑˈfɛɾ tɑn ɕɔˈqɔ ˈɾɑnɑɾɑn ɖɑŋg bɔtitɑj. ɑˈxɛɾi
+gɑn ˈbɛhtɕi pɛˈtsʰitɑj. kjɑˈʋɑt ki jɔɾ pin bik ɕuˈɾuɣ ɑˈɾɛɾ, musɑˈfɛɾ tɑn ɕɔˈqɔ
+ˈjɑkdɑm pɛˈtsʰitɑj. hɑʂˈtɑn ˈtɕɑqɑ ɕuˈmɑlɔ gɑn mɑdʑbuˈɾɑn mɑniˈtɑj ki, jɔɾ
+tɑqɑtˈdɑɾ hɛ dʑuˈjɛn ˈmuʑi.
+
+
+# Notes:
+The transcript here is of the broad transcription. A narrow transcription is also provided in the JIPA paper. 
+Velar nasal [ŋ] occurs in the transcription, but is not discussed in the paper nor listed as a phoneme. 
+Given its position in the word, my guess is that it is a homorganic nasal, and /n/ is the underlying phoneme. 
+
+# Errors:
+/ŋ/

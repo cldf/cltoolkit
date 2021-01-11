@@ -1,0 +1,47 @@
+# Reference:
+10.1017/S0025100312000229
+
+# Language:
+Central Sama
+
+#ISO Code:
+sml
+
+# Consonant Inventory:
+p(p, p̚), p:, b(b, β), b:, t̪(t̪, t̪̚), t̪:, d(d, ɾ), d:, dʒ, d:ʒ, 
+k(k, k̚), k:, g(g, ɣ), g:, ʔ, 
+m, m:, n, n:, ɲ, ŋ, ŋ:, s, s:, h, w, j, j:, l(l, ɭ), l:
+
+# Vowel Inventory:
+i(i, ɪ), e, ə, a(a, ä), u(u, ʊ), o, i:, eː, aː(aː, äː), oː, uː(uː, ʊː)
+
+# Phoneme inventory size:
+30
+
+# Length of NWS audio file:
+1.12min.sec
+
+# Audio:
+72
+
+# Transcript:
+na däˈkajʊʔ ˈlːäw mägˌkälʊˈkasːä si häˈbaɣät̪̚ ˈmakä si ˈlːäw | ja
+pägˌkälʊkäˈsːahän ˈsɪɣäːm baŋ saɪ ˈkonoʔ äˈkosog mɪn ˈsiɣaːm ˌkärʊˈwaŋän
+| päˈsalt̪äʔ äˈnijäʔ däˈkajʊʔ ˌbɪjäˈhero ˌmäɪˈnaʔän ˈaŋkän ˈsɪɣaːm mägˈsulʊt̪
+baŋ saɪ ˈkonoʔ ˌmäkäpähʊˈrusän ˈsəmːek ˌbɪjäˈhero ɪˈnaːn | ˈijaːja ˌäŋänˈdaʔʊg
+| mänˈjarɪ päˈrähuː na si häˈbaɣät̪̚ ˌämäˈluwäs koˈsognä boʔ ˈijä ja ˌäŋänˈdaʔʊg
+päˈkosog | ˌpɪnʊsˈpusan t̪oʔˈoŋän ˈheʔnä koˈsognä ˈsaɣoʔ ˈjampä na ˈijä
+äˈnijʊp päˈkosog gom ˈpaʔɪn na ɪˈsaːb äŋˈəmːos ˈdinä ˌbijäˈhero ˈinaːn | na
+ˈpagkä ˈhaläm ˌkähʊˈrusän eʔ si häˈbaɣät̪ ˈsəmːek ˌbɪjäˈhero ɪˈnaːn | ˌpɪnäˈsəlːeʔ
+ˈeʔnä si ˈlːäw ˌämäˈluwäs koˈsognä | na päˈsiläk mägˈt̪ʊːj si ˈlːäw ˌämʊsˈpusän
+päˈsuʔnä | ˈlandʊʔ t̪oʔˈoŋän äˈpasʊʔ ˈsampäj ˈmbal t̪äˈsandäl eʔ ˌbɪjäˈhero
+ɪˈnaːn ˈaŋkän ˈijä ˌäŋʊˈrusän ˈsəmːeknä ˈɪnʊt̪̚ | mä käˌt̪äpʊˈsannä ˈpagkä
+mbäl na ˌkäsänˈdalän ˈpasʊʔ ɪˈnän | äˈnant̪äŋ ˌbɪjaˈhero ɪˈt̪uː boʔ päˈkuppaː
+ni ˈt̪igbäw ja baj ˌmäɪˈnaʔän äˈsaːl ma läˈbajän | häˈt̪inä äˈhaːp ˈlaɣɪʔ ˈkit̪ä
+ˌähäˈnunʊt̪̚ min äˈmoɣos
+
+# Notes:
+All allophony discussed in paper.
+
+# Errors:
+/r/ in transcription, but not in phoneme inventory or discussed in paper. Presumably supposed to be tap [ɾ].

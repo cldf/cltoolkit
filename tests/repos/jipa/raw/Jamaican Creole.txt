@@ -1,0 +1,45 @@
+﻿# Reference:
+10.1017/S002510030600243X
+
+# Language:
+Jamaican Creole
+
+#ISO Code:
+jam
+
+# Consonant Inventory:
+m, n, ŋ, p(p, pʷ, pʲ), b(b, bʷ, ɓ), t, d(d, ɗ), k(k, kʲ), g(g, gʷ, gʲ, ɠ), tʃ, dʒ, f, v, s, z, ʃ, 
+h, ɹ, j, w, l
+
+# Vowel Inventory:
+i, e, a, o, u, ai, ia, au, ua, iː, aː, uː
+
+# Phoneme inventory size:
+33
+
+# Length of NWS audio file:
+47sec
+
+# Audio:
+47
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+# Other symbols:
+,, .
+
+# Transcript:
+di naːt win an di son wen a kuaɹil baut witʃ wan a dem mua tʃɹaŋga. siam
+taim, wan man ena kom daun di ɹuad. im ɹap op ina wan dʒakit fi kiːp aut
+di kual. di win an di son agɹiː se dat di wan we mek di man tek aːf im dʒakit
+fos, a im a di tʃɹanga wan. so, di naːt win blua aːd aːd, bot di mua im blua, a
+di mua di man ɹap di dʒakit ɹaun im. di naːt win a fi tap tʃɹai. den di son taːt
+ʃain at. di man tek aːf im dzakit siam taim. wen im tek i aːf, di naːt win
+luk pan di son an se, buai, ju tʃɹaŋga dan mi fi tʃɹuː.
+
+# Notes:
+Long vowels are written as double graph in the JIPA paper. Here the length symbol is used for consistency.
+ 

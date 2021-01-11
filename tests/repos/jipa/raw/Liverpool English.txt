@@ -1,0 +1,44 @@
+﻿# Reference:
+10.1017/S0025100307003180
+
+# Language:
+Liverpool English
+
+#ISO Code:
+eng
+
+# Consonant Inventory:
+p(p, pʰ, ɸ), b, t(t, tʰ, h, ts, ɹ, ʔ), d, k(k, kʰ, ç), g, tʃ, dʒ, m, n, ŋ, f, v, θ(θ, t̪), ð(ð, d̪), 
+s, z, ʃ, ʒ, h, r(r, ɾ, ɹ), j, w, l
+
+# Vowel Inventory:
+ i(i, iː), ɪ, e, eː, ɛ, a, ʉ(ʉ, ʉː), ə, ʊ, ɔ(ɔ, ɔː), ɑ(ɑ, ɑː), ɒ, iɛ, eɪ, aɪ, aʊ, ɔɪ 
+ 
+# Phoneme inventory size:
+41
+
+# Length of NWS audio file:
+27sec
+
+# Audio:
+27
+
+# Minimal pairs:
+/iː~ɪ~eː~ɛ~a~ɑː~ɒ~ɔː~ʉː~ʊ/ /eɪ~aɪ/ /ɛʉ~iɛ/
+
+# Minimal pair examples:
+<heed~hid~heard~head~had~hard~hod~hoard~who'd~hood/ /hay~high/ /hoe~how/
+
+# Transcript:
+θə nɔːθ wɪnd ən ðə sʊn wə dɪspjʉːtən wɪtʃ wəz ðə strɒŋgə wɛn ə travələ kaɪm əlɒŋg rapt 
+ɪn ə wɔːm klɛʉk ðeɪ əgriːd ðat ðə wɒn ʉː feːst sʊksiːdəd ɪn meɪkən ðə travələ teɪk ɪz klɛʊk 
+ɒf ʃʊd biː kənsɪdəd strɒŋgə ðan ðiː ʊðə ən ðən ðə nɔːθ wɪnd blʉː əz hɑːd əz iː kʊd bʊt ðə mɔː 
+hiː blʉː ðə mɔː klɛʉsli dɪd ðə travələ fɛʉld ɪz klɛʉk əraʊnd ɪm ənd at last ðə nɔːθ wɪnd geɪv 
+ʊp ðiː ətɛmpt ðɛn ðə sʊn ʃaɪnd aʊt wɔːmli ən ɪmiːdɪətli ðə travələ tʊk ɪz klɛʉk ɒf ən sɛʉ ðə 
+nɔːθ wɪnd wəz əblaɪdʒd tə kənfɛs ðat ðə sʊn wəz ðə strɒŋgə əv ðə tʉː 
+
+
+# Notes:
+The phonemic version of the transcript is provided here. A phonetic transcript is also
+provided in the JIPA illustration. 
+

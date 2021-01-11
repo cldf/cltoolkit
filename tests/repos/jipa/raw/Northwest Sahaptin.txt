@@ -1,0 +1,40 @@
+# Reference:
+ 10.1017/S0025100314000218
+
+# Language:
+Northwest Sahaptin
+
+#ISO Code:
+yak
+
+# Consonant Inventory:
+p, t, k, kʷ, q, qʷ, ʔ, ts, tʃ, tɬ, p’, t’, k’, k’ʷ, q’, q’ʷ, ts’, tʃ’, tɬ’, 
+m, n, s, ʃ, x, xʷ, χ, χʷ, h, ɬ, w, j, ʁ, l
+
+# Vowel Inventory:
+a, i, u, ɨ, aː, iː, uː
+
+# Phoneme inventory size:
+40
+
+# Length of NWS audio file:
+60sec
+
+# Audio:
+60
+
+# Transcript:
+ʔatjaˈjaːja ˈaːnin
+papatanaˈwiːχʃana ʔatajaˈjaːja ˈʔaːnin ˈʃin ʔiˈwa ˈχtutχaw
+ˈkuːk awˈku ʔiˈpajʃna ˈts’muj ˈʔutpaːsji wjaninˈɬa
+ˈpapaʔiːʔiːna ʔatjaˈjaːja ˈʔaːnin
+ʔanaˈpɨnχuʃ ʔiʃaˈpatʃaχʷtʃ’kta ˈʔutpaːs wjaninˈɬaːn ʔiˈwata ˈχtutχaw
+ʔawˈku ʔatjaˈjaːja ʔiwsˈlatsajka ˈχtuwiki kutja ʔanaˈmɨl ʔiˈhulina
+ku majkˈq’aːp piˈnatʃats’mujka wjaninˈɬa
+ku awˈku piˈnajaːnwana ʔatjaˈjaːja
+ku anaˈmaːl ˈʔaːn ʔiˈχtuna ʔiʔɨtʃuna
+ˈkuːk awˈku ʔiˈlaχujχna wjaninˈɬa ku iˈtʃ’ka ˈʔutpaːs
+ku awˈku piˈnajaːnwana ʔatjaˈjaːja
+ˈʔaw ˈʔinχaj ˈʔaːn ʔiˈwa ˈχtutχaw
+
+

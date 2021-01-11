@@ -1,0 +1,47 @@
+﻿# Reference:
+10.1017/S0025100300006538
+
+# Language:
+Standard Modern Greek
+
+#ISO Code:
+ell
+
+# Consonant Inventory:
+p, b(b, mb), t, d(d, nd), k(k, c), g(g, ŋg, ɟ), 
+f, v, θ, ð, s, z, x(x, ç), ɣ(ɣ, ʝ), m, n(n, ɱ, ɲ, ŋ), 
+ɾ(ɾ, ɹ, r), l(l, ʎ)
+
+# Vowel Inventory:
+i(i, i̯, i̥), ɛ, ɐ(ɐ, ɐ̯), o(o, o̯), u(u, u̥)
+
+# Phoneme inventory size:
+23
+
+# Length of NWS audio file:
+Male: 28sec
+Female: 34sec
+
+# Audio:
+31
+
+# Transcript:
+o voˈɾʝɐs ˈco̯iʎoz ˈmɐlonɐn | ʝɐ to ˈpços ɐptuz ˈðʝo ˈin o ðinɐˈtotɛɾos |
+ˈotɐ ˈnɛtiçɛ nɐ pɛˈɾɐsi ɐpo broˈstɐ tus | ˈɛnɐs tɐksiˈðʝotis pu̥ foˈɾusɛ ˈkɐpɐ ‖
+ˈotɐn to ˈniðɐn | o voˈɾʝɐs ˈco̯iʎo siɱˈfonisɐn |
+oˈti̯opço ˈsɛkɐnɛ to dɐksiˈðʝoti nɐ ˈvɣɐli ti ˈgɐpɐ tu |
+θɐ θɛoˈɾundɐn o ˈpço ðinɐˈtos ‖
+o voˈɾʝɐs ˈɐɾçisɛ ˈtotɛ nɐ fiˈsɐi mɛ mɐˈniɐ | ɐˈlɐ̯oso pɛɾiˈsotɛɾo fiˈsusɛ |
+ˈtoso pɛɾiˈsotɛɾo tiliˈɣotɐn mɛ ti ˈgɐpɐ tu̯o tɐksiˈðʝotis |
+ˈospu o voˈɾʝɐs kuˈɾɐsticɛ cɛ stɐˈmɐti̥sɛ nɐ fi̥ˈsɐi ‖
+ˈtotɛ ˈo̯iʎo ˈsɐɾçisɛ mɛ ti siˈɾɐ tu nɐ ˈlɐmbi ðinɐˈtɐ |
+cɛ ˈɣriɣoɾɐ̯o tɐksiˈðʝotis zɛˈstɐθi̥cɛ ˈc ɛvɣɐlɛ ti ˈgɐpɐ tu ‖
+ˈɛtsi o voˈɾʝɐs ɐnɐˈgɐsticɛ nɐ pɐɾɐðɛˈxti |
+ˈoti ˈo̯iʎos ˈinɛ ˈpço ðinɐˈtos ɐp ɐˈfton ‖
+
+# Notes:
+Homorganic nasals expressed as allophones of /n/.
+Transcript compiled from two recordings from a male and female speaker.
+
+# Errors:
+/u̯/ In the transcription. Not discussed in paper. Presumably phonetic process author has marked.

@@ -1,0 +1,46 @@
+﻿# Reference:
+10.1017/S0025100310000277
+
+# Language:
+Istanbul Judeo-Spanish
+
+#ISO Code:
+lad
+
+# Consonant Inventory:
+p, b(b, β), t(t, tʰ), d(d, ð, ɾ), k(k, kʰ), g(g, ɣ, ɣʷ), tʃ, dʒ, 
+f, v(v, ʋ), s, z, ʃ, ʒ, x, m, n(n, ɲ, ɱ, n̪, ŋ), l, r, j
+
+# Vowel Inventory:
+i(i, i̯), e(e, eː), a(a, aː), o(o, oː), u(u, w)
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Other Symbols:
+/ʔ/ A non-phonemic glottal stop appears in the transcription, and has been included here.
+
+# Transcript:
+eˈlai̯ɾe delˈnortʰe jelˈsol | seˈstaʋam peleˈando | paɾasaˈʋer ˈken ˈera elˈmas
+ˈfwerte | jeˈneste ˈpunto ‖ ˈʋjene depaˈsar ˈʔum pasaˈʒeɾo koˈnum ˈpalto
+ˈɣodro ‖ semeˈtʰjeɾon daˈkʰorðo | kʰeʔelkʰeˈpweðe aˈzer kiˈtar suˈpalto
+alpasaˈʒeɾo ˈantez ðeˈlotro ‖ ˈiʋa ˈser konsiðeˈraðo komelˈmas ˈfwerte ‖
+eˈlai̯re delnortʰe empeˈso aˈzer ˈuna furˈtʰuna ‖ amaloˈmas ˈfwerte eˈlai̯ɾe
+soˈplaʋa ‖ loˈmaz apreˈtaðo elpasaˈʒeɾo seːmbolˈvia ensuˈpalto ‖ alˈkaʋoː
+eˈlai̯ɾe del,nortʰe seːzvatʃeˈo ‖ elˈsol saˈljo | jempeˈso aːˈzer kaˈlor | ipiˈʃin
+elpasaˈʒeɾo sekiˈto suˈpalto ‖ jeˈlai̯ɾe delˈnorte | ˈtuvo keɾekonoˈser ‖
+keːlˈsol ˈʔeɾa elˈmas ˈfwertʰe ðelsoˈðos ‖
+
+# Notes:
+Some phonetic processes not discussed in the text, but marked in the transcript 
+have not been reproduced here.
+
+A non-phonemic glottal stop appears in the transcription, and has been included here.
+
+Vowel length is not mentioned in the text, but is assumed to be allophonic.
+ 
+
+# Errors:

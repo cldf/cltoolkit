@@ -1,0 +1,49 @@
+# Reference:
+10.1017/S0025100312000266
+
+# Language:
+Tena Quichua
+
+#ISO Code:
+quw
+
+# Consonant Inventory:
+p, b(b, mb, β), t, d(d, nd), k, g(g, ŋg, ɣ), 
+ts, tʃ(tʃ, dʒ), m, n(n, ŋ), ɲ, ɾ(ɾ, r, ɹ), s, z, ʃ, x(x, h), j, w, l, ʎ(ʎ, l)
+
+# Vowel Inventory:
+i(i, i̯), a, u
+
+# Phoneme inventory size:
+23
+
+# Length of NWS audio file:
+1.52min.sec
+
+# Audio:
+112
+
+# Other Symbols:
+/// used to indicate intonation units.
+
+
+# Transcript:
+tʃi wai̯ɾa iskinamanda indiwa ɾimanuˈnun / mai̯kanda tʃi iʃkipuɾamanda
+mas ʃindʒi aka //tʃi ɾju runa pasaka ʃu kilpaɾina tʃuɹaɾiʃka // pai̯na
+tʃuɾanuka paɾehumanda aʎi ɲawpapunda puɾiŋgawa / mai̯kambas tʃi
+tʃuɾana uɾmakta ɲa ɾikuŋgawa pai̯ ʃindʒi aʃkaɾa // ʃinakpi tʃi iʃkimanda
+ʃamuk wai̯ɾa pukuka punkuŋˈga kaʎaɾika wai̯ɾawa // tʃi mas ʃindʒi wai̯ɾa
+ʃitaka tʃi ɾju runa ʃindʒiɾa apika pai̯wa kilpaɾinaɹa // tʃi iʃkiˈuna ɾimanuʃa
+wai̯ɾa sambajaŋgama // ʃinakpi tʃi indi ʃindʒi rai̯taka pai̯wa ɾikutʃina
+pundʒawa // ʃinakpi dzasʎa tʃi ɾjux runa apaʃitaka pai̯wa tʃuɾanaɾa //
+ʃinakpi wai̯ɾa iskinamanda wai̯ɾa ɲa jatʃaka aʎiɾa tʃi indi aʃka ʃindʒi aʃkaɾa //
+
+
+# Notes:
+The rhotic approximant [ɹ] is not mentioned in the text.  I have placed it as an allophone 
+of the rhotic tap.
+
+# Errors:
+/e/ I assume / paɾehumanda/ is of Spanish origin. In which case ‘e’ and ‘h’ are loan-sounds. [h] can be assigned as an allophone of /x/, but I’m not sure how to represent [e]. If we give it full phoneme status, it’s misleading because it’s very rare, but if it’s not in the phoneme inventory it just looks like an error. 
+
+/ʒ/ Should be with ‘d’ to represent affricate [dʒ] an allophone of /tʃ/.

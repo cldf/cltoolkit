@@ -1,0 +1,33 @@
+# Reference:
+10.1017/S0025100300005326
+
+# Language:
+Taba
+
+#ISO Code:
+mky
+
+# Consonant Inventory:
+p, b, t, d, k, g, m, n, ŋ, f, s, h, tʃ, dʒ, r, j, w, l, 
+pː, bː, tː, dː, kː, gː, mː, nː, ŋː, fː, sː, hː, tːʃ
+
+# Vowel Inventory:
+i, ɛ, a, ɔ, u
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+ˈbanda ˈni ˈwɛ ˈmhɔnas | ˈnim ˈwɛ naˈlusa ˈmhɔnas ‖ ˈnim papˈpukɔ ˈmɛ naˈlusa
+ˈmhɔnas ‖ ˈbiŋɔ namɔˈlam ‖ uˈlɔn ˈnmau ˈnhan ‖ ˈpɔtɔ ˈpɔpɛ ˈnmau ˈnhan ˈntʃiwi ‖
+ˈsumɔ naˈlusa ˈkhan ‖ ˈmtɔ ˈnujak | ˈpɔjɔ ˈmhɔnas | baiˈbijɔ nmaˈlɔŋɔ ‖ uˈlɔn ˈnmau
+ˈnhan | ˈmtumɔ ɛ ˈlɔ ɛ ‖ papˈpukɔ ˈmai naˈlusa taˈsiaki | ˈmpili ɛ ˈlɔ ˈli ɛ ‖ ˈpɔlɔ
+ˈbanda taˈsiak | ˈnhan ˈtuli naˈhatɛs ‖ ˈmau ˈnhan ˈtuli sɛˈdaŋkan ˈbanda naˈpɛ taˈsiaki ‖
+ˈmalɛ ˈsiɔ ˈmalai ˈhan ˈtuli ‖ ˈsiɔ ˈmul ˈmalai ˈhan ˈtuli aˈhan ‖ ˈmalɛ ˈtːʃiɔtit ˈhu ˈmalai
+ˈthan ‖ ˈtːʃiɔtit ˈɔkik ˈmalai ˈthan ˈtuli | ˈthan ˈtrɔnda ‖
+
+# Notes:
+The text is a riddle about being sick.

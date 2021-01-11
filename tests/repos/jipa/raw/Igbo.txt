@@ -1,0 +1,43 @@
+﻿# Reference:
+10.1017/S0025100300004473
+
+# Language:
+Igbo
+
+#ISO Code:
+ibo
+
+# Consonant Inventory:
+p, b, t(t, t̪), d(d, d̪), k, g, kp(kp, ɓ̜), gb(gb, ɓ), 
+m, n, ɲ, ŋ, f, s, z, ʃ, ɣ, ɦ, tʃ, dʒ, 
+ɹ(ɹ, ɾ), j, w, l, kʷ, gʷ, ŋʷ
+
+# Vowel Inventory:
+i(i, í), i̙(i̙, í̙), e(e, é, é̙), a(a, á), u(u, ú), u̙(u̙, ú̙),
+o(o, ó), o̙(o̙, ó̙), ɪ(ɪ, ɪ́), ʊ(ʊ, ʊ́), ɔ(ɔ, ɔ́)
+
+# Phoneme inventory size:
+38
+
+# Length of NWS audio file:
+44sec
+
+# Audio:
+44
+
+# Other Symbols:
+/↓/
+
+
+# Transcript:
+ikuku ú̙gu̙ɹu̙ na á↓ŋwú̙ naaɹú̙ɹí̙tá ú̙↓ká óɲé ↓ká íbe já íké mgbe ɦá
+ɦu̙ɹu̙ otu óɲé ídʒe ka ó ji uwé ú̙gu̙ɹu̙ ja náabí̙á. ɦa kweko̙ɹi̙taɹa na óɲé
+↓buɹu ú̙zo̙ méé ka óɲé ídʒe áɦu̙ jípu̙ uwé ↓ja ka á ga éwe dí̙ ka oɲé ka íbe
+já íké. ikuku ú̙gu̙ɹu̙ wéé malíté féé, féé, féé, otu íké ↓já ɦa; ma ka ó̙ na
+efé ka óɲé ídʒe áɦu̙ na edʒídésí ↓úwé ↓já ↓íké na aɦú̙ ↓já. já fékata ɦapu̙.
+mgbe áɦu̙ a↓ŋwú̙ wéé tʃápu̙tá, tʃásí↓ké méé ka ebe níí↓lé kpoɹó ó̙↓ku̙
+ná↓átufuɣi óge oɲe oɲé ídʒe áɦu̙ jipu̙ɹu̙ uwé ↓já ŋké a meɹe ikuku u̙gu̙ɹu̙
+kweɹe na a↓ŋwu̙ ka já íké.
+
+# Notes:
+Marking of tones: < ́> indicates high tone, low tone is unmarked, and <↓ ́> indicates downstep.

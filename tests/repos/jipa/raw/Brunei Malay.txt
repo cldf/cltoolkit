@@ -1,0 +1,40 @@
+﻿# Reference:
+10.1017/S0025100316000189
+
+# Language:
+Brunei Malay
+
+#ISO Code:
+kxd
+
+# Consonant Inventory:
+p, b, t, d, k, g, tʃ, dʒ, s, h, m, n, ɲ, ŋ, r, w, j, l
+
+# Vowel Inventory:
+i, u, a
+
+# Phoneme inventory size:
+21
+
+# Length of NWS audio file:
+32
+
+# Audio:
+32
+
+# Other symbols:
+/‖/
+
+# Transcript:
+masa si aŋin utara sama si matahari bataŋkar pasal siapa jaŋ lagi kuat ‖
+ada tia uraŋ paŋambara dataŋ ‖ diuraŋ satudʒu siapa jaŋ dapat maŋgalkan
+dʒubah paŋambara atu iatah jaŋ paliŋ kuat ‖ si aŋin utara pun maniup
+sakuat kuatɲa ‖ tapi makin kuat ia maniup makin tah pulaŋ paŋambara
+atu mamigaŋ banar banar dʒubahɲa  ‖ si aŋin utara pun maŋalah ‖ udah atu
+si matahari lagi mamantʃar kuat kuat sampaj paŋambara atu inda tahan ‖
+tarus ia buka dʒubahɲa ‖ dʒadi si aŋin utara pun paksa ŋakun si matahari
+lagi kuat dari kadia
+
+
+# Notes:
+The transcription provided here is phonemic. There is also a phonetic transcription in the JIPA paper.

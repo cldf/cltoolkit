@@ -1,0 +1,62 @@
+﻿# Reference:
+10.1017/S0025100309990181
+
+# Language:
+Nepali
+
+#ISO Code:
+npi
+
+# Consonant Inventory:
+p, b, pʰ(pʰ, ɸ, pʰʲ, p̞ʰ), bʱ(bʱ, β, b̞ʱ) , t(t, tʲ), d(d, d̞), tʰ(tʰ, tʰʲ), dʱ, ʈ, ɖ(ɖ, ɽ) , ʈʰ, ɖʱ, 
+k(k, k̞), g(g, g̞) , kʰ(kʰ, x, k̞ʰ), gʱ(gʱ, ɣ), ts, dz(dz, d̞z), tsʰ, dzʱ, m, n(n, n̞), ŋ, ɳ, r(r, ɾ), s, ɦ, l(l, lʲ), w, j
+pː, bː, pʰː, bʰː, tː, dː(dː, dʲː), tʰː, dʰː, ʈː, ɖː, ʈʰː, ɖʱː, kː, gː, kʰː, gʱː, 
+tsː, dzː, tsʰː, dzʱː, mː, nː, ŋː, rː, sː, lː
+
+# Vowel Inventory:
+i(i, iː), u, e(e, e̤), o, ʌ(ʌ, ɜ, ɞ, ɔ, ʌ̤), a(a, aː), ĩ, ũ, ẽ(ẽ, ẽː), ʌ̃(ʌ̃, ʌ̤̃), ã
+
+# Phoneme inventory size:
+64
+
+# Length of NWS audio file:
+43sec
+
+# Audio:
+43
+
+# Minimal pairs:
+ /p~pʰ/ /t~tʰ/ /ts~tsʰ/ /ʈ~ʈʰ/ /k~kʰ/ /m~n/ /b~bʱ/ /d~dʱ~dz~dzʱ/ /ɖ~ɖʱ/ g~gʱ/ /s~ɦ/ /l~r/
+/i~u~e~o~ʌ~a/
+
+# Minimal pair examples:
+
+/pir~pʰir/ /tal~tʰal/ /tsar~tsʰar/ /ʈaʈ~ʈʰaʈ/ /kal~kʰal/ /mam~nam/ /bar~bʱar/ 
+/dar~dʱar~dzar~dzʱar/ /ɖol~ɖʱol/ gol~gʱol/ /sat~ɦat/ /lat~rat/
+/sir~sur~ser~sor~sʌr~sar/
+
+# Transcript:
+utːʌri bʌtas ɾʌ surjʌ
+dzʌti k̞ʰeɾʌ utːʌɾi bʌtas ɾʌ suɾje ek apʌsmã ko bʌlijo bʱʌ̤nːẽ kuɾa lieɾʌ
+ bazᵊdtʰʲe tʲetixeɾʌ jeuʈa bɞʈuwo taːto oɽnẽ oɽe̤ɾʌ ajo uniɦʌɾle ke sʌlːaː
+gʌaɾeβʌ̤nẽ dzʌsle pɞile tʲo bɞʈuʌko oɳne kʰʌsalid̞intsʌ uɦinẽː bʌlijo manĩnẽtsʰʌ
+tʲespʌtsi bʌtas besːkʌnʌ tsʌlnʌ tʰalʲo bʌtas dzʌti d̞zoɽle tsʌltʰjo bɞʈuwʌ tʲetinẽ 
+d̞zoɽle ʔaɸnʌ̃ sʌɾiɾ oɾiːpʌɾi ʔoɽnẽ kʌstʰo jutːʌaɾi bʌtasle bʌʈwako oɳɽẽ usk̞o
+sʌɾiɾbaɽʌ kʰʌsan̞ʌ nike pᵊɾjas gʌɾjo tʌɾʌ ʌ̃ntʲema kei nʌ̃lag̞i aɸno pᵊɾjas tsʰaɽjo
+tʲespʌtsi swijʌ tsʌmkʌmʌ̃ tʰaljo suɾjeko ɾaple g̞ʌɾda tjo mãntsele ʔaɸno oɽnẽ
+tuɾũntʌ pʰʲaljo esʌɾi utːʌɾi bʌtas ʔap̞ʰu b̞ʱʌ̤̃nda suɾje bʌlijo ɾʌetsʌ bʱʌ̤nːẽ kuɾa
+mãnːʌ̃ badʲːe bʱʌ̤jo
+
+# Notes:
+ The author states that the transcription is a narrow phonetic transcription. Many diacritics
+are not discussed in the paper (such as palatalisation).  
+The retroflex nasal [ɳ] is not listed as a phoneme, but in discussion in the text
+it reads as if it is, and it appears in the transcription. I have listed it as a phoneme.
+In the article geminate consonants are indicated by doubling the consonant. Here
+I have used the length symbol in line with other descriptions.
+
+
+# Errors:
+/ʔ/ glottal stop not discussed in paper, but present in transcription.
+/pᵊ/ is not discussed in the paper, but appears in the transcription.
+/zᵊ/ is not discussed in the paper, but appears in the transcription.

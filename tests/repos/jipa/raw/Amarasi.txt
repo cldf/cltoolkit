@@ -1,0 +1,54 @@
+﻿# Reference:
+10.1017/S0025100315000377
+
+# Language:
+Amarasi
+
+#ISO Code:
+aaz
+
+# Consonant Inventory:
+p, b(b, β), t(t, t̪), dʒ, k(k, kʲ), g, ʔ, f, s, h, m, n(n, n̪, ɲ, ŋ), r(r, ɾ) 
+
+# Vowel Inventory:
+i(i, ɪ), ɛ(ɛ, e), a(a, ɐ), ɔ(ɔ, o), u
+
+# Phoneme inventory size:
+18
+
+# Length of NWS audio file:
+38 sec
+
+# Audio:
+38
+
+# Other symbols:
+/-/
+/=/
+
+
+# Transcript:
+au kaan-k=i bi ɔma
+au u-ʔkɔ nɛkmɛsɛʔ
+au - ʔuab ʔ-ɛik uab mɛtɔʔ
+kɔtɔs amarasi
+au hɛ u-tɔɔn n-ɔk
+kuan nɛkmɛsɛʔ
+nɛkmɛsɛʔ au hɔ na-hɔni-ʔ kau n-bi nɛkmɛsɛʔ
+nɛkmɛsɛʔ rɛʔ ia
+unuʔ=tɛ
+n-muiʔ kuan
+kuan amnaaʔ=ma naʔ nua
+ɛs ɛt aʔtakaʔ
+ʔtakaʔ
+ɛs ɛt kɔtɔs
+kɔɔrʔɔtɔ
+au mama n-ɔʔka ʔtakaʔ au bapa n-ɔʔka kuan amnasiʔ
+rɛʔ a-bi-t nɛɛ
+ɔnaim=ma ɔras ia sin n-mɔin ɛt
+kuan=ɛs kaan-n=ɛ nɛkmɛsɛʔ 
+
+# Notes:
+The text is the opening of a larger narrative about the Nekmese' village by speaker Oma.
+The transcription provided here is phonemic. There is alo a phonetic transcription in the paper. 
+A new line is provided at each pause.

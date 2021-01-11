@@ -1,0 +1,81 @@
+﻿# Reference:
+10.1017/S0025100314000243
+
+# Language:
+Goemai
+
+#ISO Code:
+ank
+
+# Consonant Inventory:
+p(p, ⁿp), pʰ, b, t, tʰ(tʰ, tʰʷ), d(d, ⁿd), k(k, kʲ, ⁿk, ⁿkʷ), kʰ(kʰ, kʰʷ), g, ɓ(ɓ, ɓʲ), ɗ, f, fʰ, v, s,
+sʰ, z, ʃ, ʃʰ, ʒ, h(h, ⁿh), m, n(n, ⁿn, nʲ), ŋ, l(l, lʷ), r, w, j
+
+# Vowel Inventory:
+iː(iː, íː, ìː, ǐː, îː), i(i, í, ì, ǐ, î), eː(eː, éː, èː, ěː, êː), ə(ə, ə́, ə̀, ə̌, ə̂), 
+a(a, á, à, ǎ, â), aː(áː, àː, ǎː, âː), ʉː(ʉ́ː, ʉ̀ː, ʉ̌ː, ʉ̂ː), uː(uː, úː, ùː, ǔː, ûː), u(u, ú, ù, ǔ, û), 
+oː(oː, óː, òː, ǒː, ôː), ɔː(ɔː, ɔ́ː, ɔ̀ː, ɔ̌ː, ɔ̂ː)
+
+# Phoneme inventory size:
+39
+
+# Length of NWS audio file:
+1.08min.sec
+
+# Audio:
+68
+
+# Other Symbols:
+/ ́/ tone
+/ ̀/ tone
+/ ̂/ tone
+/ ̌/ tone
+
+/ʔ/ Glottal stop is considered non-phonemic in the JIPA illustration, but rather a 
+regular phonological process.
+
+/ʉ/ occur as “variant realizations of the secondary feature of labialization following a labial consonant” p88 Not sure how to represent this in the phoneme inventory.
+
+# Minimal pairs: 
+/pʰ~p~b~ɓ/ /tʰ~t~d~ɗ/ /kʰ~k~g/ /sʰ~s~z/ /ʃʰ~ʃ~ʒ/ /m~n~ŋ/ /l~r/
+/i~u~ə~a/ /ʉː~uː~eː~oː/ /ɔ:~aː/
+
+
+# Minimal pair examples:
+/pʰáŋ~páŋ~báŋ~ɓáŋ/ /tʰǎŋ~táŋ~dáŋ~ɗàŋ/ /kʰáŋ~káŋ~gàŋ/ /sʰán~sán~záŋ/ /ʃʰáŋ~ʃǎŋ~ʒáŋ/
+/màŋ~náŋ~ŋáŋ/ /láŋ~rǎŋ/
+/tíl~tʰùl~tʰə́l~tʰàl/ /bʉ̂ːr~bûːr~bêːr~gə́.bóːr/ /hɔ̀:s~hàːs/
+
+
+# Transcript:
+ⁿhàt ̀ ⁿpáŋ ́ ⁿdə̀ pʉ́ːs mʉə̀p ɓʲóːl nʲèɓʲóːl ́ ⁿdə̀ sʰə́k mʉə́p pʰé, ʔà gə́nàŋ kɔ́ːm tʰə́ mà gə́nʲé jì.
+ ́ ŋdə̀ gə̀mʉàːn mʉàːn, də́ pə́t ká mʉə́p, gɔ̀ŋ sʰə́k múk gə́ lé gə̀gɔ̀ŋ kút. 
+mʉə̀p jín, gùrùm gə̀pʰé lá ɓóːt gə̀ sʰà gə̀mʉàːn mʉàːn, ́ ⁿnə́hə̀, lʷə́n tʰʷə́n múk, hɔ́k, bá ́ ⁿní, 
+ʔà ní tʰə́, ʔà gə̀kɔ́ːm má jì.  ⁿhàt ̀ⁿpáŋ sʰù sʰək gə̀zə̀m kʲák ʒi.
+bə̀tɔ́ŋ sʰù múk hɔ́k, gə̀mʉàːn mʉàːn ɓə́p tɔ́ŋ, gɔ̀ sʰʉ́ːn kʰʉ́ː, gə́ lé gə̀ɓáːn.
+nʲáŋ má ̀ ⁿhàt ̀ ⁿpáŋ ̀ ⁿní, sʰáj, kʰʷán, nʲèɓóːl hɔ́k ̀ ⁿkʷà.
+pʉ́ːs, pə́t kʰʉ́ːt ɓáːn làp pʰè díp.
+gə̀mʉàːn mʉàːn, wə́p lé ʒí, gə̀ɓáːn kʰʉ́ːt, kʰʷán.
+sʰáj ̀ ⁿhàt ̀ ⁿpáŋ jìn ʔà pʉ́ːs tʰə́, ʔà gə̀kɔ́ːm má jì. 
+ 
+
+# Notes:
+"Although Hellwig (2011) considers the contrast between the two types of voiceless 
+oral stops to be one of aspiration, other students of Goemai have analysed the contrast 
+differently. Wolff (1959), for example, labels the contrast as fortis vs. lenis, and Hoffman 
+(1975) labels it as glottalized vs. non-glattlized." p83 JIPA article
+
+Goemai has two level tones: high <  ́ > and low < ̀ >. They combine to create HL < ̂ > 
+and LH < ̌ >.
+
+Glottal stop is considered non-phonemic in the JIPA illustration, but rather a 
+regular phonological process. As with other languages that contain glottal stops in their transcriptions
+I have not included it in the phonemic inventory.
+
+# Errors:
+/é/ not in phoneme inventory, but present in transcript.
+/ɔ̀/ not in phoneme inventory, but present in transcript.
+/ɔ́/ not in phoneme inventory, but present in transcript.
+/è/ not in phoneme inventory, but present in transcript.
+
+

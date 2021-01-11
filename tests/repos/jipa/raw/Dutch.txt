@@ -1,0 +1,33 @@
+# Reference:
+10.1017/S002510030000459X
+
+# Language:
+Dutch
+
+#ISO Code:
+nld
+
+# Consonant Inventory:
+p, b, t(t, c), d, k, ʔ, m, n(n, ɲ), ŋ, f, v, s(s, ʃ), z, ʒ, χ, ɦ, ɾ(ɾ, ɹ, ʀ), ʋ(ʋ, β̞), j, l
+
+# Vowel Inventory:
+ɪ, ʏ, ɛ, ə, ɑ, ɔ, i, y, eː, øː, aː, oː, u, iː, yː, ɛː, œː, ɔː, uː, ɛi, œy, ʌu
+
+# Phoneme inventory size:
+42
+
+# Length of NWS audio file:
+27sec
+
+# Audio:
+27
+
+# Transcript:
+də ˈnoːɾdəʋɪnt ɛn də ˈzɔn | ɦɑdə ən dɪsˈkʏsi oːvəɾ də ˈfɾaːχ | ˈʋi fɑn ɦʏn
+ˈtʋeːə də ˈstɛɾəkstə ʋɑs |tun əɾ ˈjœyst imɑnt foːɾˈbɛi kʋɑm | di ən ˈdɪkə ˈʋɑɾmə
+ˈjɑs aːnɦɑt ‖ zə spɾaːkə ˈɑf | dɑt ʋi də foːɾbɛiχɑŋəɾ dəɾtu zʌu ˈkɾɛiχə zəɲ ˈjɑs
+œy tə tɾɛkə | də ˈstɛɾɛkstə zʌu zɛin ‖ də ˈnoːɾdəʋɪnt bəχɔn œyt ɑlə mɑχ tə
+ˈblaːzə ‖ maːɾ u ˈɦɑɾdəɾ i ˈblis | dɛs tə ˈdɪχtəɾ də foːɾbɛiχɑŋəɾ zəɲ jɑz ɔm zɪχ
+ˈɦeːn tɾɔk ‖ tənˈslɔtə χɑf tə noːɾdəʋɪnt ət maːɾ ˈɔp ‖ fəɾˈfɔlχənz bəχɔn də ˈzɔn |
+ˈkɾɑχtəχ tə ˈstɾaːlə | ɛn ɔˈmɪdələk daːɾɔp | tɾɔk tə foːɾbɛiχɑŋəɾ zəɲ ˈjɑz œyt ‖
+də ˈnoːɾdəʋɪnt kɔn tun slɛχs bəʔaːmə | dɑtə ˈzɔn də stɛɾəkstə ʋɑs.

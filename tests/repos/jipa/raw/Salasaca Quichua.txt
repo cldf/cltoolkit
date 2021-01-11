@@ -1,0 +1,48 @@
+﻿# Reference:
+10.1017/S0025100308003332
+
+# Language:
+Salasaca Quichua
+
+#ISO Code:
+qxl
+
+
+# Consonant Inventory:
+p, pʰ(pʰ, ɸ), b, t, tʰ, d, k, kʰ, g, ts, tʃ, tʃʰ, m, n, ɲ, s, z, ʃ, ʒ, x, ɾ, j, w, l
+
+# Vowel Inventory:
+i, a, u
+
+# Phoneme inventory size:
+27
+
+# Length of NWS audio file:
+59sec
+
+# Audio:
+59
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+
+
+# Transcript:
+ˈxawa laduˈmunda wajˈɾami | majˈxinʃi ˈjaʒi xuɾˈsada tʃaɾin ˈtʃiʃi ˈniʃa inˈdiwan
+ɾimanukugaˈguna || ˈʃina ɾimanukuguˈʃami ʃuk ˈkʰaɾi ˈpuntʃu tʃuˈɾʃka ɾiˈbusu
+piʒuˈɾiʃka | tʃi kuˈtʃuda pasaˈgukta ɾikugaˈguna || ˈtʃida ɾikuˈʃaga || ˈmajxin || tʃi
+ˈkʰaɾi tʃuɾaˈɾiʃka punˈtʃuda ɾibuˈsudaʃ ʒukʃiˈtʃigmi ˈjaʒi xuɾˈsada tʃaɾik ˈganga
+ninuˈkuʃa sakiɾigaˈguna || tʃiˈmunda xawaˈmunda wajˈɾaga mantʃaˈnajdi ˈtuki
+ˈxuɾsan pʰuˈkungu kaʒaˈɾiga || ˈʃina ˈmixuɾ pʰukuˈgukiʃ | tʃi kʰaˈɾiga aʃˈtanmi
+piʒuˈɾiga ||ʃiˈnuʃa xawaˈmundawajˈɾaga | iˈmadaʃ na ˈɾuɾi puˈdiʃa sakigaˈʒami 
+‖ tʃi ˈkʰipa inˈdiga mixuɾˈʒadi pʰalaˈniʃa mantʃanajdi ˈɾupi ʃiˈtuga || ʃiˈnuʃa tʃi
+kʰaˈɾiga mantʃaˈnajdi ɾupaˈɾiʃa | tʃi ˈɾatu paj tʃuɾa ˈɾiʃka punˈtʃuda | ɾibuˈsudaʃ
+ʒukʃiˈtʃiga || ʃiˈnami ˈxawa laduˈmunda wajˈɾaga ˈindi ˈjaʒi juɾˈzajuk gaʃˈkada
+jatʃiktʃaˈjuʃa sakiˈɾiga ||
+
+
+# Notes:
+ 

@@ -2,21 +2,19 @@
 Basic class for handling inventory datasets.
 """
 import attr
-from cldftk.models.sounds import Inventory, Phoneme
+from pathlib import Path
+from collections import defaultdict, OrderedDict
+import pybtex
 from cldfbench import get_dataset
 import pycldf
+from pycldf.sources import Source
 from pyclts import CLTS
-from collections import defaultdict, OrderedDict
 from pyclts.util import nfd
+from pyclts.models import is_valid_sound
 from cldftk.util import progressbar
 from cldftk import log
 from cldftk.models.language import LanguageWithInventory
-from pyclts.models import is_valid_sound
-from pathlib import Path
-import pybtex
-from pycldf.sources import Source
-
-
+from cldftk.models.sounds import Inventory, Phoneme
 
 
 def normalize(grapheme):
@@ -25,13 +23,18 @@ def normalize(grapheme):
     return grapheme
 
 
-def from_metadata(dataset, td, ts):
+def from_metadata(dataset, cldf, td, ts):
+    if not cldf:
+        cldf = Path(dataset).joinpath('cldf')
+    else:
+        cldf = Path(cldf)
+
     ds = pycldf.Dataset.from_metadata(
-            Path(dataset).joinpath('cldf', 'StructureDataset-metadata.json'))
+            cldf.joinpath('StructureDataset-metadata.json'))
 
     bib = pybtex.database.parse_string(
-            open(Path(dataset).joinpath(
-                'cldf', 'sources.bib').as_posix()).read(), bib_format='bibtex')
+            open(cldf.joinpath(
+                'sources.bib').as_posix()).read(), bib_format='bibtex')
     bib_ = [Source.from_entry(k, e) for k, e in bib.entries.items()]
     bib = {source.id: source for source in bib_}
 
@@ -59,25 +62,26 @@ def retrieve_data(dataset, ds, bib, td, ts):
                     else '']
         
     languages = {}
-    sound_list = defaultdict(list)
     for lid, data in progressbar(varieties.items(), desc='identify inventories'):
-        sounds = OrderedDict()
-        
-        for grapheme in data['graphemes']:
-            sound = td.grapheme_map.get(grapheme, grapheme)
-            try:
-                sounds[sound].graphemes_in_source.append(grapheme)
-            except KeyError:
-                sounds[sound] = Phoneme(
-                        grapheme=sound,
-                        graphemes_in_source=[grapheme],
-                        sound=ts[sound]
-                        )
-        languages[lid] = LanguageWithInventory(
-                cldf=data,
-                dataset=dataset,
-                id=lid,
-                inventory=Inventory(sounds=sounds, ts=ts))
+        if 'graphemes' in data:
+            sounds = OrderedDict()
+            for grapheme in data['graphemes']:
+                sound = td.grapheme_map.get(grapheme, grapheme)
+                try:
+                    sounds[sound].graphemes_in_source.append(grapheme)
+                except KeyError:
+                    sounds[sound] = Phoneme(
+                            grapheme=sound,
+                            graphemes_in_source=[grapheme],
+                            sound=ts[sound]
+                            )
+            languages[lid] = LanguageWithInventory(
+                    cldf=data,
+                    dataset=dataset,
+                    id=lid,
+                    inventory=Inventory(sounds=sounds, ts=ts))
+        else:
+            log.warning('no data found for {0}'.format(lid))
     return languages, bib
 
 @attr.s
@@ -88,11 +92,12 @@ class InventoryData:
     sounds = attr.ib(default=None, repr=False)
     
     @classmethod
-    def from_metadata(cls, dataset, td, ts=None):
+    def from_metadata(cls, dataset, cldf_path=None, td=None, ts=None):
         ts = ts or CLTS().bipa
+        td = td or dataset
         if isinstance(td, str):
             td = CLTS().transcriptiondata_dict[td]
-        languages, bib = from_metadata(dataset, td, ts)
+        languages, bib = from_metadata(dataset, cldf_path, td, ts)
         return cls(languages, bib)
 
     @classmethod

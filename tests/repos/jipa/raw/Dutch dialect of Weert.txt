@@ -1,0 +1,35 @@
+# Reference:
+10.1017/S0025100300006307
+
+# Language:
+The Dutch dialect of Weert
+
+#ISO Code:
+nld
+
+# Consonant Inventory:
+p, b, t, d, c, ɟ, k, g, ʔ, m, n(n, ɲ), ŋ,
+ f, v, s, z, ʃ, ʒ, x(x, ç), ɣ(ɣ, ʝ), h, β̞, j, l(l, ʎ), ʀ 
+
+# Vowel Inventory:
+i, y, ɪ, ʏ, ɛ, œ, æ, ɑ, ɔ, u, ə, iː, yː, eː, øː, ɛː, œː, 
+æː, aː, ɑː, ɔː, oː, uː, iə, yə, uə, ɛi, œy, ʌu
+
+# Phoneme inventory size:
+54
+
+# Length of NWS audio file:
+39sec
+
+# Audio:
+39
+
+# Transcript:
+də ˈnoːʀdəβ̞eːɲc æn də ˈzɔn | ˈhaːjə nən dɪsˈkʏsi | ˈoːvəʀ də ˈvʀɔːx | β̞eːm vɑn hʏn
+tβ̞iːjə də ˈstæːʀkstə β̞oːʀ | tun dəʀ ˈjyst eːməs vəʀˈbeːj kβ̞oːm | dɛː ənə ˈdɪkə | ˈβ̞æːʀmə
+ˈjɑs aːnhaːj ‖ zə ˈspʀoːkən ˈaːf | dæt β̞eːm də vəʀˈbeːjɣɑŋəʀ | zuβ̞iːt zoːj ˈkʀiːɣə | ʏm
+zinə ˈjɑs yt tə tʀækə | də ˈstæːʀkstə zoːj zeːn ‖ də ˈnoːʀdəˈβ̞eːɲc |bəɣɔs yt ˈɑlə mɑxt tə
+ˈblɔːzə | mæʀ β̞ ˈhaːʀəʀ hɛː ˈbleːs | dæs tə ˈstʀɑŋəʀ | də vəʀˈbeːjɣɑŋəʀ zinə ˈjɑs ʏm
+zɪx ˈhɛːʀ tʀɔk ‖ ytˈʔɛindələk | ɣoːf də ˈnoːʀdəβ̞eːɲc ət mæʀ ˈɔp ‖ ˈdɔːnɔː | bəɣɔs tə
+ˈzɔn | ˈkʀɑxtəx tə ˈstʀɔːlə | æn məˈtæjn dɔːˈʔɔp tʀɔk də vəʀˈbeːjɣɑŋəʀ zinə ˈjɑz yt ‖ də
+ˈnoːʀdəβ̞eːɲc | mɔs ˈtun β̞aːl ˈtɔβ̞ɣɛːvə | dæt də ˈzɔn də ˈstæːʀkstə β̞oːʀ ‖

@@ -1,0 +1,57 @@
+﻿# Reference:
+10.1017/S0025100300006526
+
+# Language:
+Dialect of Maastricht
+
+#ISO Code:
+nld
+
+# Consonant Inventory:
+p, b, t, d, c, k, g, m, n, ɲ, ŋ, f, v, s, z, ʃ, ʒ, x, ɣ, ɦ, β̞, j, l, ʀ
+
+# Vowel Inventory:
+ɪ, ʏ, ɛ, æ, œ, ɑ, ɔ, ʊ, i, y, u, ɛː, œː, ɔː, iː, yː, uː, eː, øː, oː, aː, ɛi, œy, ɔu, ə 
+
+# Phoneme inventory size:
+49
+
+# Length of NWS audio file:
+36sec
+
+# Audio:
+36
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+
+# Other symbols:
+/ʔ/
+/ˈ/
+/ ̄/
+/|/
+/||/
+
+
+# Transcript:
+də ˈ ̄noːʀdə ̄ β̞ɪnt æn də ˈzɔn | ɦɑdən ən ˈdrœkə dɪsˈkʏsi  ̄ øːvəʀ də ˈvʀɔːx |
+β̞eː vaːn ɦynən ˈtβ̞iə də ˈ ̄stæʀkstə β̞ɔːʀ | tun ˈʒys iːmɑnt vøːʀˈ ̄bɛi kɔːm | deː
+nən ˈdɪkə ˈβ̞ærmə ˈjɑs ɔːnɦɑt ||
+zə spʀɔːkən ˈɔːf | tɔt β̞eː də vəʀˈ ̄bɛiɣæŋəʀ dətɔu zɔu ˈkʀiːɣə | zənə
+ˈjɑs uːt tə tʀɛkə | də ˈ ̄stæʀkstə zɔu ziːn ||
+də ˈ ̄noːʀdə ̄β̞ɪnt bəɣus uːt ˈɑlə mɑx tə ˈ ̄bloːzə | mæ β̞i ˈɦældəʀ tɔtəʀ
+ˈ ̄bloːzdə | β̞i ˈɪŋəʀ də vəʀ ̄bɛiɣæŋəʀ zənə jɑs ʏm zɪx ˈ ̄ɦeːn tʀɔk ||
+utˈʔɛindələk ɣɔːf tə  ̄noːʀdə ̄β̞ɪnt ət mæʀ ˈʔɔp ||
+dɔːˈnɔː bəɣʊs tə ˈzɔn ˈkʀɑxtəx tə ˈstʀɔːlə | æn məˈtɛin dəˈnɔː tʀɔk tə
+vəʀˈ ̄bɛiɣæŋəʀ zənə ˈjɑs ʔuːt ||
+də ˈ ̄noːʀdə ̄β̞ɪnt mʊs tun β̞ɑl ˈtɔu ̄ɣeːvə tɔtə ˈzɔn də ˈ ̄stæʀkstə β̞ɔːʀ
+
+
+# Notes:
+<̄> is used to indicate accent 2.
+
+# Errors:
+/r/ Present in transcription, not discussed in paper.

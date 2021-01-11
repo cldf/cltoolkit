@@ -1,0 +1,41 @@
+﻿# Reference:
+10.1017/S002510030000445X
+
+# Language:
+Japanese
+
+#ISO Code:
+jpn
+
+# Consonant Inventory:
+p(p, pː), b(b, v̠, β), t(t, tː), ts(ts, tːs, tɕ), 
+d, ɖ(ɖ, ɾ), k(k, kː), g(g, ŋ, ɣ), m, n, ɴ, s(s, ɕ),
+ z(z, ʑ, dz), h(h, ç, ɸ), hː(hː, ç, xː, ɸː), j, w
+
+# Vowel Inventory:
+i(i, í, iː), e(e, é), a(a, á), o(o, ó, oː, óː), u(u, ú, uː)
+
+# Phoneme inventory size:
+22
+
+# Length of NWS audio file:
+32sec
+
+# Audio:
+32
+
+# Transcript:
+áɖutoki kitakaze to t́ijoː ga tsikaɖakúɖabe o simásita. tabibito no gaitoː o
+nugáseta hóː ga katsí to juː kotó ni kimete, mázu, kitakaze kaɖa
+hazimemásita. kitkaze wa, náni, hitomákuɖi ni site misejóː, to, hagésiku
+hukitatemásita. suɖuto tabibito wa, kitakaze ga hukéba hukúhodo gaitoː o
+sikːáɖito kaɖada ni kutːsukemásita. kóɴdo wa táijoː no báɴ ni naɖimásita.
+táijoː wa kúmo no aida kaɖa jasasiː kao o dásite, atatákana hikaɖí o
+okuɖimásita. tabibito wa daɴdaɴ jói kokoɖomotsi ni nátte, simai ní wa gaitoː
+o nugimásita. sokode kitakaze no make ni naɖimásita.
+ 
+# Notes:
+In paper geminates denoted by double letter.   
+
+# Errors:
+/t́/ Not in transcript

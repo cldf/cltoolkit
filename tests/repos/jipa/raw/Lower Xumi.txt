@@ -1,0 +1,77 @@
+﻿# Reference:
+10.1017/S0025100313000157
+
+# Language:
+Lower Xumi
+
+#ISO Code:
+sxg
+
+# Consonant Inventory:
+p, pʰ(pʰ, ɸ), b(b, β), t, tʰ, d, k, kʰ(kʰ, x), g(g, ɣ), q, qʰ(qʰ, χ), ɢ, ts, tsʰ, dz(dz, z), 
+tʂʰ, tʂ, dʐ, tʃ, tʃʰ, dʒ, tɕ, tɕʰ(tɕʰ, ɕ), dʑ(dʑ, ʑ), 
+m̥, m, n̥, n, ɲ̥, ɲ, ŋ̥, ŋ, s, z, ʃ, ʒ, ɕ, ʑ, x, ɣ, ʁ, h, ɦ, w, ɹ, j, l̥, l, ʎ̥, ʎ, ɹ̩
+
+# Vowel Inventory:
+i, e, ɛ, ɐ, ɑ, ʉ, o, u(u, ə), ĩ, ɛ̃, ɐ̃, õ, ɑ̃
+
+# Phoneme inventory size:
+63
+
+# Length of NWS audio file:
+53sec
+
+# Audio:
+53
+
+# Minimal pairs:
+/p~pʰ~b~m/ /tj~tʰj~dj/ /ts~tsʰ~dz/ /s~z/ /dʒ~ʒ/ /tɕ~tɕʰ/ /ʎ~ʎ̥/ /x~ɣ/ /k~q~qʰ~ɢ~ʁ/ /h~ɦ/
+
+
+# Minimal pair examples:
+/Hpɐ~Hpʰɐ~Hbɐ~Rmɐ/ /Htjɛ~Htʰjɛ~Hdjɛ/ /Rtsu~Rtsʰu~Rdzu/ /Hsɐ~Rzɐ/ /Rdʒʉ~Hʒʉ/ /Htɕɐ~Rtɕʰɐ/ 
+/Rʎo~Hʎ̥o/ /Hxu~Hɣu/ /Hko~Hqo~Hqʰo~Rɢo~Rʁo/ /Hhɑ̃~Hɦɑ̃/
+
+# Other symbols:
+/R/
+/H/
+/EP/
+/LP/
+/RP/
+/ʔ/
+/=/
+/|/
+/||/
+/-/
+
+
+# Transcript:
+RPtɕʰike LPʔine Hl̥e ɲi | LPɲɐmi RPɲɐ=ko | RPɲɐ=ko |
+Hɲi χɑ RPtʂɑ=ji | LPtsʰelo Hpɐ=ʎo=wɛ̃=ji ||
+LPtsʰelo Hpɐ=ʎoŋwɛ̃=ji Hʎɐ=ɹ̩ | Htɐ | Hhĩ Rdʑĩ
+Htɐ Hpɑ=tɕʰõ=ʎo=wɛ̃=ji || Hhĩ Htʰi=ɹ̩ | Hhĩ |
+RPtʰɐ=no | Hɲi | Hgu | LPnegu RPʎɐ-dʑi-pʰʉ RPdɐ=ʁo |
+Hpɐ=ʎo=wɛ̃=ji || LPnegu RPʎɐ-dʑi-pʰʉ RPdɐ=ʁo
+Hpɐ=ʎo=wɛ̃=ji Hʎɐ=ɹ̩ |
+Hl̥e=ɹ̩ | Hɹu=βɐ=se=ɹ̩
+Hl̥e=Hpe=Htɕʰõ=ʎo=wɛ̃=ji || Hɹu=βɐ=se
+Hl̥e Hʎɐ=ɹ̩ | Htʰi RPʎɐ-pʰʉ LPme=dɑ̃
+ʎo=wɛ̃=ji || RPʎɐ-pʰʉ LPme=dɑ̃
+RPʎɐ=xɐ=ʎo=wɛ̃=ji ʎɐ=ɹ̩ |
+RPdʑi-dʑo=ɹɛ̃=nɑ̃=ɹ̩ | LPɲɐmi RPdʑi-ɕõ
+xɐ=ʎo=wɛ̃=ji || LPɲɐmi Htɕʰõ=ʎɐ=ɹ̩ | LPɲɐmi
+RPqʰu-tʃʉ bʉ=se=ɹ̩ | RPbə-tsʰɹ̩=pe=ʎɐ=se Htɕʰwɐ
+RPbə-pɑ̃=ʎɐ=ɹ̩ | LPnegu | LPnegu | RPʎɐ-pʰʉ Hdɑ̃
+Hxɐ=ʎo=wɛ̃=ji || RPtʰɐ=ʎɐ=ɹ̩ | RPdʑĩ=lɑ RPpɐ̃xuɐ
+LPme=ʑɑ̃ | Htʰo LPme=ʑɑ̃ | Htʰi LPɲɐmi Hχɑ Htʰo Rdʑɑ̃ |
+RPisɹ̩ Htʰi Rwɛ̃=ji ||
+
+
+
+# Notes:
+Minimal pair examples from JIPA. 
+R = rising tone; H = high tone; EP = equally-prominant contour; LP = left-prominant contour; 
+RP = right-prominant contour.
+Glottal stop is non-phonemic.
+There are two transcriptions, a semi-narrow phonetic one and an interlinear morphemic glossing one.
+The interlineear morphemic glossing transcription is used here.  

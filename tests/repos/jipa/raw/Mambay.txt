@@ -1,0 +1,88 @@
+﻿# Reference:
+10.1017/S0025100306002635
+
+# Language:
+Mambay
+
+#ISO Code:
+mcs
+
+# Consonant Inventory:
+p, b, t, d, k, g(g, k̚, q̚, ɣ, ʁ), kp(kp, kpŋm), gb, ɓ(ɓ, ʔm̰, ʔɓ, ʔp), ɗ(ɗ, ʔn̰, ʔɗ, ʔl̰), m, n, ŋ, ⱱ̟, 
+ɽ(ɽ, ɳ̆, r), f, v, s, z, h, j(j, ɲ), 
+ʔj̰(ʔj̰, ʔɲ̰), w(w, ŋʷ), ʔw̰(ʔw̰, ʔŋ̰ʷ, ʔẁ̰), l(l, n), ʔ
+
+# Vowel Inventory:
+i(i, í, ì, î, ĭ̀, ĭ́, íʔḭ̆́), ĩ(ĩ, ĩ́, ĩ̀, ĩ̂), ḭ(ḭ, ḭ́, ḭ̀, ḭ̂, iʔḭ), e(e, é, è, ê), ḛ(ḛ, ḛ́, ḛ̀, ḛ̂, eʔḛ, èʔḛ̆), a(a, á, à, â), 
+ã(ã, ã́, ã̀, ã̂), a̰(a̰, á̰, ắ̰, ằ̰, à̰, â̰, aʔa̰, áʔằ̰, áʔắ̰), o(o, ó, ò, ô, ŏ̀), o̰(o̰, ó̰, ò̰, ô̰, oʔo̰, óʔŏ̰́), u(u, ú, ù, û), ũ(ũ, ṹ, ũ̀, ũ̂), 
+ṵ(ṵ, ṵ́, ṵ̀, ṵ̂, uʔṵ, úʔṵ̆́, úʔṵ̆̀, ùʔṵ̆̀), iː(iː, íː, ìː, îː), ĩː(ĩː, ĩ́ː, ĩ̀ː, ĩ̂ː), eː(e:, éː, èː, êː), aː(aː, áː, àː, âː), 
+ãː(ãː, ã́ː, ã̀ː, ã̂ː), oː(oː, óː, òː, ôː), uː(uː, úː, ùː, ûː), ũː(ũː, ṹː, ũ̀ː, ũ̂ː), 
+iˤ(iˤ, íˤ, ìˤ, îˤ, eˤ, éˤ, èˤ, êˤ), aˤ(aˤ, áˤ, àˤ, âˤ), uˤ(uˤ, úˤ, ùˤ, ûˤ, oˤ, óˤ, òˤ, ôˤ), 
+ĩˤ(ĩˤ, ĩ́ˤ, ĩ̀ˤ, ĩ̂ˤ), ẽˤ(ẽˤ, ẽ́ˤ, ẽ̀ˤ, ẽ̂ˤ), ãˤ(ãˤ, ã́ˤ, ã̀ˤ, ã̂ˤ), õˤ(õˤ, ṍˤ, õ̀ˤ, õ̂ˤ), ũˤ(ũˤ, ṹˤ, ũ̀ˤ, ũ̂ˤ), 
+ḭ̃(ḭ̃, ḭ̃́, ḭ̃̀, ḭ̃̂), ḛ̃(ḛ̃, ḛ̃́, ḛ̃̀, ḛ̃̂), ã̰(ã̰, ã̰́, ã̰̀, ã̰̂), õ̰(õ̰, ṍ̰, õ̰̀, õ̰̂), ṵ̃(ṵ̃, ṵ̃́, ṵ̃̀, ṵ̃̂)
+
+# Phoneme inventory size:
+60
+
+# Length of NWS audio file:
+2.0min.sec
+
+# Audio:
+120
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+# Other Symbols:
+/↓/ downstep
+/↗/
+/↘/
+/↘/
+/|/
+/||/
+/ʔ/
+
+# Transcript:
+làˤ mã́↓ jáː káː ↓tí sí gĭ̀↓ɽó↘gbàŋtàŋ gbàŋtaŋ || ↗ɗáŋ ↓páʔl̰páʔl̰ || géˤnáː | géːɽî nĩ̀ː↗síʔĭ́↓lá
+|↘mã́↗gjâˤh || ʔà↗dã́ːn↘zì sóʔŏ̰́↓lé || géːɽî nĩ̀ː↗síʔḭ̆́↓lá | βè lè jó↗óʔẁ̰ || gjâˤħ ↓bóː↘bè
+lè lè ʔã́ː↓ɽí ↓dú || ↗mṹn gjâˤ bè↗hã́ː | ↘lè túʔṵ̆́↗nṹm̰ | láʔằ̰nã́ː lè lè ʔã́ː↓ɳ̆ãm↘ɽè || ↗ɗáː
+tò↗páː ↓vérgí bín | tòʁò |↗lóː↓lé | ɲã̀ː↓lé sú↓ʁú |↗báŋ mã́ tí sũ̂ː ↓wágâ || báŋ ʔílé
+kàm↗kpáŋkpáŋ lóʔẁ̰ | ʔóːː↘géːɽí bîn ʔìì ɽíʔḭ̆́ɽó í ndù já || ↗mṹn géː↓ɽá̰ || nĩ̀ː síʔḭ̆́lâ mã́ ɽóʔ
+jáʁ↗gjâˤɽé || bèːː | lè túʔṵ̆̀↓nṹm bàˤ lè↗jó |↘ká sóʔŏ̰́↓léɽè | kà lè bóː | lè ↓tĩ̂ː w̃ṹː ↓ʔám ||
+lè↗bór | jèr ↓dóʔ ↓ʔín ↓pâː ↓dóʔŏ̰́ɽè tóʁ mṹ kò ||↗mṹn gjâˤ bè↗hã́ː↘mṹ bóɽì ||↗géːɽâ
+ʔèr kpã̀ʔã̰nã̂ | ʔèr kpã̀ʔã̰́nã̂ | ʔèr kpã̀ʔã̰́nã̂ | ʔèr kpã̀ʔã̰́nã̂ || láʔắ̰ lè↗bór jé↓ɽí | ʔín ↓páː
+nã̀pù↗gá↓ɽé |↘páː nã̀pù↓gá bóː tòʁ gbàˤħ jè↓ɽí |↘ mã́ séˤħ↗kpáŋkpáŋ tòʁ ↓dím vòɽò
+↓ʔílé || gìː wár séˤħ ↓ʔí ↗lé↗já↘| géːɽâ ↓bó: | tòʁ kpã̀↓ʔã̰́nã̂ dòː↓nĩ́ː || géːɽâ | mṹn lóː↓lé |
+wàr páː nã̀pù↓gáɽè ||↗ʔàː ɗáː | ʔàː bó↓r | tísũ̂ː↗wágâ kùːɽù↓já || ↗mṹn gjâˤ bè↗hã́ː
+nã̀↘mũ̀ kóɽì mũ̀ bóɽì↗já || ↘mũ̀↗kjáŋ | lè lè túʔṵ̆̀↓nṹm bàˤː | lè ʔã́ː↓ɳ̆ãmɽè ||↗↗gjâˤ
+mṹn↗lùʁú ||↘tòʁŏ̀↗héːɽâ tòʁ ↓héːɽâ tòʁ sóːɽâ tòʁ sóːɽâ tòʁ ↗ sóːɽâ || háː mṹn kèʔḛ̆sòːgá
+| lùʁ ↓kaː ↓pâː↓nã́↓ɽé || ɗáː ↓ʔí lé kásôː↓gá↗lóʔw̰ ||↘mṹn | hùʔṵ̆̀n↗séˤ | bòr jèrnã́ː ↓díɣĭ́↗lé
+| ɓóʔŏ̰́ vóɽò sùʁù || mṹ láʔắ̰↗ kìkéː ↘ mṹ láʔá̰ː ↗ gjâˤ bè hã́ mũ̀↗kòjá ||↘lè lè zwáʔắ̰ ||
+dú jó mã́ bôr jèɽí ↓mã́ ʔílé ʔílé↗ʔã́ːɳ̆ã̀m sóʔŏ̰́lé dóːnã̀ː↓ɽé ||↗mṹn géːɽî nĩ̀ː ↓síʔḭ̆́lá |
+bè↗hã́ː |dwàʔằ̰nã́ː↓ɽé lè↗kóɽí || mũ̀ ʔã́ː↓ɽí↗lé |↘mũ̀ jó mũ̀ tĩ̀ːm wṹː ↓éː ɽè || kàⱱ̟ã́w̃ |
+làˤ mṹ túː ↓káːnĩ́↓gá ||
+
+# Notes:
+/ɗ/ is an implosive retroflex. /ⱱ̟/ is a bilabial flap.
+
+Glottal stop is identified as a morpheme boundary marker by the JIPA authors, but not posited as a phoneme. 
+Here I have included it in the phoneme inventory, as we have no other way of representing it.
+
+High tone [á]; low tone [à]; High-low tone [â]; downstep ↓
+
+# Errors:
+/β/ not discussed in paper, but appears in transcript. 
+/ħ/ is in the transcript, but not discussed in the paper.
+/óːː/ not discussed in paper, but present in transcript.
+/èːː/ not discussed in paper, but present in transcript.
+
+/w̃/ in transcript, not discussed. Probably a typo.
+/m̰/ In transcript. Typo? Laryngealization: “…it is a vocalic rather than consonantal phenomenon…” p229
+
+/á̰ː/ Not sure what to do with the last vowel in this sequence being long. It doesn’t fit as either a phoneme or allophone anywhere. (In the transcript.)
+
+/àˤː/ ?
+
+

@@ -1,0 +1,62 @@
+﻿# Reference:
+10.1017/S0025100309990260
+
+# Language:
+Goizueta Basque
+
+#ISO Code:
+eus
+
+# Consonant Inventory:
+p, t, c, k, b(b, b̥, β̞),  d(d, ɾ, ð̞),  g(g, ɣ̞),  f, s̻, s̺, ʃ, x, 
+ts̻, ts̺, tʃ, m, n(n, n̥), ɲ, l, ʎ, 
+ɾ(ɾ, ɾ̞), r(r, r̥), j(j, ʝ̞, ɟ)
+
+# Vowel Inventory:
+i(i, í, ì, i̯, ì̥, ḭ), e(e, è, é, ḛ̀, e̥), a(a, á, à, aː, ḁ, a̰, ḁ̀),  
+o(o, ó, ò), u(u, u̯, ú, u̥, ù), 
+ai̯(ai̯, ái̯, ài̯), ei̯(ei̯, éi̯, èi̯), oi̯(oi̯, ói̯, òi̯), au̯(au̯, áu̯, àu̯), eu̯(eu̯, éu̯, èu̯)
+
+
+# Toneme Inventory:
+V́(í, é, á, ó, ú, aí̯, eí̯, oí̯, aú̯, eú̯),
+V̀(ì, è, à, ò, ù, aì̯, eì̯, oì̯, aù̯, eù̯)
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Phoneme inventory size:
+35
+
+# Transcript - narrow:
+ipàr ai̯s̻éaǀ ta ḛ̀u̯s̻kiaǁ
+ipàr ai̯s̻éaǀ ta ḛ̀u̯s̻kiaːǀ indàrts̺una s̻èi̯n ts̻en ʔés̺pan ài̯ s̻iála ǀ iβ́ltaɾi βa pas̺átu s̻en ǁ
+kàpa loði βátem bilʲdúa ǁ ʔeɾ̞áβakʲ(i) s̻utén ǀindàrts̺una is̻ái̯n ts̻ela ǀ
+iβílʲtaɾiɾi ǀ kàpa ʔau̯réna ken(d)ùs̻its̻en ts̻ína ǁ 
+ʔórdun ǀ ipar ais̻ék ǀ b̥eɾ̞̀ íɲal ɣus̻ìkin ɟó s̻un ǁ biɲo s̻émbat eta fu̯érteo ʝó ǀ ibílʲtaɾik ǀ
+órðun eta es̺túo ʔèus̺ten ts̻in beɾé kàpaɾi̻ ǁ
+ʔḁs̻kénen ipàr ais̻ék ǀ e̥ts̺ì̥ta ǀ uts̻ì ín ts̻un beɾ̞aléi̯ ɲa ǁ
+géɾ̞o ǀ èu̯s̻ki̯a fu̯èrte βeɾòts̻en as̺í s̻en ǁ
+ta̰ ḭβílʲtaɾik ǀ béleʃe ken(d)ú s̻um beɾé kḁ̀pḁ ǁ
+ta̰ óla ǀ ipàr ai̯s̻ék a̰i̯còrtu βar is̻an ts̻ún èu̯s̻kḭa̰ s̻éla bìetan indà̰r̥s̺u̥n̥ḁ ǁ
+
+# Transcript - broad:
+ipàr ai̯s̻éa ta èu̯s̻kia ||
+ipàr ai̯s̻éa ta èu̯s̻kia | indàrts̺una s̻èi̯n ts̻en és̺pan ài̯ s̻iála | ibíltaɾi bat pas̺átu
+s̻en kàpa lodì báten bildúa || eɾábaki s̻utén indàrts̺una is̻ái̯n ts̻ela ibíltaɾiɾi kàpa
+au̯réna kendùs̻its̻en ts̻ína || órdun ipàr ai̯s̻ék beɾè íɲal gus̻ìkin jó s̻un | biɲo
+s̻émbat eta fu̯érteo jó | ibíltaɾik órdun eta es̺túo èus̺ten ts̻in beɾè kàpaɾi ||
+as̻kénen | ipàr ai̯s̻ék | ets̺ìta | uts̻ì ín ts̻un beɾè aléi̯ɲa || géɾo | èu̯s̻kia fu̯èrte
+beɾòts̻en as̺í s̻en | ta ibíltaɾik béleʃe kendú s̻un beɾé kàpa || ta óla |ipàr ai̯s̻ék
+acòrtu bear is̻an ts̻ún èu̯s̻kia s̻éla bìetan indàrts̺una ||
+
+# Notes:
+"In Goizueta both the position of the stress and the tonal contour or pitch-accent associated with the stressed syllable are lexically
+contrastive." p123 Diacritic  ́  is a rise over the stressed vowel (a high tone), and diacritic  ̀  is falling contour (a low tone).  Above, these are presented as allophones of a single phoneme.
+
+
+# Errors:
+/èu/ occurs in transcript, not in phoneme inventory. Author’s typo - ‘u’ is missing a non-phonemic diacritic under it.

@@ -1,0 +1,50 @@
+﻿# Reference:
+10.1017/S0025100302001056
+
+# Language:
+Friulian
+
+#ISO Code:
+fur
+
+# Consonant Inventory:
+m, n(n, ŋ, nʲ, n̪), ɲ(ɲ, ŋ), p, b, t, d, c, ɟ, k, g, t͜s(t͜s, s̺), d͜z(d͜z, z̺), tʃ, dʒ, f, v, 
+s(s, s̺, s̺ʷ), z(z, z̺, z̺ʷ), ʃ(ʃ, s̺), ʒ(ʒ, z̺), j, w, r(r, ɾ, r̴, ɾ̴), l(l, ʎ, lʲ, l̪) 
+
+# Vowel Inventory:
+i, iː, e, eː, ɛ(ɛ, e̞), ɛː, a, aː, u, uː, o, oː, ɔ(ɔ, o̞), ɔː, ɪi, eɪ(eɪ, ei̞), e̞ɪ, oʊ̃(oʊ̃, oũ), ɔoũ 
+
+# Phoneme inventory size:
+44
+
+# Length of NWS audio file:
+52sec
+
+# Audio:
+52
+
+# Minimal pairs:
+
+# Minimal pair examples:
+
+
+# Other symbols:
+
+
+
+# Transcript:
+ˌuːne̞ di | laˈbwɛːɾe̞ eˌils̺oˈɾeːli s̺ibaɾuˈfaːvim | paɾˈvie̞ | keˌoɲiduːŋ | alˌpɾatin̪ˈdɛːve̞ diˈjeːsi
+ˈplui ˈfwaːɾt ˌdike laːtɾi | ˈkwaːn̪t keˌavjoˈdɛɾiŋ uŋˌvjadʒa doːoɾ | keˌalviˈɲiːve̞ di luːŋk | ˈduː
+tin̪ˌtaba ɾaːat || idoi ˌliti gaːn̪ts | ˌinaˈlɔːɾe̞ | aˌdetʃiˈdɛɾiŋ keˈkui kalˈfoːs̺ ˈtaːat ˈboːn̪ ˌdiɟaˈvai
+ˌil̪taˈbaːa ɾalˌvjadʒadoːoɾ | ˈals̺aˈɾeːs̺ ˈtaːat ˈlui ilˈplui fwaːɾt || laˈbwɛːɾe̞ ˌataˈka ˌas̺o fla |
+ˌkuŋvjo lɛːnʲtʃe̞ | map ˈlui ˌes̺o flaːve̞ | eˈplui ilˌvjadʒaˈdoːoɾ ˌs̺is̺ʷtɾenʲˈdzɛːve̞ ˌtal̪ta baːaɾ |
+alˈpɔːn̪t ˌketaluːl̪tiŋ | ilˈpua ˈɾaːja ˌɾals̺kuˈɲi ɾiːn̪dis̺i || ˌils̺oˈɾeːli | ˌinaˈlɔːɾe̞ | ˌal̪taˈka ˌatʃo ka
+| ˌes̺uˈbiːt da uːu | ɾilˌvjadʒa doːoɾ | keˌals̺kloˈpaːve̞ diˈcaːl̪t | ˌs̺iɟaˈva ˌil̪ta baːaɾ || ˌekuˈs̺i |
+ae bwɛːɾe̞ | ˌitoˈca diˌɾiko ɲɔːʃi | keˌils̺oˈɾeːli | aˈlɛːɾe̞p ˈlui ˈfwaːɾt di je ||
+
+
+
+
+# Notes:
+In JIPA paper, long vowels written as double letter, here length symbol has been used.
+Prosodic symbols used in paper unavailable to me and have not been included.

@@ -1,0 +1,63 @@
+﻿# Reference:
+10.1017/S0025100314000383
+
+# Language:
+Basaá
+
+#ISO Code:
+bas
+
+# Consonant Inventory:
+p, t, k, kʷ, gʷ, tʃ, dʒ, ɓ, ⁿb, ⁿd, ⁿdʒ, ⁿg, m(m, ḿ), n(n, ń), ɲ, ŋ(ŋ, ŋ́, ŋ̀), ŋʷ, 
+ɾ̥, ɾ(ɾ, r), ɸ, β, s, x, ɣ, χ, h, ɦ, w, j, l
+
+# Vowel Inventory:
+i(i, í, ì, ǐ, î), e(e, é, è, ě, ê), a(a, á, à, ǎ, â), u(u, ú, ù, ǔ, û), 
+o(o, ó, ò, ǒ, ô), ɛ(ɛ, ɛ́, ɛ̀, ɛ̌, ɛ̂), ɔ(ɔ, ɔ́, ɔ̀, ɔ̌, ɔ̂), iː(iː, íː, ìː, ǐː, îː), 
+eː(eː, éː, èː, ěː, êː), ɛː(ɛː, ɛ́ː, ɛ̀ː, ɛ̌ː, ɛ̂ː), aː(aː, áː, àː, ǎ:, âː), 
+uː(uː, úː, ùː, ǔː, ûː), oː(oː, óː, òː, ǒː, ôː), ɔː(ɔː, ɔ́ː, ɔ̀ː, ɔ̌ː, ɔ̂ː)
+
+# Phoneme inventory size:
+44
+
+# Length of NWS audio file:
+52sec
+
+# Audio:
+52
+
+# Other Symbols:
+/ˈ/
+/↓/
+
+# Minimal pairs:
+/í~ìː/ /é~èː/ /ɛ́~ɛ́ː/ /ú~ùː/ /ó~òː/ /ɔ̀~ɔ̀ː/ /á~áː/
+/ì~é~ɛ́/ /ó~ɔ̀/
+
+# Minimal pair examples:
+/sí~sìː/ /jé~jèː/ /sɛ́~sɛ́ː/ /sú~sùː/ /só~sòː/ /sɔ̀~sɔ̀ː/ /sá~sáː/
+/lìm~lém~lɛ́m/ /póɸ~pɔ̀ɸ/
+
+# Transcript:
+ⁿbɛ̀βí nì hàŋgáː ⁿbɛ̀βí máɓɛ́rá nì hàŋgáː ɓá ↓ɓá pêhⁿbà kɛ́l já↓rá íɲǔː lìjí ndʒɛ́ à gʷěː ⁿgùj 
+ìlɔ̀ː núnú há↓ɲɛ́n ŋ̀kěn mùɾ̥ à βí↓tíhíì á ɓâx à héːβá kórí ⁿbèŋ ɓá nóɣlá lɛ́ í ŋwɛ̌ɾ̥ à ḿ↓ɓɔ̀ŋ 
+ŋ́kěn mùr lɛ́ á hé↓já kórí jěː ɲɛ́n à gʷěː ⁿgùj ìlɔ̀ː núnú 
+wɛ̌ː ⁿbɛ̀βí βíhòŋ ní ⁿgùj lí↓ɓím ì ɓélâ ⁿdí kǐː jɔ̀ ì ɓêː ì hòŋòx jàx mùr à sûrɣɛ̀ kórí jěː
+ì ɓɔ̀l lɛ́ tɛ̀ː ⁿbɛ̀βí ì βítɔ́ⁿb ì wáː hôŋ hàŋgáː hɔ́ hí βó↓roː ɓáj ↓ní ⁿgùj ì ɓɔ́l lɛ́ tɛ̀ː ŋ́kěn 
+mùɾ̥ à hé↓já kórí jěː há ↓ɲɛ́n ⁿbɛ́βí máɓɛ́rá ì βíǃnɛ̀ːβɛ́ lɛ́ hàŋgáː hiˈ ńlɛ́l jɔ́ ⁿgùj
+
+# Notes:
+High tone < ́>, low tone < ̀>, rising tone < ̌> and falling < ̂>
+In the JIPA article prenasalised stops are indicated by a superscript homorganic 
+nasal preceding the voiced stop symbol. I was unable to replicate this, and so have 
+just used a superscript <n> preceding the stop.
+Nasals can be syllabic, in which case they can take tone.
+The click isn't mentioned in the text.
+[r] isn't mentioned in the text. Because there are no instances of the voiced tap
+in the transcript, it is assumed to represent this sound, either as the tap or an allophone
+of it. 
+
+# Errors:
+/ǃ/ is in the transcription, but not in the phonemic inventory.
+/ŋg/ I suspect that the instances of plain ‘g’ should be preceded by superscript ‘n’ (which in the original article is <ŋ> but I was unable to do a superscript velar nasal – see notes). Instead these instances of ‘g’ are preceded by a normal-size <ŋ>. 
+

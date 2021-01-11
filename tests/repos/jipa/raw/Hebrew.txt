@@ -1,0 +1,51 @@
+﻿# Reference:
+10.1017/S0025100300004278
+
+# Language:
+Hebrew
+
+#ISO Code:
+heb
+
+# Consonant Inventory:
+p, b, t, d, k, g, ʔ, m, n(n, ŋ), r, f, v, s, z, ʃ, ʒ, χ, ħ, h, j, ʕ, l,ts, tʃ, dʒ
+
+# Vowel Inventory:
+i, e, a, o, u
+
+# Minimal pairs:
+/p~b/ /t~d/ /k~g/ /ʃ~s~z~h/ /m~n/ /f~v/ /j~ʕ/
+/i~e~a~u/
+
+# Minimal pair examples:
+/par~bar/ /tar~dar/ /kar~gar/ /ʃar~sar~zar~har/ /gam~gan/ /tsaf~tsav/ /jam~ʕam/
+/gir~ger~gar~gur/
+
+# Phoneme inventory size:
+30
+
+# Length of NWS audio file:
+1.08min.sec
+
+# Audio:
+68
+
+# Transcript:
+ˈruaħ hattʃaˈfon, vehaʃʃemeʃ, hitvakeˈħu beneˈhem, ˈmi meˈhem ħaˈzak
+joˈter. gameˈru, ki ʔet hannitsaˈħon, jinˈħal, ˈmi ʃejjatsˈlijaħ lif,ʃot meˈʕal
+ʕoˈver ˈʔoraħ ʔet begaˈdav. paˈtaħ ˈruaħ hatsaˈfon venaˈʃav beħozˈka. hidˈdek 
+haʔaˈdam ʔet begaˈdav ʔel guˈfo. ˈʔaz, histaˈʕer ʕaˈlav haˈruaħ, beˈjeter ˈʕoz,
+ˈʔaχ haʔaˈdam, miʃʃehoˈsif hakˈkor leʕannoˈto, laˈvaʃ meˈʕil ʕelˈjon ʕal
+begaˈdav. noˈʕaʃ mimˈmennu haˈruaħ, umesaˈro biˈde haʃˈʃemeʃ. teħilˈla,
+zaˈraħ ʕaˈlav haʃˈʃemeʃ berakˈkut. vehaʔaˈdam heˈsir ʔet bigˈdo haʕelˈjon
+meʕaˈlav. higˈbir haʃˈʃemeʃ ʔet ħumˈmo, ˈʕad ʃeˈo jaˈχol haʔaˈdam laʕaˈmod
+bifˈne haʃʃaˈrav, ufaˈʃat ˈʔet begaˈdav, veniχˈnas leˈtoχ hannaˈhar, ʃehaˈja
+bekirˈvat maˈkom, keˈdej lirˈħots bemejˈmav.
+
+# Notes:
+This is the Oriental dialect. Non-Oriental Hebrew has a few less phonemes than the Oriental
+dialect. In the JIPA article the phoneme inventory for Oriental Hebrew was provided,
+followed by transcriptions in both Oriental and non-Oriental Hebrew. 
+Nothing was mentioned in the text about geminate/long consonants. Because many of them are
+separated by a stress symbol, they are assumed to belong to different syllables, and I have left in double consonant
+symbols as in the original article. 

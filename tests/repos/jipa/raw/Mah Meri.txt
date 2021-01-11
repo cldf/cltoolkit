@@ -1,0 +1,59 @@
+﻿# Reference:
+10.1017/S0025100309003946
+
+# Language:
+Mah Meri
+
+#ISO Code:
+mhe
+
+# Consonant Inventory:
+p, b, t, d, k, g, ʔ, pʰ, tʰ, kʰ, m̥, m, n̥, n, ɲ̊, ɲ, ŋ̊, ŋ,
+ɾ(ɾ, r, ɹ), s, h, tɕ, dʑ, tɕʰ, ʍ, w, j, ɰ, l̥, l
+
+
+# Vowel Inventory:
+i, ĩ, e, ẽ, ɛ, ɛ̃, ɨ̞, ə, ə̃, a, ã, ɯ, ɯ̃, u, ũ, o, õ, ɔ, ɔ̃, 
+i̤, e̤, ɛ̤, a̤, ə̤, ɯ̤, ṳ, o̤, ɔ̤
+
+# Phoneme inventory size:
+58
+
+# Length of NWS audio file:
+1.43min.sec
+
+# Audio:
+103
+
+# Other Symbols:
+/=/ is used to indicate clitic boundary in the transcription.
+
+
+# Minimal pairs:
+/p~b~m/ /ɲ~ɲ̊/ /kʰ~g/ /s~h/ /l~l̥~ɾ/ /j~ɰ/
+/a~ã~a̤/ /ə~ə̤/ 
+
+
+# Minimal pair examples:
+/pɔk~bɔ̃k~mɔ̃k/ /ɲə̃h~ɲ̊əh/ /kʰap~ga̤p/ /sɔ̤k~hɔ̤k/ /la̤k~l̥äk~ɾɔk/ /jɔh~ɰɔh/
+/luwat~luwãt~luwa̤t/ /ɰətɕ~ɰə̤tɕ/ 
+
+
+
+# Transcript:
+buwaʔ ʔutarə | ŋ̊ãn mɛ̃t ʔaɰiʔ ŋãheʔ | humãʔ nã=ləbeh kwat ʔalə | dala̤p ŋ̊kiʔ baba. 
+‖ dala̤p nãke | tibaʔ m̥ãʔ tɕɔʔ jɔ, ‖ bəgəbũn | badʑuʔ səʔ. ‖ buwaʔ ʔutarə |
+ŋ̊ãn mɛ̃t ʔaɰiʔ  pə̤t pakat kɔdah ‖ dala̤p baba ke nɔ̃ŋ, ‖ nã=mã nĩʔ mũj moh bɛ m̥ãʔ 
+tɕɔʔ jɔ ke nɔ̃ŋ | katɔh badʑuʔ=hãn=ə̃. ‖ nã=nãke lɛh ləbeh kwat ʔalə dariʔ nã=ʔasi̤k=ə̃. ‖
+ləpas ke nɔ̃ŋ | mə̃limpʰũj dah buwaʔ ʔutarə ke nɔ̃ŋ, ‖ ʔɔh sot hidʑup həl. | tapiʔ baʔ 
+kwat buwaʔ ke nɔ̃ŋ mə̃limpʰũj, | baʔ gəbũn mo | m̥ãʔ tɕɔʔ jɔ | sɔp badʑuʔ, ‖
+ gəbũn | tutup | krɛt=hãn=ə̃. ‖ las kaliʔ | ŋ̊kiʔ, | buwaʔ ʔutarə ke nɔ̃ŋ, | ŋ̊ãn dah 
+ʔaga lawãn=ə̃. ‖ ləpas ke nɔ̃ŋ, | mɛ̃t ʔaɰiʔ pə̤t mãntɕa ʔarɛh, ‖ sot panãs prɛk həl.
+‖ dʑa̤p nãke kələ | m̥ãʔ tɕɔʔ tɕɔʔ jɔ ke nɔ̃ŋ pə̤t | katɔh badʑuʔ=hãn kɔdah. ‖ ŋ̊kiʔ gəbũn ŋɔt dah, ‖ 
+səbap ʔaɰiʔ panãs prɛk həl. ‖ dʑadiʔ | buwaʔ ʔutarə pə̤t | ŋãkoʔ kalah, ‖ mɛt ʔaʍiʔ=lɛh nã=nãhə=ə̃ ‖ 
+kwat ʔalə | dala̤p | ŋ̊kiʔ baba ‖ nãke. ‖ 
+
+
+# Notes:
+
+# Errors:

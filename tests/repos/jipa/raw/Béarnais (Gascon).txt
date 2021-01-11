@@ -1,0 +1,40 @@
+# Reference:
+10.1017/S002510031400005X
+
+# Language:
+Béarnais (Gascon)
+
+#ISO Code:
+oci
+
+# Consonant Inventory:
+p, b(b, β̞, β), t, d(d, ð̞, ð), k, g(g, ɣ̞, ɣ), tç, dʝ, 
+m, n, ɲ, ŋ, r(r, ʁ), ɾ(ɾ, ʁ), f, v, s, z, ʃ, ʒ, h, j, w, l, ʎ
+
+# Vowel Inventory:
+i, y, e, ɛ, a, ɔ, u, ĩ, ỹ, ẽ, ã, ũ
+
+# Phoneme invetory size:
+37
+
+# Length of NWS audio file:
+1.26min.sec
+
+# Audio:
+86
+
+# Other Symbols:
+/ˈ/
+
+# Transcript:
+la ˈbizɔ e lu suˈɾeʎ kɛs peleˈjaβɔn | kaˈdũ | aseɣyˈrãn ˈkɛɾɔ lu mej hɔɾt ‖ ˈkwãm
+beˈdũn ỹ bjadʝaˈðu | k ĩ nãˈnaβɔ |aruˈpat ˈhẽns lu sũ ˈmãntu | kɛs ˈhikɛn daˈβis |
+lu pyrˈmɛ | ki si jeskaˈdure ẽnˈtaw ha tiˈɾa | ke seˈɾe jɛsˈpjat kũm lu mej hɔɾt ‖
+alaˈβets | la ˈbizə kɛs hiˈkɛ a buˈha ẽn si hãn a muɾt | mes me je βuˈhaβɔ | mej
+lu bjadʝaˈðu ɛs truˈsabɔ hẽns lu sũ ˈmãntu ‖ per la fĩ | karenũnˈsjɛ ‖ alaˈβets |
+lu suɾeʎ ke ku.mẽnˈsɛ a araˈja | e aw kap dỹ muˈmẽn | lu bjadʝaˈðu | ɛskaluˈɾit
+| kɛs tiˈɾɛ lu ˈmãntu ‖ aˈtaw | la ˈβizɔ kaˈβu de rekuˈneʃe ke lu suˈɾeʎ ˈkɛɾɔ lu
+mej hɔɾt
+
+# Errors:
+/ə/ The schwa is in the transcript in the JIPA article. Doesn’t appear to be discussed anywhere in the text.

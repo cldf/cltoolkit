@@ -1,0 +1,118 @@
+﻿# Reference:
+10.1017/S0025100311000181
+
+# Language:
+Hanoi Vietnamese
+
+#ISO Code:
+vie
+
+# Online bible:
+http://paralleltext.info/data/vie-x-bible-1926compounds/41/001/
+http://paralleltext.info/data/vie-x-bible-1926nocompounds/41/001/
+http://paralleltext.info/data/vie-x-bible-2002/41/001/
+http://paralleltext.info/data/vie-x-bible-banphothong/41/001/
+http://paralleltext.info/data/vie-x-bible-bd2011/41/001/
+http://paralleltext.info/data/vie-x-bible-revised2010/41/001/
+
+# Consonant Inventory:
+p(p, b, ɓ), ɓ, t(t, t̪, t̻), tʰ(tʰ, t̪ʰ, t̻ʰ), ɗ, tɕ, k(k, kp, kʷ), ʔ, 
+m, n, ɲ, ŋ(ŋ, ŋm, ŋ̟), f, v, s, z, x(x, xʷ), ɣ, h, w, j, l, r (r, z)
+
+# Vowel Inventory:
+i, e, ɛ, a(a, ă), ɔ, ɤ(ɤ, ɤ̆), o, ɯ(ɯ, ɯ̽), u, iə, ɯə, uə
+
+# Toneme Inventory:
+˧, ˨, ˦, ˩, ˥
+
+# Phoneme inventory size:
+40
+
+# Length of NWS audio file:
+34sec
+28sec
+
+# Audio:
+31
+
+# Transcript:
+zɔ˨˦ ɓɤ̆k˦˥ va˧˨ măt˨˩ tɕɤj˧˨ kaj˧˨˩˥ ɲaw˦ sɛm˦ aj˦ mɛŋ̟˨ hɤn˦ || tɕɔŋm˦ lukp ˦˥ ɗɔ˧˦
+| mot ˨˩ zu˦ xɛk˦˥ măk˨˩ mot˨˩ aw˧˦ xʷak˦˥ ɤm˨˦ ɗi˦ kʷa˦ || hɔ˨ zaw˦ kɛw˧˨ vɤj˨˦
+ɲaw˦ zăŋ˦˨ | ʔaj˦ la˦˨ ŋɯəj˧˨ ɗɤ̆w˧˨ tiən˦ ma˧˨ kɔ˨˦ tʰe˧˩˨ ɓăt˦˥ ŋɯəj˧˨ zu˦ xɛk˦˥ kiə˦
+| kɤj˧˩˨ ʔaw˨˦ | tʰi˧˨ sɛ˧˨˥ | ɗɯək˨˩ kɔj˦ la˧˨ mɛŋ̟˨ hɤn˦ || săw˦ ɗɔ˧˦ zɔ˧˦ ɓɤ̆k˦˥ ɓăt˦˥
+ɗɤ̆w˧˨ tʰoj˧˩˨ mɛŋ̟˨ het˦˥ sɯk˦˥ kɔ˨˦ tʰe˧˩˨ | ɲɯŋ˦ kaŋ˧˨ tʰoj˧˩˨ | tʰi˧˨ ŋɯəj˧˨ zu˦ xɛk˦˥
+kaŋ˧˨ zɯ˧˨˥ tɕăt˨˩ ʔaw˨˦ xʷak˦˥ | va˧˨ kuj˨˦ kuŋm˧˨ | zɔ˨˦ ɓɤ̆k˦˥ ɗa˧˨˥ faj˧˩˨ tɯ˧˨ ɓɔ˧˩˨ ||
+săw˦ ɗɔ˨˦ | măt˨˩ tɕɤj˧˨ sɯej˧˩˨ ʔɤ̆m˨˦ | va˧˨ ŋɯəj˧˨ zu˦ xɛk˦˥ liən˧˨ kɤj˧˩˨ ʔaw˨˦ xʷak˦˥
+‖ket˦˥ kukp˨˩ la˧˨ | zɔ˨˦ ɓɤ̆k˦˥ faj˧˩˨ tʰɯə˧˨ ɲɤ̆n˨ zăŋ˧˨ | măt˨˩ tɕɤj˧˨ la˧˨ ŋɯəj˧˨ mɛŋ̟˨
+hɤn˦ tɕɔŋm˦ haj˦ ŋɯəj˧˨
+
+
+# Notes:
+There are 8 tones.  In the transcription they are expressed word finally by the phonetic
+tone level markers. 
+˦ (level) ˧˨ (mid falling)  ˨˦ (rising) ˦˥ (rising checked) ˨ (low glottalized) ˨˩ (low checked) ˥˩˨ (low falling) ˨˩˥ (broken)
+
+# Errors:
+/ə/ not in phoneme inventory, but in transcript.
+
+# Orthography Consonant Phoneme Correspondences: 
+<b>-<p>=/b/, <b>=/ɓ/, <c>-<q>-<k>=/k/, <d>=/z/, <đ>=/ɗ/, <g>-<gh>=/g/, <h>=/h/, <k>=/k/,
+<l>=/l/, <m>=/m/, <n>=/n/, <p>=/p/, <r>=/r/, <s>=/ʃ/, <t>=/t/, <x>=/s/, <kh>=/x/,
+<ng>-<ngh>=/ŋ/, <nh>=/ɲ/, <ph>=/f/, <th>=/tʰ/, <v>=/v/, <y>=/j/, <tr>-<ch>=/tɕ/,
+
+# Orthography Vowel Phoneme Correspondences:
+<a(a. á. à. ả. ã. ạ)>=/a/,
+<ǎ(ă. ắ. ằ. ẳ. ẵ. ặ)>=/ɒ/,
+<â(â. ấ. ầ. ẩ. ẫ. ậ)>=/ʌ/,
+<e(e. é. è. ẻ. ẽ. ẹ)>=/ɛ/,
+<ê(ê. ế. ề. ể. ễ. ệ)>=/e/,
+<i(i. í. ì. ị. ỉ. ĩ)>-<y(y. ý. ỳ. ỷ. ỹ. ỵ)>=/i/,
+<o(o. ó. ò. ỏ. õ. ọ)>=/ɔ/,
+<ô(ô. ố. ồ. ổ. ỗ. ộ)>=/o/,
+<u(u. ú. ù. ủ. ũ. ụ)>=/u/,
+<ư(ư. ứ. ừ. ử. ữ. ự)>=/ɯ/,
+<ơ(ơ. ớ. ờ. ở. ỡ. ợ)>=/ə/,
+
+# Orthographic marking of tone:
+Mid-level: <a> 
+High rising: <á>
+Low-falling: <à>
+Low-broken: <ạ>
+Low-rising: <ả>
+High-broken:<ã>
+
+# Minimal pairs differing by a single phonetic feature:
+/p~b/ /p~t/ /p~k/ /ɓ~ɗ/  /t~tʰ/ /t~tɕ/ /t~k/ /t~s/ /tʰ~s/ /m~n/ /m~ɲ/ /m~ŋ/ 
+/n~ɲ/ /n~ŋ/ /ɲ~ŋ/ /f~v/ /f~s/ /f~x/ /k~x/ /f~h/ /v~z/ /s~z/ /s~x/ /s~h/ /x~h/
+ /w~j/ /l~r/
+<á~à> <á~ả> <á~ã> <á~ạ> <á~ắ> <á~ắ> <á~é> <á~ế> <á~ớ> <à~ả> <à~ã> <à~ạ> <à~ằ> 
+<à~è> <à~ề> <à~ờ> <ả~ã> <ả~ạ> <ả~ẳ> <ả~è> <ả~ể> <ả~ở> <ã~ẽ> <ã~ẵ> <ã~ễ> <ã~ỡ> 
+<ã~ạ> <ạ~ặ> <ạ~ẹ> <ạ~ệ> <ạ~ợ> 
+<ắ~ằ> <ắ~ẳ> <ắ~ẵ> <ắ~ặ> <ắ~ó> <ắ~ố> <ắ~ú> <ằ~ẳ> <ằ~ẵ> <ằ~ặ> <ằ~ồ> <ằ~ò> <ằ~ù> <ẳ~ẵ> 
+<ẳ~ặ> <ẳ~ỏ> <ẳ~ở> <ẳ~ủ> <ẵ~ặ> <ẵ~õ> <ẵ~ỡ> <ẵ~ũ> <ặ~ọ> <ặ~ợ> <ặ~ụ>
+<ấ~ầ> <ấ~ẩ> <ấ~ẫ> <ấ~ậ> <ấ~ó> <ấ~ớ> <ấ~é> <ầ~ẩ> <ầ~ẫ> <ầ~ậ> <ầ~ò> <ầ~ờ> <ầ~è> <ẩ~ẫ> 
+<ẩ~ậ> <ẩ~ỏ> <ẩ~ở> <ẩ~ẻ> <ẫ~ậ> <ẫ~õ> <ẫ~ỡ> <ẫ~ẽ> <ậ~ọ> <ậ~ợ> <ậ~ẹ>
+<é~è> <é~ẻ> <é~ẽ> <é~ẹ> <é~ế> <é~í> <é~ớ> <è~ẻ> <è~ẽ> <è~ẹ> <è~ề> <è~ì> <è~ờ> 
+<ẻ~ẽ> <ẻ~ẹ> <ẻ~ể> <ẻ~ỉ> <ẻ~ở> <ẽ~ẹ> <ẽ~ễ> <ẽ~ĩ> <ẽ~ỡ> <ẹ~ệ> <ẹ~ị> <ẹ~ợ>
+<ế~ề> <ế~ể> <ế~ễ> <ế~ệ> <ế~í> <ế~ớ> <ề~ể> <ề~ễ> <ề~ệ> <ề~ì> <ề~ờ> <ể~ễ> <ể~ệ> <ể~ỉ> 
+<ể~ở> <ễ~ệ> <ễ~ĩ> <ễ~ỡ> <ệ~ị> <ệ~ợ>
+<ó~ò> <ó~ỏ> <ó~õ> <ó~ọ> <ó~ố> <ó~ú> <ò~ỏ> <ò~õ> <ò~ọ> <ò~ồ> <ò~ỗ> <ò~ù> <ỏ~õ> 
+<ỏ~ọ> <ỏ~ổ> <ỏ~ủ> <õ~ọ> <õ~ỗ> <õ~ũ> <ọ~ộ> <ọ~ụ>
+<í~ì> <í~ỉ> <í~ĩ> <í~ị> <í~ứ> <ì~ỉ> <ì~ĩ> <ì~ị> <ì~ừ> <ỉ~ĩ> <ỉ~ị> <ỉ~ử> <ĩ~ị> <ĩ~ữ> <ị~ự>
+<ố~ồ> <ố~ồ> <ố~ổ> <ố~ỗ> <ố~ộ> <ố~ú> <ồ~ổ> <ố~ỗ> <ồ~ộ> 
+<ồ~ù> <ổ~ỗ> <ổ~ộ> <ổ~ủ? <ỗ~ộ> <ỗ~ũ> <ộ~ụ> 
+<ú~ù> <ú~ủ> <ú~ũ> <ú~ụ> <ú~ứ> <ù~ủ> <ù~ũ> <ù~ụ> <ù~ừ> <ủ~ũ> <ủ~ụ> <ủ~ử> <ũ~ụ> <ũ~ữ> <ụ~ự>
+<ứ~ừ> <ứ~ử> <ứ~ữ> <ứ~ự> <ừ~ử> <ừ~ữ> <ừ~ự> <ử~ữ> <ử~ự> <ữ~ự>
+<ớ~ờ> <ớ~ở> <ớ~ỡ> <ớ~ợ> <ờ~ở> <ờ~ỡ> <ờ~ợ> <ở~ỡ> <ở~ợ> <ỡ~ợ>
+
+# Phonologically sensible minimal pairs differing by more than one phonetic feature:
+/p~ɓ/ /p~f/ /p~m/ /t~n/ /k~ŋ/ /ɗ~z/ /ɗ~l/ /ɗ~r/ /ɗ~n/
+
+# References:
+JIPA Illustration
+
+Phan vǎn Giuõng. 2009. Tiếng Viêt: Vietnamese for Beginners. 1.  Nhà Xuất Bân Vǎn Hoá Sài Gòn.
+
+https://en.wikipedia.org/wiki/Vietnamese_alphabet
+
+http://morevietnamese.com/tag/tones/

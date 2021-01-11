@@ -1,0 +1,69 @@
+﻿# Reference:
+10.1017/S0025100310000289
+
+# Language:
+Shilluk
+
+#ISO Code:
+shk
+
+# Consonant Inventory:
+p(p, b, f, w), b, t̪, d̪, t(t, d), d, c(c, tɕ, tç), 
+ɟ, k(k, g, ɰ), g, m, n̪, n(n, nː), ɲ, ŋ, r, l(l, ɬ), w, j
+
+# Vowel Inventory:
+i(í, ī, ì, ǐ, î), iˑ(íˑ, īˑ, ìˑ, ǐˑ, îˑ), iː(íː, īː, ìː, ǐː, îː), 
+ɪ(ɪ́, ɪ̄, ɪ̀, ɪ̌, ɪ̂, ɪ̂́), ɪˑ(ɪ́ˑ, ɪ̄ˑ, ɪ̀ˑ, ɪ̌ˑ, ɪ̂ˑ), ɪː(ɪ́ː, ɪ̄ː, ɪ̀ː, ɪ̌ː, ɪ̂ː, ɪ̂́ː), 
+e(é, ē, è, ě, ê, ế), eˑ(éˑ, ēˑ, èˑ, ěˑ, êˑ, ếˑ), eː(éː, ēː, èː, ěː, êː), 
+ɛ(ɛ, ɛ́, ɛ̄, ɛ̀, ɛ̌, ɛ̂, ɛ̂́), ɛˑ(ɛ́ˑ, ɛ̄ˑ, ɛ̀ˑ, ɛ̌ˑ, ɛ̂ˑ), ɛː(ɛ́ː, ɛ̄ː, ɛ̀ː, ɛ̌ː, ɛ̂ː), 
+ʌ(ʌ́, ʌ̄, ʌ̀, ʌ̌, ʌ̂), ʌˑ(ʌ́ˑ, ʌ̄ˑ, ʌ̀ˑ, ʌ̌ˑ, ʌ̂ˑ), ʌː(ʌ́ː, ʌ̄ː, ʌ̀ː, ʌ̌ː, ʌ̂ː), 
+a(á, ā, à, ǎ, â), aˑ(áˑ, āˑ, àˑ, ǎˑ, âˑ), aː(áː, āː, àː, ǎː, âː), 
+ɔ(ɔ, ɔ́, ɔ̄, ɔ̀, ɔ̌, ɔ̂, ɔ̂́), ɔˑ(ɔ́ˑ, ɔ̄ˑ, ɔ̀ˑ, ɔ̌ˑ, ɔ̂ˑ, ɔ̂́ˑ), ɔː(ɔ́, ɔ̄, ɔ̀, ɔ̌, ɔ̂), 
+o(ó, ō, ò, ǒ, ô), oˑ(óˑ, ōˑ, òˑ, ǒˑ, ôˑ), oː(óː, ōː, òː, ǒː, ôː), 
+ʊ(ʊ́, ʊ̄, ʊ̀, ʊ̌, ʊ̂), ʊˑ(ʊ́ˑ, ʊ̄ˑ, ʊ̀ˑ, ʊ̌ˑ, ʊ̂ˑ), ʊː(ʊ́ː, ʊ̄ː, ʊ̀ː, ʊ̌ː, ʊ̂ː), 
+u(ú, ū, ù, ǔ, û), uˑ(úˑ, ūˑ, ùˑ, ǔˑ, ûˑ), uː(úː, ūː, ùː, ǔː, ûː)
+
+# Other Symbols:
+/-/
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+wùːt(ɔ) á-pêˑm gɛ̂-kɪ́ cʌ̂ŋ
+kāˑ á-lɪ̂́ːt̪ gɛ̂n, wếl(ɔ) ɛ̂ ʊ́-cʌ̀ˑt̪(ɔ) 
+rɛ̄ˑ kùm ɛ̂n kɪ̄ ʊ́dìːp(ɔ)
+kāˑ gɛ̂ ʊ̀-kôːp(ɔ) kɪ̂n-ɪ̀, áˑmɛ̂n à-tɛ̂ˑk
+kāˑ á-pî́t gɛ̂n ɪ̀ pèːm(ɔ)
+à-kóːp-gɛ̂ kɪ̂nː-ɪ̀ dɔ̂́ˑc, pʌ̀ˑɲɪ̀-wāˑ ɛ́n 
+ɟâˑl(ɔ)-ánɪ́ kɛɲà ʊ̀-béːn-ɛ́, ɛ ʊ́-cʌ̂ŋɔ̀
+ŋâːn à-tɛ̂ˑk, ʊ́gɔt̪-ɛ̀ ʊ́-lǔɲ-ɛ́ wʌ̂k
+kāˑ wùːt(ɔ) ʊ̀-jếˑj(ɔ)
+à-cʌ̄kɪ̄ wùːt(ɔ) kɪ́ kôˑn(ɔ)
+kɛ̂ɲà á-kɛ̂́t̪ wùːt(ɔ) ɛ̂ ʊ́-têˑŋ(ɔ)
+ɟâˑl(ɔ)-ánɪ́ kɛ́t̪ ɛ̂ ʊ́dìːp(ɔ) m-ɛ̄ˑ, twɪ́c-ɛ̂ˑ rɛ̄ˑ, gɔ̂ twɪ́c-ɛ̂ˑ rɛ̄ˑ
+kɛ́t̪ wùːt(ɔ) ʊ́-têˑŋ(ɔ), kɛ́t̪ gɔ̂ twɪ́c-ɛ̂ˑ rɛ̄
+kɪ̀ cʌ́n kāˑ kóˑ wùːt(ɔ) ʊ́-bùːt(ɔ)
+à-kóːp-ɛ̂ kɪ̂n:-ɪ̀ dɔ̂́ˑc, àdá lûɲí
+kɛ̂ɲà á-lûɲɪ̀ cʌ̂ŋ kɪ́ jɛ̀ːr(ɔ), kāˑ ɟâˑl-ání ʊ́gɔ̂t̪-ɛ̀ jwāːt-ɛ́ pɪ́ɲ, ʊ́dìːp(ɔ) á-wɛ̀t-ɛ́
+kāˑ wùːt(ɔ) ʊ̀-kôˑ, cê ɪ̂́ŋ-à djēˑr, bâˑ jín à-têˑk
+
+
+# Notes:
+There is a three way distinction between length in vowels, which in the paper is written 
+as single letter for short, double letter for long and triple letter for overlong.  
+Here I have used single symbol for short, the half-long symbol for long and the 
+long symbol for overlong. 
+Geminate consonants are indicated in the paper with a doubling of the letter.  Here I have 
+used the length symbol.  
+Tone: Low (cv́c), Mid (cv̄c), High (cv̀c), Rise (cv̌c), Fall (cv̂c), High Fall (cv̂́c), 
+and Late Fall (cv́c̀).  Each possible tone type is expressed on vowels which are presented 
+as allophones.  Consonants that take the late fall in the transcription are expressed as
+allophones of the consonant phoneme. 
+The transcription is phonemic. 
+
+# Errors:
+/î́/ typo?

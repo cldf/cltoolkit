@@ -1,0 +1,48 @@
+# Reference:
+10.1017/S0025100303001385
+
+# Language:
+Standard Yiddish
+
+#ISO Code:
+ydd
+
+# Consonant Inventory:
+p, b(b, b̥, bⁿ), t(t, t̚), d(d, d̥, d̥ⁿ), tʲ, dʲ, k, g, m(m, m̩), n(n, n̩), nʲ, ŋ, r(r, ɾ, ʀ), f, v, s, z(z, z̥), 
+ʃ, ʒ, sʲ, zʲ, χ, ɣ, h, j, l, ʎ, 
+ts, tʃ, tsʲ, tʃʲ, dz, dʒ, dzʲ, dʒʲ
+
+# Vowel Inventory:
+ɪ, ɛ(ɛ, ɛ̘ʲ), a, ɜ(ɜ, ɜ̘), ʊ, ɔ, ɛɪ(ɛɪ, ɛɪʲ), aɛ, ɔɜ(ɔɛ, ɔɛ̘ʲ, ɔɛ̘)
+
+# Phoneme inventory size:
+44
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+a mɔl a mɔl ˈhɔbⁿm̩zɪχ dɛɾ ˈtsɔfn̩ vɪnt ʊn dɪ zʊn gɜˈkɾɪkt vɛɾr sɪz̥fʊn zɛɪ ˈʃtaɾkɜɾ
+hɔd̥zɪɣbaˈvɪzn afn̩ vɛg a dʊɾɣˈgɛɪʲɜɾ ˈaɛngɜˌhɪʎt m a ˈvaɾɜmɜn ˈfʊtɜɾ ˈhɔbⁿm̩
+zɛɪ dɛɾ ˈtsɔfn̩ vɪnt ʊn dɪ zʊn hɛɪst ɛs ˈtsvɪʃn̩ zɪχ ˈɔb̥gɜˌmaχt az dɛɾ ˈʃtaɾkɜɾɜɾ
+vɛd̥zaɛn dɛɾ vɔs vɛt ˈnɛɪd̥ⁿn̩ dɛm ˈdʊɾɣgɛɪʲɛɾ ˈɔɜstsʊˌtɔn dɛm ˈfʊtɛɾ hɔdɛɾ ˈtsɔfn̩
+vɪnt gɜˈnʊmɜn ˈblɔzn̩ mɪt ˈalɜ ˈkɔɜχɜs nɔɾ vɔs mɛɾ ɛɾ hɔt gɜˈblɔzn̩ alts ˈtɪfɜɾ
+hɔd̥zɪɣ dɛɾ ʃpaˈtsɪɾɜɾ ˈaɛngɜˌhɪʎt ɪn dɛm ˈfʊtɛɾ tsʊm sɔf hɔdɛɾ ˈtsɔfn̩ vɪnt zɪχ
+ˈʊntɜɾgɜˌgɜbⁿm̩ ʊn mɛɾ nɪft gɜˈkɛmft ˈdɛmɔʎt hɔdɪ zʊn mɪt ˈɪɾɜ ˈfɾaɛndlɜχɜ
+ˈʃtɾaln̩ dɜɾˈvaɾɜmt d̥ɪ ʎʊft ʊn sɔt nɪft̚gɜˈdɔɛ̘ʲɜɾt mɛɾ vɪʲa pɔɾ mɪˈnʊt hɔdɛɾ
+ˈdʊɾχgɛɪʲɛɾ ˈɔɛ̘z̥gɜˌtɔn dɛm ˈfʊtɜɾ hɔdɛɾ ˈtsɔfn̩ vɪnt zɪɣgɜˈmʊz̥t ˈmɔɜdɜ zaɛn az dɪ
+zʊn ɪz̥ ˈʃtaɾkɜɾ fʊnɪm
+
+# Notes:
+Allophonic variation of nasals and laterals and rhotics is discussed, other consonantal allophones were assigned by Louise, as were the vowel allophones.
+
+"The glottal stop functions as an intervocalic separator only." p262 Ie. it is not a phoneme.
+
+Nothing is mentioned in the paper on the nasal release symbol ‘ⁿ’ In line with assigning other sounds as allophones, I’ve assigned these sounds as allophones in the phoneme inventory as well.
+
+# Errors:
+/ɪʲ/ superscript ʲ not discussed in paper. Probably included to indicate the end of diphthong / ɛɪ/ to distinguish from following vowel. Entered as allophone in phoneme inventory
+

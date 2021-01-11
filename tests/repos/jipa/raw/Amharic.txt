@@ -1,0 +1,47 @@
+﻿# Reference:
+10.1017/S0025100300004606
+
+# Language:
+Amharic
+
+#ISO Code:
+amh 
+
+# Consonant Inventory:
+p, b, t, d, k, g, tʃ, dʒ, bʷ, kʷ, gʷ
+m, n, ɲ, ŋ, mʷ, f, s, z, ʃ, ʒ, h, fʷ, r, j, w, l, p’, t’, k’, tʃ’, pʷ’, kʷ’, tʷ’, hʷ, s’,
+bː, tː, dː, tʃː, dʒː, kː, gː,  bʷː, kʷː, gʷː, mː, nː, ɲː, ŋː, mʷː, fː, sː, zː, ʃː, ʒː, 
+fʷː, rː, wː, jː, lː, p’ː, t’ː, tʃ’ː, kʷ’ː, sʷː
+
+# Vowel Inventory:
+i, e, ə(ə, ɛ, ɔ), a, u, o, ɨ(ɨ, ɪ, ʊ)
+
+# Size of phoneme inventory:
+73
+
+# Length of NWS audio file:
+53sec
+
+# Audio:
+53
+
+# Transcript:
+s’əhajɪnːa kəsəmen jɛmːinəfsəw nəfas
+s’əhajɪnːa kəsəmen bəkʷːʊl jɛmːinəfsəw nəfas ɨnenɛɲ t’ənkarra ɨnenɛɲ
+t’ənkarra bəmːil jɪkːərakːəru nəbːər. bəzːi gize and məŋgədɛɲːa jɛbɨrd
+məkːəlakəja lɨbs ləbso jɪgʷːaz nəbːər. kəzjam məŋgədɛɲːəw ləbɨrd
+məkːəlakəja ləbsot jɛmːihedəw lɨbs k’ədɨmo jaswɔlːək’ə bət’ɨnkare
+jɪbəlt’al bəmːil təsmamːu. bəzːihɨm məsərət kəsəmen bəkʷːʊl
+jɛmːinəfsəw nəfas balːə bəlelːəw gʷʊlbət bəhajl nəfːəsə. honomgɨn bəhajl
+bənəfːəsə kʷ’ʊt’ɨr məŋgədɛɲːəw jɛbasəwnu bələbːəsəw lɨbs jɪdʒː əbːɔn jɛmːər.
+bəmətʃ’ərːəʃam kəsəmen bəkʷːʊl jɛmːinəfsəw nəfas bəgənza
+fək’adu akʷ’omə. s’ahajm bətərawa wət’ːatʃɪnːa muk’ətwan mawrəd
+sɨtːɨdʒəmːɨr məŋgədɛɲːəw mɨnɨmː saj kʷ’ɔj wɔdijawnu jɛləbːəsəwl lɨbs
+awɔlːək’ə. bəmətʃ’ərːəʃam kəsəmen bəkʷːʊl jɛmːinəfsəw nəfas s’əhaj
+bət’ɨnkare kəssu jɛmːɨtːɨbəlt’ məhonwan jaləwʊdː bəgɨdː amːənə.
+
+# Notes:
+k’ absent from phoneme inventory, but present in transcription, also discussed elsewhere in paper. Added.
+
+# Errors:
+

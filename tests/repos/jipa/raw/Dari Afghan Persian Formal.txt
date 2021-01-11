@@ -1,0 +1,42 @@
+﻿# Reference:
+10.1017/S0025100315000390
+
+# Language:
+Dari Afghan Persian Formal
+
+#ISO Code:
+prs
+
+# Consonant Inventory:
+p, b, t, d, k, g, q, m, n, f, s, z, ʃ, ʒ, s, x, ɣ, h, tʃ, dʒ, ɾ(ɾ, r), w, j, l
+
+# Vowel Inventory:
+i, e, ɛ, ɐ, ʌ, ʊ, o, u, ɐi, ɐu, ʌi, ui
+
+# Phoneme inventory size:
+36
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Other symbols:
+ˈ, ‖, |
+
+
+# Transcript:
+jɐk ɾoz bʌd hɐmˈɾʌjɛ ʌf ˈtʌb ‖ ˈkɐti | jɛk dɛˈgɐɾ dɐˈwʌ ˈmekɐɾdɐnd ke kʊˈdʌɛʃ
+qɐwiˈtɐɾ ɐs ‖ dɐɾ in wɐqt jɐk mʊsʌˈfɛɾ ɾɐˈsid | ke jɐk pɐˈtuje dɐˈbɐl dɐɾ ˈdɐwɾɛ xʊd
+petʃiˈdɐ bud ‖ ʌnˈhʌ gʊftɐnd ke | hɐɾ kʊˈdʌmɛ mʌ ke ɐˈwɐl ˈbɛtɐwʌnim mʊsʌˈfɛɾ
+ɾʌ mɐdʒˈbuɾ kʊˈnim | pɐˈtujɛʃ ɾʌ ɐz ˈdʒʌnɛʃ duɾ ˈkʊnɐd | mɐˈlum ˈmɛʃɐwɐd ke ˈzuɾɛʃ
+zijʌ ɐst ‖ bʌd tʌ tɐwʌˈnɛst wɐˈzid ‖ ˈlekɛn ˈhɐɾtʃe ke | beʃˈtɐɾ wɐˈzid | mʊsʌˈfɛɾ
+pɐˈtujɛʃ ɾʌ dɐɾ ˈdɐwɾɛ ˈxʊdɛʃ dʒɐmɐ kɐɾd ‖ ˈbɛlʌxɛɾɐ | bʌd xɐsˈtɐ fʊd wɐ mʊnsɐˈɾɛf
+ʃʊd ‖ bʌd ɐz ʌn | ʌf ˈtʌbid wɐ hɐˈwʌ ˈinqɐdɐɾ gɐɾm ʃʊd ke | ˈfɐwɾɐn mʊsʌˈfɛɾ
+pɐˈtukjɛʃ ɾʌ ɐz ˈdʒʌnɛʃ duɾ kɐɾd ‖ bʌd ɐz ʌn | bʌd mɐdʒˈbuɾ fʊd ke ɛqˈɾʌɾ kʊˈnɐd ke
+ɐf ˈtʌb ˈzuɾɛʃ zijʌd ɐst
+
+
+# Notes:
+There is no online recording for Dari.

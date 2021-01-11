@@ -1,0 +1,48 @@
+﻿# Reference:
+10.1017/S0025100301002122
+
+# Language:
+Burmese
+
+#ISO Code:
+mya
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, tʃ(tʃ, t̪θ), tʃʰ, dʒ(dʒ, d̪ð), k, kʰ, g, ʔ, m̥(m̥, m̥m), m, n̥(n̥, n̥n), n, 
+ɲ̥(ɲ̥, ɲ̥ɲ), ɲ, ŋ̊(ŋ̊, ŋ̊ŋ), ŋ, 
+θ, ð, s, sʰ, z, ʃ, h, ʍ(ʍ, ʍw), w, ɹ, j(j, ɹ), ɬ(ɬ, ɬl), l 
+
+# Vowel Inventory:
+i(i, í, ḭ), e(e, eː), ɛ(ɛ, ɛ̰), a(a, á, a̰), ɔ(ɔ, ɔ̰), o(o, o̰), u(u, ṵ), ə, ɪ(ɪ̃, ɪ̃́), ʊ(ʊ, ʊ̃, ʊ̃́), 
+eɪ, aɪ, aʊ, oʊ, ɪ̃, ã, ʊ̃, eɪ̃, aɪ̃, aʊ̃, oʊ̃(oʊ̃, oʊ̃́)
+
+# Phoneme inventory size:
+55
+
+# Length of NWS audio file:
+31sec
+
+# Audio:
+31
+
+# Other Symbols:
+/ ́/ high tone
+
+# Minimal pairs:
+/p~pʰ~b/ /t~d~s~sʰ~z/ /m~m̥~n~n̥~ŋ~ŋ̊~ɲ~ŋ̥/ /ʔ~h/ /k~kʰ/ /tʃ~tʃʰ~ʃ/
+
+# Minimal pair examples:
+/pa~pʰa~ba/ /ta~da~sa~sʰa~za/ /ma~m̥a~na~n̥a~ŋa~ŋ̊a~ɲa~ŋ̥a/ /ʔa~ha/ /ka~kʰa/ /tʃa~tʃʰa~ʃa/
+
+# Transcript:
+mjaʊʔlemɪ̃́nɛ̰ neːmɪ̃́
+mjaʊʔlemɪ̃́nɛ̰ nemɪ̃́ | θṵdɛʔŋa ʔát ʃídɛlo̰ | ɲɪ̃́kʰoʊ̃nedʒa̰doʊ̃́ | ʔeɪ̃́dʒitʰudu
+wʊʔladɛ̰ kʰəjíðɛtəjaʊʔko mjɪ̃dɔ̰ga | θṵgo ʔeɪ̃́dʒitʃʰʊʔʔaʊ̃ taʔn̥aɪ̃ðuga̰ | θaʔátʃídɛlo̰
+m̥aʔjujã | gədḭ tʰádʒa̰dɛ || lemɪ̃́ga̰ | taʔn̥aɪ̃ðəlaʊʔ taiʔtɔ̰ | tʃaʔtʃaʔ taɪʔle kʰəjíðɛ
+ʔəwʊʔ kom̥a θakaʔle || ʔətãt ʃadɔ̰ | lemɪ̃́ga̰ mətaʔn̥aɪ̃lo̰ jaʔja̰dɛ || didɔ̰ nemɪ̃́ga̰
+nebu pja̰ja | kʰəjíðɛ ʔaɪʔlo̰ ʔəwʊʔ tʃʰʊʔja̰dɔ̰ | lemɪ̃́ga̰ nemɪ̃́ha θṵdɛʔ θababedɛlo̰
+wʊ̃kʰãja̰ledɛ || 
+
+
+# Notes:
+Burmese has four tones: low <unmarked>; high < ́ > creaky <a̰> and killed includes a syllable final glottal stop

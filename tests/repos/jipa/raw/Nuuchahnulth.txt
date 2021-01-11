@@ -1,0 +1,48 @@
+﻿# Reference:
+10.1017/S0025100301002092
+
+# Language:
+Nuuchahnulth
+
+#ISO Code:
+nuk
+
+# Consonant Inventory:
+p, t, k, kʷ, q, qʷ, ʔ, m, n, s, ʃ, x, xʷ, χ, χʷ, ħ, h, ts, tʃ, ɬ, tɬ, j, w, ʔ, 
+p', t', k', kʷ', ts', tʃ', tɬ', ʔm, ʔn, ʔj, ʔw
+
+# Vowel Inventory:
+iː, i, uː, u, aː, a, ɛː, ɔː
+
+# Phoneme inventory size:
+43
+
+# Length of NWS audio file:
+40sec
+
+# Audio:
+40
+
+# Minimal pairs:
+
+
+# Minimal pair examples:
+
+
+
+# Transcript:
+ʔaːqiqɬiwuːsħs himwits'a ʔuːqɬiwuːsħs himwits'a
+ku:kuːɬʃiʔatɬquːtʃ t'aːtnaʔis ʔijikiːʔiɬamuʔuxʷa
+himwits'a nitniʃʔaːɬ jaqukʷitin ʔumʔiːqsu ts'itkpiʔaɬkʷin
+nuːʔiʔatɬquː qʷimats'ukʔwt' asʔitq
+huħtakʔatɬkʷin jaːqmats'ukʔwit'asʔitq
+nuːʔiʔatɬqu ʔaħʔaː 
+hawiːʔatɬʃiʔatɬquː xiːmts xiːmts waːʔatɬquː
+qʷaːʔatɬkʷin qʷaːʔiːtqʔaːɬ t'aːtnaʔis tʃ'iʔnuqtɬap hawiːʔatɬ himwits'a
+ɬaːkɬaːkʷa wikquː hawiːʔatɬʃtɬ
+
+
+# Notes:
+ I do not have an superscript glottal stop symbol available and so have used the glottal 
+ stop preceding the glottalised resonants. 
+ Not northwind and sun story.

@@ -1,0 +1,59 @@
+﻿# Reference:
+10.1017/S0025100300004060
+
+# Language:
+Swedish
+
+#ISO Code:
+swe
+
+# Consonant Inventory:
+p, b, t(t, ʈ), d(d, ɖ), k, g, m, n(n, ɳ), ŋ, f, v, s(s, ʂ), ʝ, h, ɹ(ɹ, r), l(l, ɭ), ɕ, ɧ
+
+# Vowel Inventory:
+iː(iː, ìː), yː(yː, ỳː), ɪ(ɪ, ɪ̀), ʏ(ʏ, ʏ̀), ʉ̟(ʉ̟, ʉ̟̀) , eː(eː, èː), øː(øː, ø̀ː), ɛ(ɛ, ɛ̀, ə), 
+œ(œ, œ̀), ɛː(ɛː, ɛ̀ː), ɵ(ɵ, ɵ̀), a(a, à), ɑː(ɑː, ɑ̀ː), ɔ(ɔ, ɔ̀), oː(oː, òː), ʊ(ʊ, ʊ̀), uː(uː, ùː)
+
+# Phoneme inventory size:
+35
+
+# Length of NWS audio file:
+32sec
+
+# Audio:
+32
+
+# Minimal pairs:
+/p~b/ /m~n/ /ɹ~l/ 
+
+# Minimal pair examples:
+/pol~bok/ /mod~nod/ /ɹov~lov/ 
+
+
+# Transcript:
+nùːɖanˈvɪndən ɔ ˈsuːlən tvɪ̀stadə əŋ ˈgɔŋ ɔm vɛm ɑv ˈdɔm sɔm vɑ
+ˈstàɹkast. ˈʝɵst ˈdoː kɔm ən ˈvàndɹaɹə ˈvɛːgən ˈfɹam, ˈɪ̀nˌsveːpt i ən ˈvaɹm 
+ˈkàpa. dɔm kɔm doː øvəˈɹɛns ɔm, at dɛn sɔm ˈfœʂt kɵndə fo vàndɹaɹən at tɑ 
+ˈɑːv sɛʝ ˈkàpan, han skɵlə ˈànˈseːs vɑɹa ˈstàrkarə  ɛn dɛn ˈàndɹa. doː ˈblòːstə
+ˈnùːɖanˈvɪndən so ˈhoːʈ han ˈnɔ̀nˈsɪn ˈkɵ̀ndə, mɛn ʝʉ̟ ˈhòːɖaɹə han ˈblòːstə,
+dɛstʊ ˈtɛ̀ːtarə ˈsvèːptə ˈvàndrarən ˈkàpan ˈɔm sɛʝ, ɔ tɪ ˈsɪst gɑv ˈnùːɖan, vɪndən
+ˈɵp fœˈʂøːkət. doː lɛːt ˈsuːlən sina ˈstɹòːlaɹ ˈheːlt ˈvarmt, ɔ ˈʝènast tug
+ˈvàndɹaɹən ˈɑːv sɛʝ ˈkàpan, ɔ so vɑ ˈnùːɖan, vɪndən ˈtvɵ̀ŋən at ˈèːrˌɕɛna, at
+ˈsuːlɛn vɑ dɛn ˈstàrkastə ɑv dɔm ˈtvoː.
+
+
+# Notes:
+The accent over the vowels indicates word accent.
+The scwha is not discussed in the article. I assume it is an allophone of /ɛ/ based
+on the orthographic version of the story.
+ 
+ 
+# Errors:
+/è/ not in paper, but present in transcription.
+/i/ not in paper, but present in transcription.
+/ɑ/ not in paper, but present in transcription.
+/ø/ not in paper, but present in transcription.
+/o/ not in paper, but present in transcription.
+/u/ not in paper, but present in transcription.
+
+Same issue for each – according to phoneme inventory they should be followed by length symbol. Possibly author’s typos. No discussion of length issues.

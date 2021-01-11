@@ -1,0 +1,52 @@
+﻿# Reference:
+10.1017/S0025100316000050
+
+# Language:
+Setswana South Africa
+
+#ISO Code:
+tsn
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, k, kʰ, ʔ, ts, tsʰ, tɬ, tɬʰ, tʃ, tʃʰ dʒ, qχ, m(m, m̀), n, ɲ, ŋ, 
+r, f, s, ʃ, χ, h, l, j, w
+
+
+# Vowel Inventory:
+i(i, ì, í, î, ǐ, ì̞, í̞), e̝(e̝, è̝, é̝, ê̝, ě̝), ɛ(ɛ, ɛ̀, ɛ́, ɛ̂, ɛ̌, ɛ̝̀, ɛ̝́), a(a, à, á, â, ǎ), 
+ɔ(ɔ, ɔ̀, ɔ́, ɔ̂, ɔ̌), o̝(o̝, ò̝, ó̝,  ô̝, ǒ̝), u(u, ù, ú, û, ǔ)
+
+# Phoneme inventory size:
+36
+
+# Length of NWS audio file:
+recording 1: 33
+recording 2: 44
+
+# Audio:
+38.5
+
+# Other symbols:
+/|/
+/‖/
+/ː/
+/ˑ/
+
+# Errors
+/ɔ̝̀/
+/è/  — Author Error (with no tack mark underneath).
+/ò/  — Author Error (with no tack mark)
+/é/  - Author Error
+
+# Transcript:
+pʰé̝ó̝ já bó̝kɔ̝̀ːnì lè̝tsàˑtsì bánɛ̀báχàné̝tsânà χɔ̀rɛ̀ | ké̝má hɔ̂ːnà nàlè̝màtɬáˑ χàísàŋ
+‖ bàbɔ́ná mò̝è̝tì m̀mé̝ lé̝tsàˑtsí là ráː pʰé̝ó̝ láʔ làrè ‖ jò ó̝tɬâ pó̝lˑám mò̝è̝tì dʒásé̝ |
+ʔɛ̝́nɛ̝́ː | ʔɛ̝́nɛ̝́ːʔɔ́ː ‖ ké̝ɛ̀nɛ́ ʔɔ́nàlì̞ŋ mátɬǎːmà ʔáχàìsàŋ ‖ lè̝tsàˑtsí lí̞nɛ̝̀là ìtʃʰúːbáː ‖ mó̝ː
+mɔ̀ràˑhó̝ χàlí̞rú || ké̝fáˑ pʰé̝ó̝ˑ jà bó̝tʃwɛ̀là kàː màtɬà ‖ mò̝è̝tì ó̝nˑɛ́ àˑ χɔ̀χá
+dʒáˑsè̝ à ìtsʰɛ̀rɛ́lɛ̝́ːtsè̝ ‖ pʰé̝ó̝ jà bó̝kɔ̝̀nì jà bájá ìtɬʰɔ̀bɔ̀χà ‖ lè̝tsàtsí lé̝ nɛ́ làːtʃʰwà
+làhíˑsá ‖ kámó̝χó̝tè m̀mé mò̝è̝tìˑ àbɛ́áːpó̝llà dʒásè̝ ‖ lè̝tsàtsí lé̝ pʰé̝ó̝ˑ jà bó̝kɔ̝̀ˑnì
+bánɛ́bádúmàlànà χɔ̀rɛ̀ lè̝tsàtsí ké̝lɔ̝̀nlè̝ lè̝ nàlɛ̀m màtɬà ‖ áχàìsàŋ
+
+# Notes:
+Setswana has two phonemic tones, low < ̀ > and high < ́ >. "The tonal phonology of Setswana is complex and
+tonal processes can cause high and low tones to mainfest on the same syllable, resulting in a surface rising or falling tone..." p243

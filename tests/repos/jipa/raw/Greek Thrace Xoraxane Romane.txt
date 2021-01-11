@@ -1,0 +1,42 @@
+﻿# Reference:
+10.1017/S0025100313000376
+
+# Language:
+Greek Thrace Xoraxane Romane
+
+#ISO Code:
+rmn
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, k, kʰ, g, tʃ, tʃʰ, dʒ, f, v, s, z, ʃ, ʒ, χ, m, n, ɾ(ɾ, r), j, l
+
+# Vowel Inventory:
+i, e, u, o, a, ej, aj, oj, uj, (ɯ), (y)
+
+# Phoneme inventory size:
+35
+
+# Length of NWS audio file:
+50sec
+
+# Audio:
+50
+
+# Transcript:
+ek χoraˈχni sas kʰaˈmni || dʒal jek ba te biandaˈrel la || jek ba kaj biandaˈrel la | 
+ikalˈda katar an jek saˈno bal || ni pukaˈvel laˈke kaj si saˈno bal || tʃol le oˈpral 
+kʰer | oˈpral kʰer tʃuda ˈle || naˈklo kɯr gyn | ek tʃʰon naˈklo | olˈdu sap || e jaˈvaʃ 
+jaˈvaʃ jaˈvaʃ jaˈvaʃ jaˈvaʃ jaˈvaʃ | kaˈva akʰerˈdas pes olˈdu jirˈmi jaʃenˈda | o sap || 
+jirˈmi seˈne opral atʃel | bariˈlo || ˈama ˈkʰonik ni diˈkʰel le kaj si oˈpral o sap || 
+aˈfu geˈlotar kaˈtar badʒa,va | pʰeˈnel pe ˈdake || tu man kaj bianˈdan | me ˈsomas | 
+pʰeˈnel | o bal | sap ˈsamas | me akaˈna | pʰeˈnel | manˈgav | pʰeˈnel | ek romˈni || 
+ˈama ˈmandaɾ laˈzɯm | pʰeˈnel | ˈkʰonik te na daˈɾal 
+
+# Notes:
+Phonetic, phonemic and orthorgraphic transcriptions are provided for the story 
+'The man-snake'. I have provided the phonemic transcription here.
+
+The vowels /ɯ/ and /y/ are only found in Turkish borrowings, and so are in brackets 
+in the inventory.
+
+

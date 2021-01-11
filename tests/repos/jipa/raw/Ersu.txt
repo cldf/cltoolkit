@@ -1,0 +1,85 @@
+﻿# Reference:
+10.1017/S0025100314000437
+
+# Language:
+Ersu
+
+#ISO Code:
+ers
+
+# Consonant Inventory:
+p, pʰ, b, Npʰ, Nb, t, tʰ, d, Ntʰ, Nd, k, kʰ, g, Nkʰ, Ng, t̪s̪, t̪s̪ʰ, d̪z̪, Nt̪s̪ʰ, Nd̪z̪, 
+t̻s̻, t̻s̻ʰ, d̻z̻, Nt̻s̻ʰ, Nd̻z̻, tɕ, tɕʰ, dʑ, Ntɕʰ, Ndʑ, ʈɽ, ʈɽʰ, ɖɽ, Nʈɽʰ, Nɖɽ, ɽ, 
+m, n, ŋ, f, v, s̪, z̪, s̻, z̻, ɕ, ʑ, x, w, j, l, ɬ  
+
+# Vowel Inventory:
+i(i, í, ì), ɛ(ɛ, ɛ́, ɛ̀), a(a, á, à), o(o, ó, ò), z̩(z̩, ź̩, z̩̀), v̩(v̩, v̩́, v̩̀), ɚ(ɚ, ɚ́, ɚ̀), a˞(a˞, a˞́, a˞̀)
+
+# Toneme Inventory:
+V́(í, ɛ́, á, ó, ź̩, v̩́, ɚ́, a˞́),
+V̀(ì, ɛ̀, à, ò, z̩̀, v̩̀, ɚ̀, à˞)
+
+# Phoneme inventory size:
+62
+
+# Length of NWS audio file:
+57sec
+
+# Audio:
+57
+
+# Other Symbols:
+/=/ used to indicate clitic boundary.
+/-/ used to indicate affix.
+
+# Minimal pairs:
+/p~pʰ~b~m~w/ /f~v/ /t~tʰ~d~t̪s̪~t̪s̪ʰ~d̪z̪~n/ /s̪~z̪/ /t̻s̻~t̻s̻ʰ~d̻z̻~s̻~z̻/ /l~ɬ/
+/tɕ~tɕʰ~dʑ~ɕ~ʑ~j/ /ʈɽ~ʈɽʰ~ɖɽ~ɽ/ /k~kʰ~g~ŋ~x/ /b~Nb~pʰ~Npʰ/ /d̪z̪~Nd̪z̪/
+/t̪s̪ʰ~Nt̪s̪/ /ɖɽ~Nɖɽ/ /ʈɽʰ~Nʈɽʰ/
+
+# Minimal pair examples:
+/pɛ́~pʰɛ́~bɛ́~mɛ́~wá/ /fí~ví/ /tɛ́~tʰɛ́~dɛ́~t̪s̪ɛ́~t̪s̪ʰɛ́~d̪z̪ɛ́~nɛ́/ /s̪ɛ́~z̪ɛ́/ /t̻s̻ɛ́~t̻s̻ʰɛ́~d̻z̻ɛ́~s̻ɛ́~z̻ɛ́/
+/lá~ɬá/ /tɕó~tɕʰó~dʑó~ɕó~ʑó~jó/ /ʈɽɛ́~ʈɽʰɛ́~ɖɽɛ́~ɽɛ́/ /ká~kʰá~gá~ŋá~xá/
+/bó~Nbó~pʰó~Npʰó/ /d̪z̪à~Nd̪z̪à/ /t̪s̪ʰá~Nt̪s̪á/ /ɖɽò~Nɖɽò/ /tɛ́ ʈɽʰó~tɛ́ Nʈɽʰó/
+
+# Transcript:
+tɛ́ njó tɛ́ kɛ́ nɛ́ | mɛ́ɚ́ lá mát̪s̪ʰá=d̪z̪í
+dɛ̀-d̪z̪v̩̀-á dʑì || nɛ̀ nɛ́=wó tʰɛ́
+tá-wá xíbá ká | xíbá ká xá nɛ́ nɛ́=wó
+dɛ̀-Ndʑì-Ndʑí | s̪ɛ́tɛ́=wó xá nɛ́ s̪ɛ́tɛ́=wó
+já-ŋá dʑì-á | s̪ɛ́tɛ́=wó xá nɛ́ s̪ɛ́tɛ́=wó
+s̻òmó jà-d̻z̻ó dʑì-á | Ndʑí-Ndʑí || nɛ-Ndʑí-Ndʑí
+nɛ́-Ndʑí-Ndʑí nɛ́ tʰɛ́-á tɛ́=wó tɛ́-á
+tʰà-kʰá mà=pʰá | tʰɛ́=kɛ́ nɛ́ Nd̻z̻á ɽź̩-kʰwá
+Nɖɽv̩̀s̻z̩̀-s̪v̩́ tɛ́ ŋà-lá dʑì-gɛ̀-á | Nɖɽv̩̀s̻z̩̀-s̪v̩́ lɛ́
+ətɕí Ngámɛ́ já-t̪s̪ʰá jà-kʰwá tá-t̪s̪ʰá dɛ̀-z̻ź̩
+t̪s̪á dʑì-gɛ́ || nɛ̀ nɛ́=wó tʰɛ́ ná-tɕá-jí | jó=d̪z̪í
+s̪ɛ́tɛ́=wó já-ŋá nɛ́ tʰɛ́ Nɖɽv̩̀s̻z̩̀-s̪v̩́ Ngámɛ́
+jà-kʰwà=t̪s̪ʰà | tʰà-kwá ná-lá s̻v̩́ tʰɛ́-já
+dʑì-á || nɛ́ mɛ́ɚ́=wó | jò s̻ó tɕʰó-gɛ́ tʰɛ́-já
+dʑì-gɛ̀-á || mɛ́ɚ́=wó dɛ̀-dɛ̀ma˞ nɛ́ | átʰɛ́
+Nɖɽv̩̀s̪v̩́ Ngámɛ́=t̪s̪ʰá tʰɛ́-tʰɛ́-pv̩́-pv̩́ | mɛ́ɚ́=wó
+dɛ̀-dɛ̀-ɚ̀ nɛ́ | Ngámɛ́=t̪s̪ʰá tʰɛ́-tʰɛ́-pv̩́-pv̩́
+áNdʑí tɕʰó-á xá lá Ngámɛ́=t̪s̪ʰá tʰà-kwà-jí
+ná-lá mà=pʰá || nɛ̀ tʰɛ̀=kɛ́ nɛ́
+mát̪s̪ʰá=wó tɕʰó-gɛ́ tʰɛ́-já dʑì-á || mát̪s̪ʰá=wó
+tɛ́ kʰó ŋà-s̪á xá nɛ́ | átʰɛ́ s̪v̩́ dà-t̪s̪ʰà-jí
+dà-là nɛ́ | Ngámɛ́=t̪s̪ʰá d̻z̻ógwá tʰà-kwà-jí
+ná-lá dʑì-gɛ́ || nɛ́ tʰɛ́=kɛ nɛ mɛ́ɚ́=wó ɛ̀j |
+á ná kʰɛ̀-s̻ź̩ má=tó-á tʰɛ́-já dʑì-á ||
+
+# Notes:
+In the paper the alveolar affricates have a solid circle beneath them. This symbol 
+was unavailable to me, and I've used the open square (laminal diacritic) instead.
+Prenasalisation is contrastive, and minimal pairs provided. Despite this it was not 
+put in the phoneme inventory. Because it is contrastive, and frequently appears in e
+the transcript I have included prenasalised consonants in the phoneme inventory. N
+represents a homorganic nasal preceeding the consonant.
+Nasalised vowels are subphonemic - only found in loanwords, and 2 native words.
+Ersu has two tones - high <ó> and low <ò>. 
+There are two transcripts in the JIPA paper. Here the one used for the interlinear morphemic glossing 
+has been used rather than the 'semi-narrow phonetic transcription'.
+
+# Errors:
+/ə/ appears in the transcript, but not in the phoneme inventory. Probably author's typo, meant to be /ɚ/.
+/a˞/ in transcript, not in phoneme inventory.

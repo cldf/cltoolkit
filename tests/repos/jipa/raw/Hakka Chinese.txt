@@ -1,0 +1,55 @@
+﻿# Reference:
+10.1017/S0025100308003599
+
+# Language:
+Hakka Chinese
+
+#ISO Code:
+hak
+
+# Consonant Inventory:
+p, pʰ, t, tʰ, c, cʰ, k, kʰ, kʷ, kʷʰ, ts, tsʰ, m, n, ɲ, ŋ, f, s, ç, h, ʋ, j, l, ɹ̩, m̩, n̹
+
+# Vowel Inventory:
+i, e, a, ə, u, ɔ, ie, iɔ, eu, ɔi, ai, ia, ui, iu, au, iau
+
+# Toneme Inventory:
+˥, ˧, ˥˧, ˧˩, ˩
+
+# Phoneme inventory size:
+47
+
+# Length of NWS audio file:
+46sec
+
+# Audio:
+46
+
+# Other Symbols:
+
+
+# Minimal pairs:
+/p~pʰ~m~f~ʋ/ /t~tʰ~n~s~ts~tsʰ~l/ /c~cʰ~ɲ~ç~j/ /k~kʰ~kʷ~kʷʰ~ŋ~h/
+/i~e~a~ɔ~u~ə/ /ai~ia~au~eu~ɔi~ui~iu/
+
+# Minimal pair examples:
+/pa˧~pʰa˩~ma˧~fa˧~ʋa˧/ /ta˧˩~tʰa˧~na˧~sa˧~tsa˧~tsʰa˧~la˧/ /cau˥˧~cʰɔ˩~ɲau˥˧~çi˧~jai˩/
+/ka˧~kʰa˩~kʷa˧~kʷʰa˧~ŋa˩~ha˥˧/
+/sit˥~set˧˩~sat˥~sɔt˧˩~sut˥~sət˥/ /sai˥˧~sia˧~sau˧~seu˥˧~sɔi˧~sui˧~siu˧/
+
+
+# Transcript:
+iu˧ it˥ pai˧ a˩ | pet˧ fuŋ˧ tʰuŋ˩ ɲit˩ tʰeu˩ hɔk˧ e˥˧ au˥ man˧ ɲin˩ kʷɔ˥ ʋɔi˥˧ au˥ | lɔi˧ au˥ çi˥˧ |
+tu˥ mɔ˧ mak˧ e˥ cat˧ kʷɔ˧˩ ‖ au˥ ten˧ au˥ ten˧˩ | lu˥ hɔŋ˥ iu˧˥ tsak˧ ɲin˩ haŋ˩ ten˧ kʷɔ˥ lɔi˩ |
+ki˩ sən˧ hɔŋ˥ tsɔk˧ ten˧ it˩ cʰan˥ tʰai˥˧ lau˧ ‖ ki˩ ten˧˥ ɲin˩ tsʰiu˥˧ ʋa˧ |
+man˧ kʰɔ˧ i˧ sien˧ ʋɔk˥ ki˩ tʰɔt˧ ha˧ lau˧˥ e˧˩ lɔi˩ | man˧ tsʰiu˥˧ kʷɔ˥ ʋɔi˥˧ ‖
+pet˧ fuŋ˧ tsʰiu˥ tsʰin˥ miaŋ˥ ku˧ tsʰiɔ˧ | tuŋ˧ he˥ | ki˩ iat˥ tsʰiɔ˧ |
+e˥ tsak˧ ɲin˩ tsʰiu˥˧ tsɔk˧ lau˧˥ e˧ em˧˥ tet˧ iat˧ sat˩ ‖ tau˥ mi˧ ha˩ | pet˧ fuŋ˥ mɔ˩ pʰan˥ fap˧ e˩ |
+tsʰiu˥ tsʰin˥˧ tet˧ ki˩ e˩ ‖ kʷɔ˥˧ it˧ ha˧ | ɲit˩ tʰeu˩ an˧ lat˧ sai˥ ha˧˥ çi˥˧ |
+e˥ tsak˧ ɲin˩ tsʰiu˥ tsɔk˧ lau˧˥ e˥ tʰɔt˧ ha˧˥ lɔi˩ ‖ e˧˩ ha˧ | pet˧ fuŋ˥ tsɹ̩˩ hau˧ sən˩ ɲin˥˧ |
+ki˩ ten˧ liɔŋ˧ tsak˧˩ | han˩ he˧ ɲit˩ tʰeu˩ kʷɔ˥ ʋɔi˥˧ ‖
+
+
+# Notes:
+There are five tones: ˥ high level; ˧ mid level; ˥˧ high falling; ˧˩ mid falling; ˩ low level
+ 

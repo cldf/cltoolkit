@@ -1,0 +1,72 @@
+﻿# Reference:
+10.1017/S0025100308003344
+
+# Language:
+Tilquiapan Zapotec
+
+#ISO Code:
+zts
+
+# Consonant Inventory:
+p, b(b, β), t, d(d, ð), k, g(g, gʷ, ɣ), kʷ, gʷ(gʷ, ɣʷ, w), m, n(n, ŋ), n, 
+ɾ(ɾ, ɹ, r), tʃ, dʒ, s, z, ʃ(ʃ, ʂ), ʒ(ʒ, ʐ), j, l, ld
+
+# Vowel Inventory:
+i(i, iː), ɨ, u, e(e, eː), o(o, oː, oˤ), a(a, ɑ, aː, ɑː),
+iˤ(iˤ, iˤː), ɨˤ(ɨˤ, ɨˤː), uˤ(uˤ, uˤː), eˤ(eˤ, eˤː), oˤ, aˤ(aˤ, aˤː, ɑˤ, ɑˤː)
+
+# Phoneme inventory size:
+33
+
+# Length of NWS audio file:
+1.44min.sec
+
+# Audio:
+104
+
+# Minimal pairs:
+/kʷ~g/ /d~l~ɾ/
+/i~ɨ~e~a/ /o~a/
+
+# Minimal pair examples:
+/kʷan~gan/ /dan~lan~ɾan/
+/ni~nɨ~ne~na/ /do~da/
+
+
+# Transcript:
+tu dʒi gu bɨ kun dʒɑngʷbidʒ tu pweʃt donu tʃunde nɑ mexoɾɾu de
+lo gɾopɾɑn ‖ bɨ ɾɑpi lo dʒɑngʷbidʒ ‖ joβo tʃoˤon tu pweʃt donu 
+tʃunde nɑ mexoɾ gu liˤː gulɑˤɑna ‖ joˤo | rɑpi dʒɑngʷbidz ‖
+niˤːtiɾɑk tʃigunɾɑn zied tu dɑdɨˤː nɑkʷbɑ tu ʃtʃɑmɑɾ | tʃiˤː ɾɑpi
+bɨ lo dɑɑngʷbidʒ | ni gun gɑn kʷeː ʃtʃɑmɑɾ dɑdɨˤːɾɨ niβi nɑ
+mexoɾɾu niβi nɑ ni gun gɑn || jo | ɾɑpi dʒɑngʷbidʒ || tɑl liː zɨˤːzɑ
+ɾniu tʃi zɨgɑk || tʃiluegʷdo bsɑn dʒɑngʷbidʒ | gubigbɨ nez ɾot zied
+dɑdɨˤːquɨ || tʃiˤː bzulo bɨ kɑldubɨ | jueɾtduʃ kɑldubɨ nez ɾot
+zied dɑdɨˤːkɨ || ne dɑdɨˤːkɨ lugɑɾdi niunbɨ gɑn niɑbeˤː ʃtʃɑmɑɾbɑ |
+nɑ gubinbɑ nɑˤːld | tʃiˤː dʒiˤːtʃɾubiubɑ lɑˤːn ʃtʃɑmɑɾbɑ || bzulo
+kɑldubɨ jueɾtduʃ peɾ ɑdbɨndibɑ gɑn nieɾeˤːn ‖ gunsi bɨ zɨβɨ |
+ɾɨˤːtɨ blezbɨ tʃi gubigɾɨbɨ lo dʒɑngʷbidʒ || tʃiˤː ɾɑpi bɨ lo
+dʒɑngubɨdʒ | bɨndiɑ gɑn nieˤː ʃtʃɑmɑɾbɑ || ɾɑpi dʒɑngʷbidʒ | tʃiˤː
+nɑgɑˤː || nɑˤːgɑˤːjɑˤː ɾuntukɑɾɑ nɑˤː || joː | ɾɑpi bɨ || tʃiˤː luegʷdo
+gubig dʒɑngʷbidʒ || zɨkni gubig dʒɑngʷbidʒ | tʃi bzulo dʒɑngʷbidʒ
+kɑɾenɑldɑˤː lo dʒɑngʷbidʒ || nɑldɑˤːɾuduʃ kɑɾeˤː lo dʒɑngʷbidz | tʃi
+bzulo dɑdɨˤː kɑɾinbɑgɑ nɑldɑˤː ɑʃtɑ jɑ lo ju ɾieb nis rɑknɑibɑ
+tɑnt gɑ nɑldɑˤː ɾinbɑ || tʃi gukbebɑ zɨˤː | luegʷdo bleˤː ebɑ
+ʃtʃɑmɑɾbɑ nuˤu nɑbɑ || tʃiˤipɑ ruɑsɑ dʒɑngʷbidʒ | gubigrɨ
+dʒɑngʷbidʒ lo bɨ | tʃiˤː ɾɑpi dʒɑngʷbidʒ lo bɨ | guntiu bɨ | nɑː
+biniɑ gɑn loː || ɑːh | ɾɑpi bɨ | guldiku liˤː lagɨ luɑ
+
+# Notes:
+Glottalization is phonemic, and marked in the article by a superscript glottal stop.
+I don't have this symbol available to me, and so I have a superscript pharyngeal fricative.
+Tone is phonemic with two tones - high and low, but tone is not marked in the transcription.
+Vowel length is marked on vowels by doubling the vowel or through use of length symbol 
+in the IPA article. Here I have used the length symbol to be consistent across languages. 
+In several places within the the transcription the symbol <y> was used. Based on the orthography
+I have either replaced this with the palatal approximant /j/ or the high front vowel /i/.
+There was a random <c> in the transcription. I have assumed it is a typo and not added it.
+
+# Errors:
+/h/ not in phoneme inventory or discussed in paper. It appears in a word that appears to be an confirmatory exclamation.
+/x/ is a Spanish loan. Not in phoneme inventory.
+/q/ in transcription, not discussed in paper or part of phoneme inventory.

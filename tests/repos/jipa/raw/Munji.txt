@@ -1,0 +1,45 @@
+﻿# Reference:
+10.1017/S0025100316000256
+
+# Language:
+Munji
+
+#ISO Code:
+mnj
+
+# Consonant Inventory:
+p, b, t, d, c, ɟ, k, g, q, ts, dz, tʃ, dʒ, ʈʂ, ɖʐ, m, n(n, ɲ), ɾ, 
+f, v, s, z, ʃ, ʒ, ʂ, ʐ, ç, x, ɣ, h, w, j, l
+
+# Vowel Inventory:
+i, ɪ, ɛ, ə, a, ɔ, ʊ, u
+
+# Phoneme inventory size:
+41
+
+# Length of NWS audio file:
+55
+
+# Audio:
+55
+
+# Other symbols:
+/ˈ/
+/./
+/ʔ/
+
+
+# Transcript:
+ˈməsɔbɪqə ʒə ˈmiɾɔcan wə ˈwijan ʒə ˈsaɾan
+ju ˈwəxtɛ wi ʒə ˈsaɾan ˈvijə wə ˈmiɾɔ ˈvijəj. jaf mɔˈbajn ˈxəsəɾan məsɔbɪˈqə
+ˈkəɾat kə wiˈʒaɾam ˈkiɛm zuɾ ʔast. bad ju musəˈfəɾ ˈzuɲɟɪɣə ʔɔˈɣaj. ju ˈvəɾɣə
+ʔɔˈɣʊst. ˈwian ʒə ˈsaɾan wə ˈmiɾɔcan fxatiat kə məsɔbɪˈqə ˈkənat ˈkiɛm zuɾ ast
+kə və ˈvəɾɣə ʒə ˈzʊɲɟɪɣan xiʃc. bad ˈʒɔwan ˈaɾtʃi kə wə ˈwian pəf kəɾ pəf kəɾ
+zʊɲˈɟɪɣɔcan və ˈvəɾɣəɪʃ qɔˈɛmɛ ɣɾɪvd wə və ˈvəɾɣə vɪˈdiɾə ˈkəɾɔ ˈtʃikəɾkəɾ. bad
+ˈʒɔwan nəˈwət nə ˈmiɾɔcan ɾəˈsi. ˈwəxtɛ kə ˈmiɾɔcan gaɾˈmi kəɾ wə musəˈfəɾ
+ˈzʊɲˈɟɪɣɔan və ˈvəɾɣə ˈwədəm lɪˈɣɛndə vɪˈdiɾ. ˈʒɪman maˈlum ʃi kə ˈmiɾɔ
+nəzˈbət nə ˈwian ʒə ˈsaɾan ˈawi ʔast.
+
+
+
+# Notes:

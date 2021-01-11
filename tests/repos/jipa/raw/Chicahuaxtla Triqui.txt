@@ -1,0 +1,51 @@
+﻿# Reference:
+10.1017/S0025100315000389
+
+# Language:
+Chicahuaxtla Triqui
+
+#ISO Code:
+trs
+
+# Consonant Inventory:
+p, b, t̪(t̪, t), d̪(d̪, d), k, g, kʷ, gʷ, ʔ, nd, ng(ng, ŋg), ts, tɕ, tʂ, s, z, ʃ, ʒ, ʐ, h, m, n, mː, nː,
+j, w, jː, wː, j̃, l, lː
+
+# Vowel Inventory:
+i, e, ə, a, ɯ, u, o, ĩ, ɯ̃, ũ,  ã 
+
+# Toneme Inventory:
+1, 2, 3, 4, 5
+
+# Phoneme inventory size:
+42
+
+# Length of NWS audio file:
+48
+
+# Audio:
+48
+
+# Other symbols:
+
+
+
+# Transcript:
+na3ne1 ta3 ni3 ja3ʔa2ah gwi3 / sũ32 ũnɯʔɯ̃31 nũ2 na3ne1 ta3 ŋga2 j̃a3ʔã2 gwi3
+ʐaʒiʔi5 awĩ3 ʔŋgoʔŋgo2 ŋgwe1h si3h nu2kwa3h do3h ŋga3 ga3tɕi43 ʔŋgo3 si5 atɕe5
+ne3h ʒuma3ʔa3 wa32h si3h si5 dã3h ni2 ni2ke2 si3 ʐe3to2 wa32h si3h ga3ʔwe3 gutɕi3
+ŋgwe1h sa3tɕi2h dã3 ʔŋgo13 ʔŋgwa3ʔã3 ni2 ga3ta3h ne3h awĩ3 go3ʔŋgo3 gi2ʔja3h
+ga2ʔne3 si5 mã3h ʐe3to2 ta1h ʒitʂa4 si3h ni2 we4ʔ ga2wĩ3 si5 nukwa2h do3h // uta3
+nu2k2a3h gu4ʒuma5 nane1 ta3 sani2 si5 dã5 ni2 do1ʔ si3 nanike3 we3ʔe4 si3h 
+ʐe3to2 we5dã3 ni2 giniʔi na3ne1 ta3 ni2 gaʔnɯ̃3 ʐua3h we4 dã3 ni2 gisi3h gwi3
+natʂa3 gatɕiʔ3i3 ni2 gu3ʃu3 si5 atɕe5 ʐeto2 ta1h ʒitʂa5 si3h ju3h dã3 nani3ʔi3 na3ne1
+ta3 si3si2 ja2ʔa2h gwi3 wĩ3 sa32 nu2kwa3h do3h //
+
+
+
+
+# Notes:
+The broad transcription has been used here. There is also a narrow transcription
+in the JIPA paper.
+Chicahuaxtla Triqui has 5 basic tones and 10-15 tonal contours. In the illustration tones are expressed by 
+superscript numbers 1-5, with 1 being the lowest and 5 the highest. 

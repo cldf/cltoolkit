@@ -1,0 +1,39 @@
+﻿# Reference:
+10.1017/S0025100300001183
+
+# Language:
+Breton of the Isle of Groix
+
+#ISO Code:
+bre
+
+# Consonant Inventory:
+p, t, c, k, b, d, ɟ, g, m, n, ɲ, ŋ, l, r, f, s, ʃ, x, v, z, ʒ, j, ɥ, w, w̃
+
+# Vowel Inventory:
+i, iː, y, yː, e, eː, ø, øː, a, aː, o, oː, u, uː, ə, ã(ã, ẽ), ea, eaː, eo, eoː, eã, ei, øy, ou, ae
+
+# Length of NWS audio file:
+NA
+
+# Audio:
+NA
+
+# Transcript:
+ənaːɥeil ag əneoːl əwa beix etrexaj, piːɥ əvəxe bed ərxreiw̃aŋ
+zənaj, pəndeʃ cɥeld urvwajaʒuːr arəneãt, ʃterdiɲ ivãto arnoŋ.
+xazo kwej dakort, ənani vəxe bed aːry netaŋ dəziʃterd mãto
+rvwajaʒuːr, əvəxe bed ərxreiw̃aŋ. ənaːɥeil ənez nemlake
+təxɥeixiɲ kreiw̃ox kreiw̃, ag ərvwajaʒuːr ənez nemlake təʃterdiɲ
+ivãto kreiw̃ aridrow. ənaːɥeil ənes komãse təgalmat. ag əneoːl
+ənez nemlake tədømet. ərvwajaʒuːr ənes pe tøm ag əzo re təxoŋ
+bu lamed ivãto. ag ənaːɥeil əneʃ cɥelt pənoʃt əneoːl əwa kreiw̃ox ytoŋ.
+
+
+# Notes:
+This is the first Illustration available online.
+Both a phonemic and phonetic transcription were provided. The phonemic one has been used here. 
+Due to typographical issues, there were several symbols that didn't use the IPA in the transcription, 
+but an equivalent was provided in the text. I have used the IPA symbols here for comparison.
+The schwa was not discussed in the paper or assigned phonemic or allophonic status. Due to its
+prolific use, and it not being clear, what it may be an allophone of, I have listed it as a phoneme.

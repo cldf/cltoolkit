@@ -1,0 +1,35 @@
+﻿# Reference:
+10.1017/S0025100300005235
+
+# Language:
+Sindhi
+
+#ISO Code:
+snd
+
+# Consonant Inventory:
+p, b, pʰ, bʱ, t, d, tʰ, dʱ, ʈ, ɖ, ʈʰ, ɖʱ, k, g, kʰ, gʱ,
+ ɓ, ɗ, ʄ, ɠ, c, ɟ, cʰ, ɟʱ, m, mʱ, n, nʱ, ɳ, ɳʱ, ɲ, ŋ,
+ f, s, z, ʂ, x, ɣ, h, r(r, ɾ), ɽ, ɽʱ, ʋ, j, l, lʱ
+
+# Vowel Inventory:
+i, ɪ, e, ɛ(ɛ, ɛə), ə, u, ʊ, o, ɔ(ɔ, əʊ), a, ĩ, ɪ̃, ẽ, ɛ̃, ə̃, ũ, ʊ̃, õ, ɔ̃, ã
+
+# Phoneme inventory size:
+66
+
+# Length of NWS audio file:
+42sec
+
+# Audio:
+42
+
+# Transcript:
+ʊtərə ɟi həʋa ɛ̃ sɪɟʊ pãɳə ɟʱəɠɽo kəre rəhja hʊja tə ɓɪnʱi mẽ kerʊ
+ʋədʱikə takətʋaro ahe. etre mẽ hɪkʊ mʊsafɪrə gərəm koʈʊ pae ʊtã əci
+ləŋgʱjo. həʋa ɛ̃ sɪɟə ɓɪnʱi kəbul kəjo tə ɟəko mʊsafɪrə ɟo koʈʊ lahrae
+səgʱəndo uho i ʋədʱikə takətʋaro ləkʰjo ʋendo. po ʊtərə ɟi həʋa ɗaɖʱo
+zora sã ləɠi, pərə ɟetro ʋədʱikə zora sã ləɠi otro ʋɛdʱikə zorə sã mʊsafɪrə
+pãɳə kʰe ɖʱəkɪɳə ɟi koʂɪʂ kəjɪ. axɪr mẽ ʊtərə ɟe həʋa koʂɪʂ cʰəɗe ɗɪni. po
+sɪɟə ɟi ʊsə zorə sã nɪkti ɛ̃ mʊsafɪrə pãhɪɲɟo koʈʊ ɟəldi lahe pəre pʰɪʈi kəjo.
+ɪnhiə kəre ʊtərə ɟə həʋa məɲjo tə sɪɟʊ hi ɓɪnʱi mẽ ʋədʱikə takətʋaro ahe. 

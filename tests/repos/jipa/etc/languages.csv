@@ -1,0 +1,160 @@
+ID,Name,ISO639P3code,Glottocode,Glottolog_Name,Source
+amarasi,Amarasi,aaz,amar1273,Amarasi,jipa_Edwards2016
+americanenglishsouthernmichigan,American English: Southern Michigan,eng,nort3317,North Central American English,jipa_Hillenbrand2003
+amharic,Amharic,amh,amha1245,Amharic,jipa_Hayward1992
+arabic,Arabic,arb,stan1318,Standard Arabic,jipa_Thelwall1990
+assamese,Assamese,asm,assa1263,Assamese,jipa_Mahanta2012
+australianenglish,Australian English,eng,aust1314,Australian English,jipa_Cox2007
+azerbaijani,Azerbaijani,azj,nort2697,North Azerbaijani,jipa_Mokari2017
+bardi,Bardi,bcj,bard1255,Bardi,jipa_Bowern2012
+basaa,Basaá,bas,basa1284,Basa (Cameroon),jipa_Makasso2015
+basquewesterlownavarresedialect,Basque (Wester Low Navarrese dialect),eus,west1508,Western Low Navarrese,jipa_Trask1978
+bearnaisgascon,Béarnais (Gascon),oci,occi1239,Occitan,jipa_Mooney2014
+belgianlimburgdialectofhamont,Belgian Limburg dialect of Hamont,lim,limb1263,Limburgan,jipa_Verhoeven2007
+belgianstandarddutch,Belgian Standard Dutch,nld,,,jipa_Verhoeven2005
+bemba,Bemba,bem,bemb1257,Bemba (Zambia),jipa_Hamann2015
+bengalibangladeshistandard,Bengali (Bangladeshi Standard),ben,beng1280,Bengali,jipa_Khan2010
+brazilianportuguese,Brazilian Portuguese,por,braz1246,Brazilian Portuguese,jipa_Barbosa2004
+bretonoftheisleofgroix,Breton of the Isle of Groix,bre,bret1244,Breton,jipa_Hewitt1978
+bretontregerdialect,Breton (Treger dialect),bre,treg1244,Tregorrois,jipa_Ternes1975
+britishenglishreceivedpronunciation,British English: Received Pronunciation,eng,stan1293,English,jipa_Roach2004
+bruneimalay,Brunei Malay,kxd,brun1243,Brunei Malay,jipa_Deterding2016
+bukharantajik,Bukharan Tajik,tgk,taji1245,Tajik,jipa_Ido2014
+bulgarian,Bulgarian,bul,bulg1262,Bulgarian,jipa_Ternes1990
+burmese,Burmese,mya,nucl1310,Burmese,jipa_Watkins2001
+castilianspanish,Castilian Spanish,spa,cast1244,Castilian,jipa_MartnezCeldrn2003
+catalan,Catalan,cat,stan1289,Catalan,jipa_Carbonell1992
+centralarrernte,Central Arrernte,aer,east2379,Eastern Arrernte,jipa_Breen2005
+centralsama,Central Sama,sml,cent2092,Central Sama,jipa_Pallesen2012
+chicahuaxtlatriqui,Chicahuaxtla Triqui,trs,chic1273,Chicahuaxtla Triqui,jipa_Elliott2016
+chikasaw,Chikasaw,cic,chic1270,Chickasaw,jipa_Gordon2001
+chinesehongkongcantonese,Chinese (Hong Kong Cantonese),yue,yuec1235,Yue Chinese,jipa_Zee1991
+chistabinopyreneanaragonese,Chistabino (Pyrenean Aragonese),arg,arag1245,Aragonese,jipa_Mott2007
+cicipu,Cicipu,awc,cici1237,Cicipu,jipa_McGill2014
+cocosmalay,Cocos Malay,coa,coco1260,Cocos Islands Malay,jipa_Soderberg2014Malay
+croatian,Croatian,hrv,croa1245,Croatian Standard,jipa_Landau1995
+cypriotgreek,Cypriot Greek,ell,cypr1249,Cypriot Greek,jipa_Arvaniti1999Cypriot
+czech,Czech,ces,czec1258,Czech,jipa_Dankoviov1997
+czechspokeninbohemia,Czech spoken in Bohemia,ces,cent1953,Central Bohemian,jipa_imkov2012
+czechspokeninmoravia,Czech spoken in Moravia,ces,czec1259,Czecho-Moravian,jipa_imkov2012
+danish,Danish,dan,dani1285,Danish,jipa_Grnnum1998
+dariafghanpersianformal,Dari Afghan Persian Formal,prs,dari1249,Dari,jipa_Baker2016
+dariafghanpersianinformal,Dari Afghan Persian Informal,prs,dari1249,Dari,jipa_Baker2016
+dialectofmaastricht,Dialect of Maastricht,nld,,,jipa_Gussenhoven1999
+dutch,Dutch,nld,dutc1256,Dutch,jipa_Gussenhoven1992
+ega,Ega,ega,egaa1242,Ega,jipa_Connell2002
+ersu,Ersu,ers,ersu1241,Ersu,jipa_Chirkova2015
+europeanportuguese,European Portuguese,por,port1283,Portuguese,jipa_CruzFerreira1995
+french,French,fra,stan1290,French,jipa_Fougeron1993
+friulian,Friulian,fur,friu1240,Friulian,jipa_Miotti2002
+galician,Galician,glg,gali1258,Galician,jipa_Regueira1996
+gayo,Gayo,gay,gayo1244,Gayo,jipa_Eades2006
+gitksan,Gitksan,git,gitx1241,Gitxsan,jipa_Brown2016
+goemai,Goemai,ank,goem1240,Goemai,jipa_Tabain2015
+goizuetabasque,Goizueta Basque,eus,guip1235,Guipuzcoan,jipa_Hualde2010
+greekthracexoraxaneromane,Greek Thrace Xoraxane Romane,rmn,balk1252,Balkan Romani,jipa_Adamou2014
+hakkachinese,Hakka Chinese,hak,hakk1236,Hakka Chinese,jipa_Lee2009
+hanoivietnamese,Hanoi Vietnamese,vie,viet1252,Vietnamese,jipa_Kirby2011
+hausa,Hausa,hau,haus1257,Hausa,jipa_Schuh1993
+hebrew,Hebrew,heb,hebr1245,Modern Hebrew,jipa_Laufer1990
+hindi,Hindi,hin,hind1269,Hindi,jipa_Ohala1994
+hungarian,Hungarian,hun,hung1274,Hungarian,jipa_Szende1994
+ibibio,Ibibio,ibb,ibib1240,Ibibio,jipa_Urua2004
+igbo,Igbo,ibo,nucl1417,Igbo,jipa_Ikekeonwu1991
+ikaigbo,Ika Igbo,ikk,ikaa1238,Ika,jipa_Uguru2015
+indonesian,Indonesian,ind,indo1316,Indonesian,jipa_Soderberg2008
+irish,Irish,gle,iris1253,Irish,jipa_Chasaide1995
+istanbuljudeospanish,Istanbul Judeo-Spanish,lad,ladi1251,Ladino,jipa_Hualde2011
+isthmusjuchitanzapotec,Isthmus (Juchitán) Zapotec,zai,isth1244,Isthmus Zapotec,jipa_Pickett2010
+italian,Italian,ita,ital1282,Italian,jipa_Rogers2004
+itunyosotrique,Itunyoso Trique,trg,lish1246,Lishán Didán,jipa_DiCanio2010
+jamaicancreole,Jamaican Creole,jam,jama1262,Jamaican Creole English,jipa_Harry2006
+japanese,Japanese,jpn,nucl1643,Japanese,jipa_Okada1991
+jicarillaapache,Jicarilla Apache,apj,jica1244,Jicarilla Apache,jipa_Tuttle2002
+kabiye,Kabiye,kbp,kabi1261,Kabiyé,jipa_Padayodi2008
+kalabariijo,Kalabari-Ijo,ijn,kala1381,Kalabari,jipa_Harry2003
+kedayan,Kedayan,kxd,keda1250,Kedayan,jipa_Soderberg2014Kedayan
+keo,Keo,xxk,keoo1238,Kéo,jipa_Baird2002
+kera,Kera,ker,kera1255,Kera,jipa_Pearce2011
+khowar,Khowar,khw,khow1242,Khowar,jipa_Liljegren2016
+korean,Korean,kor,kore1280,Korean,jipa_Lee1993
+kumzari,Kumzari,zum,kumz1235,Kumzari,jipa_Anonby2011
+kunama,Kunama,kun,kuna1268,Kunama,jipa_Ashkaba1999
+liverpoolenglish,Liverpool English,eng,stan1293,English,jipa_Watson2007
+lizu,Lizu,lis,lisu1250,Lisu,jipa_Chirkova2013Lizu
+lowerxumi,Lower Xumi,sxg,shix1238,Shixing,jipa_Chirkova2013LowerXumi
+luanyjangdinka,Luanyjang Dinka,dik,sout2832,Southwestern Dinka,jipa_Remijsen2009
+lusogalutenga,Lusoga Lutenga,xog,soga1242,Soga,jipa_Nabirye2016
+luxembourgish,Luxembourgish,ltz,luxe1241,Moselle Franconian,jipa_Gilles2013
+lyonnaisfrancoprovencal,Lyonnais (Francoprovencal),frp,fran1260,Arpitan,jipa_Kasstan2015
+mahmeri,Mah Meri,mhe,besi1244,Besisi,jipa_Kruspe2009
+makasar,Makasar,mak,maka1311,Makasar,jipa_Tabain2016
+malayalamnamboodiridialect,Malayalam Namboodiri Dialect,mal,mala1464,Malayalam,jipa_Namboodiripad2016
+mambay,Mambay,mcs,mamb1294,Mambai,jipa_Anonby2006
+mapudungun,Mapudungun,arn,mapu1245,Mapudungun,jipa_Sadowsky2013
+mavea,Mavea,mkv,mafe1237,Mafea,jipa_Guerin2019
+mennoniteplaudietschcanadianoldcolony,Mennonite Plaudietsch (Canadian Old Colony),pdt,plau1238,Plautdietsch,jipa_Cox2013
+mono,Mono,mnh,mono1270,Mono (Democratic Republic of Congo),jipa_Olson2004
+monolakenorthernpaiute,Mono Lake Northern Paiute,mnr,mono1275,Mono (USA),jipa_Babel2012
+munji,Munji,mnj,munj1244,Munji,jipa_Williamson2016
+murcianspanish,Murcian Spanish,spa,murc1238,Murcian,jipa_Monroy2015
+nara,Nara,nrb,nara1262,Nara,jipa_Dawd2002
+nen,Nen,nqn,nenn1238,Nen,jipa_Evans2016
+nepali,Nepali,npi,nepa1254,Nepali,jipa_Khatiwada2009
+newzealandenglish,New Zealand English,eng,newz1240,New Zealand English,jipa_Bauer2007
+niuean,Niuean,niu,niue1239,Niuean,jipa_Brown2017
+nivacleschichaamlhavos,Nivacle Schichaam Lhavos,cag,niva1238,Nivaclé,jipa_Gutirrez2016
+northgerman,North German,deu,stan1295,German,jipa_Kohler1990
+northwestsahaptin,Northwest Sahaptin,yak,yaki1237,Northwest Sahaptin,jipa_Hargus2014
+nuosoyi,Nuoso Yi,iii,sich1238,Sichuan Yi,jipa_Edmondson2016
+nuuchahnulth,Nuuchahnulth,nuk,nuuc1236,Nuu-chah-nulth,jipa_Carlson2001
+palula,Palula,phl,phal1254,Palula,jipa_Liljegren2009
+persianfarsi,Persian (Farsi),prs,west2369,Western Farsi,jipa_Majidi1991
+pitjantjatjara,Pitjantjatjara,pjt,pitj1243,Pitjantjatjara,jipa_Tabain2014
+polish,Polish,pol,poli1260,Polish,jipa_Jassem2003
+russian,Russian,rus,russ1263,Russian,jipa_Yanushevskaya2015
+salasacaquichua,Salasaca Quichua,qxl,sala1272,Tungurahua Highland Quichua,jipa_Masaquiza2008
+sandawe,Sandawe,sad,sand1273,Sandawe,jipa_Eaton2006
+seri,Seri,sei,seri1257,Seri,jipa_Marlett2005
+setswanasouthafrica,Setswana South Africa,tsn,tswa1253,Tswana,jipa_Bennett2016
+shanghaichinese,Shanghai Chinese,wuu,wuch1236,Wu Chinese,jipa_Chen2015
+shilluk,Shilluk,shk,shil1265,Shilluk,jipa_Remijsen2011
+shipibo,Shipibo,shp,ship1254,Shipibo-Conibo,jipa_Valenzuela2001
+shiwilujebero,Shiwilu (Jebero),jeb,jebe1250,Jebero,jipa_Valenzuela2013
+sindhi,Sindhi,snd,sind1272,Sindhi,jipa_Nihalani1995
+slovak,Slovak,slk,slov1269,Slovak,jipa_Hanulkov2010
+slovene,Slovene,slv,slov1268,Slovenian,jipa_utari1995
+southeasternpashayi,Southeastern Pashayi,psi,sout2672,Southeast Pashayi,jipa_Lamuwal2013
+spokane,Spokane,spo,spok1245,Spokane,jipa_Carlson2000
+standardaustriangerman,Standard Austrian German,bar,bava1246,Bavarian,jipa_Moosmller2015
+standardchinesebeijing,Standard Chinese (Beijing),cmn,mand1415,Mandarin Chinese,jipa_Lee2003
+standardestonian,Standard Estonian,ekk,esto1258,Estonian,jipa_Asu2009
+standardgeorgian,Standard Georgian,kat,nucl1302,Georgian,jipa_Shosted2006
+standardmalaybrunei,Standard Malay (Brunei),zsm,stan1306,Standard Malay,jipa_Clynes2011
+standardmoderngreek,Standard Modern Greek,ell,mode1248,Modern Greek,jipa_Arvaniti1999Greek
+standardyiddish,Standard Yiddish,ydd,east2295,Eastern Yiddish,jipa_Kleine2003
+sumisema,Sumi (Sema),nsm,sumi1235,Sumi Naga,jipa_Teo2012
+swedish,Swedish,swe,swed1254,Swedish,jipa_Engstrand1990
+taba,Taba,mky,east2440,East Makian,jipa_Bowden1996
+tamambo,Tamambo,mla,malo1243,Tamambo,jipa_Riehl2005
+tamil,Tamil,tam,tami1289,Tamil,jipa_Keane2004
+tashlhiytberber,Tashlhiyt Berber,shi,tach1250,Tachelhit,jipa_Ridouane2014
+tausugsuluk,Tausug (Suluk),tsg,taus1251,Tausug,jipa_Soderberg2012
+telugu,Telugu,tep,tepe1278,Tepecano,jipa_Bhaskararao2016
+temne,Temne,tem,timn1235,Timne,jipa_Kanu2010
+tenaquichua,Tena Quichua,quw,tena1240,Tena Lowland Quichua,jipa_ORourke2013
+tera,Tera,ttr,tera1251,Tera,jipa_Tench2007
+thai,Thai,tha,thai1261,Thai,jipa_Tingsabadh1993
+thedutchdialectofhasselt,The Dutch dialect of Hasselt,nld,,,jipa_Peters2006
+thedutchdialectofweert,The Dutch dialect of Weert,nld,,,jipa_Heijmans1998
+theflemishbrabantdialectoforsmaalgussenhoven,The Flemish-Brabant dialect of Orsmaal-Gussenhoven,nld,brab1243,Brabants,jipa_Peters2010
+tilquiapanzapotec,Tilquiapan Zapotec,zts,tilq1235,Tilquiapan Zapotec,jipa_Merrill2008
+tukangbesi,Tukang Besi,khc,tuka1248,Tukang Besi North,jipa_Donohue1994
+turkish,Turkish,tur,nucl1301,Turkish,jipa_Zimmer1992
+tynesideenglish,Tyneside English,eng,nort3300,Northumberland English,jipa_Watt2003
+ukrainian,Ukrainian,ukr,ukra1253,Ukrainian,jipa_PompinoMarschall2016
+uppersaxonchemnitzdialect,Upper Saxon (Chemnitz dialect,sxu,uppe1400,Central East Middle German,jipa_Khan2013
+uppersorbian,Upper Sorbian,hsb,uppe1395,Upper Sorbian,jipa_Howson2017
+upperxumi,Upper Xumi,sxg,shix1238,Shixing,jipa_Chirkova2013UpperXumi
+yine,Yine,pib,yine1238,Yine,jipa_Sebastin2008
+zurichgerman,Zurich German,gsw,swis1247,Central Alemannic,jipa_Fleischer2006

@@ -1,0 +1,92 @@
+﻿# Reference:
+10.1017/S0025100300004990
+
+# Language:
+Hindi
+
+#ISO Code:
+hin
+
+# Online Bible:
+Gospel of Mark
+http://paralleltext.info/data/hin-x-bible/41/
+
+# Consonant Inventory:
+p, b, pʰ, bʱ, t̪, d̪, t̪ʰ, d̪ʱ, ʈ, ɖ, ʈʰ, ɖʱ, k, g, kʰ, gʱ, tʃ, dʒ, tʃʰ, dʒʱ, m, n, ŋ, ɾ(ɾ, r), ɽ, ɽʱ, f, 
+s, z, ʃ, h, ʋ(ʋ, v, w), j, l, p:, bː, pʰː, t̪ː, t̪ʰː, d̪ː, dʱː, tʃː, ʈː, ɖː, ʈʰː, ɖːʱ, kː, gː, kʰː, gʱː, dʒː, 
+tʃʰː, dʒʱː, mː, nː, ŋː, r, fː, sː, zː, ʃː, ʋː, jː, lː
+
+# Vowel Inventory:
+i, ɪ, e, ɛ, æ, ə, ɑ, ɔ, o, ʊ, u, ĩ, ɪ̃, ẽ, ɛ̃, ɑ̃, ɔ̃, ə̃, õ, ʊ̃, ũ
+
+# Phoneme inventory size:
+85
+
+# Length of NWS audio file:
+not available
+
+# Audio:
+NA
+
+# Minimal pairs:
+/p~b~pʰ~bʱ~m/ /t̪~d̪~t̪ʰ/ /s~h/ /ɾ~l/ /tʃ~dʒ~tʃʰ~ʃ/ /k~g~kʰ/ /ʈ~ɖ~ʈʰ~ɖʱ/ /ɽ~ɽʱ/
+/i~ɪ~e~ɛ/ 
+
+# Minimal pair examples:
+/pɑl~bɑl~pʰɑl~bʱɑl~mɑl/ /t̪ɑl~d̪ɑl~t̪ʰɑl/ /sɑl~hɑl/ /ɾɑl~lɑl/ /tʃɑl~dʒɑl~tʃʰɑl~ʃɑl/ /kɑl~gɑl~kʰɑl/ 
+/ʈɑl~ɖɑl~ʈʰɑl~ɖʱɑl/ /bəɽɑ~bəɽʱɑ/
+/mil~mɪl~mel~mɛl/ 
+
+# Other symbols:
+/./
+
+
+# Transcript:
+ʊt̪ːəɾi həʋɑ ɔɾ suɾədʒ ɪs bɑt̪ pəɾ dʒʱəgəɽ ɾəhe t̪ʰe ki həm d̪onõ, mẽ zjɑd̪ɑ
+bəlʋɑn kɔn hɛ. ɪt̪ne mẽ gəɾəm tʃogɑ pɛhne ek mʊsɑfɪɾ ʊd̪ʱəɾ ɑ nɪklɑ. həʋɑ
+ɔɾ suɾədʒ d̪onõ ɪs bɑt̪ pəɾ ɾɑzi ho gəje ki d̪onõ mẽ se dʒo pɛhle mʊsɑfɪɾ kɑ
+tʃogɑ ʊt̪əɾʋɑ degɑ ʋəhi zjɑd̪ɑ bəlʋɑn səmdʒʱɑ dʒɑjegɑ. ɪs pəɾ ʊt̪ːəɾi həʋɑ
+əpnɑ puɾɑ zoɾ ləgɑkəɾ tʃəlne ləgi lekɪn ʋo dʒɛse dʒɛse dʒɛse əpnɑ zoɾ bəɽhɑt̪i gəji
+ʋɛse ʋɛse mʊsɑfɪɾ əpne bəd̪ən pəɾ tʃoge ko ɔɾ bʱi zjɑd̪ɑ kəs kəɾ ləpeʈt̪ɑ
+gəjɑ. ənt̪ mẽ həʋɑ ne əpni koʃɪʃ bənd̪ kəɾ d̪i. pʰɪɾ suɾədʒ t̪ezi ke sɑt̪ʰ nɪklɑ
+ɔɾ mʊsɑfɪɾ ne t̪ʊɾənt̪ əpnɑ tʃogɑ ʊt̪ɑɾ d̪ɪjɑ. ɪs lɪje həʋɑ ko mɑnːɑ pəɽɑ ki
+ʊn d̪onõ mẽ suɾədʒ hi zjɑd̪ɑ bəlʋɑn hɛ.
+
+# Notes:
+Minimal pair examples from JIPA.
+
+# Errors:
+/d/ not in phoneme inventory but in transcript. Probably author’s typo.
+
+
+# Minimal pairs:
+/p~b~pʰ~bʱ~m/ /t̪~d̪~t̪ʰ/ /s~h/ /ɾ~l/ /tʃ~dʒ~tʃʰ~ʃ/ /k~g~kʰ/ /ʈ~ɖ~ʈʰ~ɖʱ/ /ɽ~ɽʱ/
+/i~ɪ~e~ɛ/ 
+
+# Minimal pair examples:
+/pɑl~bɑl~pʰɑl~bʱɑl~mɑl/ /t̪ɑl~d̪ɑl~t̪ʰɑl/ /sɑl~hɑl/ /ɾɑl~lɑl/ /tʃɑl~dʒɑl~tʃʰɑl~ʃɑl/ /kɑl~gɑl~kʰɑl/ 
+/ʈɑl~ɖɑl~ʈʰɑl~ɖʱɑl/ /bəɽɑ~bəɽʱɑ/
+/mil~mɪl~mel~mɛl/ 
+
+# Minimal pairs differing by a single phonetic feature:
+/p~b/ /p~pʰ/ /p~t̪/ /p~ʈ/ /p~k/ /p~pː/ /b~bʱ/ /b~d̪/ /b~ɖ/ /b~g/ /b~m/ /b~bː/ /pʰ~bʱ/ /pʰ~t̪ʰ/ 
+/pʰ~ʈʰ/ /pʰ~kʰ/ /bʱ~d̪ʱ/ /bʱ~ɖʱ/ /bʱ~gʱ/ /t̪~d̪/ /t̪~t̪ʰ/ /t̪~ʈ/ /t̪~k/ /t̪~t̪ː/ /d̪~d̪ʰ/ /d̪~ɖ/ /d̪~g/ /d̪~d̪ː/ 
+/t̪ʰ~d̪ʰ/ /t̪ʰ~ʈʰ/ /t̪ʰ~kʰ/ /t̪ʰ~t̪ʰː/ /d̪ʱ~ɖʱ/ /d̪ʱ~gʱ/ /d̪ʱ~d̪ʱː/ /ʈ~ɖ/ /ʈ~ʈʰ/ /ʈ~k/ /ʈ~ʈː/ /ɖ~ɖʱ/ /ɖ~g/ /ɖ~ɽ/ 
+/ɖ~ɖː/ /ʈʰ~ɖʱ/ /ʈʰ~kʰ/ /ʈʰ~ʈʰː/ /ɖʱ~gʱ/ /ɖʱ~ɽʱ/ /ɖʱ~ɖʰː/
+/k~g/ /k~kʰ/ /k~kː/ /g~gʱ/ /g~gː/ /g~ŋ/ /kʰ~gʱ/ /kʰ~kʰː/ /gʱ~gʱː/ /tʃ~dʒ/ /tʃ~tʃʰ/ /tʃ~tʃː/ 
+/tʃ~ʃ/ /dʒ~dʒʱ/ /dʒ~dʒː/ /tʃʰ~dʒʱ/ /tʃʰ~tʃʰ/ /dʒʱ~dʒʱ/ /m~n/ /m~ŋ/ /m~mː/ /n~ŋ/ /n~ɾ/ /n~z/ 
+/n~nː/ /ŋ~ŋː/ /ɾ~ɽ/ /ɾ~z/ /ɾ~r/ /ɽ~ɽʱ/ /f~s/ /f~ʃ/ /f~h/ /f~fː/ /s~z/ /s~ʃ/ /s~h/ /s~sː/ 
+/z~zː/ /ʃ~h/ /ʃ~ʃː/ /ʋ~j/ /ʋ~ʋː/ /j~jː/ /l~lː/ /pː~bː/ /pː~pʰː/ /bː~d̪ː/ /bː~ɖː/ /bː~gː/ /pʰː~t̪ʰː/ 
+/pʰː~ʈʰ/ /pʰː~kʰː/ t̪ː~t̪ʰː/ /t̪ː~d̪ː/ t̪ː~ʈː/ /t̪ː~kː/ /t̪ʰː~d̪ʰː/ /t̪ʰː~ʈʰː/ /t̪ʰː~kʰː/ /d̪ː~d̪ʱː/ /d̪ː~ɖː/ /d̪ː~gː/ /d̪ʱː~ɖʱː/ 
+/d̪ʱ~gʱː/ /tʃː~dʒː/ /tʃː~tʃʰː/ /ʈː~ɖː/ /ʈː~ʈʰː/ /ʈː~kː/ /ɖː~ɖʱː/ /ɖː~gː/ /ʈʰː~ɖʱː/ /ʈʰː~kʰː/ /ɖʱː~gʱː/ /kː~gː/ 
+/kː~kʰː/ /gː~gʱː/ /gː~ŋː/ /kʰː~gʰː/ /dʒː~dʒʱː/ /tʃʰː~dʒʱː/ /mː~nː/ /mː~ŋː/ /nː~ŋː/ /nː~zː/ /nː~lː/ 
+/fː~sː/ /fː~ʃː/ /ʋː~jː/
+/i~ɪ/ /i~e/ /i~ɛ/ /i~ĩ/ /ɪ~e/ /ɪ~ɛ/ /ɪ~ɪ̃/ /e~ɛ/ /e~ẽ/ /e~æ/ /ɛ~æ/ /ɛ~ɛ̃/ /e~ə/ /ɛ~ə/ /ə~ɔ/ 
+/ə~o/ /ə~ə̃/ /ɔ~o/ /ɔ~u/ /ɔ~ɔ̃/ /o~u/ /o~õ/ /ʊ~ʊ̃/ /ʊ~u/ /ĩ~ɪ̃/ /ĩ~ẽ/ /ĩ~ɛ̃/ /ɪ̃~ẽ/ /ɪ̃~ɛ̃/ /ẽ~ɛ̃/ 
+/ẽ~ə̃/ /ɛ̃~ə̃/ /ɔ̃-~õ/ /ɔ̃~ũ/ /õ~ũ/ /ʊ̃~ũ/
+
+
+# Phonologically sensible minimal pairs differing by more than one phonetic feature:
+/p~f/ /p~pʰː/ /pʰ~f/ /b~ʋ/ /m~ʋ/ /f~ʋ/ /ʋ~l/ /pʰː~fː/
+
+/i~u/ /æ~ɑ/ /ɑ~u/ /ɔ~ʊ/ /o~ʊ/

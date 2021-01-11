@@ -1,0 +1,38 @@
+# Reference:
+10.1017/S0025100300006162
+
+# Language:
+Galician
+
+#ISO Code:
+glg
+
+# Consonant Inventory:
+p, b(b, β̞), t, d(d, ð̞), ɟ, k, g(g, ɰ), tʃ,
+m, n(n, ɱ, m, nʲ ɲ, ŋ, n̪), ɲ, ŋ, r, ɾ, f, θ(θ, θ̬), s̺(s, s̬), ʃ, j, w, l(l, lʲ, l̪)
+
+# Vowel Inventory:
+i(i, ĩ), e(e, ẽ), ɛ(ɛ, ɛ̃), a(a, ã), ɔ(ɔ, ɔ̃), o(o, õ, oː), u(u, ũ), ɑ(ɑ, ɑ̃)
+
+# Phoneme inventory size:
+29
+
+# Length of NWS audio file:
+22sec
+
+# Audio:
+22
+
+# Other Symbols:
+/ˈ/
+
+# Transcript:
+o ˈβ̞ɛn̪to ð̞o ˈnɔrte ɛ majlo ˈs̺ol poɾfiˈaβ̞ãŋ s̺oβ̞ɾe kɑl̪ ˈdeles̬ ˈɛɾa o majs̬ ˈfɔɾte | kɑ̃n̪do
+kɑˈð̞ɾow ð̞e paˈs̬aɾ ũm biaˈʃejɾo mˈbɔl̪to nũŋa ˈãmpla ˈkɑpa ‖ kõmbiˈɲɛɾoŋ ẽŋ ke o ke
+ˈan̪tes̬ kõŋs̬eˈɰis̬e faˈθeɾɟe kiˈtala ˈkɑpa ɔ β̞iaˈʃejɾo s̬eˈɾria kõŋs̬ið̞ɛɾað̞oː majs̬ ˈfɔɾte ‖ o
+ˈβ̞ɛn̪to ð̞o ˈnoɾte s̬oˈpɾow kõŋ gɾãɱ ˈfuɾja | ɛ ˈkɑn̪to majs̬ s̬oˈpɾaβ̞a majs̬ s̬e mbolˈβ̞i ɔ
+β̞iaˈʃejɾo na ˈs̬ol kɛn̪ˈtow kõɱ ˈfoɾθa ɛ ĩŋmeð̞jataˈmẽn̪te o β̞iaˈʃejɾo s̬aˈkow a ˈkɑpa ‖ ɛ
+ð̞aˈkela | o ˈβ̞ɛn̪to ð̞o ˈnɔɾte ˈtiβ̞o ke rekoɲeˈθela s̬upɛɾiˈð̞að̞e ð̞o ˈs̬ol ‖
+
+# Notes:
+Homorganic nasals are presented as allophones of the phoneme /n/.

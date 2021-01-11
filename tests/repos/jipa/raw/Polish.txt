@@ -1,0 +1,54 @@
+﻿# Reference:
+10.1017/S0025100303001191
+
+# Language:
+Polish
+
+#ISO Code:
+pol
+
+# Consonant Inventory:
+p, b, t, d, c, ɟ, k, g, f, v, s, z, ʃ, ʒ, ɕ, ʑ, x, ts, dz, tʃ, dʒ, tɕ, dʑ, m, n, ɲ(ɲ, nʲ, j̃), 
+ŋ(ŋ, ü̃, ï̃), l, r, j, j̃, w, w̃
+
+# Vowel Inventory:
+i, ɨ, e, a, o, u
+
+# Phoneme inventory size:
+39
+
+# Length of NWS audio file:
+40sec
+
+# Audio:
+40
+
+# Minimal pairs:
+/p~b/ /t~d/ /d~ɟ/ /k~g/ /f~v/ /s~z/ /ʃ~ʒ/ /ɕ~ʑ/ /c~k/ /ɟ~g/ /s~ʃ~ɕ/ /z~ʒ~ʑ/ /k~x/ /ts~tʃ~tɕ/ 
+/dz~dʒ~dʑ/ /n~ɲ~ŋ/ /ɲ~ɲj/ /l~r/ /j~w/ /j̃~w̃/
+/i~ɨ~u~e~a~o/
+
+# Minimal pair examples:
+/bal~pal/ /tom~dom/ /cew~ɟewda/ /ˈkura~ˈgura/ /fur~vur/ /ˈkosa~ˈkoza/ /ʃal~ʒal/ /ˈɕina~ˈʑima/ 
+/ˈcelɲa~ˈkelner/ /ˈdroɟe~ˈdrogew̃/ /ˈkasa~ˈkaʃa~ˈkaɕa/ /zet~ʒet~ʑet/ /ˈkula~ˈxula/ 
+/ˈkatse~ˈkatʃe~ˈkatʃe/ /ˈridze~ˈbridʒe~ˈidʑe/ /iˈrenka~maˈleɲka~ˈreŋka/ /ˈdaɲa~ˈdaɲja/ 
+/bul~bur/ /ˈmaja~ˈmawa/ /ˈkoj̃sci~kow̃sci/
+/ˈbitɨ~ˈbɨtɨ~ˈbutɨ~ˈbetɨ~ˈbatɨ~ˈbotɨ/
+
+
+
+# Transcript:
+pe vnego razu || puw notsnɨ vjatr iswoɲtse || spʃetʃaliɕe || ktozɲix
+jest ɕilɲeijʃɨ || vwaɕɲe pʃexodʑiw drogow̃ jaciɕ tʃwovjek || oviɲentɨ
+ftɕepwɨ pwaʃtʃ || umu viliɕe vjents || ʒetenzɲix kturɨ pjerʃɨ zmuɕi
+pʃexodzon tsego || abɨzdjow okrɨtɕe || beɲdʑe uvaʒanɨ zaɕilɲej ʃego ||
+puwnotsnɨ vjatr zatʃow odrazu doɲtɕ stsawej ɕiwɨ || aleim motsɲej
+dow || tɨmɕilɲej podruʒnɨ otulawɕe fpwaʃtʃ || vreʃtɕe puwnotsnɨ
+vjatr daw spokuj || ftedɨ swoɲtse zatʃewo pʃɨgʒevaɕ /| afxfile
+puʑɲej podruʒnɨ zdjow pwaʃtʃ || ften sposup /| puw notsnɨ vjatr muɕaw
+pʃɨznatɕ || ʒeswoɲtse jestɕilɲejʃe odɲego
+
+
+# Notes:
+ Minimal pair examples from JIPA paper. 
+ Intonation is marked in the JIPA transcription. The notation used is not available to me.

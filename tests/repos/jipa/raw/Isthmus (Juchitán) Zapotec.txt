@@ -1,0 +1,37 @@
+﻿# Reference:
+10.1017/S0025100310000174
+
+# Language:
+Isthmus (Juchitán) Zapotec
+
+#ISO Code:
+zai
+
+# Consonant Inventory:
+p, b, t, d, k, g, tʃ, dʒ, m, nː, n, ɲ, r, ɾ, s, z, ʃ(ʃ, h), ʒ, w, j, lː, l
+
+# Vowel Inventory:
+i(i, í, ì, ǐ), e(e, é, è, ě), a(a, á, à, ǎ), o(o, ó, ò, ǒ), u(u, ú, ù, ǔ),
+ḭ(ḭ, ḭ́, ḭ̀, ḭ̌), ḛ(ḛ, ḛ́, ḛ̀, ḛ̌), a̰(a̰, á̰, à̰, ǎ̰), o̰(o̰, ó̰, ò̰, ǒ̰), ṵ(ṵ, ṵ́, ṵ̀, ṵ̌),
+aʔ(aʔ, áʔ, àʔ) iʔ(iʔ, ìʔ, íʔ) 
+
+# Phoneme inventory size:
+34
+
+# Length of NWS audio file:
+43sec
+
+# Audio:
+43
+
+# Transcript:
+tì dʒì kàkà̰ jú bì jó̰ʃò ně gùbìdʒà ‖ tù tòbì dè là̰kà ʃmá nàdìpáʔ ‖ ɾàkě nṵ̌ kǎ
+bèdàndǎ tì ngḭ̀u ɾěndǎ tì làɾì ngòlà ‖ pàɾà ùnìʔ stḭ̀dʒà kàʔ tù lá̰
+gàʃáʔ làɾì làdì ngḭ̀u kě ‖ bìzùˈlù ndàʔ bì jó̰ʃò bìndùbǐ ně stàlːě stípà ‖ pèɾù làgǎ
+ʃmá nàdìpá lá kùndùbǐ lá | ʃmá ɾùsǐ bìɾěndǎ dʒìtʃì ngḭ̀u kě ʃàbà ‖ nì bíʔnì tì bì
+lá | bià̰nǎ dʒǐ ‖ ǒɾàkě bìzùˈlù gùbìdʒà bìzà̰nì ně ìˈɾǎ ʃtúʃù ‖ ǒɾàkěkǎ gùlḛ̌ ngḭ̀u
+kè ʃábà | ně zàkǎ bḭ̀jàʔ | bì ʃmá nàdìpá gùbìdʒà kě là̰ ‖
+
+# Notes:
+There are three phonemic tones: High < ́>; Low < ̀>; and Rising  <̌>.  Although the tones are
+phonemic, here I have expressed the vowels with the different tone diacritics as allophones.

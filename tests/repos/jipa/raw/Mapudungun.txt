@@ -1,0 +1,90 @@
+﻿# Reference:
+10.1017/S0025100312000369
+
+# Language:
+Mapudungun
+
+#ISO Code:
+arn
+
+# Online Bible:
+Gospel of Mark
+http://paralleltext.info/data/arn-x-bible/41/001/
+
+# Consonant Inventory:
+p(p, pʰ, pʷ), t̪(t̪, t̪ʰ, tʷ), t, k(k, c, kʰ, cʰ, kʷ), tʃ, ʈʂ(ʈʂ, t̺s̺, t̺ʰ, ʈʰ), 
+m(m, mː), n̪, n(n, nː, n̥ː), ɲ(ɲ, ɲː), ŋ(ŋ, ɲ), f(f, fʷ, fː), θ, s, ʃ, ʐ(ʐ, ɻ, ʂ, ɭ), ɣ(ɣ, ʝ), j(j, ʝ), 
+̪l(l̪, l̪̥, l̪:), l(l, l̥, l:), ʎ, w
+
+# Vowel Inventory:
+ɪ(ɪ, ɪ̝, iː, i), ë(ë, ë̝, ë̝ʰ, ë̝ʷ, e, e̝, ëː), ɐ̝(ɐ̝, ɜ, ɜ̃, ʌ̈), ö(ö, ö̝), 
+ʊ(ʊ, ʊ̝, ʊ̃, ʊː, ʉ, ʊ̟, iʷ, ʊ̝ː,), ɘ(ɘ, ɨ̞, ɚ, ɨ̞̥)
+
+
+# Phoneme inventory size:
+28
+
+# Length of NWS audio file:
+57sec
+
+# Audio:
+57
+
+# Transcript - narrow:
+pɪˈkʰʊ kʰɘˈʐɘf ɘë̝ˈŋʊ̃ ɜ̃n̪ˈt̪ë̝ʰ ǁ pɪˈkʰʊ̝ kʰɚˈʐɚf ˌɘë̝ŋʊ̞̃ ən̪ˈt̪ë̝ː | n̪öˈtʰʊ̝kʰʌ̈w ˌmɨ̞ɪcʰe̝ˈlʊː
+| tʰʉˈtʃɪ ɲɪ̝ ˈθë̝j në̝wënˈǃŋe̝n | ɻʊ̟ˈpɜɻö̝ˌmɪ ˈcʰɪɲɪ wë̝n̥ːˈʈʂʊː mɜˌkʉɲtɨ̞lëˈlʊ̟ ǁ fëj
+ˈmë̝w fʷë̝jˈpʰë̝ʷwë̝ˈŋʊ̝ ǁ tʰɨ̞ˈtʃiː ne̝nˌtʰiʷmɜfe̝ˈle̝ ɲɪ mɜˈkʊɲː ˈfë̝jtʰiˌtʃë̝ wë̝nˈʈʂʊ̝ |
+fëj | ˈθöj neˌwë̝nŋë̝ɻˈcɪj pë̝ŋej ǁ fëj ˈmëw | fɨʈʰɐ̝ nëˈwë̝ntʰɨ̞ʈʂɪ̝ˈpɜj | tɪ pɪ̝ˈkʊ̝ ɣɨ̝ˈʐɘf
+ǁ wë̝ˈlʊ̞ | ˈtʰɪe̝tʃɪ wënˈʈʂʊ̞ fëːj | ˈθöj ˌë̝mpʷɨ̞ʎʊ̝ˈwɪ ɲɪ ˈməkʷʉɲ ˈmë̝w ǁ fëmˈlʉ tʰɪ
+wë̝nˈʈʂʊ̝ː fëːe̝ | tʰɪ̝ piˈkʊ kɨ̞ˈʐɚfː ʐʊ̟ˈpɐj ǁ fëj ˈmëw tʰɪ ën̪ˈt̪ë̝ | wɨ̝ˈlɘfʷɨ̞j ˌɲɪ ɐˌləf
+ʈʰe̝ˈpɐ̝n ǁ ɐˈʐëlɘ tʰɪ wënˈʈʂʊ | ne̝nˈtʷë̝j ɲɪ mɜˈkʊ̝ɲ ǁ fëj ˈmëw | tʰɪ̝ pɪ̝ˈkʊ̝ kɨ̞̥ˈɻɚfː
+ǁ kɪˈmːɪ̞ | ən̪ˈt̪ʰë ɲɪ ˈθɘj ne̝wë̝nˈǃŋen
+
+# Transcript - broad:
+pɪˈkʊ kɘˈʐɘfëˈŋʊ ɐ̝n̪ˈt̪ɘ || pɪˈkʊ kɘˈʐɘfëˈŋʊ ɐ̝n̪ˈt̪ɘ | n̪öˈtʊkɐ̝wˈmëkëˈlʊ | tʊˈtʃɪɲɪ ˈθöj
+nëwënˈŋën | ʐʊˈpɐ̝ʐʊˈmɪ ˈkɪɲë wën ˈʈʂʊ mɐ̝ˈkʊɲtʊlëˈlʊ fëj ˈmëw fëjˈpɪwɪˈŋʊ ‖
+tʊˈtʃɪ nënˈtʊɲmɐ̝fɪˈlë ɲɪ mɐ̝ˈkʊɲ ˈfëjtɪtʃɪ wënˈʈʂʊ | fëj ˈθöj nëwënŋëʐˈkëj pɪˈŋëj
+|| fëj ˈmëw | fɘˈʈʂɐ̝ nëˈwëntʊ ʈʂɪˈpɐ̝j | tɪ pɪˈkʊ kɘˈʐɘf || wëlʊ | ˈtɪjëtʃɪ wënˈʈʂʊ
+fëj | ˈθöj ɘmpɘʎʊˈwɪ ɲɪ mɐ̝ˈkʊɲ mëw || fëmˈlʊ tɪ wënˈʈʂʊ fëj | tɪ pɪˈkʊ kɘˈʐɘf
+ʐʊˈpɐ̝j || fëj ˈmëw tɪ ɐ̝n̪ˈt̪ɘ | wɘlɘˈfɘj ɲɪ ɐ̝ˌlöfʈʂɪˈpɐ̝n || ɐ̝ʐëˈlʊ tɪ wënˈʈʂʊ | nënˈtʊj
+ɲɪ mɐ̝ˈkʊɲ || fëj ˈmëw | tɪ pɪˈkʊ kɘˈʐɘf || kɪˈmɪ | ɐ̝n̪ˈt̪ɘɲɪ ˈθöj nëwënˈŋën
+
+# Notes:
+The allophones [t̺s̺] [t̺ʰ] are described as apical post-alveolar, and have a dot under 
+them in the original paper, which is unavailable to me.  I have therefore used the apical 
+diacritic instead.
+No mention of nasalization, length, or labialization is made in the discussion.  Based on the broad transcription nasalized
+and lengthened vowels in the narrow transcription and labialized consonants have been allocated as allophones of their non-nasalized
+counterpart or non-lengthened counterparts or non-labialized counterparts.
+Likewise no mention of the vowels [ɚ], [ʌ]̈ [ʉ], [ʊ̟], [ë̝ʷ], [iː], [iʷ], [i], [e], [e̝] and consonant [ʈʰ] is made, 
+but based on the broad transcription they have been allocated as allophones.
+No mention of the retroflex click [ǃ] is made.  It has not been listed in the sounds, because it is not possible
+to determine its status from the paper.
+In the original paper consonant length is indicated by doubling of the letter.
+
+# Orthography consonant phoneme correspondences:
+<p> = /p/, <t> = /t/-/t̪/, <k> = /k/, <ch> = /tʃ/, <tr> = /ʈʂ/, 
+<m> = /m/, <n> = /n/-/n̪/, <ñ> = /ɲ/, <ng> = /ŋ/, <f> = /f/, <d> = /θ/, <s> = /s/-/ʃ/,  
+<r> = /ʐ/, <g> = /ɣ/, <y> = /j/, <l> = /l/-/l̪/, <ll> = /ʎ/, <w> = /w/  
+
+# Orthography vowel phoneme correspondences:
+<i> = /ɪ/, <e> = /ë/, <a> = /ɐ̝/, <o> = /ö/, <u> = /ʊ/, <ü> = /ɘ/
+
+# Minimal pairs differing in a single phonetic feature:
+/p~t̪/ /p~t/ /p~k/ /t̪~t/ /t̪~k/ /t̪~θ/ /t~k/ /t~tʃ/ /t~s/ /tʃ~ʈʂ/ /tʃ~ʃ/ /m~n̪/ /m~n/ /m~ɲ/ 
+/m~ŋ/ /n̪~ɲ/ /n̪~ŋ/ /n~ɲ/ /n~ŋ/ /n~l/ /ŋ~ɣ/ /f~θ/ /f~s/ /f~ʃ/ /θ~s/ /θ~ʃ/ /s~ʃ/ /ʐ~ɣ/ 
+/n̪~l̪/ /j~ʎ/ /j~w/ /l̪~l/ /l̪~ʎ/ /l~ʎ/ 
+
+
+# Phonologically sensible minimal pairs differing in more than a single phonetic feature:
+/p~m/ /p~f/ /p~w/ /t~n/ /k~ŋ/ /k~ɣ/ /ʈʂ~ʐ/ /t̪~n̪/ 
+/ɪ~ë/ /ë~ɐ̝/ /ë~ɘ/ /ɐ̝~ö/ /ɐ̝~ʊ/ /ɐ̝~ɘ/ /ö~ʊ/    
+
+# Orthography notes:
+All orthographies for Mapudungun underspecify for certain sounds. 
+The orthography information comes from https://en.wikipedia.org/wiki/Mapudungun_alphabet. 
+The orthography as used in the bible translation does not seem to adhere to a single system, as per Wikipedia,
+but all graphemes are identifiable based on a combination of the systems. 
+<> represent graphemes, // represent phonemes.
+
+Sadowsky, Scott; Painequeo, Héctor; Salamanca, Gastón; Avelino, HeribertoAuthor InformationView Profile. International Phonetic Association. Journal of the International Phonetic Association43.1 (Apr 2013): 87-96. 

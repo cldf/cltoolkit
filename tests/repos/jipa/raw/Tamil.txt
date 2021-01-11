@@ -1,0 +1,59 @@
+﻿# Reference:
+10.1017/S0025100304001549
+
+# Language:
+Tamil
+
+#ISO Code:
+tam
+
+# Consonant Inventory:
+p(p, b), t̪(t̪, d̪), ʈ(ʈ, ɖ), k(k, g, ɦ, x, ɣ), tʃ(tʃ, dʒ), m, n(n, nː, n̪, ŋ), ɳ, ɲ, s, ɾ(ɾ, r), ʋ, ɻ, j, 
+l(l, lː), ɭ
+
+
+# Vowel Inventory:
+i(i, ʲi), iː, e(e, ẽ), eː, a(a, ʌ̃), aː(aː, ãː), o(o, ʷo), oː, u(u, ʉ, ɨ, ʉ̃), uː, aɪ(aɪ, ɛ, a), aʊ
+
+# Phoneme inventory size:
+28
+
+# Length of NWS audio file:
+54sec
+
+# Audio:
+54
+
+# Minimal pairs:
+
+
+
+# Minimal pair examples:
+
+
+# Other symbols:
+
+
+
+# Transcript:
+ʷoɾʉ naːɭʉ kaːt̪ʉ̃ suːɾɨjənʉ̃ ɾombə saɳɖə poːʈɨkɨʈʉ jaːɾʉ baləsaːlinːʉ pan̪d̪ajʌ̃
+poːʈaːŋgə || kaːt̪ʉ solːɨtʃit̪aːn̪d̪aːn baləsaːlinːʉ | suːɾɨjẽ solːɨtʃi t̪aːn̪d̪aːn baləsaːlinːʉ ||
+apə an̪d̪ə ʋaɻɨjaː oɾʉ ʋaɻɨpoːkən kambəɭɨje poːt̪ɨkɨʈʉ poːnãː || kaːt̪ʉ̃ suːɾɨjənʉ̃
+jaːɾʉ ʋaɻɨpoːkəne kambəɭɨje eɖʉkə ʋaɪkɨɾaːŋgəɭoː aʋəŋgəd̪aːn baləsaːlinːʉ pan̪d̪ajʌ̃
+poːʈaːŋgə || mod̪əlːe kaːt̪ʉ ʋeːgəmaː aɖɨtʃɨðʉ | ɾombə baləmaː aɖɨkaːɖɨkə
+ʋaɻɨpoːkən kambəɭɨje iɻʉt̪ʉ poːt̪ɨkɨʈãː || kaɖesile kaːt̪ʉ kambəɭɨjeːɖʉkə
+muɖɨjaːmə kaɪʋɨʈʉɾʉtʃɨ | aɖʉt̪ʉ suːɾɨjẽ ukɨɾəmaː kaːɲdʒɨðʉ | ʋejɨl ad̪ɨɣəm aːgaːgə
+ʋaɻɨpoːkən ʋepəm t̪aːŋgə muɖɨjaːmə kambəɭɨje eɖʉt̪ʉ poːʈãː ‖ ʲiðe paːt̪ʉʈʉ kaːt̪ʉ
+suːɾɨjən̪d̪aːn baləsaːli aðʉ pan̪d̪aɪt̪ɪle dʒaɪtʃʉɾʉtʃʉnːʉ ot̪ʉkɨɖʉtʃɨ ‖
+
+
+# Notes:
+The phonemic status of the palatal nasal is marginal.
+There was no discussion of schwa [ə] in the paper. It is unclear where to place it.
+[ð] appears in transcript, not clear from paper how it should be treated.
+[ɪ] appears in transcript, not discussed in paper. 
+
+# Errors:
+/ə/ There was no discussion of schwa [ə] in the paper. It is unclear where to place it.
+/ð/ appears in transcript, not clear from paper how it should be treated.
+/ɪ/ appears in transcript, not discussed in paper.

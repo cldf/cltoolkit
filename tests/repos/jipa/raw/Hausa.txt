@@ -1,0 +1,52 @@
+# Reference:
+10.1017/S0025100300004886
+
+# Language:
+Hausa
+
+#ISO Code:
+hau
+
+# Consonant Inventory:
+b, t, d, tʃ, dʒ, kʲ, gʲ, k, g, kʷ, gʷ, ʔ,
+ ɓ, ts’(ts’, s’), ɗ, tʃ’, ʔʲ, kʲ’, k’, kʷ’, m, n(n, ɲ, ŋ),
+ ɸ(ɸ, p, f), s, z, ʃ, h, r, ɽ, w, j, l
+
+# Vowel Inventory:
+i(i, ɪ, ɨ, í, ì, î, ɪ́, ɪ̀, ɪ̂, ɨ́, ɨ̀, ɨ̂), e(e, é, è, ê),
+a(a, ə, á, à, â, ə́, ə̀, ə̂), o(o, ó, ò, ô), 
+u(u, ʊ, ʉ, ú, ù, û, ʊ́, ʊ̀, ʊ̂, ʉ́, ʉ̀, ʉ̂), 
+iː(iː, íː, ìː, îː), eː(eː, éː, èː, êː), aː(aː, áː, àː, âː), 
+oː(oː, óː, òː, ôː), uː(uː, úː, ùː, ûː)
+
+# Phoneme inventory size:
+42
+
+# Length of NWS audio file:
+1.03min.sec
+
+# Audio:
+63
+
+# Transcript:
+ʔɪskàː də̀ raːnaː
+wətə raːnaː, də̀ ʔɪskə̀r hʊ̀ntuːrùː tə ʔərèːwəʔ | də̀ raːnaː sʊkə̀ ji gə̀rdəmàː ʔə̀ 
+kə̂n koːwàːtʃeːtʃèː də̀gə̀ tʃɨkɪnsù tə ɸi k’ərɸiː. tò sʊnàː tʃɨkɪn wənnə̀ŋ 
+gə̀rdəmàː | səj gàː wənɨ mətə̀fɪjiː, jaː zoː sə̀ɲɛʔ də̀ rìːgər səɲiː. tò ʃiːkèːnən,
+səj ʔɪskə̀r hʊ̀ntuːrùː də̀ raːnaː sʊkə̀ ji jə̀rdʒeːeːnìjaː, ʔə̀ kə̀n jə̂w, zaːʔə̀ ji
+kʷ’ʊreʔ, dɔn ʔə̀ gə koː wàː zə́j ʔijə̀ sâː mətə̀fìjìn jə̀ tuːɓèː rìːgərsə̀ʔ ʔə̀ kə̂n
+tiːlə̀s. tò ʃiːkèːnən, səj ʔɪskə̀r hʊ̀ntuːrùː tə buːsoː səɲɪntə̀ʔ, də̀ k’ərɸiː | ʔijə̀
+jɪntə̀ | ə̀mmaː ìnâː. səj tə kaːsə̀ sâː ʃiː wənnə̀m mətə̀fɪjiː | jə̀ kʷəɓèː rìːgərsə̀ʔ,
+dɔn kʷʊ̀wa, jaː dəndə̀nneː rìːgə̂r gə́mgə́m ʔè jɨ̀kɪnsə̀ʔ. tò də̀gə̀ k’ə̀rʃeː dəj,
+səj ʔɪskàː tə səllə̀maː, də̀gə̀ nən nèː kʷʊma, ʔɪtə raːnaː | tə ʃɨgə naːtə̀ ʔajkìŋ.
+ʔaj kòː raːnaː | səj gàː ʃiː wənnə̀m mʊ̀tʊ̂m | mətə̀fɪjiː | jaː kʷəɓèː rìːgərsàː, bâː
+gʲɪrmaː də́ ʔərzɨ̀kiː. gənɨŋ həkə̀ kʷʊ̀wa | səj ʔɪskàː dóːlè tə ʔəmìntʃeː ʔə̀ kə̂n
+tʃêːwaː, ləlleː| raːnaː taː fiː tə̀ k’ərɸiː.
+
+# Notes:
+Conventions for tones are: high tone unmarked; grave accent < ̀> for low tone; 
+a circumflex accent < ̂> for falling tone; the acute accent < ́> is used to mark extra-high tone.
+
+# Errors:
+/ɛ/ not discussed in paper, but present in transcription.
+/ɔ/ not discussed in paper, but present in transcription.

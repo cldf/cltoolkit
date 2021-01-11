@@ -1,0 +1,51 @@
+﻿# Reference:
+10.1017/S0025100300004266
+
+# Language:
+Arabic
+
+#ISO Code:
+arb
+
+# Consonant Inventory:
+b(b, bː), t(t, tː), d, k, q, ʔ, m, n(n, nː), r(r, rː), f(f, fː), θ(θ, θː), ð, s(s, sː), z, 
+ʃ(ʃ, ʃː), x, ɣ, ħ, ʕ, h, j(j, jː), w(w, wː), l(l, lː), tˤ, dˤ, sˤ, ðˤ, lˤ, dʒ
+
+# Vowel Inventory:
+i(i, ɨ, ɤ), a(a, ɑ, ɐ), aː, u(u, ʊ, ɤ), ij(ij, ɨ, ɤ), au, aw, uw(uw, ʊ, ɤ)
+
+# Phoneme inventory size:
+37
+
+# Length of NWS audio file:
+43sec
+
+# Audio:
+43
+
+# Minimal pairs:
+/b~m/ /f~θ/ /t~d/ /x~ɣ/ /s~z/ /tˤ~dˤ/ /k~q/ /ʔ~ʕ/ /ʃ~dʒ/
+
+# Minimal pair examples:
+/balːa~malːa/ /dafara~daθara/ /tijn~dijn/ /xilaːf~ɣilaːf/ /saːra~zaːra/ /xitˤaːb~xidˤaːb/ 
+/kalb~qalb/ /saʔala~saʕala/ /ʃadːa~dʒadːa/
+
+
+# Transcript:
+kaːnat rijħu ʃːamaːli tatadʒaːdalu wa ʃːamsa fij ʔajːin minumaː kaːnat
+ʔawaː min alʔuxraː, wa ʔið bi-musaːfirin jatˤluʕu mutalafːiʕan bi-
+ʕabːʔatin samijka. fatafaqataː ʕalaː ʕtibaːri sːaːbiqi fij ʔidʒbaːri
+lmusaːfiri ʕalaː xalʕi xalʕi ʕabaːʔatihi lʔaqwaː. ʕasˤafati rijħu ʃːamaːli bi-
+ʔaqsˤaː ma statˤaːʔat min quwːa. wa laːkin kulːumaː zdaːda lʕasˤf
+izdaːda lmusaːfiru tadaθːuran biʕabaːʔatih, ʔilaː ʔan ʔusqitˤa fij jadi rːijħ
+fa taxalːat ʕan muħaːwalatihaː. baʕdaʔiðin satˤaʔati ʃːamsu bi-difʔihaː, fa
+maːkaːna min almusaːfiri ʔilːaː ʔan xalaʕa ʔabaːʔatahu ʕalaː tːauw. wa
+haːkaða idˤtˤurat rijħu ʃːamaːli ʔilaː liʕtiraːfi biʔanːa ʃːamsa kaːnat hija lʔaqwaː
+
+
+# Notes:
+The JIPA article does not specify whether geminate consonants are phonemic or not. Based
+on the transcription it appears they are, and so the ones appearing in the transcription 
+have been treated as separate phonemes here.
+In the JIPA article the geminate articles are written with a doubling of the conssonant
+grapheme. Here I have use the length symbol, for consistency across languages. 

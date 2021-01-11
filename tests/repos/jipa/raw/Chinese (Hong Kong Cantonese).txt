@@ -1,0 +1,43 @@
+﻿# Reference:
+10.1017/S0025100300006058
+
+# Language:
+Chinese (Hong Kong Cantonese)
+
+#ISO Code:
+yue
+
+# Consonant Inventory:
+p, pʰ, t, tʰ, k, kʰ, kʷ, kʷʰ, m, n, ŋ, r, f, s, h, w, j, l, ts, tsʰ
+
+# Vowel Inventory:
+i, iː, y, yː, ɪ, ɛ, ɛː, œ, œː, ɵ, ɵː, a, aː, ɐ, ɔ, ɔː, u, uː, ʊ,
+ai, aːi, ɐi, au, aːu, ɐu, ei, ɵy, ɔi, ɔːi, ui, uːi, iu, iːu, ou
+
+# Toneme Inventory:
+˥, ˧, ˨, ˨˩, ˨˥, ˩˧, ˩, ˩˦, ˦
+
+# Phoneme inventory size:
+63
+
+# Length of NWS audio file:
+25sec
+
+# Audio:
+25
+
+# Transcript:
+jau˧˥ jɐt˥ tsʰi˧ lɛ˥˧ | pɐk˥ fʊŋ˥ tʰʊŋ˨˩ tʰai˧ jœŋ˨˩ hɐi˨˥ tou˧ au˧ kɐn˨˥ pin˥
+kɔ˧ lɛk˥ ti˥ wɔ˧ || kʰɵy˨˧ tei˨ am˥ am˥ tʰɐi˨˥ tou˧jɐu˨˧ kɔ˧ jɐn˨˦ haŋ˨˩
+kʷɔ˧ || li˥ kɔ˧ jɐn˨˦ tsœk˧ tsy˨ kin˨ tai˨ lɐu˥ || kʰɵy˨˧ tei˨ tsɐu˨ wa˨
+lɐk˧ pin˥ kɔ˧ hɔ˨˦ ji˧ tsɪŋ˨˦ tɔ˧ li˥ kɔ˧ jɐn˨˦ tsʰɵy˨˩ tsɔ˨˦ kin˨ lɐu˥ lɛ˥˧
+tsɐu˨ syn˧ pin˥ kɔ˧ lɛ˥ ti˥ lɐk˧ || jy˥ si˨ pɐk˥ fʊŋ˥ tsɐu˨ pɔk˧ mɛŋ˨
+kɐm˨˦ tsʰɵy˥ lɔ˧ wɔ˧ || tim˨˦ tsi˥ kʰɵy˨˧ jyt˨ tsʰɵy˥ tɐk˥ sɐi˥ lei˨ kɔ˨˦ kɔ˧
+jɐn˨˦ tsɐu˨ jyt˨ hɐi˨ la˨˦ sɐt˨ kin˨ lɐu˥ || tsɵy˧ hɐu˨ pɐk˥ fʊŋ˥ mou˨˦ sai˧
+fu˨˩ wɐi˨˩ jɐu˨˧ fɔŋ˧ hei˧ || kɐn˥ tsy˨ tʰai˧ jœŋ˨˩ tsʰɵt˥ lei˨˩ sai˧ tsɔ˨˦ jɐt˥
+tsɐn˨ || kɔ˨˦ kɔ˧ jɐn˨˦ tsɐu˨ tsɪk˥ hak˥ tsʰɵy˨˩ tsɔ˩˦ kin˨ lɐu˥ lɐk˧ || jy˥
+si˨ pɐk˥ fʊŋ˥ wɐi˨˩ jɐu˩˨ jɪŋ˨ sy˥ la˥ ||
+
+
+# Notes:
+6 tones: [˥] [˧] [˨] [˨˩] [˨˥] [˩˧]

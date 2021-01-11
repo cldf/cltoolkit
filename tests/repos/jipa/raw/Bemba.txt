@@ -1,0 +1,54 @@
+﻿# Reference:
+10.1017/S0025100314000371
+
+# Language:
+Bemba
+
+#ISO Code:
+bem
+
+# Consonant Inventory:
+p, t, k, β, f, s, ʃ, tʃ, mp, mb, nt, nd, ŋk, ŋg, mf, 
+ns, nʃ, ntʃ, ndʒ, m, n, ɲ, ŋ, j, w, l 
+
+# Vowel Inventory:
+i(i, í, ì), e(e, é, è), a(a, á, à), o(o, ó, ò), u(u, ú, ù), 
+iː(iː, íː, ìː), eː(eː, é:, è:), aː(aː, á:, à:), oː(oː, óː, òː), uː(uː, ú:, ù:)
+
+# Toneme Inventory:
+◌́, ◌̀, ↓
+
+# Phoneme inventory size:
+36
+
+# Length of NWS audio file:
+54sec
+
+# Audio:
+54
+
+# Other Symbols:
+
+# Minimal pairs:
+/p~t~k~f~s~ʃ~tʃ~β~l/
+/ì~íː/ /è~éː/ /à~áː/ /ò~oː/ /ú~úː/
+
+# Minimal pair examples:
+/pùlá~túːlá~kùːlá~fúː↓lá~súː↓lá~ʃùːlá~tʃúːlá~βúː↓lá~lùːlá/
+/lìlá~líːlà/ /pèlá~péːlà/ /làlá~láːlà/ /βòlá~βòːlá/ /tú↓lá~túː↓lá/
+
+
+# Transcript:
+kàːŋkùːŋgwé nà àkásùβà | βáléːùmàná  pá mùláːndú wà kwíʃíβà ùːlìpó nàmàkà jàkùtʃímfjá ùmúβìjé |
+éljò kwàːìʃílé ùmúlèːndó | ùwà fwéːlé ìkòːtì ljàːmpépò | íljà tìkámá ‖ βáːlìsúmíníʃánjá átì | 
+ùwìːŋgà ùmúːntù ùkú↓fúːlá ìkòːtí nìːnʃì éùlìpó nàmàkà ‖ kàːnʃì kàːŋkùːŋgwé | épákù pùːtà nàmàkà jàkwé jónsè ‖
+nòːmbà tʃìljá àpúːtíʃá | éljò nàò ùmúːntù àkwáːpíʃá ìkòːtì ljàkwé | àwé mpàká kàːŋkùːŋgwé àsúká àléká ‖
+éljò nòːmbà àkásùβà nàkó kàtàːmpà ùkú↓sáníká | nòkúkáβá ìtʃínè tʃínè ‖
+àwé ùmúlèːndó | βwáːŋgù βwáːŋgù á↓fúːlá ìkóːtí kùtʃípùkí ‖
+àwé kàːnʃì kàːŋkùːŋgwé | épákú↓súmíná àtì íjò tʃínè tʃínè | àkásùβà kàlímútʃíːmfjà àmàkà ‖
+
+# Notes:
+In the JIPA article an exclamation mark <!> was used to indicate downstep. 
+Here I have used the IPA symbol in line with other articles.
+Two tones: high <́  > and low < ̀ >
+The broad transcription has been used here.

@@ -1,0 +1,40 @@
+﻿# Reference:
+10.1017/S0025100300005211
+
+# Language:
+Slovene
+
+#ISO Code:
+slv
+
+# Consonant Inventory:
+p, b, t, d, k, g, ts, tʃ, dʒ, m, n(n, ŋ, ɱ, nː),
+ ɾ, f, s, z, ʃ, ʒ, x, ʋ(ʋ, u, w, ʍ), j, l
+
+# Vowel Inventory:
+i(i, iː), e(e, eː), ɛ(ɛ, ɛː), ə(ə, əː),
+ a(a, aː), o(o, oː), ɔ(ɔ, ɔː), u(u, uː)
+ 
+# Phoneme inventory size:
+29
+
+# Length of NWS audio file:
+35sec
+36sec
+
+# Audio:
+35.5
+
+# Transcript:
+ˈseːʋəɾni ˈʋeːtəɾ in ˈsoːntsɛ sta sɛ pɾɛˈpiːɾala | kaˈteːɾi ɔd ˈnjiːju jɛ mɔtʃˈneiʃi |
+kɔ jɛ ˈmiːmɔ pɾiˈʃɛu pɔˈpoːtnik | zaˈʋiːt u ˈtɔːpəu ˈpəɾʋɛmu uˈspeːla sta sɛ
+| da bo ʋɛlˈjau za mɔtʃˈneiʃɛga ˈtiːsti | ki mu bo ˈpəːɾʋɛmu uˈspeːlɔ | da bo
+pɔˈpoːtnik ˈsleːkəu sʋoi ˈplaːʃt. ‖ ˈseːʋəɾni ˈʋeːtəɾ jɛ zaˈpiːxau z uˈsɔː mɔˈtʃjoː
+‖ toda ˈboːl kɔ jɛ ˈpiːxau | ˈboːl təˈsnːo jɛ pɔˈpoːtnik | ɔˈʋiːjau sʋoi ˈplaːʃtʃ
+ɔkoli ˈsɛːbɛ. ‖ ˈkɔːntʃnɔ | jɛ ˈseːʋəɾni ˈʋeːtəɾ pɔˈpuːstiu. ‖ naˈtoː jɛ ˈsoːntsɛ
+tɔˈploː pɔsiˈjaːlɔ | in pɔˈpoːtnik jɛ taˈkoi ˈsleːkəu sʋoi ˈplaːʃtʃ. ‖ in taˈkoː jɛ 
+ˈseːʋəɾni ˈʋeːtəɾ ˈmoːɾau pɾiˈznaːti | da jɛ ˈsoːntsɛ mɔˈtʃneiʃɛ ɔdˈnjɛːga. ‖
+
+# Notes:
+Homorganic nasals are presented as allophones of /n/.
+Transcription a compilation of two recordings by a male and a female speaker.

@@ -1,0 +1,56 @@
+﻿# Reference:
+10.1017/S0025100306002659
+
+# Language:
+Standard Georgian
+
+#ISO Code:
+kat
+
+# Consonant Inventory:
+pʰ, p’, b, tʰ, t’, d, kʰ, k’, g, q’(q’, χ’, ʔ), ts, ts’, dz, tʃ, tʃ’, dʒ, m, n, 
+ɾ(ɾ, r), v(v, f, ɸ), s, z, ʃ, ʒ, x, ɣ, h, l
+
+# Vowel Inventory:
+i, ɛ, ɑ, ɔ, u
+
+# Phoneme inventory size:
+33
+
+# Length of NWS audio file:
+47sec
+
+# Audio:
+47
+
+# Minimal pairs:
+/pʰ~p’/ /kʰ~k’/ /n~m/ /l~ɾ/ /z~ʃ~x/ /q’~h/ 
+
+
+# Minimal pair examples:
+/pʰuɾi~p’uɾi/ /kʰudi~k’udi/ /nɛlɑ~mɛlɑ/ /kʰɑli~kʰɑɾi/ /zɑɾi~ʃaɾi~xɑɾi/ /q’ɑvɑ~hɑvɑ/ 
+
+# Other symbols:
+/./
+/,/
+
+# Transcript:
+tʃɾdilɔɛtʰis kʰɑɾi dɑ mzɛ k’ɑmɑtʰɔbdnɛn tʰu ɾomɛli iq’ɔ upʰɾɔ dzliɛɾi. ɑm
+dɾɔs gɑiɑɾɑ ɛɾtʰmɑ nɑbɑdts’ɑmɔxurulmɑ mgzɑvɾmɑ isini ʃɛtʰɑnxmdnɛn
+udzliɛrɛsɑd ɛtsnɔtʰ is, ɾɔmɛits mgzɑvɾs p’irvɛli mɔʒxdevinebdɑ nɑbɑds.
+dʒɛɾ tʃrdiɔɛtʰis kʰɑɾmɑ dɑubɛɾɑ mtʰɛli dzɑlɣɔnitʰ, mɑgɾɑm ɾɑts upʰrɔ dzliɛɾ
+ubɛɾɑvdɑ, mgzɑvri mitʰupʰrɔ mɑgrɑd ɛxveɔdɑ nɑbadʃi. bɔlɔs tʃɾdilɔɛtʰis kʰɑɾi
+dɑtsxɾa. ɑslɑ mzɛm gɑmɔɑbrts’q’inɑ dɑ dɑːtsxunɑ. mgzɑvɾmɑ nɑbɑdi maʃinvɛ
+mɔixɑdɑ. ɑmɾigɑd, tʃɾdiɔɛtʰis kʰɑɾi idzulɛbuli gɑxdɑ ɛɣiɑɾɛbinɑ, ɾɔm mɑtʰ
+ʃɔɾis mzɛ upʰɾɔ dzliɛɾi iq’ɔ.
+
+
+# Notes:
+Vowel length not discussed in paper. [ɑː] present in transcript.
+
+# Errors:
+/ɑː/
+/a/ 3 instances in the transcript. Not discussed in paper.
+/e/ in transcript. Not discussed in paper.
+/o/ in transcript. Not discussed in paper.
+

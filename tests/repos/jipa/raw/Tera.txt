@@ -1,0 +1,61 @@
+﻿# Reference:
+10.1017/S0025100307002952
+
+# Language:
+Tera
+
+#ISO Code:
+ttr
+
+# Consonant Inventory:
+p, b, t, d, k, g, tʃ, dʒ, ɓ, ɗ, ɠ, mb, nd, ɲdʒ, ŋg, m, n, ɲ, ŋ, r, f, v, s, z, ʃ, ʒ, x, ɣ, h, 
+ɬ, lʒ, l, j, w, ʔj, ɓʲ, mʲ, vʲ, kʷ, gʷ, ŋgʷ, xʷ, ɣʷ
+
+# Vowel Inventory:
+i(i, í, ì), iː(iː, íː, ìː), e:(eː, éː, èː), e(e, é, è), ɨ(ɨ, ɨ́, ɨ̀), 
+a(a, á, à), aː(aː, áː, àː), 
+uː(uː, úː, ùː), u(u, ú, ù), oː(oː, óː, òː), o(o, ó, ò), eu(eu, éu, èu),
+ ai(ai, ái, ài), 
+au(au, áu, àu), oi(oi, ói, òi)
+
+# Toneme Inventory:
+V́(í, íː, é, éː, ɨ́, á, áː, ú, úː, ó, óː, éu, ái, áu, ói),
+V̄(ī, īː, ē, ēː, ɨ̄, ā, āː, ū, ūː, ō, ōː, ēu, āi, āu, ōi),
+V̀(ì, ìː, è, èː, ɨ̀, à, àː, ù, ùː, ò, òː, èu, ài, àu, òi)
+
+# Phoneme inventory size:
+61
+
+# Length of NWS audio file:
+54sec
+
+# Audio:
+54
+
+# Minimal pairs:
+/b~ɓ/ /tʃ~dʒ/ /k~g/ /kʷ~gʷ/ /ŋg~ŋgʷ/ /f~v/ /s~z/ /ʃ~ʒ/ /x~ɣ/ /j~ʔj/
+
+
+# Minimal pair examples:
+/bala~ɓala/ /tʃéré~dʒere/ /kaːri~gàri/ /kʷári~gʷàri/ /ŋgá~ŋgʷà/ /fára~vàra/ /sari~zari/ /ʃóka~ʒòka/ 
+/xar~ɣàr/ /jema~ʔjema/
+
+# Other symbols:
+
+
+
+# Transcript:
+xɨ̀xeːtí na vìkí kɨn zan ndɨ fɨɗa a kélé ʔjine kí dúkkí, dɨ̀mbɨ̀r tʃele ɓaːnda. a
+mbɨ kélé ku, tɨna xuski ŋgur á sa luktí taɗakandi a péːtar jiti ɲdʒivi tɨ gɨn mé
+jen ku za, ɲdʒib nɨ sakí xuskinaŋ tɨ fét luktá nɨɣa, tʃin dukt dɨ̀mbɨ̀ri.
+nɨ xɨ̀xeːtí na vìkí kɨn zan gɨ̀rkí, tɨ pi xuskjáŋ maʔjí kɨme kɨ fét luktá ɓar venda
+tɨ xuskjáŋ xuɓ luktá tʃip nɨ ve nda. tɨ xɨ̀xeːtá ʃí tɨ ʃi kɨme kɨ fét luktá ɓar
+venda tɨ kɨna. nɨ kɨnáki tɨ tʃiŋ ɣa.
+gaːɲdʒe nɨ xɨxéːtí na vìkí kɨn zan kɨnákí tɨ fɨɗará vi ɓwa, tɨ máːrá ʃi gɨ̀rgɨ̀r. nɨ
+gɨ̀rgɨ̀r máːrá ɓgɨlki nda, tɨ xuskjáŋ damta tɨ fét lukti taɗakanda niɣa.
+naːɗó, tɨ xɨ̀eːtá ɬoɣan ʔjine fɨda wa duktɨnda dɨ̀mbɨri.
+
+
+# Notes:
+Minimal pairs from JIPA.
+High tone [ ́ ], mid tone unmarked, low tone [ ̀ ]

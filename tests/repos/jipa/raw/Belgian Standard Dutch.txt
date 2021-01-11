@@ -1,0 +1,57 @@
+﻿# Reference:
+10.1017/S0025100305002173
+
+# Language:
+Belgian Standard Dutch
+
+#ISO Code:
+nld
+
+# Consonant Inventory:
+p, b, t, d, c, k, g, ʔ, m, n(n, ɱ, ɲ), ŋ, ʀ(ʀ, r, ʀ̥), f, v, s, z, ʃ, ʒ, x, ɣ, ɦ, w, j, l, ʎ
+
+# Vowel Inventory:
+i, yː, eː, ɪ, ɛ, aː, ɑ, ɔ, oː, u, øː, ʏ, ɛj, œy, ɔu
+
+# Phoneme inventory size:
+40
+
+# Length of NWS audio file:
+45sec
+
+# Audio:
+45
+
+# Minimal pairs:
+/p~b/ /t~d/ /k~ʔ/ /n~ŋ/ /f~v/ /s~z/ /x~ɣ/ /j~w/
+/i~ɪ/ /eː~ɛ/ /ɑ~aː/ /ɔ~oː/ /u~ʏ/ /yː~øː/ /ɛj~œy~ɔu/
+
+# Minimal pair examples:
+/paːlə~baːlə/ /taːlə~daːlə/ /kaːlə~ʔaːlə/ /vɑn~vɑŋ/ /fɛl~vɛl/ /seːl~zeːl/ /xɛil~ɣɛil/ /jaːʀ̥~waːʀ̥/
+/lip~lɪp/ /leːs~lɛs/ /ʀɑp~ʀaːp/ /lɔt~loːt/ /buk~bʏk/ /dyːʀ̥~døːʀ̥/ /lɛj~lœy~lɔu/
+
+
+# Transcript:
+də noːʀdəwɪnt ʔɛn də zɔn | waːʀə ʀyzi aːn ət maːkə | ʔoːvər wi ɦət stɛʀkstə wɑs |
+tun əʀ ən ʀɛizɪɣəʀ voːʀbɛi kwɑm mɛ ən wɑʀmə jɑzaːn || zə spraːkən ʔɑf |
+dɑt dəɣeːnə di ʔəʀɪn zɔu slaːɣə ʔɔm də ʀɛizɪɣəʀ zɛin jɑs tə dun ʔœytrɛkə | də
+stɛʀkstə wɑs || də noʀdəwɪnts blis soː ɦɑʀt ɦɛɪ kɔn | maːʀ ɦu ɦɑʀdəʀ hɛɪ blis |
+hu wɑʀməʀ də ʀɛizɪɣəʀ zɪx ɪndʏfəldə || ʔœytɛindələk gɑf hɛɪ zɛin poːɣɪŋ ʔɔp
+|| dɑn bəɣɔn də zɔn ɦɑʀt tə sxɛinə | ʔɛn də ʀɛizɪɣəʀ deːt ɔmɪdələk sɛin jɑzœyt
+|| də noːʀdəwɪnt must tuɣeːvə | dɑtə zɔn hət stɛʀkstə wɑs.
+
+
+# Notes:
+Many of the sounds presented in the consonant phoneme chart are considered to be the result of phonological 
+processes rather than phonemes. I have made a judgement call here on when to present them as phonemes, and when
+to present them as allophones dependent on the information in the paper.
+
+# Errors:
+
+/y/ in transcript not in phoneme inventory. 
+/o/ in transcript not in phoneme inventory. 
+
+/ə/  Schwa is not discussed in the paper, but appears in the transcript. In the middle of the vowel phoneme inventory, where schwa is usually found, the symbol / øː/ is used, which I would expect to be more front than central. It is not found at all in the transcript. I just wonder if somehow the two are being muddled.
+
+/h/ is in the transcript, but not explicitly discussed in the paper. I suspect it is a typo. Eg. <het> in one place is transcribed /ɦət/ and in another /hət/. It could be accounted for by the devoicing of fricatives that takes place in Belgian Dutch, but based on the above pair am leaning towards typos.  
+

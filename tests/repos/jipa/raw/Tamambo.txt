@@ -1,0 +1,55 @@
+﻿# Reference:
+10.1017/S0025100305002197
+
+# Language:
+Tamambo
+
+#ISO Code:
+mla
+
+# Consonant Inventory:
+mb(mb, f, v), mbʷ(mbʷ, w), t, ⁿd, ⁿɟ(ⁿɟ, ⁿtʃ), k, m, mʷ, n, ŋ, r(r, ɾ), β, βʷ, s, x(x, ɣ, h, ɦ, g), l
+
+# Vowel Inventory:
+i(i, ɪ), e, a, o, u(u, ʊ)
+
+# Phoneme inventory size:
+21
+
+# Length of NWS audio file:
+45sec
+
+# Audio:
+45
+
+# Minimal pairs:
+/mb~mbʷ/ /ⁿd~t/ /m~mʷ/ /n~ŋ/ /β~βʷ/ /r~l/ /s~ⁿɟ/ /k~x/
+/i~u~e~o~a/
+
+# Minimal pair examples:
+/mbara~mbʷara/ /ⁿdunu~tunu/ /mata~mʷata/ /naⁿdi~ŋaⁿdi/ /βiⁿdi~βʷiⁿdi/ /rako~lako/ /sivo~ⁿɟivo/ /kete~xete/
+/xili~xuli~xeli~xolo~xalo/
+
+# Other symbols:
+,, -, .
+
+# Transcript:
+laŋi mana alo na-loli matan xisei mo-suixa, tamaloxi atea
+mo-mule tusi mo-ruru na ruru βonoxaxa.
+na-sora-sora-xi xisei mo-loli na tamaloxi mo-le takaxi
+no-na ruru ro nia mara suixa. mo-iso laŋi
+mo-sere mo-suixa mo-ta sere mo-suixa tina tamaloxi
+mo-tauri lalati no-na ruru mo-iso
+mo-suixa. mo-iso alo mo-alo mo-suixa. mo-te tuai
+tamaloxi mo-le takxi no-na ruru. mo-iso
+laŋi mo-βiti-a telei alo mo-re nixo mara suixa.
+
+# Notes:
+Superscript <m> is used for prenasalised bilabial stops in the JIPA paper, but I couldn't replicate this,
+so the prenasal /m/ is in normal font.
+
+"Prenasalised stops are common in the language, and it is simply a coincidence that none appear in the transcribed
+passage." p256
+Minimal pair examples from JIPA paper.
+
+Both phonemic and phonetic transcriptions are provided. The phonemic one is reproduced here.

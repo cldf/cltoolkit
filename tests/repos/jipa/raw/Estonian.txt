@@ -1,0 +1,127 @@
+﻿# Reference:
+10.1017/S002510030999017X
+
+# Language:
+Standard Estonian
+
+#ISO Code:
+ekk
+
+# Online bible:
+http://paralleltext.info/data/ekk-x-bible-1968/41/001/
+http://paralleltext.info/data/ekk-x-bible-1997/41/001/
+
+# Consonant Inventory:
+p, t, tʲ, k, m(m, m̥), n(n, n̥), nʲ, r(r, r̥), f, v(v, v̥), s, ʃ, sʲ, h(h, h̬), 
+l(l, l̥), lʲ, j, pː, tː, tʲː, kː, sː, sʲː, ʃː, fː
+
+
+# Vowel Inventory:
+i, iˑ, iː, iːː, y, yˑ, yː, yːː, e(e, e̞, e̝, e̟), eˑ(eˑ, e̞ˑ), eː, eːː, ø, øˑ, øː, øːː, æ, æˑ, æː, æːː, u(u, u̟), uˑ, uː, uːː, 
+ɤ(ɤ, ɯ, ɘ), ɤˑ, ɤː, ɤːː, o, oˑ, oː, oːː, ɑ(ɑ, ɑ̟, ɑ̟), ɑˑ, ɑː, ɑːː
+eɑ, iɑ, oɑ, uɑ, ɤɑ, øɑ, yɑ, ɑe, ie, oe, ue, ɤe, æe, øe, ye, ɑi, ei, oi, ui, ɤi, æi, 
+øi, yi, ɑo, eo, io, uo, ɤo, æo, yo, ɑu, eu, iu, ou, ɤu, æu 
+
+# Phoneme inventory size:
+97
+
+# Length of NWS audio file:
+49sec
+
+# Audio:
+49
+
+# Other Symbols:
+
+# Minimal pairs:
+/s~v/ /r~l/
+/i~y~u/ /e~ø/ /o~ɤ/ /æ~ɑ/
+/ɑ~ɑː~ɑːː/
+
+# Minimal pair examples:
+/saba~vaba/ /raba~laba/
+/sile̞ˑ~syle̞ˑ~sule̞ˑ/ /keh̬ɑˑ~køh̬ɑˑ/ /kole̞ˑ~kɤle̞ˑ/ /væle̞ˑ~vɑle̞ˑ/
+/kɑluˑ~kɑːlu~kɑːːlu/
+
+# Transcript:
+ˈpɤh̬.jɑ.ˌtuːːl jɑ ˈpæik.ke̞ ‖ ˈykːs.kort ˈvɑiːt.le.sit ˈpɤh̬.jɑ.ˈtuːːl jɑ ˌpæik.ke ˈsel.le̞ ˈy.le̞ˑ |
+ ˌkumːp ˈneisːt on ˈtu.ke̞ˑ.vɑm || ˈju̟sː ˈsiːːs ˈtu.li ˈmøːː.tɑ ˈteːːt rænː.tɑ̟.e̝ɑ̟ | ˈselʲ.jɑs ˈsoeː 
+ˈmɑntː.te̞l ‖ ˈpɤh̬.jɑ.ˌtuːːl jɑ ˌpæik.ke ˈlepː.pi.sit ˈkokː.ku | et ˈseːː | ˈkel.lel 
+ˈe.sʲi.ˌme.se̞.nɑ̟ ˈɤn.ne̞s.tup ˈsunʲː.ti.tɑ ˈrænː.tɑ̟.e̝ɑ̟t ˈmɑntː.litː ˈselʲ.jɑst ˈvɤtː.mɑ |
+on ˈtei.sest ˈtu.ke̞ˑ.vɑ̟m ‖ ˈpɤh̬.jɑˌtuːːl  ˈpu.h̬us.ki ˈkɤi.kest ˈjɤusːt | ˈɑ.kɑˑ ˈmi.tɑˑ ˈrohː.kem 
+tɑ ˈpu.h̬uˑs | se.tɑˑ ˈe.nɑˑm ˈkoːː.mɑ.le̞ ˈtɤmː.pɑs ˈrænː.tɑ̟.e̝ɑ̟ | o.mɑ ˈmɑntː.li ˈhɤl.mɑˑt ‖ 
+ˈlɤp.puks ˈloːː.pus ˈpɤh̬.jɑ.ˈtuːːl ˈkɑtː.sest ‖ ˈsiˑs ˈhɑkː.kɑs ɑ.kɑ ˈpæik.ke ˈniːː ˈsoː.jɑlt ˈpɑisːt.mɑ | 
+et ˈrænː.tɑ̟..e̝ɑ̟ ˈko.h̬e o.mɑ ˈmɑntː.li ˈselʲ.jɑst ˈvɤtʲː.tis ‖ jɑ ˈnɤn.tɑˑ ˈpi.tiˑ.ki ˈpɤh̬.jɑ.ˌtuːːl 
+ˈtunʲ.nis.ˌtɑ.mɑˑ | et ˈpæik.ke on tɑst ˈtu.ke̞ˑ.vɑm ‖
+
+
+# Notes:
+JIPA articles contains notes on orthography.
+The dipthongs are presented as if they are phonemic in the text, but evidence they are phonemic, 
+and not just sequences of vowels is not provided. 
+No mention is made of the use of the following symbols: raised < ̝ >, lowered <  ̞> and advanced <   ̟>.
+I have treated vowels with these symbols in the transcript as allophones. 
+
+
+# Errors:
+/nː/ Paper doesn’t specifically mention long nasal consonants in phoneme inventory or in text.
+/nʲː/ Paper doesn’t specifically mention long nasal consonants in phoneme inventory or in text.
+/mː/ Paper doesn’t specifically mention long nasal consonants in phoneme inventory or in text.
+/h:/ Paper discusses long fricatives, but doesn’t list ‘h:’ as one of them. 
+
+
+# Orthography Consonant Phoneme Correspondences:
+<p>=/p/, <t>=/t/, <d>=/tʲ/, <k>=/k/, <f>=/f/, <v>=/v/, <s>=/s/-/sʲ/, <š>=/ʃ/, <h>=/h/,
+<m>=/m/, <n>=/n/-/nʲ/, <r>=/r/, <l>=/l/-/lʲ/, <j>=/j/
+
+# Orthography Vowel Phoneme Correspondences:
+<i>=/i/, <ü>=/y/, <u>=/u/, <e>=/e/, <ö>=/ø/-/ɤ/, <o>=/o/,
+<ä>=/æ/, <a>=/ɑ/,
+<ii>=/i:/, <üü>=/yː/, <uu>=/uː/, <ee>=/eː/, <öö>=/øː/-/ɤː/, <oo>=/oː/,
+<ää>=/ɑː/, <aa>=/ɑː/, 
+<ea>=/eɑ/, <ia>=/iɑ/, <oa>=/oɑ/, <ua>=/uɑ/, <öa>=/ɤɑ/-/øɑ/, <üa>=/yɑ/,
+<ae>=/ɑe/, <ie>=/ie/, <oe>=/oe/, <ue>=/ue/, <öe>=/ɤe/-/øe/, <äe>=/æe/,
+<üe>=/ye/, <ai>=/ɑi/, <ei>=/ei/, <oi>=/oi/, <ui>=/ui/, <öi>=/ɤi/-/øi/,
+<äi>=/æi/, <üi>=/yi/, <ao>=/ɑo/, <eo>=/eo/, <io>=/io/, <uo>=/uo/, <üo>=/ɤo/,
+<äo>=/æo/, <üo>=/yo/, <au>=/ɑu/, <eu>=/eu/, <iu>=/iu/, <ou>=/ou/, <öu>=/ɤu/,
+<äu>=/æu/,
+
+
+# Minim,al pairs f,rom JIPA:
+/s~v/ /r~l/
+/i~y~u/ /e~ø/ /o~ɤ/ /æ~ɑ/
+/ɑ~ɑː~ɑːː/
+
+# Minimal pair examples from JIPA:
+/saba~vaba/ /raba~laba/
+/sile̞ˑ~syle̞ˑ~sule̞ˑ/ /keh̬ɑˑ~køh̬ɑˑ/ /kole̞ˑ~kɤle̞ˑ/ /væle̞ˑ~vɑle̞ˑ/
+/kɑluˑ~kɑːlu~kɑːːlu/
+
+# Minimal pairs differing by a single phonetic feature:
+/p~t/ /p~k/ /p~pː/ /p~tʲ/ /t~tʲ/ /t~k/ /t~tː/ /t~s/ /tʲ~tʲː/ /k~kː/ /m~n/ /m~nʲ/ /n~nʲ/ /n~r/ 
+/n~l/ /nʲ~lʲ/ /r~l/ /f~v/ /f~s/ /f~ʃ/ /f~sʲ/ /f~h/ /f~fː/ /s~ʃ/ /s~sʲ/ /s~h/ /s~sː/ /ʃ~sʲ/ 
+/ʃ~h/ /ʃ~ʃː/ /sʲ~h/ /sʲ~sʲː/ /l~lʲ/ /nʲ~j/ /pː~tː/ /pː~tʲː/ /pː~kː/ /tː~tʲː/ /tː~kː/ /tː~sː/ /tʲː~sʲː/ 
+/sː~sʲː/ /sː~ʃː/ /sː~fː/ /sʲː~ʃː/ /sʲː~fː/ /ʃː~fː/
+/i~iː/ /i~y/ /i~e/ /i~æ/ /iː~yː/ /iː~eː/ /iː~æː/ /y~yː/ /y~ø/ /y~u/ /yː~øː/ /yː~uː/ /e~eː/ 
+/e~ø/ /e~æ/ /e~ɤ/ /eː~øː/ /eː~æː/ /eː~ɤː/ /ø~øː/ /ø~o/ /øː~oː/ /æ~æː/ /æ~ɑ/ /æː~ɑː/ /u~uː/ 
+/u~o/ /uː~oː/ /ɤ~o/ /ɤ~ɑ/ /ɤː~oː/ /ɤː~ɑː/ /o~oː/
+
+# Phonologically sensible minimal pairs differing by more than one phonetic feature:
+/p~m/ /p~f/ /r~lʲ/ /pː~fː/
+/eɑ~iɑ/ /eɑ~oɑ/ /eɑ~uɑ/ /eɑ~ɤɑ/ /eɑ~øɑ/ /eɑ~yɑ/ /eɑ~ei/ /eɑ~eo/ /eɑ~eu/ /iɑ~oɑ/ /iɑ~uɑ/ 
+/iɑ~ɤɑ/ /iɑ~øɑ/ /iɑ~yɑ/ /iɑ~ie/ /iɑ~io/ /iɑ~iu/ /oɑ~uɑ/ /oɑ~ɤɑ/ /oɑ~øɑ/ /oɑ~yɑ/ /oɑ~oe/ 
+/oɑ~oi/ /oɑ~ou/ /uɑ~ɤɑ/ /uɑ~øɑ/ /uɑ~yɑ/ /uɑ~ue/ /uɑ~ui/ /uɑ~uo/ /ɤɑ~øɑ/ /ɤɑ~yɑ/ /ɤɑ~ɤi/ 
+/ɤɑ~ɤo/ /ɤɑ~ɤu/ /øɑ~yɑ/ /øɑ~øe/ /øɑ~øi/ /yɑ~ye/ /yɑ~yi/ /yɑ~yo/ /ɑe~ie/ /ɑe~oe/ /ɑe~ue/ 
+/ɑe~ɤe/ /ɑe~æe/ /ɑe~øe/ /ɑe~ye/ /ɑe~ai/ /ɑe~ɑo/ /ɑe~ɑu/ /ie~oe/ /ie~ue/ /ie~ɤe/ /ie~æe/ 
+/ie~æe/ /ie~øe/ /ie~ye/ /ie~io/ /ie~iu/ /oe~ue/ /oe~ɤe/ /oe~æe/ /oe~øe/ /oe~ye/ 
+/oe~oi/ /oe~ou/ /ue~ɤe/ /ue~æe/ /ue~øe/ /ue~ye/ /ue~ui/ /ue~uo/ /ɤe~æe/ /ɤe~øe/ 
+/ɤe~ye/ /ɤe~ɤi/ /ɤe~ɤo/ /ɤe~ɤu/ /æe~øe/ /æe~ye/ /æe~æi/ /æe~æo/ /æe~æu/ /øe~ye/ 
+/øe~øi/ /ye~yi/ /ye~yo/ /ɑi~ei/ /ɑi~ui/ /ɑi~ɤi/ /ɑi~æi/ /ɑi~øi/ /ɑi~yi/ /ɑi~ɑo/ 
+/ɑi~ɑu/ /ei~oi/ /ei~ui/ /ei~ɤi/ /ei~æi/ /ei~øi/ /ei~yi/ /ei~eo/ /ei~eu/ /oi~ui/ 
+/oi~ɤi/ /oi~æi/ /oi~øi/ /oi~yi/ /oi~ou/ /ui~ɤi/ /ui~æi/ /ui~øi/ /ui~yi/ /ui~uo/ 
+/ɤi~æi/ /ɤi~øi/ /ɤi~yi/ /ɤi~ɤo/ /ɤi~ɤu/ /æi~øi/ /æi~yi/ /æi~æo/ /æi~æu/ /øi~yi/ 
+/yi~yo/ /ɑo~eo/ /ɑo~io/ /ɑo~uo/ /ɑo~ɤo/ /ɑo~yo/ /ɑo~ɑu/ /eo~io/ /eo~uo/ /eo~ɤo/ 
+/eo~æo/ /eo~yo/ /eo~eu/ /io~uo/ /io~ɤo/ /io~æo/ /io~yo/ /io~iu/ /uo~ɤo/ /uo~æo/ 
+/uo~yo/ /ɤo~æo/ /ɤo~yo/ /ɤo~ɤu/ /æo~yo/ /æo~æu/ /ɑu~eu/ /ɑu~iu/ /ɑu~ou/ /ɑu~ɤu/ 
+/ɑu~æu/ /eu~iu/ /eu~ou/ /eu~ɤu/ /eu~æu/ /iu~ou/ /iu~ɤu/ /iu~æu/ /ou~ɤu/ /ou~æu/ /ɤu~æu/
+

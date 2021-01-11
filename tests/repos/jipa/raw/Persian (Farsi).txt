@@ -1,0 +1,42 @@
+﻿# Reference:
+10.1017/S0025100300004461
+
+# Language:
+Persian (Farsi)
+
+#ISO Code:
+prs
+
+# Consonant Inventory:
+p, b(b, bː), t, d, k, g, ʔ, m(m, ɱ, mː), n(n, ŋ), r(r, ɾ, ɹ, rː), f, v(v, w, vː), 
+s, z, ʃ, ʒ, x, ɣ(ɣ, ɢ, ɣ̠), h, tʃ, dʒ, j, l
+
+# Vowel Inventory:
+i, e, æ, u, o, ɒ
+
+# Phoneme inventory size:
+29
+
+# Length of NWS audio file:
+57sec
+
+# Audio:
+57
+
+# Transcript:
+ˈjek ˈruzi ˈbɒde ʃoˈmɒl bɒ xorˈʃid bɒhæm dæʔˈvɒ ˈmikærdænd, ke ˈɒjɒ
+koˈdɒmjeki ɣæviˈtæræst. dærˈɒn ˈhin mosɒˈferi reˈsid, ke læbːɒˈdeje koˈlofti
+be ˈdovre ˈxodeʃ pitʃiˈde bud. ɒnˈhɒ ɣæˈrɒr ˈgozɒʃtænd, ˈhærkoˈdɒmeʃɒn, ke
+ˈævːæl ˈbetævɒnæd mosɒˈferːɒ mædʒˈbur konæd læbːɒˈdeæʃro ˈbekænæd,
+mæʔˈlum ˈmiʃævæd, ke ˈzuræʃ biʃˈtæræst. ˈbɒde ʃoˈmɒl tɒtævɒnest væˈzid,
+ˈæmːɒ ˈhærtʃe biʃˈtær væˈzid, mosɒˈfer læbːɒˈdeæʃrɒ biʃˈtær ˈdovre ˈxodeʃ 
+ˈdʒæmʔ kærd. ɒɣeˈbæt ˈbɒde ʃoˈmɒl xæsˈte ʃod væ ˈdæst ˈbærdɒʃt. ˈbæʔd
+xorˈʃid tɒˈbid, væ  hæˈvɒ inˈɣædr ˈgærm ʃod ke fovˈri mosɒˈfer læbːɒˈdeæʃrɒ
+ˈdærɒværd. pæs ˈbɒde ʃoˈmɒl mædʒˈbur ʃod eɣˈrɒr konæd ke xorˈʃid ˈzuræʃ
+biʃˈtæræst.
+
+# Notes:
+Gemination indicated by double letter symbol in original paper.
+
+/f/ and /v/ not in phoneme chart, but discussed in paper as phonemes. /f/ missed in language file. Added in.
+

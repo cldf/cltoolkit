@@ -1,0 +1,59 @@
+# Reference:
+10.1017/S0025100312000217
+
+# Language:
+Bardi
+
+#ISO Code:
+bcj
+
+# Consonant Inventory:
+p(p, b), t(t, d), ʈ(ʈ, ɖ), c(c, ɟ), k(k, g), 
+m, n, ɳ, ɲ, ŋ, l, ɭ, ʎ, r(r, ɾ, ɹ), ɻ, j, w
+
+# Vowel Inventory:
+i(i, ɪ), iː(iː, ɛː), a(a, ɑ, ə, æ), aː(aː, ɑː), o(o, ɒ, ɔ), u(u, ʊ), uː 
+
+# Phoneme inventory size:
+24
+
+# Length of Frog Story audio file:
+7.16
+
+# Audio:
+NA
+
+# Transcript:
+bɑːwɑ ‖ midəbɑʊ ‖ ɑɣɑl iːlɑ ɑgɑl gɑrjɑɭ cirə cɑwɑl ‖
+midɑbɑːw jɪnɑ cɑwɑl ɑgɑl | iːlɑ ‖ ɑgɑl gɑrcɑɭ ‖
+ulɒn | cubolɟubol ɪrɪn ‖
+ɻoəlɪ ɪnɲɑ ‖ miːdəbɑwə agal iːlə | bɑɖə | bɑlɪŋɑn ‖
+ɪnəmɪjɪn | miːdəbɑwnɪm ɪnɑmɪjɪn bɑːgɪdi |
+nɛːd ɪnəmɪjɪn  | gɑɳɖɪ | bɑɖə | ruəl inɲə cubol
+inɟʊ ‖ bɪləboŋgon ‖
+giɲiŋgɔn | ɪmbɑɲiɟɪn ‖ ɪmbɑɲi | cubolb ɪnco ‖
+balab ɻuil ɪnɲa baɖ ar ɪndan ‖ 
+bʊlŋʊr ɲʊn ɪnɟal bɪləboŋ | garcaɭ ɪnɪn gaɳdɪ | bɪlɪlon 
+iɲɟarələ ɲæləb |laɖaŋɑn injaliç | garɟaɭ | iːl agal
+midəbaw ɪŋarcarələ baɖə ‖
+wir ɪŋarjarmɪn jubol ɪŋɪɾɪn ɲuno pɪləboŋgon ‖
+puɲɟə ɪral kaɾəgʊn iːla | miːdəpawə agal karcaɭ ‖
+olal ɪŋargaɖi | bɑːw agal | iːla | buɣun garɟəɭnɪm
+arə oːlalənəɾ ‖
+daral ɪŋorbul | bəlab | aŋanaɖ | garɟaɭnim
+ɪnɟalɪɾ aŋanaŋar | dɔrɔlb ɪŋorobol ‖
+ɲɑləbʊ | gɑɳɖ ɪnɪn bɪlɪlɔn gɑrɟɑɭ ‖
+gɪɲɪŋɣɔn wɪr ɪɲɟɑrmɪn bilɪlɔ bɑɖɪ ɲʊn ɪnɪn
+bɔɖɔɣɔn | gɑɳɖɪ gɑrɟɑɭ inɟɑɹgɪɟɪr ‖
+
+
+# Notes:
+The text is a telling of Mercer Meyer's 'The Frog Story'.
+All consonant allophones are discussed in the text.  The vowel allophones are Louise's
+guesses, based on vowel charts provided.  
+
+# Errors:
+/oː/ is not in the phoneme inventory (or discussed in the paper) but appears in the transcription.
+/ɣ/ appear in the transcription, but are not in the phoneme inventory and I cannot find anywhere in the paper to account for them.
+/ç/ appear in the transcription, but are not in the phoneme inventory and I cannot find anywhere in the paper to account for them.
+

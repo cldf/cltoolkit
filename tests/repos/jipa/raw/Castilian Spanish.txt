@@ -1,0 +1,55 @@
+# Reference:
+10.1017/S0025100303001373
+
+# Language:
+Castilian Spanish
+
+#ISO Code:
+spa
+
+# Consonant Inventory:
+p, b(b, β̞), t, d(d, ð̞), k, g(g, ɣ̞), tʃ, ɟʝ, m, n(n, ɱ, n̟, n̪, nʲ, ŋ, ɴ), ɲ, ɾ, r, f, θ(θ, θ̬), s, x,
+l(l, l̟, l̪, lʲ), ʎ
+
+# Vowel Inventory:
+i(i, i̯), e(e, e̯, ẽ), a(a, a̯, ã), o(o, o̯), u(u, u̯), je, ja, jo, ju, wi, we, wa, wo
+
+# Phoneme inventory size:
+32
+
+# Length of NWS audio file:
+38sec
+
+# Audio:
+38
+
+# Transcript - narrow:
+el ˈβjen̪to ˈnoɾte ʝ elˈsol poɾˈfjaβan soβɾe ˈkwal̪ ˈdeʎoˈseɾa e̯lˈmasˈfweɾte ǀ kwan̪do̯
+aθeɾˈto a̯ paˈsaɾ um bjaˈxeɾo̯ emˈbwel̪to̯ eˈn ãnʲtʃa ˈkapa ǁ kombiˈnjeɾon ẽŋ ke kje 
+ˈn ãn̪tez loˈɣɾaɾa o̯βliˈɣaɾ al βjaˈxeɾo̯ a kiˈtaɾse la ˈkapa ǀ seˈɾia konsiðeˈɾaðo ˈmas
+poðeˈroso ǁ el ˈβjen̪to ˈnoɾte soˈplo koŋ gɾaɱ ˈfuɾja ǀ ˈpeɾo kwan̪to ˈma soˈplaβa ǀ
+ˈma se̯ areβuˈxaβa e̯n su ˈkapa e̯l βjaˈxeɾo ǁ poɾ ˈfin ǀ el ˈβjen̪to ˈnoˈte aβan̪doˈno la
+e̯mˈpɾesa ǁ ẽn̪ˈton̟θez βɾiˈʎo e̯l ˈsol kon aɾˈðoɾ ǀ e i̯ⁿmeˌðjataˈmẽn̯te se ðespoˈχo ðe 
+su ˈkapa e̯l βɾaˈxeɾo ǁ poɾ lo ke l ˈβjen̪to ˈnoɾte ˈuβo ðe rekonoˈθeɾ la supeɾjoɾiˈða ðel ˈsol 
+
+# Transcript - broad:
+el bjento norte j el sol porjaban sobre kwal de eʒos era el mah fwerte, kwando 
+aserˈto a paˈsar um bjaxero embwelto en anca kapa. kombinjeɾon en ke kjen 
+anteh lograra obliˈgar al bjaxero a kitarse la kapa seria konsiderado mah 
+poderoso, el bjento norte soˈplo kon gram furja, pero kwanto mas soplaba, 
+mas se arrebuxaba en su kapa el bjaxero; por fin el bjento norte abandoˈno la 
+empresa. entonseh briˈʒo el sol kon arˈdor, e immedjatamente se dehpoˈxo de 
+su kapa el bjaxero; por lo ke l bjento norte ubo de rrekonoˈser la superjoriˈdad del sol.
+ 
+# Notes:
+All the consonantal allophones are discussed in the article.  The article mentions that vowels may be nasalised.  
+Otherwise I have assigned vowels with diacritics in the transcription as allophones. 
+ 
+# Errors:
+/ʝ/ is not in the phonemic inventory, but occurs in the transcription.
+/j/ in transcript, not in phoneme inventory. Corresponds to [ʝ] in narrow transcript and <y> in orthography.
+/c/ is in broad transcript, but not in inventory. It corresponds to /tʃ/ in the narrow transcript. Doesn’t correspond to orthography, which is <ch>.
+/ʒ/ not in phoneme inventory; not in orthography; corresponds to /ʎ/ in narrow transcription.
+/ʎ/
+/h/ not in phoneme inventory; corresponds to [s] in narrow transcription and <s> in orthographic version.
+

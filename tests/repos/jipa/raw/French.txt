@@ -1,0 +1,44 @@
+# Reference:
+10.1017/S0025100300004874
+
+# Language:
+French
+
+#ISO Code:
+fra
+
+# Consonant Inventory:
+p, b, t, d, k, g, m, n, ɲ, ŋ, f, v, s, z, ʃ, ʒ,
+ ʁ(ʁ, ʁ̞, ʀ, r, ʁ̥), l, j, ɥ, w
+
+# Vowel Inventory:
+i, y, e, ø, ɛ(ɛ, ɛʲ, ɛ̝), œ, a, ə, ɔ(ɔ, ɔ̈), o, u(u, ʊ), ɛ̃(ɛ̃, ɛ̹̃), ɑ̃, ɔ̃
+
+# Phoneme inventory size:
+35
+
+# Length of NWS audio file:
+30sec
+
+# Audio:
+30
+
+# Transcript:
+la viz e lə sɔlɛʲ sə dispytɛ ‖ ʃakɛ̃ asyʁɑ̃ kilɛtɛ lə ply fɔ̈ʁ̥ ‖ kɑ̃t ilzɔ̃ vy ɛ̃
+vwɑjaʒœ ki savɑ̃sɛ ‖ ɑ̃vlope dɑ̃ sɔ̃ mɑ̃to ‖ iː sɔ̃ tɔ̃be dakɔ̈ʁ̥ kə səlɥi ki
+aʁivʁe ləpʁ̥əmje a lə lɥi fɛʁote ‖ səʁə ʁəgaʁde kɔ̈m lə ply fɔ̈ʁ̥ ‖ alɔ̈ʁ̞ la
+biz sɛ̝ miz a sufle də tut se fɔ̈ʁ̞s ‖ mɛ ply ɛl suflɛ ply lə vwɑjaʒœʁ̞ sɛʁɛ
+sɔ̃ mɑ̃totʊʁ̞ də lɥi ‖ finalmɑ̃ ɛl ʁənõsa lə lɥi fɛʁote ‖ alɔ̈ʁ̞ lə sɔlɛʲ kɔmɑ̃sa
+bʁ̥ije ‖ e o bu dɛ̹̃ mɔmɑ̃ lə vwɑjaʒœ ʁeʃofe ota sɔ̃ mɑ̃to ‖ ɛ̃si la biz dy
+ʁəkɔnɛt kə lə sɔlɛʲ ɛtɛ lə ply fɔ̈ʁ̞
+
+# Notes:
+The allophones of /ɛ/ /u/ and /ɛ̃/ were assigned by Louise.
+
+# Errors:
+
+/õ/ occurs once in the transcript, but is not discussed anywhere in the paper. It immediately follows a nasal consonant, so could be a nasalised allophone of /o/. However, I'm reluctant to enter it as such, because of the contrast in other vowels between oral and nasal. I recommend we leave it as an error.
+/ɑ/ The author writes: "Some speakers have a contrast between two low vowels [a] and [ɑ]; our speaker has only one low vowel, [a], which is central." p73 This means the [ɑ] that appears in the multiple instances of the same word in the transcript is either a typo or an allophone of /ɑ̃/. I recommend we leave it as an error, as we don't have enough information to make the call.
+/iː/ Not discussed in the paper. There are two orthographic instances of the word that it occurs in "ils". The first consists of four sounds, the second just this long vowel, which makes it appear like an abbreviated form of the word. But reluctant to say that it is an allophone of /i/. I recommend leaving it as an error. 
+
+All of the missing vowels appear in the transcript, but are not discussed in the paper. They could probably be assigned as allophones to phonemes, fi we wanted to do this.

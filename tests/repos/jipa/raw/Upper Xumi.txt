@@ -1,0 +1,64 @@
+﻿# Reference:
+10.1017/S0025100313000169
+
+# Language:
+Upper Xumi
+
+#ISO Code:
+sxg
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, k, kʰ, g, q, qʰ, ts, tsʰ, dz, tʂ, tʂʰ, dʐ, tɕ, tɕʰ, dʑ, m̥, m, n̥, n, ɲ, ŋ, s, z, ʂ, 
+ʐ, ɕ, ʑ, x, χ, ʁ, h, ɦ, w, ɹ, j, l̥, l, ʎ̥, ʎ, ɹ̩, Nb, Nd, Ndz, Ndʑ, Ndʐ, Ng
+
+# Vowel Inventory:
+i, e, ɛ, ɜ, u(u, ə), ʉ, o, ɔ, ɐ, ĩ, ɛ̃, ũ, ɔ̃, ɐ̃, ɘ̃
+
+# Toneme Inventory:
+R, H, EP, LP, RP
+
+# Phoneme inventory size:
+71
+
+# Length of NWS audio file:
+1.21min.sec
+
+# Audio:
+81
+
+# Minimal pairs:
+/p~pʰ~b~m~m~m̥~w/ /t~tʰ~d/ /tsʰ~dz/ /s~z/ /tɕ~tɕʰ~dʑ/ /ʎ~ʎ̥/ /k~kʰ~g/ /q~qʰ/ /h~ɦ/ /dz~Ndz/ /g~Ng/
+
+
+# Minimal pair examples:
+/Hpɜ~Hpʰɜ~Hbɜ~Rmɜ~Hmɜ~Hm̥ɜ̃~Hwɜ/ /Htjɛ~Htʰjɛ~Hdjɛ/ /Htsʰɜ~Rdzɜ/ /Hsɜ~Rzɜ/ /Htɕɜ~Rtɕʰɜ~Hdʑɜ/ /Hʎɛ~Hʎ̥ɛ/ 
+/Hku~Rkʰu~Hgu/ /Hqu~Hqʰu/ /Hhɔ̃~Hɦɔ̃/ /Rdze~RNdze/ /RPlɐ-gɐ~RPlɐ-Ngɐ/
+
+# Other symbols:
+/ʔ/
+/-/
+/=/
+/||/
+/|/
+
+# Transcript:
+RPdʑi-bu | EPdʑɜ-ʁu=ji Hl̥ɔ ɲi | LPɲɜmi RPɲɜ-ku | H ɲi χɐ | EP eɹɔ ʎɛ=ji |
+RPtɕʰelɐ li ɲɔ̃ || RPtɕʰelɐ dʑɜ lɜ | EP ɹumi nɔ RPtsʰɹ̩-ɹ̩ pʰɜlɔ Hgu Hhĩ Hhĩ Rdʑĩ | Htɜ
+Hpɔ Rtɕʰũ li ɲɔ̃ || RPtʰe-ʎɛ LPtʰi-dzɹ̩ RPɲɜ-ku | RPlɐ-kʰɔ̃dɛ̃ se | Htʰi Rbɜ ʎu | Hpɜ
+li ɲɔ̃ || Hɲi=ɹɛ̃ EPɕɐʁɐ nɔ | Hhĩ RPtʰi=sɹ̩ | RPtsʰɹ̩-ɹ̩ pʰɜlɔ | Rɦɛ̃=ɹɛ̃ RPlɐ-pʰʉ dɔ̃
+xi ʑu | RPtʰi=ʐɹ | EPeɹɔ nɔ Hsu ʎu Hpɜ li ɲɔ̃ || RPtʰe-ʎɛ | EPdʑɜ-ʁu=ji Hl̥ɔ=ɹɛ̃ |
+EPɕɜ mu gi Rbɜ se | Hl̥ɔ Hɕũ Rxi li ɲɔ̃ || Hl̥ɔ RPsɐʁɔ EPduɜ nɔ ɲi | Hhĩ tʰi Rdʑɔ̃
+se | EPpʰɜlɔ RPlisɹ̩pu=ʁɔ̃ | RPsɐʁɔ RPlɐ-lu-lu li ɲɔ̃ || EPdʑɜ-ʁu=ji Hl̥ɔ | Htʰo
+RPmu=ʐɔ̃ se | Htɜ Htʂʰu Rtɕi li ɲɔ̃ || EPdʑɐ-χɐ ʎɛ ʎɛ | LPɲɜmi=ɹɛ̃ | RPbə-tsɐ li
+se | RPmjɛ-qɛ̃ Hpu Rxɐ li ɲɔ̃ || Hhĩ tʰi | EPɐ-tsjɛ Hpu li se | EPpʰɜlɔ | EPdʑɐ-χɔ
+RPdʑi-wu | RPlɐ-pʰʉ Rtɕi li ɲɔ̃ || RPtʰe-ʎɛ | EPdʑɜ-ʁu=ji Hl̥ɔ=ɹɛ̃ | Hmɔ ɲɔ̃ Hpɜ
+lɜ | Hpɜ mɔ hɛ̃ | LP ɲɜmi Hχɐ EPeɹɔ Rwɛ̃ ɲɔ̃ | Hpɜ li ɲɔ̃ ||
+
+
+# Notes:
+Minimal pair examples from JIPA.
+"N" preceding consonants indicates prenasalisation.
+R = rising tone; H = high tone; EP = Equally-prominent contour; LP = Left-prominent contour; 
+RP = right-prominent contour
+Two transcripts are provided: a semi-narrow phonetic transcription and an interlinear morphemic glossing 
+transcription. Here the semi-narrow phonetic transcription has been used. 

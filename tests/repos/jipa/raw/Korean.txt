@@ -1,0 +1,47 @@
+﻿# Reference:
+10.1017/S0025100300004758
+
+# Language:
+Korean
+
+#ISO Code:
+kor
+
+# Consonant Inventory:
+p, pʰ, b, t, tʰ, d, k, kʰ, g, m, n, ŋ, f, s, z, h, c, cʰ, ʝ, l
+
+# Vowel Inventory:
+i, e, ɛ, a, ʌ, o, u, ɯ, iː, eː, ɛː, aː, oː, ʌː(ʌː, əː), uː, ɯː,
+je, jɛ, ja, jo, ju, jʌ, wi, we(we, weː, øː), wɛ, wa, wʌ, ɯi
+
+# Phoneme inventory size:
+48
+
+# Length of NWS audio file:
+50sec
+
+# Audio:
+50
+
+# Minimal pairs:
+/p~pʰ~b/ /m~n/ /t~tʰ~d/ /k~kʰ~g/ /s~z~h/ /c~cʰ~ʝ/
+/i~iː/ /a~aː/ /ʌ~ʌː/
+
+# Minimal pair examples:
+/pal~pʰal~bal/ /mal~nal/ /tal~tʰal~dal/ /kal~kʰal~gal/ /sal~zal~hal/ /cal~cʰal~ʝal/
+/ziʝaŋ~ˈziːʝaŋ/ /ˈmal~ˈmaːl/ /ˈbʌl~ˈbʌːl/
+
+# Transcript:
+baˈlamgwa ˈhɛnnimi zʌˈlo hiˈmi ˈdʌ ˈzeːdago daˈtʰugo iˈsɯl tɛ, ˈhan
+naˈgɯnega taˈtɯtʰan ˈweːtʰulɯl ˈibko ˈgʌːlʌ waˈsɯmnida. gɯˈdɯlɯn
+nuˈgudɯnʝi naˈgɯneɯi ˈweːtʰulɯl ˈmʌnʝʌ ˈbʌdkinɯn nig hiˈmi ˈdʌ
+ˈzeːdago haˈgilo ˈgjʌlcʌŋhɛsɯmnida. bugpʰuŋɯn ˈhimkʌd buˈlʌsɯna
+ˈbuːlmjʌn ˈbuːlsulog naːgɯnɛnɯn ˈweːtʰuɯl ˈdandanhi jʌˈmjʌsɯmnida. gɯ
+ˈtɛe ˈhɛnnimi tɯˈgʌun hɛˈpicʰɯl gaˈmanhi nɛˈljʌ ˈcøːni naˈgɯnenɯn
+ˈweːtʰulɯl ˈʌllɯn bʌˈzʌsɯmnida. iˈlihajʌ ˈbugphuŋɯn ˈhɛnnini ˈduːlcuŋe
+hiˈmi ˈdʌ ˈzeːdago ˈinʝʌnhaʝi aˈnɯl su ˈʌːbsʌsɯmnida. 
+
+
+# Notes:
+The doubling of consonant graphemes is not discussed in the text. The text is reproduced
+here as it appears in the article.
