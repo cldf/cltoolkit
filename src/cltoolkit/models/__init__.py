@@ -1,4 +1,4 @@
-from cldftk.models.sounds import Phoneme, Inventory
-from cldftk.models.language import * 
-from cldftk.models.form import Form
-from cldftk.models.concept import Concept
+from cltoolkit.models.sounds import Phoneme, Inventory
+from cltoolkit.models.language import * 
+from cltoolkit.models.form import Form
+from cltoolkit.models.concept import Concept

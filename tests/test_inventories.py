@@ -1,7 +1,7 @@
 import pytest
 from pyclts import CLTS
 from pathlib import Path
-from cldftk.inventories import (
+from cltoolkit.inventories import (
         normalize, from_metadata, from_dataset, retrieve_data, InventoryData)
 
 

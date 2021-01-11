@@ -9,7 +9,7 @@ from cldfbench import get_dataset
 from lingpy.basictypes import lists
 from lingpy import Wordlist as LingPyWordlist
 
-from cldftk.util import progressbar
+from cltoolkit.util import progressbar
 import attr
 
 # reference catalogs (glottolog not needed)
@@ -17,10 +17,10 @@ from pyconcepticon import Concepticon
 from pyclts import CLTS
 
 # lexicore functions
-from cldftk import log
-from cldftk.util import lower_key
-from cldftk.validate import valid_segments
-from cldftk.models import (
+from cltoolkit import log
+from cltoolkit.util import lower_key
+from cltoolkit.validate import valid_segments
+from cltoolkit.models import (
         LanguageWithForms, LanguageWithSegments, Concept, Phoneme, Form)
 
 def iter_rows(ds, table, *values):
@@ -75,7 +75,7 @@ def validate_forms(dataset, ds, ts, concepts, languages):
 
 
 @attr.s
-class Wordlist:
+class WordlistData:
     """
     A wordlist is a collection of several CLDF lexibank datasets.
     """

@@ -2,7 +2,7 @@
 """
 import attr
 from collections import defaultdict, OrderedDict
-from cldftk.util import syllables
+from cltoolkit.util import syllables
 from csvw.dsv import UnicodeDictReader
 from importlib import import_module
 

@@ -1,7 +1,7 @@
 """
-Rudimentary validators for cldftk data.
+Rudimentary validators for cltoolkit data.
 """
-from cldftk import log
+from cltoolkit import log
 from lingpy.basictypes import lists
 
 def valid_segments(segments, bipa):

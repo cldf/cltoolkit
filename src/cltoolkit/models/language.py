@@ -6,41 +6,36 @@ from functools import cached_property
 from pyclts.inventories import Phoneme, Inventory
 from pyclts import CLTS
 from collections import OrderedDict
+import argparse
 
+
+class CLDFGetter:
+    def __init__(self, attr):
+        self.attr = self
+    def __get__(self, obj, objtype=None):
+        return getattr(obj.cldf, self.attr)
 
 @attr.s
 class Language:
     id = attr.ib()
-    cldf = attr.ib(default=None, repr=False)
+    cldf = attr.ib(converter=lambda d: argparse.Namespace(**d), default=None, repr=False)
+    data = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
-    @property
-    def name(self):
-        return self.cldf['Name']
+    name = CLDFGetter('name')
+    glottocode = CLDFGetter('glottocode')
+    latitude = CLDFGetter('latitude')
+    longitude = CLDFGetter('longitude')
+    macroarea = CLDFGetter('macroarea')
 
-    @property
-    def glottolog_name(self):
-        return self.cldf['Glottolog_Name']
-
-    @property
-    def glottocode(self):
-        return self.cldf['Glottocode']
-
-    @property
-    def macroarea(self):
-        return self.cldf['Macroarea']
-
-    @property
-    def family(self):
-        return self.cldf['Family']
-
-    @property
-    def latitude(self):
-        return self.cldf['Latitude']
-
-    @property
-    def longitude(self):
-        return self.cldf['longitude']
+    @classmethod
+    def from_row(cls, idf, row, cldf_property_map, dataset=None):
+        cldf_props, data = {}, OrderedDict()
+        for k, v in row.items():
+            if k in cldf_property_map:
+                cldf_props[cldf_property_map[k]] = v
+            data[k] = v
+        return cls(id=idf, cldf=cldf_props, data=data)
 
 
 @attr.s

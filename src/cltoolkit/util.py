@@ -3,7 +3,7 @@ Utility functions for lexicore.
 """
 from collections import OrderedDict
 from lingpy.sequence.sound_classes import syllabify
-from cldftk import log
+from cltoolkit import log
 from tqdm import tqdm as progressbar
 
 

@@ -1,1 +1,1 @@
-from cldftk.features.collection import *
+from cltoolkit.features.collection import *
