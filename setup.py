@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='cldftk',
+    name='cltoolkit',
     version='0.1.0',
     description='',
     author='',
@@ -11,7 +11,7 @@ setup(
     long_description_content_type='text/markdown',
     keywords='',
     license='MIT',
-    url='https://github.com/cldf-datasets/cldftk',
+    url='https://github.com/cldf/cltoolkit',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
     include_package_data=True,
