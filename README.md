@@ -1,2 +1,2 @@
-# cldftk
-CLDF Toolkit for Processing Cross-Linguistic Data in CLDF
+# CL Toolkit
+Toolkit for processing Cross-Linguistic data.
