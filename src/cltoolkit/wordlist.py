@@ -5,9 +5,12 @@ from collections import OrderedDict, defaultdict
 import pycldf
 from pycldf.util import DictTuple
 
+from pyclts import CLTS
+import lingpy
+
 from cltoolkit.util import progressbar
 from cltoolkit import log
-from cltoolkit.models import Language, Concept, Form, ConceptInSource
+from cltoolkit.models import Language, Concept, Form, ConceptInSource, Phoneme
 
 import attr
 
@@ -22,9 +25,7 @@ class Wordlist:
     """
 
     datasets = attr.ib(default=[])
-    concepts = attr.ib(default=None, repr=False)
-    languages = attr.ib(default=None, repr=False)
-    forms = attr.ib(default=None, repr=False)
+    ts = attr.ib(default=CLTS().transcriptionsystem_dict['bipa'])
 
     @classmethod
     def from_datasets(cls, datasets):
@@ -40,6 +41,7 @@ class Wordlist:
         """
         languages, concepts, forms = [], [], []
         concepts_in_source = []
+        phonemes = OrderedDict()
         for dataset in progressbar(self.datasets, desc="loading datasets"):
             dsid = dataset.metadata_dict["rdf:ID"]
             for language in dataset.objects("LanguageTable"):
@@ -86,17 +88,42 @@ class Wordlist:
                             form.parameter.id,
                             dsid+"-"+form.id
                             )
-                    forms += [(lid, cid, pid, fid, dsid, form)]
-                
+                    sounds = []
+                    for i, segment in enumerate(form.data["Segments"]):
+                        sound = self.ts[segment]
+                        try:
+                            phonemes[str(sound)].graphemes_in_source.add(segment)
+                            try:
+                                phonemes[str(sound)].occs[lid] += [(i, fid)]
+                            except KeyError:
+                                phonemes[str(sound)].occs[lid] = [(i, fid)]
+                        except KeyError:
+                            phonemes[str(sound)] = Phoneme(
+                                    grapheme=str(sound),
+                                    graphemes_in_source = set([segment]),
+                                    occs = {lid: [(i, fid)]},
+                                    sound=sound
+                                    )
+                        if sound.type == 'unknownsound':
+                            log.warning("unknown sound {0}".format(segment))
+                        sounds += [sound]
+
+                    forms += [(lid, cid, pid, fid, dsid, sounds, form)]
+
+        self.phonemes = DictTuple(phonemes.values(), key=lambda x: x.grapheme)
         self.languages = DictTuple(languages)
         self.concepts = DictTuple(concepts)
         self.concepts_in_source = DictTuple(concepts_in_source)
         self.forms = []
-        for lid, cid, pid, fid, dsid, form in forms:
+        for lid, cid, pid, fid, dsid, sounds, form in forms:
             self.forms += [Form(
                         id=fid,
                         concept=self.concepts[cid],
                         language=self.languages[lid],
+                        sounds = [self.phonemes[str(sound)] for sound in
+                            sounds],
+                        tokens = lingpy.basictypes.lists(
+                            [str(sound) for sound in sounds]),
                         concept_in_source=self.concepts_in_source[pid],
                         cldf=form,
                         data=form.data,
@@ -106,7 +133,13 @@ class Wordlist:
             self.concepts[cid].forms += [self.forms[-1]]
             self.languages[lid].forms += [self.forms[-1]]
         self.forms = DictTuple(self.forms)
+        self.height = len(self.concepts)
+        self.width = len(self.languages)
 
+    @property
+    def inventories(self):
+        for language in self.languages:
+            yield language.inventory
 
 
 

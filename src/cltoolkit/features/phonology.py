@@ -6,9 +6,16 @@ from cltoolkit.util import syllables
 from csvw.dsv import UnicodeDictReader
 from importlib import import_module
 
+def consonant_quality_size(language):
+    sounds = []
+    for s in language.inventory.consonants.values():
+        sounds += [" ".join([s for s in s.name.split() if not "long" in s and not "short" in s])]
+    return len(set(sounds))
 
-def has_voiced(inv):
+
+def plosive_fricative_voicing(language):
     """WALS Feature 4A, check for voiced and unvoiced sounds"""
+    inv = language.inventory
     voiced = set([sound.sound.manner for sound in inv.consonants.values() if
         (sound.sound.phonation=='voiced' and sound.sound.manner in
             ['stop', 'fricative']) or ( sound.sound.breathiness and
@@ -25,10 +32,11 @@ def has_voiced(inv):
         return 3
 
 
-def has_ptk(inv):
+def has_ptk(language):
     """
     WALS Feature 5A, check for presence of certain sounds.
     """
+    inv = language.inventory
     sounds = [sound.sound.s for sound in inv.consonants.values()]
     
     if not 'p' in sounds and not 'g' in sounds:
@@ -44,10 +52,11 @@ def has_ptk(inv):
         return 4
 
 
-def has_uvular(inv):
+def has_uvular(language):
     """
     WALS Feature 6A, check for uvular sounds.
     """
+    inv = language.inventory
     uvulars = set([sound.sound.manner for sound in inv.consonants.values() if
             sound.sound.place=='uvular'])
     if len(uvulars) == 0:
@@ -61,10 +70,10 @@ def has_uvular(inv):
         return 4
 
 
-def has_glottalized(inv):
+def has_glottalized(language):
     """
     WALS Feature 7A, check for glottalized or implosive consonants."""
-    
+    inv = language.inventory
     ejectives = [sound for sound in inv.consonants.values() if
             sound.sound.ejection and sound.sound.manner in 
             ['stop', 'affricate']]
@@ -91,9 +100,10 @@ def has_glottalized(inv):
         return 8
 
 
-def has_laterals(inv):
+def has_laterals(language):
     """
     WALS Feature 8A, check for lateral sounds."""
+    inv = language.inventory
     laterals = set([sound.sound.manner for sound in
         inv.consonants.values() if
         sound.sound.airstream == 'lateral'])
@@ -111,9 +121,10 @@ def has_laterals(inv):
         return 6
 
 
-def has_engma(inv):
+def has_engma(language):
     """
     WALS Feature 9A, check for nasals."""
+    inv = language.inventory
     consonants = [sound.sound.s for sound in inv.consonants.values()]
     if 'ŋ' in consonants:
         for fid, pos in inv.sounds['ŋ'].occs:
@@ -123,25 +134,25 @@ def has_engma(inv):
     return 3
 
 
-def has_nasal_vowels(inv):
+def has_nasal_vowels(language):
     """
     WALS Feature 10A, check for nasal vowels.
     """
-    vowels = [sound for sound in inv.vowels.values() if
+    vowels = [sound for sound in language.inventory.vowels.values() if
             sound.sound.nasalization]
     if vowels:
         return 1
     return 2
 
 
-def has_rounded_vowels(inv):
+def has_rounded_vowels(language):
     """
     WALS Feature 11A, check for front rounded vowels.
     """
-    high = [sound for sound in inv.vowels.values() if
+    high = [sound for sound in language.inventory.vowels.values() if
             sound.sound.roundedness == 'rounded' and sound.sound.height in
             ['open', 'near-open']]
-    mid = [sound for sound in inv.vowels.values() if
+    mid = [sound for sound in language.inventory.vowels.values() if
             sound.sound.roundedness == 'rounded' and
             sound.sound.height in ['open-mid', 'mid']]
     if not high and not mid:
@@ -154,7 +165,7 @@ def has_rounded_vowels(inv):
         return 4
 
 
-def syllable_complexity(inv, pp=None):
+def syllable_complexity(language):
     """
     WALS Feature 12A, check for syllable complexity.
 
@@ -164,10 +175,10 @@ def syllable_complexity(inv, pp=None):
     """
     
     preceding, following = defaultdict(list), defaultdict(list)
-    for form in inv.language.forms:
+    for form in language.forms:
         for syllable in syllables(form):
             sounds, count = [], 0
-            for sound in map(lambda x: inv.ts[x], syllable):
+            for sound in map(lambda x: language.wordlist.ts[x], syllable):
                 if sound.type == 'marker':
                     log.warning(syllable, morpheme, form.id, form.segments)
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
@@ -178,7 +189,7 @@ def syllable_complexity(inv, pp=None):
                     break
             preceding[count] += [sounds]
             sounds, count = [], 0
-            for sound in map(lambda x: inv.ts[x], syllable[::-1]):
+            for sound in map(lambda x: language.wordlist.ts[x], syllable[::-1]):
                 if sound.type not in ['vowel', 'diphthong']:
                     if sound.type not in ['tone', 'marker']:
                         count += 1
