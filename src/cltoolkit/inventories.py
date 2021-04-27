@@ -13,7 +13,7 @@ from pyclts.util import nfd
 from pyclts.models import is_valid_sound
 from cltoolkit.util import progressbar
 from cltoolkit import log
-from cltoolkit.models.language import LanguageWithInventory
+from cltoolkit.models.language import Language
 from cltoolkit.models.sounds import Inventory, Phoneme
 
 

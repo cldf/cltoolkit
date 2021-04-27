@@ -1,270 +1,112 @@
 """
 Class for handling wordlist data.
 """
-from collections import defaultdict, OrderedDict
-from csvw.dsv import UnicodeReader, UnicodeDictReader
+from collections import OrderedDict, defaultdict
 import pycldf
-from cldfbench import get_dataset
-
-from lingpy.basictypes import lists
-from lingpy import Wordlist as LingPyWordlist
+from pycldf.util import DictTuple
 
 from cltoolkit.util import progressbar
+from cltoolkit import log
+from cltoolkit.models import Language, Concept, Form, ConceptInSource
+
 import attr
 
-# reference catalogs (glottolog not needed)
-from pyconcepticon import Concepticon
-from pyclts import CLTS
-
-# lexicore functions
-from cltoolkit import log
-from cltoolkit.util import lower_key
-from cltoolkit.validate import valid_segments
-from cltoolkit.models import (
-        LanguageWithForms, LanguageWithSegments, Concept, Phoneme, Form)
-
-def iter_rows(ds, table, *values):
-    for item in ds.iter_rows(table):
-        yield [item[v] for v in values]+[item]
 
 
-def iter_dict(lst, *values):
-    for item in lst:
-        yield [item[v] for v in values]+[item]
 
+@attr.s(repr=False)
+class Wordlist:
 
-def make_id(*elms, sep='-'):
-    return sep.join(elms)
-
-
-def validate_languages(dataset, ds, valid_coordinates, valid_glottocode):
     """
-    Select those languages from the sample which conforms to the validation.
+    A collection of one or more lexibank datasets, aligned by concept.
     """
-    for language in ds.iter_rows('LanguageTable'):
-        language['forms'] = []
-        lid = make_id(dataset, language['ID'])
-        if valid_coordinates and valid_glottocode:
-            if language['Latitude'] and language['Glottocode']:
-                yield lid, language
-        elif valid_coordinates:
-            if language['Latitude']:
-                yield lid, language
-        elif valid_glottocode:
-            if language['Glottocode']:
-                yield lid, language
-        else:
-            yield lid, language
 
-
-def validate_forms(dataset, ds, ts, concepts, languages):
-    for segments, _fid, _lid, pid, form in iter_rows(
-            ds, 'FormTable', 'Segments', 'ID', 'Language_ID',
-            'Parameter_ID'
-            ):
-        fid, lid = make_id(dataset, _fid), make_id(dataset, _lid)
-        sounds = valid_segments(segments, ts)
-        if sounds and pid in concepts and lid in languages:
-            yield (
-                    fid, lid, concepts[pid], form, 
-                    sounds,
-                    lists([str(s) for s in sounds]))
-        elif not segments:
-            log.warning('Invalid form {0}-{1} (Segments: {2}'.format(
-                dataset, _fid, segments))
-
-
-@attr.s
-class WordlistData:
-    """
-    A wordlist is a collection of several CLDF lexibank datasets.
-    """
     datasets = attr.ib(default=[])
-    ts = attr.ib(default=CLTS().transcriptionsystem_dict['bipa'], repr=False)
-    concepticon = attr.ib(default=Concepticon(), repr=False)
-    concepts = attr.ib(default=OrderedDict(),
-            repr=False)
-    languages = attr.ib(default=OrderedDict(), repr=False)
-    inventories = attr.ib(default=OrderedDict(), repr=False)
-    forms = attr.ib(default=OrderedDict(), repr=False)
-    invalid = []
-    dataset_dict = {}
-
-    @property
-    def width(self):
-        return len(self.languages)
-
-    @property
-    def height(self):
-        return len(self.languages)
+    concepts = attr.ib(default=None, repr=False)
+    languages = attr.ib(default=None, repr=False)
+    forms = attr.ib(default=None, repr=False)
 
     @classmethod
-    def from_file(cls, path, delimiter='\t'):
-        datasets = []
-        with UnicodeDictReader(path, delimiter=delimiter) as reader:
-            for row in reader:
-                if row['IGNORE'] != '1':
-                    datasets += [row['ID']]
-        return cls(datasets=datasets)
-
-    @classmethod
-    def from_datasets(cls, *datasets):
-        return cls(datasets=datasets)
-
-    def as_wordlist(
-            self, format_language=None, wordlist=LingPyWordlist):
-        if not format_language:
-            format_language = lambda x: x.id.split('-')[1]
-        D = {
-                0: ['lexibank', 'dataset', 'doculect', 'doculect_in_source',
-                    'glottolog', 'concept', 'concepticon', 'concept_in_source',
-                    'latitude', 'longitude', 'family', 'value', 'form',
-                    'tokens']
-                }
-        idx = 1
-        for language_id, language in self.languages.items():
-            for form in language.forms:
-                D[idx] = [
-                        form.id, 
-                        form.language.dataset, 
-                        format_language(form.language),
-                        language.name, 
-                        language.glottocode,
-                        form.concept_name, 
-                        form.concept.concepticon_id,
-                        form.concept_in_source, 
-                        language.latitude,
-                        language.longitude, 
-                        language.family, 
-                        form.value,
-                        form.form, 
-                        form.tokens
-                        ]
-                idx += 1
-        return wordlist(D)
-
-    def load_datasets(self, mode='python', path=''):
+    def from_datasets(cls, datasets):
         """
-        Load the datasets from pylexibank and check if they exist.
+        Initialize from multiple datasets already loaded via pycldf.
         """
-        if mode == 'python':
-            for dataset in progressbar(self.datasets, desc="load datasets"):
-                ds = get_dataset(
-                        dataset,
-                        ep='lexibank.dataset')
-                if ds:
-                    self.dataset_dict[dataset] = ds.cldf_reader()
-                else:
-                    log.warning('could not load {0}'.format(dataset))
-        elif mode == 'path':
-            for dataset in progressbar(self.datasets, desc="load datasets"):
-                ds = pycldf.Dataset.from_metadata(
-                        Path(path, dataset, 'cldf', 'cldf-metadata.json'))
-                self.dataset_dict[dataset] = ds
-    
-    def load_forms(
-            ):
-        pass
+        return cls(datasets=DictTuple(
+            datasets, key=lambda x: x.metadata_dict["rdf:ID"]))
 
-
-    def load_segments(
-            self, 
-            threshold=100,
-            valid_coordinates=True,
-            valid_glottocode=True
-            ):
-        # validators from parameters
-
-
-        for dataset, ds in progressbar(
-                self.dataset_dict.items(),
-                desc="load segments"
-                ):
-
-            # retrieve languages
-            languages = OrderedDict(
-                    validate_languages(
-                        dataset, ds, valid_coordinates,
-                        valid_glottocode))
-            # TODO: allow to retrieve concepts not mapped to concepticon
-            concepts = OrderedDict(
-                    [(concept['ID'], concept
-                        ) for concept in ds.iter_rows('ParameterTable') if \
-                                concept['Concepticon_ID']])
-            forms = OrderedDict()
-            for (fid, lid, concept, form, sounds, tokens
-                    ) in validate_forms(
-                            dataset, ds, self.ts, concepts, languages
-                    ):
-                # store all essential attributes
-                languages[lid]['forms'] += [
-                        (
-                            form, concept, tokens, sounds,
-                            fid, concept['Concepticon_Gloss'])] 
-
-            for lid, language in [(k, v) for k, v in languages.items() if
-                    len(v['forms']) >= threshold]:
-                # add language to the wordlist
-                self.languages[lid] = LanguageWithSegments(
-                        id=lid, 
-                        cldf=language,
-                        dataset=dataset,
-                        ts=self.ts,
-                        forms=[]
+    def load(self):
+        """
+        Load the data.
+        """
+        languages, concepts, forms = [], [], []
+        concepts_in_source = []
+        for dataset in progressbar(self.datasets, desc="loading datasets"):
+            dsid = dataset.metadata_dict["rdf:ID"]
+            for language in dataset.objects("LanguageTable"):
+                language_id = dsid+"-"+language.id
+                languages += [
+                        Language(
+                            id=language_id, 
+                            wordlist=self, 
+                            data=language.data,
+                            cldf=language, 
+                            dataset=dsid,
+                            forms=[]
                         )
+                    ]
 
-                # iterate over the forms to add forms and concepts
-                for form, concept, tokens, sounds, fid, cid in language['forms']:
-                    if not cid in self.concepts:
-                        self.concepts[cid] = Concept(
-                                id=cid,
-                                forms=[],
-                                concept=concept
-                                )
-                    self.forms[fid] = Form(
-                            id=fid,
-                            language=self.languages[lid],
-                            concept=self.concepts[cid],
-                            sounds=sounds,
-                            tokens=tokens,
-                            concept_in_source=concept,
-                            attributes=form)
-                    self.concepts[cid].forms += [self.forms[fid]]
-                    self.languages[lid].forms += [self.forms[fid]]
+            # concepts need to be merged, so we treat them differently
+            for concept in dataset.objects("ParameterTable"):
+                concept_id = concept.data["Concepticon_Gloss"]
+                if concept_id:
+                    concepts_in_source += [
+                            ConceptInSource(
+                                id=concept.id,
+                                wordlist=self,
+                                dataset=dsid,
+                                data=concept.data
+                                )]
+                    concepts += [
+                            Concept(
+                                id=concept_id,
+                                wordlist=self,
+                                name=concept_id.lower(),
+                                concepticon_id=concept.data["Concepticon_ID"],
+                                concepticon_gloss=concept.data["Concepticon_Gloss"],
+                                forms=[]
+                            )
+                        ]
 
-    def __len__(self):
-        return len(self.forms)
+            for form in dataset.objects("FormTable"):
+                # check for concepticon ID
+                if form.parameter.data["Concepticon_Gloss"]:
+                    lid, cid, pid, fid = (
+                            dsid+"-"+form.data["Language_ID"], 
+                            form.parameter.data["Concepticon_Gloss"],
+                            form.parameter.id,
+                            dsid+"-"+form.id
+                            )
+                    forms += [(lid, cid, pid, fid, dsid, form)]
+                
+        self.languages = DictTuple(languages)
+        self.concepts = DictTuple(concepts)
+        self.concepts_in_source = DictTuple(concepts_in_source)
+        self.forms = []
+        for lid, cid, pid, fid, dsid, form in forms:
+            self.forms += [Form(
+                        id=fid,
+                        concept=self.concepts[cid],
+                        language=self.languages[lid],
+                        concept_in_source=self.concepts_in_source[pid],
+                        cldf=form,
+                        data=form.data,
+                        dataset=dsid,
+                        wordlist=self
+                        )]
+            self.concepts[cid].forms += [self.forms[-1]]
+            self.languages[lid].forms += [self.forms[-1]]
+        self.forms = DictTuple(self.forms)
 
-    def __iter__(self):
-        for language in self.languages.values():
-            yield language
 
-    #def load_inventories(self):
-    #    for lid, language in progressbar(
-    #            self.languages.items(),
-    #            desc="load inventories"):
-    #        sounds = OrderedDict()
-    #        for form in language.forms:
-    #            for i, (sound, segment, token) in enumerate(zip(
-    #                form.sounds, form.segments, form.tokens)):
-    #                if sound.type != 'marker':
-    #                    try:
-    #                        sounds[token].occs += [(form.id, i)]
-    #                        sounds[token].graphemes_in_source += [segment]
-    #                    except KeyError:
-    #                        sounds[token] = Phoneme(
-    #                                grapheme=token,
-    #                                graphemes_in_source=[segment],
-    #                                name=sound.name,
-    #                                type=sound.type,
-    #                                sound=sound,
-    #                                occs=[(form.id, i)]
-    #                                )
-    #        self.inventories[lid] = Inventory(
-    #                id=lid,
-    #                sounds=sounds,
-    #                language=language,
-    #                ts=self.ts
-    #                )
 
 
