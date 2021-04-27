@@ -7,6 +7,11 @@ from csvw.dsv import UnicodeDictReader
 from collections import OrderedDict
 import json
 from pycldf.util import DictTuple
+from cltoolkit.util import cltoolkit_path
+
+
+def feature_data():
+    return json.load(open(cltookit_path('features', 'features.json')))
 
 @attr.s(repr=False)
 class Feature:
@@ -29,7 +34,13 @@ class FeatureCollection:
     def from_metadata(cls, path):
         with open(path) as f:
             data = json.load(f)
+        return cls.from_data(data)
+
+
+    @classmethod
+    def from_data(cls, data):
         features = []
+        
         for vals in data:
             
             vals["function"] = getattr(

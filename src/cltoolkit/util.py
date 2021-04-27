@@ -6,12 +6,12 @@ from lingpy.sequence.sound_classes import syllabify
 from cltoolkit import log
 from functools import partial
 from tqdm import tqdm as progressbar
+from pathlib import Path
+import cltoolkit
 
 
-def lower_key(dictionary, **keywords):
-    out = OrderedDict([(k.lower(), v) for k, v in dictionary.items()])
-    out.update(keywords)
-    return out
+def cltoolkit_path(*comps):
+    return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()
 
 
 def syllables(form):

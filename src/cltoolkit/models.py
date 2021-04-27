@@ -39,6 +39,9 @@ class Language(CLBase):
     subgroup = GetValueFromData("SubGroup")
     forms = attr.ib(default=[], repr=False)
 
+    def __repr__(self):
+        return '<Language '+self.id+">"
+
     @property
     def inventory(self):
         sounds = OrderedDict()
@@ -62,6 +65,9 @@ class ConceptInSource(CLBase):
     """
     name = GetValueFromData("Name")
 
+    def __repr__(self):
+        return '<ConceptInSource '+self.id+'>'
+
 
 @attr.s(repr=False)
 class Concept:
@@ -76,7 +82,7 @@ class Concept:
     forms = attr.ib(default=[], repr=False)
 
     def __repr__(self):
-        return "<concept «"+ self.name+"»>"
+        return "<Concept «"+ self.name+"»>"
 
 
 
@@ -100,11 +106,16 @@ class Form(CLBase):
 class Phoneme(CLTSPhoneme):
     
     def __repr__(self):
-        return "/"+str(self)+"/"
+        return "<Phoneme "+str(self)+">"
 
 
 @attr.s(repr=False)
 class Inventory(CLTSInventory):
 
+    def __getitem__(self, idx):
+        if isinstance(idx, int):
+            return self.sounds[list(self.sounds.keys())[idx]]
+        return self.sounds[idx]
+
     def __repr__(self):
-        return "<inventory "+self.language.id+">"
+        return "<Inventory "+self.language.id+">"

@@ -203,19 +203,20 @@ def syllable_complexity(language):
     return 2 * (p*f)/(p+f)
 
 
-def has_tones(inv):
+def has_tones(language):
     """
     WALS Feature 13A. Presence of tones.
     """
-    if inv.tones:
+    if language.inventory.tones:
         return 2
     return 1
 
 
-def lacks_common_consonants(inv):
+def lacks_common_consonants(language):
     """
     WALS Feature 18A, check for absence of common consonants.
     """
+    inv = language.inventory
     bilabials = [sound for sound in inv.consonants.values() if 'bilabial' in
             sound.sound.featureset]
     fricatives = [sound for sound in inv.consonants.values() if 'fricative' in
@@ -236,12 +237,12 @@ def lacks_common_consonants(inv):
         return 6
 
 
-def consonant_size(inv):
-    return len(inv.consonants)
+def consonant_size(language):
+    return len(language.inventory.consonants)
 
 
-def vowel_size(inv):
-    return len(inv.vowels)
+def vowel_size(language):
+    return len(language.inventory.vowels)
 
 
 def consonantal_size(inv):

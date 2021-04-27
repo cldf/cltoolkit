@@ -5,6 +5,8 @@ from collections import OrderedDict, defaultdict
 import pycldf
 from pycldf.util import DictTuple
 
+from importlib import import_module
+
 from pyclts import CLTS
 import lingpy
 
@@ -28,12 +30,23 @@ class Wordlist:
     ts = attr.ib(default=CLTS().transcriptionsystem_dict['bipa'])
 
     @classmethod
-    def from_datasets(cls, datasets):
+    def from_datasets(cls, datasets, load=True):
         """
         Initialize from multiple datasets already loaded via pycldf.
         """
-        return cls(datasets=DictTuple(
+        this_class = cls(datasets=DictTuple(
             datasets, key=lambda x: x.metadata_dict["rdf:ID"]))
+        if load:
+            this_class.load()
+        return this_class
+
+    @classmethod
+    def from_lexibank(cls, datasets, load=True):
+        dsets = []
+        for ds in datasets:
+            dsets += [pycldf.Dataset.from_metadata(import_module(
+                'lexibank_'+ds).Dataset().cldf_dir.joinpath('cldf-metadata.json'))]
+        return cls.from_datasets(dsets, load=load)
 
     def load(self):
         """
@@ -42,6 +55,7 @@ class Wordlist:
         languages, concepts, forms = [], [], []
         concepts_in_source = []
         phonemes = OrderedDict()
+        self.invalid = []
         for dataset in progressbar(self.datasets, desc="loading datasets"):
             dsid = dataset.metadata_dict["rdf:ID"]
             for language in dataset.objects("LanguageTable"):
@@ -81,6 +95,7 @@ class Wordlist:
 
             for form in dataset.objects("FormTable"):
                 # check for concepticon ID
+                valid = True
                 if form.parameter.data["Concepticon_Gloss"]:
                     lid, cid, pid, fid = (
                             dsid+"-"+form.data["Language_ID"], 
@@ -106,9 +121,11 @@ class Wordlist:
                                     )
                         if sound.type == 'unknownsound':
                             log.warning("unknown sound {0}".format(segment))
+                            self.invalid += [form]
+                            valid = False
                         sounds += [sound]
-
-                    forms += [(lid, cid, pid, fid, dsid, sounds, form)]
+                    if valid:
+                        forms += [(lid, cid, pid, fid, dsid, sounds, form)]
 
         self.phonemes = DictTuple(phonemes.values(), key=lambda x: x.grapheme)
         self.languages = DictTuple(languages)
@@ -135,11 +152,9 @@ class Wordlist:
         self.forms = DictTuple(self.forms)
         self.height = len(self.concepts)
         self.width = len(self.languages)
+        if self.invalid:
+            log.warning("there are {0} invalid forms".format(len(invalid)))
 
-    @property
-    def inventories(self):
-        for language in self.languages:
-            yield language.inventory
 
 
 

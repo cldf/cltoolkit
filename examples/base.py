@@ -1,14 +1,19 @@
 from cltoolkit import Wordlist
 from pycldf import Dataset
-from cltoolkit.features.collection import FeatureCollection
+from cltoolkit.features.collection import FeatureCollection, feature_data
+from cltoolkit.util import cltoolkit_path
+from importlib import import_module
 
-ds = Dataset.from_metadata('/home/mattis/data/datasets/cldf/lexibank-data/allenbai/cldf/cldf-metadata.json')
+wordlists = ['allenbai', 'liusinitic', 'walworthpolynesian']
 
-wl = Wordlist.from_datasets([ds])
-wl.load()
-ft = FeatureCollection.from_metadata("features.json")
-out = ft.apply_to_language("ConsonantQualitySize", wl.languages[1])
-print(out)
+datasets = [
+        Dataset.from_metadata(import_module('lexibank_'+ds).Dataset().cldf_dir.joinpath('cldf-metadata.json'))
+        for ds in wordlists]
+
+wl = Wordlist.from_lexibank(wordlists)
+#wl.load()
+ft = FeatureCollection.from_metadata(cltoolkit_path('features',
+    "features.json"))
 
 for language in wl.languages:
     for feature in ft.features:
