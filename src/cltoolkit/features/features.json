@@ -9,6 +9,87 @@
     "note": ""
   },
   {
+    "id": "VowelQualitySize",
+    "name": "vowel quality size",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "vowel_quality_size",
+    "note": ""
+  },
+  {
+    "id": "VowelSize",
+    "name": "vowel size",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "vowel_size",
+    "note": ""
+  },
+  {
+    "id": "ConsonantSize",
+    "name": "consonant size",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "consonant_size",
+    "note": ""
+  },
+  {
+    "id": "CVRatio",
+    "name": "consonant and vowel ratio",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "cv_ratio",
+    "note": ""
+  },
+  {
+    "id": "CVQualityRatio",
+    "name": "consonant and vowel ratio (by quality)",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "cv_quality_ratio",
+    "note": ""
+  },
+  {
+    "id": "CVSoundRatio",
+    "name": "consonant and vowel ratio (including diphthongs and clusters)",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "cv_sounds_ratio",
+    "note": ""
+  },
+  {
+    "id": "HasNasalVowels",
+    "name": "has nasal vowels or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_nasal_vowels",
+    "note": ""
+  },
+  {
+    "id": "HasRoundedVowels",
+    "name": "has rounded vowels or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_rounded_vowels",
+    "note": ""
+  },
+  {
+    "id": "VelarNasal",
+    "name": "has the velar nasal (engma)",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_engma",
+    "note": ""
+  },
+  {
     "id": "PlosiveVoicingGaps",
     "name": "voicing and gaps in plosives",
     "type": "integer",
@@ -43,9 +124,41 @@
     "module": "cltoolkit.features.phonology",
     "function": "syllable_complexity",
     "note": ""
+  },
+  {
+    "id": "HandAndArm",
+    "name": "hand and arm distinguished or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_hand_arm_colexified",
+    "note": ""
+  },
+  {
+    "id": "FingerAndHand",
+    "name": "hand and finger distinguished or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_finger_hand_colexified",
+    "note": ""
+  },
+  {
+    "id": "GreenAndBlue",
+    "name": "green and blue colexified or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_green_blue_colexified",
+    "note": ""
+  },
+  {
+    "id": "RedAndYellow",
+    "name": "red and yellow colexified or not",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_red_yellow_colexified",
+    "note": ""
   }
-
-
-
-
 ]

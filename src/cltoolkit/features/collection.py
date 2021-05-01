@@ -13,6 +13,7 @@ from cltoolkit.util import cltoolkit_path
 def feature_data():
     return json.load(open(cltookit_path('features', 'features.json')))
 
+
 @attr.s(repr=False)
 class Feature:
     id = attr.ib()
@@ -26,6 +27,10 @@ class Feature:
     def __call__(self, param):
         return self.function(param)
 
+    def __repr__(self):
+        return "<Feature "+self.id+">"
+
+
 @attr.s
 class FeatureCollection:
     features = attr.ib(default=None)
@@ -35,7 +40,6 @@ class FeatureCollection:
         with open(path) as f:
             data = json.load(f)
         return cls.from_data(data)
-
 
     @classmethod
     def from_data(cls, data):
@@ -49,7 +53,6 @@ class FeatureCollection:
         return cls(features=DictTuple(features))
 
     def apply_to_language(self, feature, language):
-
         return self.features[feature](language)
         
 

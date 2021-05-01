@@ -1,26 +1,51 @@
-"""Miscelleneous features collected from the WALS database.
+"""Miscellaneous features collected typological databases.
 """
-import attr
 from collections import defaultdict, OrderedDict
 from cltoolkit.util import syllables
-from csvw.dsv import UnicodeDictReader
-from importlib import import_module
+from functools import partial
 
-def consonant_quality_size(language):
-    sounds = []
-    for s in language.inventory.consonants.values():
-        sounds += [" ".join([s for s in s.name.split() if not "long" in s and not "short" in s])]
-    return len(set(sounds))
+
+def base_inventory_query(language, attr=None):
+    return len(getattr(language.inventory, attr))
+
+
+def base_yes_no_query(language, attr=None):
+    out = getattr(language.inventory, attr)
+    if out:
+        return 1
+    return 0
+
+def base_ratio(language, attr1=None, attr2=None):
+    return len(getattr(language.inventory, attr1)) / len(
+            getattr(language.inventory, attr2))
+
+
+vowel_quality_size = partial(base_inventory_query, attr="vowels_by_quality")
+consonant_quality_size = partial(base_inventory_query, attr="consonants_by_quality")
+vowel_size = partial(base_inventory_query, attr="vowels")
+consonant_size = partial(base_inventory_query, attr="consonants")
+vowel_sound_size = partial(base_inventory_query, attr="vowel_sounds")
+consonant_sound_size = partial(base_inventory_query, attr="consonant_sounds")
+has_tones = partial(base_yes_no_query, attr="tones")
+cv_ratio = partial(base_ratio, attr1="vowels", attr2="consonants")
+cv_quality_ratio = partial(
+        base_ratio, attr1="vowels_by_quality",
+        attr2="consonants_by_quality")
+cv_sounds_ratio = partial(
+        base_ratio,
+        attr1="vowel_sounds",
+        attr2="consonant_sounds")
+
 
 
 def plosive_fricative_voicing(language):
     """WALS Feature 4A, check for voiced and unvoiced sounds"""
     inv = language.inventory
-    voiced = set([sound.sound.manner for sound in inv.consonants.values() if
-        (sound.sound.phonation=='voiced' and sound.sound.manner in
-            ['stop', 'fricative']) or ( sound.sound.breathiness and
-                sound.sound.manner in ['stop', 'fricative']) or (
-                    sound.sound.voicing and sound.sound.manner in
+    voiced = set([sound.clts.manner for sound in inv.consonants if
+        (sound.clts.phonation=='voiced' and sound.clts.manner in
+            ['stop', 'fricative']) or ( sound.clts.breathiness and
+                sound.clts.manner in ['stop', 'fricative']) or (
+                    sound.clts.voicing and sound.clts.manner in
                     ['stop', 'fricative'])])
     if not voiced:
         return 1
@@ -37,7 +62,7 @@ def has_ptk(language):
     WALS Feature 5A, check for presence of certain sounds.
     """
     inv = language.inventory
-    sounds = [sound.sound.s for sound in inv.consonants.values()]
+    sounds = [sound.clts.s for sound in inv.consonants]
     
     if not 'p' in sounds and not 'g' in sounds:
         return 1
@@ -57,8 +82,8 @@ def has_uvular(language):
     WALS Feature 6A, check for uvular sounds.
     """
     inv = language.inventory
-    uvulars = set([sound.sound.manner for sound in inv.consonants.values() if
-            sound.sound.place=='uvular'])
+    uvulars = set([sound.clts.manner for sound in inv.consonants if
+            sound.clts.place=='uvular'])
     if len(uvulars) == 0:
         return 1
     elif len(uvulars) == 1:
@@ -74,14 +99,14 @@ def has_glottalized(language):
     """
     WALS Feature 7A, check for glottalized or implosive consonants."""
     inv = language.inventory
-    ejectives = [sound for sound in inv.consonants.values() if
-            sound.sound.ejection and sound.sound.manner in 
+    ejectives = [sound for sound in inv.consonants if
+            sound.clts.ejection and sound.clts.manner in 
             ['stop', 'affricate']]
-    resonants = [sound for sound in inv.consonants.values() if 
-            sound.sound.ejection and sound.sound.manner not in
+    resonants = [sound for sound in inv.consonants if 
+            sound.clts.ejection and sound.clts.manner not in
             ['stop', 'affricate']]
-    implosives = [sound for sound in inv.consonants.values() if 
-            sound.sound.manner == 'implosive']
+    implosives = [sound for sound in inv.consonants if 
+            sound.clts.manner == 'implosive']
     if not ejectives and not implosives and not resonants:
         return 1
     elif ejectives and not implosives and not resonants:
@@ -104,9 +129,9 @@ def has_laterals(language):
     """
     WALS Feature 8A, check for lateral sounds."""
     inv = language.inventory
-    laterals = set([sound.sound.manner for sound in
-        inv.consonants.values() if
-        sound.sound.airstream == 'lateral'])
+    laterals = set([sound.clts.manner for sound in
+        inv.consonants if
+        sound.clts.airstream == 'lateral'])
     if not laterals:
         return 1
     elif len(laterals) == 1 and 'l' in inv.sounds:
@@ -125,7 +150,7 @@ def has_engma(language):
     """
     WALS Feature 9A, check for nasals."""
     inv = language.inventory
-    consonants = [sound.sound.s for sound in inv.consonants.values()]
+    consonants = [sound.clts.s for sound in inv.consonants]
     if 'ŋ' in consonants:
         for fid, pos in inv.sounds['ŋ'].occs:
             if pos == 0:
@@ -138,8 +163,8 @@ def has_nasal_vowels(language):
     """
     WALS Feature 10A, check for nasal vowels.
     """
-    vowels = [sound for sound in language.inventory.vowels.values() if
-            sound.sound.nasalization]
+    vowels = [sound for sound in language.inventory.vowels if
+            sound.clts.nasalization]
     if vowels:
         return 1
     return 2
@@ -149,12 +174,12 @@ def has_rounded_vowels(language):
     """
     WALS Feature 11A, check for front rounded vowels.
     """
-    high = [sound for sound in language.inventory.vowels.values() if
-            sound.sound.roundedness == 'rounded' and sound.sound.height in
+    high = [sound for sound in language.inventory.vowels if
+            sound.clts.roundedness == 'rounded' and sound.clts.height in
             ['open', 'near-open']]
-    mid = [sound for sound in language.inventory.vowels.values() if
-            sound.sound.roundedness == 'rounded' and
-            sound.sound.height in ['open-mid', 'mid']]
+    mid = [sound for sound in language.inventory.vowels if
+            sound.clts.roundedness == 'rounded' and
+            sound.clts.height in ['open-mid', 'mid']]
     if not high and not mid:
         return 1
     elif high and mid:
@@ -203,26 +228,18 @@ def syllable_complexity(language):
     return 2 * (p*f)/(p+f)
 
 
-def has_tones(language):
-    """
-    WALS Feature 13A. Presence of tones.
-    """
-    if language.inventory.tones:
-        return 2
-    return 1
-
 
 def lacks_common_consonants(language):
     """
     WALS Feature 18A, check for absence of common consonants.
     """
     inv = language.inventory
-    bilabials = [sound for sound in inv.consonants.values() if 'bilabial' in
-            sound.sound.featureset]
-    fricatives = [sound for sound in inv.consonants.values() if 'fricative' in
-            sound.sound.featureset]
-    nasals = [sound for sound in inv.consonants.values() if 'nasal' in
-            sound.sound.featureset]
+    bilabials = [sound for sound in inv.consonants if 'bilabial' in
+            sound.clts.featureset]
+    fricatives = [sound for sound in inv.consonants if 'fricative' in
+            sound.clts.featureset]
+    nasals = [sound for sound in inv.consonants if 'nasal' in
+            sound.clts.featureset]
     if bilabials and fricatives and nasals:
         return 1
     elif not bilabials and fricatives and nasals:
@@ -237,54 +254,4 @@ def lacks_common_consonants(language):
         return 6
 
 
-def consonant_size(language):
-    return len(language.inventory.consonants)
 
-
-def vowel_size(language):
-    return len(language.inventory.vowels)
-
-
-def consonantal_size(inv):
-    return len(inv.consonants)+len(inv.clusters)
-
-
-def vocalic_size(inv):
-    return len(inv.vowels)+len(inv.diphthongs)
-
-
-def cv_ratio(inv):
-    return len(inv.consonants) / len(inv.vowels)
-
-
-def hand_and_arm(lng):
-    """
-    Return 0 for missing data
-    """
-    forms = [form for form in lng.forms if form.concept.concepticon_id in
-            ['1673', '2121', '1277']]
-    form_dict = defaultdict(list)
-    for form in forms:
-        form_dict[form.form] += [form.concept.concepticon_id]
-    for k, v in form_dict.items():
-        if ('1673' in v and '1277' in v) or '2121' in v:
-            return 1
-    concepts = [form.concept.concepticon_id for form in forms]
-    if '1673' in concepts and '1277' in concepts:
-        return 2
-    return 0
-
-
-def finger_and_hand(lng):
-    forms = [form for form in lng.forms if form.concept.concepticon_id in
-            ['1277', '1303', '2120']]
-    form_dict = defaultdict(list)
-    for form in forms:
-        form_dict[form.form] += [form.concept.concepticon_id]
-    for k, v in form_dict.items():
-        if '1277' in v and ('1303' in v or '2120' in v):
-            return 1
-    concepts = [form.concept.concepticon_id for form in forms]
-    if '1277' in concepts and ('1303' in concepts or '2120' in concepts):
-        return 2
-    return 0

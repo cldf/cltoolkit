@@ -10,13 +10,11 @@ from importlib import import_module
 from pyclts import CLTS
 import lingpy
 
-from cltoolkit.util import progressbar
+from cltoolkit.util import progressbar, DictList
 from cltoolkit import log
-from cltoolkit.models import Language, Concept, Form, ConceptInSource, Phoneme
+from cltoolkit.models import Language, ConceptSet, Concept, Form, ConceptInSource, Sound, Phoneme
 
 import attr
-
-
 
 
 @attr.s(repr=False)
@@ -54,7 +52,7 @@ class Wordlist:
         """
         languages, concepts, forms = [], [], []
         concepts_in_source = []
-        phonemes = OrderedDict()
+        phonemes = DictList([])
         self.invalid = []
         for dataset in progressbar(self.datasets, desc="loading datasets"):
             dsid = dataset.metadata_dict["rdf:ID"]
@@ -67,7 +65,8 @@ class Wordlist:
                             data=language.data,
                             cldf=language, 
                             dataset=dsid,
-                            forms=[]
+                            forms=DictList([]),
+                            concepts=DictList([])
                         )
                     ]
 
@@ -77,20 +76,17 @@ class Wordlist:
                 if concept_id:
                     concepts_in_source += [
                             ConceptInSource(
-                                id=concept.id,
+                                id=dsid+'-'+concept.id,
                                 wordlist=self,
                                 dataset=dsid,
                                 data=concept.data
                                 )]
                     concepts += [
-                            Concept(
-                                id=concept_id,
+                            ConceptSet.from_concept_in_source(
+                                concepts_in_source[-1],
                                 wordlist=self,
-                                name=concept_id.lower(),
-                                concepticon_id=concept.data["Concepticon_ID"],
-                                concepticon_gloss=concept.data["Concepticon_Gloss"],
-                                forms=[]
-                            )
+                                forms=DictList([])
+                                )
                         ]
 
             for form in dataset.objects("FormTable"):
@@ -100,25 +96,28 @@ class Wordlist:
                     lid, cid, pid, fid = (
                             dsid+"-"+form.data["Language_ID"], 
                             form.parameter.data["Concepticon_Gloss"],
-                            form.parameter.id,
+                            dsid+"-"+form.parameter.id,
                             dsid+"-"+form.id
                             )
                     sounds = []
                     for i, segment in enumerate(form.data["Segments"]):
                         sound = self.ts[segment]
+                        sound_id = str(sound)
                         try:
-                            phonemes[str(sound)].graphemes_in_source.add(segment)
+                            phonemes[sound_id].graphemes_in_source.add(segment)
                             try:
-                                phonemes[str(sound)].occs[lid] += [(i, fid)]
+                                phonemes[sound_id].occs[lid] += [(i, fid)]
                             except KeyError:
-                                phonemes[str(sound)].occs[lid] = [(i, fid)]
+                                phonemes[sound_id].occs[lid] = [(i, fid)]
                         except KeyError:
-                            phonemes[str(sound)] = Phoneme(
-                                    grapheme=str(sound),
-                                    graphemes_in_source = set([segment]),
-                                    occs = {lid: [(i, fid)]},
-                                    sound=sound
-                                    )
+                            phonemes.append(Sound(
+                                id=sound_id,
+                                grapheme=str(sound),
+                                graphemes_in_source = set([segment]),
+                                occs = {lid: [(i, fid)]},
+                                data=sound.__dict__,
+                                clts=sound
+                                ))
                         if sound.type == 'unknownsound':
                             log.warning("unknown sound {0}".format(segment))
                             self.invalid += [form]
@@ -126,18 +125,18 @@ class Wordlist:
                         sounds += [sound]
                     if valid:
                         forms += [(lid, cid, pid, fid, dsid, sounds, form)]
-
-        self.phonemes = DictTuple(phonemes.values(), key=lambda x: x.grapheme)
-        self.languages = DictTuple(languages)
-        self.concepts = DictTuple(concepts)
-        self.concepts_in_source = DictTuple(concepts_in_source)
+        
+        self.sounds = phonemes
+        self.languages = DictList(languages)
+        self.concepts = DictList(concepts)
+        self.concepts_in_source = DictList(concepts_in_source)
         self.forms = []
         for lid, cid, pid, fid, dsid, sounds, form in forms:
             self.forms += [Form(
                         id=fid,
                         concept=self.concepts[cid],
                         language=self.languages[lid],
-                        sounds = [self.phonemes[str(sound)] for sound in
+                        sounds = [self.sounds[str(sound)] for sound in
                             sounds],
                         tokens = lingpy.basictypes.lists(
                             [str(sound) for sound in sounds]),
@@ -147,9 +146,21 @@ class Wordlist:
                         dataset=dsid,
                         wordlist=self
                         )]
+            if cid not in self.languages[lid].concepts:
+                self.languages[lid].concepts.append(
+                    Concept.from_concept_set(
+                        self.concepts[cid],
+                        self.languages[lid],
+                        concepts_in_source=DictList([]),
+                        wordlist=self,
+                        dataset=dsid,
+                        forms=DictList([])))
+            self.languages[lid].concepts[cid].forms.append(self.forms[-1])
+            self.languages[lid].concepts[cid].concepts_in_source.append(self.concepts_in_source[pid])
             self.concepts[cid].forms += [self.forms[-1]]
             self.languages[lid].forms += [self.forms[-1]]
-        self.forms = DictTuple(self.forms)
+        # add concepts here
+        self.forms = DictList(self.forms)
         self.height = len(self.concepts)
         self.width = len(self.languages)
         if self.invalid:
