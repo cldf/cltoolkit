@@ -1,0 +1,9 @@
+ID,Name,Glottocode,Glottolog_Name,ISO639P3code,Macroarea,Latitude,Longitude,Family
+Anyi,Anyi,ganc1239,Gan Chinese,gan,Eurasia,27.9896,115.166,Sino-Tibetan
+Beijing,Beijing,mand1415,Mandarin Chinese,cmn,Eurasia,40.0209,116.228,Sino-Tibetan
+Changsha,Changsha,xian1251,Xiang Chinese,hsn,Eurasia,27.66847,111.47112,Sino-Tibetan
+Chengdu,Chengdu,mand1415,Mandarin Chinese,cmn,Eurasia,40.0209,116.228,Sino-Tibetan
+Fuzhou,Fuzhou,mind1253,Min Dong Chinese,cdo,Eurasia,26.0,119.5,Sino-Tibetan
+Guangzhou,Guangzhou,yuec1235,Yue Chinese,yue,Eurasia,23.0,113.0,Sino-Tibetan
+Lianchang,Lianchang,hakk1239,,,,,,
+Meixian,Meixian,hakk1236,Hakka Chinese,hak,Eurasia,25.0,116.0,Sino-Tibetan

@@ -11,23 +11,48 @@ from pyclts import CLTS
 from functools import cached_property
 
 
+
 @attr.s(repr=False)
-class CLBase:
+class CLCore:
+    id = attr.ib()
+    wordlist = attr.ib(default=None)
+    data = attr.ib(default=None)
+
+
+    def __repr__(self):
+        return "<"+self.__class__.__name__+" "+self.id+">"
+
+
+@attr.s(repr=False)
+class CLCoreWithForms(CLCore):
+    forms = attr.ib(default=None)
+    
+    @cached_property
+    def bipa_forms(self):
+        return DictList([f for f in self.forms if f.tokens])
+
+    @cached_property
+    def segmented_forms(self):
+        return DictList([f for f in self.forms if f.segments])
+
+
+@attr.s(repr=False)
+class CLBase(CLCore):
     """
     Base class.
     """
-    id = attr.ib()
     cldf = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
-    wordlist = attr.ib(default=None, repr=False)
-    data = attr.ib(default=None, repr=False)
-
-    def __repr__(self):
-        return self.id
 
 
 @attr.s(repr=False)
-class Language(CLBase):
+class CLBaseWithForms(CLCoreWithForms):
+    cldf = attr.ib(default=None, repr=False)
+    dataset = attr.ib(default=None, repr=False)
+
+
+@attr.s(repr=False)
+class Language(CLBaseWithForms):
     """
     Base class for handling languages.
     """
@@ -38,27 +63,10 @@ class Language(CLBase):
     longitude = GetValueFromData("longitude")
     family = GetValueFromData("Family")
     subgroup = GetValueFromData("SubGroup")
-    forms = attr.ib(default=[], repr=False)
-    concepts = attr.ib(default=[], repr=False)
-
-    def __repr__(self):
-        return '<Language '+self.id+">"
-    
-    #@cached_property
-    #def forms(self):
-    #    return DictList([
-    #        form for form in self.wordlist.forms if form.language.id = self.id])
-
-    #@cached_property
-    #def concepts(self):
-    #    concepts = DictList([])
-    #    for form in self.forms:
-    #        try:
-    #            concepts[self.id+"-"+form.concept.id]["forms"] += [form]
-    #        except KeyError:
-    #            concepts.append(
-    #                    ConceptSet(
-
+    senses = attr.ib(default=None, repr=False)
+    concepts = attr.ib(default=None, repr=False)
+    #segmented_forms = attr.ib(default=None, repr=False)
+    #bipa_forms = attr.ib(default=None, repr=False)
 
     @cached_property
     def inventory(self):
@@ -72,65 +80,92 @@ class Language(CLBase):
 
 
 @attr.s(repr=False)
-class ConceptInSource(CLBase):
+class Sense(CLBaseWithForms):
     """
     Concepts in source are the original concepts in the individual wordlists.
     """
     name = GetValueFromData("Name")
+    #segmented_forms = attr.ib(default=[], repr=False)
+    #bipa_forms = attr.ib(default=[], repr=False)
 
     def __repr__(self):
-        return '<ConceptInSource '+self.id+'>'
+        return '<Sense '+self.id+'>'
 
 
 @attr.s(repr=False)
-class ConceptSet:
+class SenseInLanguage(Sense):
+    language = attr.ib(default=None)
+
+    @classmethod
+    def from_sense(cls, sense, language, forms):
+        return cls(
+                id=sense.id,
+                data=sense.data,
+                cldf=sense.cldf,
+                forms=forms,
+                dataset=sense.dataset,
+                wordlist=sense.wordlist,
+                language=language)
+
+
+@attr.s(repr=False)
+class Concept(CLCoreWithForms):
     """
     Base class for the concepts in a dataset.
     """
-    id = attr.ib()
-    wordlist = attr.ib(default=None, repr=False)
     name = attr.ib(default=None, repr=False)
     concepticon_id = attr.ib(default=None, repr=False)
     concepticon_gloss = attr.ib(default=None, repr=False)
-    forms = attr.ib(default=[], repr=False)
-
-    def __repr__(self):
-        return "<ConceptSet «"+ self.name+"»>"
+    #segmented_forms = attr.ib(default=[], repr=False)
+    #bipa_forms = attr.ib(default=[], repr=False)
 
     @classmethod
-    def from_concept_in_source(cls, concept, wordlist=None, forms=DictList([])):
+    def from_sense(
+            cls, concept, id=None, name=None, wordlist=None):
         return cls(
-                id=concept.data["Concepticon_Gloss"],
-                name=concept.data["Concepticon_Gloss"].lower(),
+                name=name,
+                id=id,
                 concepticon_id=concept.data["Concepticon_ID"],
                 concepticon_gloss=concept.data["Concepticon_Gloss"],
-                forms=forms
+                forms=concept.forms,
+                #segmented_forms=concept.forms,
+                #bipa_forms=concept.bipa_forms
                 )
-
-
-@attr.s(repr=False)
-class Concept(ConceptSet):
-    """
-    Base class for concepts in individual languages.
-    """
-    language = attr.ib(default=None)
-    concept_set = attr.ib(default=None)
-    concepts_in_source = attr.ib(default=None)
 
     def __repr__(self):
         return "<Concept «"+ self.name+"»>"
 
+
+@attr.s(repr=False)
+class ConceptInLanguage(Concept):
+    """
+    Base class for concepts in individual languages.
+    """
+    language = attr.ib(default=None)
+    concept = attr.ib(default=None)
+    senses = attr.ib(default=None)
+    #forms = attr.ib(default=None)
+    #segmented_forms = attr.ib(default=None)
+    #bipa_forms = attr.ib(default=None)
+
+
+    def __repr__(self):
+        return "<ConceptInLanguage «"+ self.name+"»>"
+
     @classmethod
-    def from_concept_set(cls, concept, language, forms=DictList([]),
-            concepts_in_source=DictList([]), wordlist=None, dataset=None):
+    def from_concept(cls, concept, language, forms=None,
+            segmented_forms=None, bipa_forms=None,
+            senses=None, wordlist=None, dataset=None):
         return cls(
                 id=concept.id,
                 name=concept.name,
-                concept_set=concept,
+                concept=concept,
                 concepticon_id=concept.concepticon_id,
                 concepticon_gloss=concept.concepticon_gloss,
-                concepts_in_source=concepts_in_source,
-                forms=forms
+                senses=senses,
+                forms=forms,
+                #bipa_forms=bipa_forms,
+                #segmented_forms=segmented_forms
                 )
 
 
@@ -139,16 +174,16 @@ class Form(CLBase):
     
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
-    concept_in_source = attr.ib(default=None, repr=False)
+    sense = attr.ib(default=None, repr=False)
     sounds = attr.ib(default=None, repr=False)
     tokens = attr.ib(default=None, repr=False)
     value = GetValueFromData("Value")
     form = GetValueFromData("Form")
     segments = GetValueFromData("Segments", transform=lingpy.basictypes.lists)
-    
+
     def __repr__(self):
-        return "[ "+str(self.segments)+" ]"
-    
+        return "<"+self.__class__.__name__+" "+self.form+">"
+
 
 @attr.s(repr=False)
 class Sound:
@@ -175,7 +210,7 @@ class Sound:
         return self.grapheme
 
     def __repr__(self):
-        return "//"+self.grapheme+"//"
+        return "<"+self.__class__.__name__+" "+self.grapheme+">"
 
     def similarity(self, other):
         if self.type not in ["marker", "unknownsound"]:
@@ -192,9 +227,6 @@ class Phoneme(Sound):
     """
     language = attr.ib(default=None)
     sound = attr.ib(default=None)
-
-    def __repr__(self):
-        return "/"+self.grapheme+"/"
 
     @classmethod
     def from_sound(cls, sound, language):

@@ -1,0 +1,206 @@
+ID,Name,Concepticon_ID,Concepticon_Gloss,Number
+1_body,body,1480,BODY,1
+2_head,head,1256,HEAD,2
+3_eye,eye,1248,EYE,3
+4_earhole,earhole,3891,EARHOLE,4
+5_hairfeather,hair/feather,2381,FEATHER OR FUR OR HAIR,5
+6_mouth,mouth,674,MOUTH,6
+7_lip,lip,478,LIP,7
+8_beard,beard,678,BEARD,8
+9_tongue,tongue,1205,TONGUE,9
+10_nose,nose,1221,NOSE,10
+11_bone,bone,1394,BONE,11
+12_back,back,1291,BACK,12
+13_breast,breast,1402,BREAST,13
+15_chest,chest,1592,CHEST,15
+16_heart,heart,1223,HEART,16
+17_liver,liver,1224,LIVER,17
+18_blood,blood,946,BLOOD,18
+19_flesh,flesh,2259,FLESH,19
+20_veins,Veins,1924,VEIN,20
+21_buttocks,buttocks,834,BUTTOCKS,21
+22_leg,leg,1297,LEG,22
+23_thigh,thigh,800,THIGH,23
+24_knee,knee,1371,KNEE,24
+25_shin,shin,186,SHIN,25
+26_foot,foot,1301,FOOT,26
+27_arm,arm,1673,ARM,27
+28_elbow,elbow,981,ELBOW,28
+29_hand,hand,1277,HAND,29
+30_neck,neck,1333,NECK,30
+31_skin,skin,763,SKIN,31
+32_navel,navel,1838,NAVEL,32
+33_tail,tail,1220,TAIL,33
+34_wing,wing,1257,WING,34
+35_egg,egg,744,EGG,35
+36_feces,feces,675,FAECES (EXCREMENT),36
+37_fart,fart,1159,FART,37
+38_urine,urine,1142,URINE,38
+39_fat,fat,323,FAT (ORGANIC SUBSTANCE),39
+40_name,name,1405,NAME,40
+41_house,house,1252,HOUSE,41
+42_village,village,930,VILLAGE,42
+43_nest,nest,539,NEST,43
+44_path,path,2252,PATH,44
+45_path2,path2,2252,PATH,45
+46_bow,bow,994,BOW,46
+47_arrow,arrow,977,ARROW,47
+48_rope,rope,1218,ROPE,48
+49_canoe,canoe,1970,CANOE,49
+50_raft,raft,1664,RAFT,50
+51_person,person,683,PERSON,51
+52_spiritsoul,spirit/soul,811,SOUL,52
+53_man,man,1554,MAN,53
+54_woman,woman,962,WOMAN,54
+55_father,father,1217,FATHER,55
+56_father2,father2,1217,FATHER,56
+57_mother,mother,1216,MOTHER,57
+58_mother2,mother2,1216,MOTHER,58
+59_son,son,1620,SON,59
+60_daughter,daughter,1357,DAUGHTER,60
+61_grandson,grandson,1618,GRANDSON,61
+62_granddaughter,granddaughter,1619,GRANDDAUGHTER,62
+63_fatherinlaw,father-in-law,1055,FATHER-IN-LAW,63
+64_motherinlaw,mother-in-law,1050,MOTHER-IN-LAW,64
+65_nephewniece,nephew/niece,3890,NEPHEW OR NIECE,65
+66_youngerbrother,younger brother,1760,YOUNGER BROTHER,66
+67_youngersister,younger sister,1761,YOUNGER SISTER,67
+68_grandmother,grandmother,1496,GRANDMOTHER,68
+69_grandfather,grandfather,1383,GRANDFATHER,69
+70_pet,pet,3780,PET,70
+71_pacarodentsp,paca (rodent sp.),316,PACA,71
+72_capybara,capybara,314,CAPYBARA,72
+73_rat,rat,1490,RAT,73
+74_agouti,agouti,313,AGOUTI,74
+75_coati,coati,2389,COATI (COATIMUNDI),75
+76_peccarysp1,peccary (sp.)1,,,76
+77_peccarysp2,peccary (sp.)2,,,77
+78_anteater,anteater,181,ANTEATER,78
+79_tapir,tapir,312,TAPIR,79
+80_capuchinmonkey,Capuchin monkey,,,80
+81_howlermonkey,howler monkey>,433,HOWLER MONKEY,81
+82_sloth,sloth,2446,SLOTH,82
+83_snake,snake,730,SNAKE,83
+84_boa,boa,,,84
+85_alligator,alligator,1581,ALLIGATOR,85
+86_turtle,turtle,112,TURTLE,86
+87_ant,ant,587,ANT,87
+88_isulaantsp,isula (ant sp.),,,88
+89_termite,termite,883,TERMITE,89
+90_wasp,wasp,1517,WASP,90
+91_mosquito,mosquito,1509,MOSQUITO,91
+92_beehoney,bee/honey,,,92
+93_fly,fly,1504,FLY (INSECT),93
+94_butterfly,butterfly,1791,BUTTERFLY,94
+95_cockroach,cockroach,1575,COCKROACH,95
+96_spider,spider,843,SPIDER,96
+97_scorpion,scorpion,1538,SCORPION,97
+98_tick,tick,1527,TICK,98
+99_louse,louse,1392,LOUSE,99
+100_worm1,worm1,1219,WORM,100
+101_worm2,worm2,1219,WORM,101
+102_fishgeneric,fish (generic),227,FISH,102
+103_piranafishsp,piraña (fish sp.),317,PIRANHA,103
+104_crab,crab,2348,CRAB,104
+105_bat,bat,1793,BAT,105
+106_birdsp1,bird (sp.)1,,,106
+107_birdsp2,bird (sp.)2,,,107
+108_birdsp3,bird (sp.)3,,,108
+109_hummingbird,hummingbird,1589,HUMMINGBIRD,109
+110_duck,duck,1360,DUCK,110
+111_eagle,eagle,1905,EAGLE,111
+112_owl,owl,735,OWL,112
+113_tree,tree,906,TREE,113
+114_palmsp,palm (sp.),,,114
+115_cane,cane,659,REED,115
+116_branch,branch,1531,BRANCH,116
+117_woodstick,"wood, stick",1295,STICK,117
+118_seed,seed,714,SEED,118
+119_shellhusk,shell/husk,,,119
+120_flower,flower,239,FLOWER,120
+121_leaf,Leaf,628,LEAF,121
+122_coca,Coca,137,COCA,122
+123_sweetpotato,sweet potato,159,SWEET POTATO,123
+124_bittermanioc,bitter manioc,,,124
+125_manioc,manioc,927,MANIOC,125
+126_maize,maize,506,MAIZE,126
+127_smokedmeat,smoked (meat),,,127
+128_pepper,pepper,1385,PEPPER,128
+129_achiote,achiote,349,ACHIOTE,129
+130_medicine,medicine,1372,MEDICINE,130
+131_sun,sun,1343,SUN,131
+132_moon,moon,1313,MOON,132
+133_night,night,1233,NIGHT,133
+134_yesterday,yesterday,1174,YESTERDAY,134
+135_wind,wind,960,WIND,135
+136_rainbow,rainbow,1733,RAINBOW,136
+137_lake,lake,624,LAKE,137
+138_water,water,948,WATER,138
+139_rain,rain,658,RAIN (PRECIPITATION),139
+140_firefirewood,fire/firewood,2675,FIRE OR FIREWOOD,140
+141_firefirewood2,fire/firewood2,2675,FIRE OR FIREWOOD,141
+142_hole,hole,1667,HOLE,142
+143_stone,stone,857,STONE,143
+144_pain,pain,1783,PAIN,144
+145_tobehave,to be/have,1579,BE,145
+146_toarrive,to arrive,1387,ARRIVE,146
+147_tocome,to come,1446,COME,147
+148_toreturn,to return,581,COME BACK,148
+149_towalk,to walk,1443,WALK,149
+150_topass,to pass,558,PASS BY,150
+151_tostep,to step,2065,STEP (VERB),151
+152_togrow,to grow,479,GROW,152
+153_tosing,to sing,1261,SING,153
+154_toeat,to eat,1336,EAT,154
+155_toswallow,to swallow,897,SWALLOW,155
+156_tosay,to say,1458,SAY,156
+157_tospeak,to speak,1623,SPEAK,157
+158_tocommand,to command,1998,COMMAND,158
+159_tocall,to call,1084,CALL,159
+160_tobreathe,to breathe,1407,BREATHE,160
+161_towash1,to wash1,1453,WASH,161
+162_towash2,to wash2,1453,WASH,162
+163_toswim,to swim,1439,SWIM,163
+164_tobath,to bath,138,BATHE,164
+165_toplantput,to plant/put,,,165
+166_todig,to dig,1418,DIG,166
+167_topeel,to peel,275,PEEL,167
+168_tohear,to hear,1408,HEAR,168
+169_tosee,to see,1409,SEE,169
+170_tolearn,to learn,504,LEARN,170
+171_tofear,to fear,1419,FEAR (BE AFRAID),171
+172_tosleep,to sleep,1585,SLEEP,172
+173_toliedown,to lie down,215,LIE DOWN,173
+174_todie,to die,1494,DIE,174
+175_tokill,to kill,1417,KILL,175
+176_tocook,to cook,1100,COOK (SOMETHING),176
+177_toroast,to roast,1962,ROAST (SOMETHING),177
+178_togrind,to grind,1033,GRIND,178
+179_tofetch,to fetch,3551,FETCH,179
+180_tosew,to sew,1457,SEW,180
+181_pregnant,pregnant,1123,PREGNANT,181
+182_hungry,hungry,1533,BE HUNGRY,182
+183_shy,shy,487,SHY,183
+184_hot,hot,1286,HOT,184
+185_cold,cold,1287,COLD,185
+186_wet,wet,1726,WET,186
+187_dry,dry,1398,DRY,187
+188_new,new,1231,NEW,188
+189_heavy,heavy,1210,HEAVY,189
+190_above,above,1741,ABOVE,190
+191_below,below,1485,BELOW OR UNDER,191
+192_coremiddle,core/middle,3208,CENTER OR MIDDLE,192
+193_two,two,1498,TWO,193
+194_three,three,492,THREE,194
+195_clliquid,cl.liquid,,,195
+196_clcylindrical,cl.cylindrical,,,196
+197_gendermasc,gender.masc,,,197
+198_genderfem,gender.fem,,,198
+199_progressive,progressive,,,199
+200_iterative,iterative,,,200
+201_intensive,intensive,,,201
+202_intensifier,intensifier,,,202
+203_causverblzr,caus/verblzr,,,203
+204_adjectivizer,adjectivizer,,,204
+205_verbalizer,verbalizer,,,205
+206_absolute,absolute,,,206

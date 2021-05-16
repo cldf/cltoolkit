@@ -1,0 +1,201 @@
+ID,Name,Concepticon_ID,Concepticon_Gloss
+all,all,98,ALL
+ash,ash,646,ASH
+bark,bark,1204,BARK
+belly,belly,1251,BELLY
+big,big,1202,BIG
+bird,bird,937,BIRD
+bite,bite,1403,BITE
+black,black,163,BLACK
+blood,blood,946,BLOOD
+bone,bone,1394,BONE
+breasts,breasts,1402,BREAST
+burn,burn,2102,BURN
+claw,claw,72,CLAW
+cloud,cloud,1489,CLOUD
+cold,cold,1287,COLD
+come,come,1446,COME
+die,die,1494,DIE
+dog,dog,2009,DOG
+drink,drink,1401,DRINK
+dry,dry,1398,DRY
+ear,ear,1247,EAR
+earth,earth,1228,EARTH (SOIL)
+eat,eat,1336,EAT
+egg,egg,744,EGG
+eye,eye,1248,EYE
+feather,feather,1201,FEATHER
+fire,fire,221,FIRE
+fish,fish,227,FISH
+flesh,flesh,2615,FLESH OR MEAT
+fly,fly,1441,FLY (MOVE THROUGH AIR)
+foot,foot,1301,FOOT
+full,full,1429,FULL
+give,give,1447,GIVE
+good,good,1035,GOOD
+grease,grease,2557,PIG FAT
+green,green,1425,GREEN
+hair,hair,2648,HAIR (HEAD)
+hand,hand,1277,HAND
+head,head,1256,HEAD
+hear,hear,1408,HEAR
+heart,heart,1223,HEART
+horn,horn,1393,HORN (ANATOMY)
+hot,hot,2272,HOT OR WARM
+i,i,1209,I
+kill,kill,1417,KILL
+knee,knee,1371,KNEE
+know,know,1410,KNOW (SOMETHING)
+leaf,leaf,628,LEAF
+lie,lie,1411,LIE (REST)
+liver,liver,1224,LIVER
+long,long,1203,LONG
+louse,louse,1392,LOUSE
+man,man,1554,MAN
+many,many,1198,MANY
+moon,moon,1313,MOON
+mountain,mountain,639,MOUNTAIN
+mouth,mouth,674,MOUTH
+name,name,1405,NAME
+neck,neck,1333,NECK
+new,new,1231,NEW
+night,night,1233,NIGHT
+nose,nose,1221,NOSE
+not,not,1240,NOT
+one,one,1493,ONE
+path,path,2252,PATH
+person,person,683,PERSON
+rain,rain,658,RAIN (PRECIPITATION)
+red,red,156,RED
+root,root,670,ROOT
+round,round,1395,ROUND
+sand,sand,671,SAND
+say,say,1458,SAY
+see,see,1409,SEE
+seed,seed,714,SEED
+sit,sit,1416,SIT
+skin,skin,763,SKIN
+sleep,sleep,1585,SLEEP
+small,small,1246,SMALL
+smoke,smoke,778,SMOKE (EXHAUST)
+stand,stand,1442,STAND
+star,star,1430,STAR
+stone,stone,857,STONE
+sun,sun,1343,SUN
+swim,swim,1439,SWIM
+tail,tail,1220,TAIL
+that,that,78,THAT
+this,this,1214,THIS
+tongue,tongue,1205,TONGUE
+tooth,tooth,1380,TOOTH
+tree,tree,906,TREE
+two,two,1498,TWO
+walk,walk,1443,WALK
+water,water,948,WATER
+we,we,1212,WE
+what,what,1236,WHAT
+white,white,1335,WHITE
+who,who,1235,WHO
+woman,woman,962,WOMAN
+yellow,yellow,1424,YELLOW
+you,you,1215,THOU
+and,and,1577,AND
+animal,animal,619,ANIMAL
+back,back,1291,BACK
+bad,bad,1292,BAD
+because,because,1157,BECAUSE
+blow,blow,175,BLOW (OF WIND)
+breathe,breathe,1407,BREATHE
+child,child,1304,CHILD (YOUNG HUMAN)
+count,count,1420,COUNT
+cut,cut,1432,CUT
+day,day,1225,DAY (NOT NIGHT)
+dig,dig,1418,DIG
+dirty,dirty,1230,DIRTY
+dull,dull,1518,STUPID
+dust,dust,2,DUST
+fall,fall,1280,FALL
+far,far,1406,FAR
+father,father,1217,FATHER
+fear,fear,1419,FEAR (BE AFRAID)
+few,few,1242,FEW
+fight,fight,1423,FIGHT
+five,five,493,FIVE
+float,float,1574,FLOAT
+flow,flow,2003,FLOW
+flower,flower,239,FLOWER
+fog,fog,249,FOG
+four,four,1500,FOUR
+freeze,freeze,1431,FREEZE
+fruit,fruit,1507,FRUIT
+grass,grass,606,GRASS
+guts,guts,1334,GUTS
+he,he,1211,HE
+here,here,136,HERE
+hit,hit,353,STRIKE
+holdtake,hold-take,2104,HOLD OR TAKE
+how,how,1239,HOW
+hunt,hunt,1435,HUNT
+husband,husband,1200,HUSBAND
+ice,ice,617,ICE
+if,if,1459,IF
+in,in,1460,IN
+lake,lake,624,LAKE
+laugh,laugh,1355,LAUGH
+leftside,leftside,244,LEFT
+leg,leg,1297,LEG
+livealive,live(alive),1422,BE ALIVE
+mother,mother,1216,MOTHER
+narrow,narrow,1267,NARROW
+near,near,1942,NEAR
+old,old,1229,OLD
+play,play,1413,PLAY
+pull,pull,1455,PULL
+push,push,1452,PUSH
+rightside,rightside,1019,RIGHT
+correct,correct,1725,CORRECT (RIGHT)
+river,river,666,RIVER
+rope,rope,1218,ROPE
+rotten,rotten,1728,ROTTEN
+rub,rub,1449,RUB
+salt,salt,1274,SALT
+scratch,scratch,1436,SCRATCH
+sea,sea,1474,SEA
+sew,sew,1457,SEW
+sharp,sharp,1396,SHARP
+short,short,1645,SHORT
+sing,sing,1261,SING
+sky,sky,1732,SKY
+smell,smell,1586,SMELL (PERCEIVE)
+smooth,smooth,1234,SMOOTH
+snake,snake,730,SNAKE
+snow,snow,784,SNOW
+spit,spit,1440,SPIT
+split,split,1437,SPLIT
+squeeze,squeeze,1414,SQUEEZE
+stab,stab,1434,STAB
+stick,stick,1295,STICK
+straight,straight,1404,STRAIGHT
+suck,suck,1421,SUCK
+swell,swell,1573,SWELL
+there,there,1937,THERE
+they,they,817,THEY
+thick,thick,1244,THICK
+thin,thin,2306,THIN (OF LEAF AND CLOTH)
+think,think,2271,THINK
+three,three,492,THREE
+throw,throw,1456,THROW
+tie,tie,1917,TIE
+turn,turn,1444,TURN AROUND
+vomit,vomit,1278,VOMIT
+wash,wash,1453,WASH
+wet,wet,1726,WET
+where,where,1237,WHERE
+wide,wide,1243,WIDE
+wife,wife,1199,WIFE
+wind,wind,960,WIND
+wing,wing,1257,WING
+heavy,heavy,1210,HEAVY
+woods,woods,420,FOREST
+worm,worm,1219,WORM
+year,year,1226,YEAR
