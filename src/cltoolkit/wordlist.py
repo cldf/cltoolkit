@@ -55,16 +55,18 @@ class Wordlist:
         """
         Load the data.
         """
-        (languages, concepts, forms, objects, senses, phonemes) = (
-                DictList([]), DictList([]), [], [], DictList([]), 
-                DictList([]))
+        (self.languages, self.concepts, self.forms, self.objects, self.senses,
+                self.graphemes,
+                self.sounds) = (
+                DictList([]), DictList([]), DictList([]), DictList([]), DictList([]), 
+                DictList([]), DictList([]))
         graphemes = {}
         for dataset in progressbar(self.datasets, desc="loading datasets"):
             dsid = dataset.metadata_dict["rdf:ID"]
             # add languages to the dataset
             for language in dataset.objects("LanguageTable"):
                 language_id = dsid+"-"+language.id
-                languages.append(
+                self.languages.append(
                         Language(
                             id=language_id, 
                             wordlist=self, 
@@ -75,7 +77,7 @@ class Wordlist:
                             senses=DictList([]),
                             concepts=DictList([]),
                         ))
-                objects + [languages[-1]]
+                self.objects.append(self.languages[-1])
 
             # add concepts
             for concept in dataset.objects("ParameterTable"):
@@ -93,12 +95,15 @@ class Wordlist:
                                 id=concept_id,
                                 name=concept_id.lower(),
                                 wordlist=self,
+                                forms=DictList([])
                                 )
-                    concepts.append(new_concept)
-                senses.append(new_sense)
-                objects += [new_sense, new_concept]
+                    self.concepts.append(new_concept)
+                self.senses.append(new_sense)
+                self.objects.extend([new_sense, new_concept])
 
             # assemble forms
+            # TODO: make this only in this run that all is added already! TODO
+            # so we create a grapheme, we create a sound from the grapheme
             for form in dataset.objects("FormTable"):
                 valid_bipa = True
                 lid, cid, pid, fid = (
@@ -109,119 +114,78 @@ class Wordlist:
                         )
                 new_form = Form(
                         id=fid,
-                        concept=concepts[cid] if cid else None,
-                        language=languages[lid],
-                        #sounds = [self.sounds[sound.name] for sound in
-                        #    sounds],
-                        #tokens = lingpy.basictypes.lists(
-                        #    [str(sound) for sound in sounds]
-                        #    ) if valid_bipa else None,
-                        sense=senses[pid],
-                        obj=form,
-                        data=form.data,
-                        dataset=dsid,
-                        wordlist=self
-                        )
-
-                sounds = []
-                if new_form.segments: 
-                    for i, segment in enumerate(new_form.segments):
-                        # append the graphemes
-                        sound = self.ts[segment]
-                        try:
-                            graphemes["grapheme-"+segment].forms.append(new_form)
-                        except KeyError:
-                            graphemes["grapheme-"+segment] = Grapheme(
-                                    id="grapheme-"+segment, dataset=dsid,
-                                    wordlist=self, 
-                                    obj=sound,
-                                    occs=OrderedDict(),
-                                    forms=DictList([new_form]))
-                        try:
-                            graphemes["grapheme-"+segment].occs[lid].append((i, new_form))
-                        except KeyError:
-                            graphemes["grapheme-"+segment].occs[lid] = [(i, new_form)]
-                        
-                        sound_id = sound.name
-                        try:
-                            phonemes[sound_id].graphemes_in_source.add(segment)
-                            try:
-                                phonemes[sound_id].occs[lid] += [(i, new_form)]
-                            except KeyError:
-                                phonemes[sound_id].occs[lid] = [(i, new_form)]
-                        except KeyError:
-                            phonemes.append(Sound(
-                                id=sound_id,
-                                grapheme=str(sound),
-                                graphemes_in_source = set([segment]),
-                                occs = {lid: [(i, new_form)]},
-                                data=sound.__dict__,
-                                obj=sound
-                                ))
-                        if sound.type == 'unknownsound':
-                            log.warning("warning: unknown sound {0}".format(segment))
-                            valid_bipa = False
-                        sounds += [sound]
-                if valid_bipa:
-                    new_form.tokens = [str(sound) for sound in sounds]
-                forms += [(valid_bipa, lid, cid, pid, fid, dsid, sounds, form)]
-        
-        self.languages = languages
-        self.concepts = DictList(concepts)
-        self.senses = DictList(senses)
-        self.sounds = phonemes
-        self.forms = []
-        self.objects = DictList(objects)
-        for valid_bipa, lid, cid, pid, fid, dsid, sounds, form in forms:
-            new_form = Form(
-                        id=fid,
                         concept=self.concepts[cid] if cid else None,
                         language=self.languages[lid],
-                        #sounds = [self.sounds[sound.name] for sound in
-                        #    sounds],
-                        tokens = lingpy.basictypes.lists(
-                            [str(sound) for sound in sounds]
-                            ) if valid_bipa else None,
                         sense=self.senses[pid],
                         obj=form,
                         data=form.data,
                         dataset=dsid,
                         wordlist=self
                         )
-
-            self.forms.append(new_form)
-
-            objects += [new_form]
-            if cid and cid not in self.languages[lid].concepts:
-                self.languages[lid].concepts.append(
-                    ConceptInLanguage.from_concept(
-                        self.concepts[cid],
-                        self.languages[lid],
-                        senses=DictList([]),
-                        wordlist=self,
-                        dataset=dsid,
-                        forms=DictList([]),
-                        segmented_forms=DictList([]),
-                        bipa_forms=DictList([])
-                    ))
-            
-            if cid:
-                self.languages[lid].concepts[cid].forms.append(new_form)
-                self.concepts[cid].forms.append(new_form)
-                self.languages[lid].concepts[cid].senses.append(self.senses[pid])
-            
-            if pid not in self.languages[lid].senses:
-                self.languages[lid].senses.append(
-                        SenseInLanguage.from_sense(
-                            self.senses[pid], self.languages[lid], DictList([])
-                            ))
-            self.languages[lid].senses[pid].forms.append(new_form)
-            self.languages[lid].forms.append(new_form)
-            self.senses[pid].forms.append(new_form)
-
-        # add concepts here
-        self.forms = DictList(self.forms)
-        self.graphemes = graphemes
+                self.forms.append(new_form)
+                sounds = [self.ts[s] for s in new_form.segments]
+                if sounds:
+                    valid_bipa = False
+                    if not [s for s in sounds if s.type == "unknownsound"]:
+                        new_form.tokens = [str(s) for s in sounds]
+                        valid_bipa = True
+                    for i, (segment, sound) in enumerate(
+                            zip(new_form.segments, sounds)):
+                        try:
+                            self.graphemes[segment].forms.append(new_form)
+                        except KeyError:
+                            self.graphemes.append(Grapheme(
+                                    id=segment, 
+                                    dataset=dsid,
+                                    wordlist=self, 
+                                    obj=sound,
+                                    occs=OrderedDict(),
+                                    forms=DictList([new_form])))
+                        try:
+                            self.graphemes[segment].occs[lid].append((i, new_form))
+                        except KeyError:
+                            self.graphemes[segment].occs[lid] = [(i, new_form)]
+                        if valid_bipa:
+                            try:
+                                self.sounds[sound.name].forms.append(new_form)
+                            except KeyError:
+                                self.sounds.append(Sound.from_grapheme(
+                                        self.graphemes[segment],
+                                        graphemes_in_source=[],
+                                        grapheme=str(sound),
+                                        occs=OrderedDict(),
+                                        forms=DictList([new_form]),
+                                        id=sound.name))
+                            try:
+                                self.sounds[sound.name].occs[lid].append((i, new_form))
+                            except KeyError:
+                                self.sounds[sound.name].occs[lid] = [(i, new_form)]
+                self.forms.append(new_form)
+                self.objects.append(new_form)
+                if cid and cid not in self.languages[lid].concepts:
+                    self.languages[lid].concepts.append(
+                        ConceptInLanguage.from_concept(
+                            self.concepts[cid],
+                            self.languages[lid],
+                            senses=DictList([]),
+                            wordlist=self,
+                            dataset=dsid,
+                            forms=DictList([]),
+                        ))
+                
+                if cid:
+                    self.languages[lid].concepts[cid].forms.append(new_form)
+                    self.concepts[cid].forms.append(new_form)
+                    self.languages[lid].concepts[cid].senses.append(self.senses[pid])
+                
+                if pid not in self.languages[lid].senses:
+                    self.languages[lid].senses.append(
+                            SenseInLanguage.from_sense(
+                                self.senses[pid], self.languages[lid], DictList([])
+                                ))
+                self.languages[lid].senses[pid].forms.append(new_form)
+                self.languages[lid].forms.append(new_form)
+                self.senses[pid].forms.append(new_form)
         self.bipa_forms = DictList([f for f in self.forms if f.tokens])
         self.segmented_forms = DictList([f for f in self.forms if f.segments])
     
@@ -259,29 +223,4 @@ class Wordlist:
                 if getattr(concept, aspect):
                     out[language.id] += 1
         return out
-
-
     
-    # TODO: consider to modify the index self._d to yield not a list but the ID
-    # index needs recalculation which is not that good for our purpose!
-    def delete_forms(self, blacklist):
-        languages, concepts = defaultdict(list), defaultdict(list)
-        for fid in blacklist:
-            languages[self.forms[fid].language.id] += [fid]
-            concepts[self.forms[fid].concept.id] += [fid]
-        for lid, forms in languages.items():
-            for fid in forms:
-                print(fid)
-                try:
-                    self.languages[lid].forms.remove(fid)
-                except:
-                    try:
-                        self.forms.remove(fid)
-                    except:
-                        print("not found", fid)
-            #if len(language.forms) == 0:
-            #    self.languages.remove(lid)
-        #for concept in concepts:
-        #    if len(concept.forms) == 0:
-        #        del self.concepts[self.concepts._d[concept.id][0]]
-

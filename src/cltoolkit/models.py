@@ -41,13 +41,13 @@ class CLBase(CLCore):
     """
     Base class.
     """
-    cldf = attr.ib(default=None, repr=False)
+    obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)
 class CLBaseWithForms(CLCoreWithForms):
-    cldf = attr.ib(default=None, repr=False)
+    obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
 
@@ -65,8 +65,6 @@ class Language(CLBaseWithForms):
     subgroup = GetValueFromData("SubGroup")
     senses = attr.ib(default=None, repr=False)
     concepts = attr.ib(default=None, repr=False)
-    #segmented_forms = attr.ib(default=None, repr=False)
-    #bipa_forms = attr.ib(default=None, repr=False)
 
     @cached_property
     def inventory(self):
@@ -85,8 +83,6 @@ class Sense(CLBaseWithForms):
     Concepts in source are the original concepts in the individual wordlists.
     """
     name = GetValueFromData("Name")
-    #segmented_forms = attr.ib(default=[], repr=False)
-    #bipa_forms = attr.ib(default=[], repr=False)
 
     def __repr__(self):
         return '<Sense '+self.id+'>'
@@ -101,7 +97,7 @@ class SenseInLanguage(Sense):
         return cls(
                 id=sense.id,
                 data=sense.data,
-                cldf=sense.cldf,
+                obj=sense.obj,
                 forms=forms,
                 dataset=sense.dataset,
                 wordlist=sense.wordlist,
@@ -116,20 +112,16 @@ class Concept(CLCoreWithForms):
     name = attr.ib(default=None, repr=False)
     concepticon_id = attr.ib(default=None, repr=False)
     concepticon_gloss = attr.ib(default=None, repr=False)
-    #segmented_forms = attr.ib(default=[], repr=False)
-    #bipa_forms = attr.ib(default=[], repr=False)
 
     @classmethod
     def from_sense(
-            cls, concept, id=None, name=None, wordlist=None):
+            cls, concept, id=None, name=None, wordlist=None, forms=None):
         return cls(
                 name=name,
                 id=id,
                 concepticon_id=concept.data["Concepticon_ID"],
                 concepticon_gloss=concept.data["Concepticon_Gloss"],
-                forms=concept.forms,
-                #segmented_forms=concept.forms,
-                #bipa_forms=concept.bipa_forms
+                forms=forms,
                 )
 
     def __repr__(self):
@@ -144,17 +136,12 @@ class ConceptInLanguage(Concept):
     language = attr.ib(default=None)
     concept = attr.ib(default=None)
     senses = attr.ib(default=None)
-    #forms = attr.ib(default=None)
-    #segmented_forms = attr.ib(default=None)
-    #bipa_forms = attr.ib(default=None)
-
 
     def __repr__(self):
         return "<ConceptInLanguage «"+ self.name+"»>"
 
     @classmethod
     def from_concept(cls, concept, language, forms=None,
-            segmented_forms=None, bipa_forms=None,
             senses=None, wordlist=None, dataset=None):
         return cls(
                 id=concept.id,
@@ -164,8 +151,6 @@ class ConceptInLanguage(Concept):
                 concepticon_gloss=concept.concepticon_gloss,
                 senses=senses,
                 forms=forms,
-                #bipa_forms=bipa_forms,
-                #segmented_forms=segmented_forms
                 )
 
 
@@ -175,33 +160,56 @@ class Form(CLBase):
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
-    sounds = attr.ib(default=None, repr=False)
     tokens = attr.ib(default=None, repr=False)
     value = GetValueFromData("Value")
     form = GetValueFromData("Form")
     segments = GetValueFromData("Segments", transform=lingpy.basictypes.lists)
+
+    @property
+    def sounds(self):
+        return [self.wordlist.sounds[self.wordlist.ts[t].name] for t in
+                self.tokens]
+
+    @property
+    def graphemes(self):
+        return [self.wordlist.graphemes["grapheme-"+s] for s in
+                self.segments]
 
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.form+">"
 
 
 @attr.s(repr=False)
-class Sound:
+class Grapheme(CLBaseWithForms):
+
+    # id, wordlist, data, forms, cldf = clts
+    occs = attr.ib(default=None)
+    
+
+@attr.s(repr=False)
+class Sound(Grapheme):
     """
     All sounds in a dataset.
     """
-    id = attr.ib(default=None)
-    data = attr.ib(default=None)
-    clts = attr.ib(default=None)
-    dataset = attr.ib(default=None)
-    wordlist = attr.ib(default=None)
     grapheme = attr.ib(default=None)
     graphemes_in_source = attr.ib(default=None)
-    occs = attr.ib(default=None)
 
     type = GetValueFromData("type")
-    name = GetAttributeFromObject("name", data="clts")
-    featureset = GetAttributeFromObject("featureset", data="clts")
+    name = GetAttributeFromObject("name", data="obj")
+    featureset = GetAttributeFromObject("featureset", data="obj")
+
+    @classmethod
+    def from_grapheme(cls, grapheme_, grapheme=None, occs=None, forms=None,
+            id=None, graphemes_in_source=None):
+        return cls(
+                id=id, 
+                grapheme=grapheme,
+                wordlist=grapheme_.wordlist,
+                occs=occs,
+                data=grapheme_.obj.__dict__,
+                graphemes_in_source=graphemes_in_source,
+                forms=forms,
+                obj=grapheme_.obj)
 
     def __len__(self):
         return len(self.occs or [])
@@ -235,11 +243,10 @@ class Phoneme(Sound):
                 sound=sound,
                 language=language,
                 data=sound.data,
-                clts=sound.clts,
+                obj=sound.obj,
                 dataset=sound.dataset,
                 wordlist=sound.wordlist,
                 grapheme=sound.grapheme,
-                graphemes_in_source=attr.ib(default=None),
                 occs=sound.occs[language.id]
                 )
 
