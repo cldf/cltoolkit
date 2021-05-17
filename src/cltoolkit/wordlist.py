@@ -13,7 +13,7 @@ import lingpy
 from cltoolkit.util import progressbar, DictList
 from cltoolkit import log
 from cltoolkit.models import (
-        Language, Concept, ConceptInLanguage,
+        Language, Concept, ConceptInLanguage, Grapheme,
         SenseInLanguage, Form, Sense, Sound, Phoneme)
 
 import attr
@@ -48,35 +48,33 @@ class Wordlist:
                 'lexibank_'+ds).Dataset().cldf_dir.joinpath('cldf-metadata.json'))]
         return cls.from_datasets(dsets, load=load)
 
-    def get(self, idf):
+    def __getite__(self, idf):
         return self.objects[idf]
 
     def load(self):
         """
         Load the data.
         """
-        languages, concepts, forms, objects = [], [], [], []
-        linked_concepts = []
-        senses = []
-        phonemes = DictList([])
-        self.invalid = []
+        (languages, concepts, forms, objects, senses, phonemes) = (
+                DictList([]), DictList([]), [], [], DictList([]), 
+                DictList([]))
+        graphemes = {}
         for dataset in progressbar(self.datasets, desc="loading datasets"):
             dsid = dataset.metadata_dict["rdf:ID"]
             # add languages to the dataset
             for language in dataset.objects("LanguageTable"):
                 language_id = dsid+"-"+language.id
-                languages += [
+                languages.append(
                         Language(
                             id=language_id, 
                             wordlist=self, 
                             data=language.data,
-                            cldf=language, 
+                            obj=language, 
                             dataset=dsid,
                             forms=DictList([]),
                             senses=DictList([]),
                             concepts=DictList([]),
-                        )
-                    ]
+                        ))
                 objects + [languages[-1]]
 
             # add concepts
@@ -109,36 +107,69 @@ class Wordlist:
                         dsid+"-"+form.parameter.id,
                         dsid+"-"+form.id
                         )
+                new_form = Form(
+                        id=fid,
+                        concept=concepts[cid] if cid else None,
+                        language=languages[lid],
+                        #sounds = [self.sounds[sound.name] for sound in
+                        #    sounds],
+                        #tokens = lingpy.basictypes.lists(
+                        #    [str(sound) for sound in sounds]
+                        #    ) if valid_bipa else None,
+                        sense=senses[pid],
+                        obj=form,
+                        data=form.data,
+                        dataset=dsid,
+                        wordlist=self
+                        )
+
                 sounds = []
-                if form.data["Segments"]: 
-                    for i, segment in enumerate(form.data["Segments"]):
+                if new_form.segments: 
+                    for i, segment in enumerate(new_form.segments):
+                        # append the graphemes
                         sound = self.ts[segment]
+                        try:
+                            graphemes["grapheme-"+segment].forms.append(new_form)
+                        except KeyError:
+                            graphemes["grapheme-"+segment] = Grapheme(
+                                    id="grapheme-"+segment, dataset=dsid,
+                                    wordlist=self, 
+                                    obj=sound,
+                                    occs=OrderedDict(),
+                                    forms=DictList([new_form]))
+                        try:
+                            graphemes["grapheme-"+segment].occs[lid].append((i, new_form))
+                        except KeyError:
+                            graphemes["grapheme-"+segment].occs[lid] = [(i, new_form)]
+                        
                         sound_id = sound.name
                         try:
                             phonemes[sound_id].graphemes_in_source.add(segment)
                             try:
-                                phonemes[sound_id].occs[lid] += [(i, fid)]
+                                phonemes[sound_id].occs[lid] += [(i, new_form)]
                             except KeyError:
-                                phonemes[sound_id].occs[lid] = [(i, fid)]
+                                phonemes[sound_id].occs[lid] = [(i, new_form)]
                         except KeyError:
                             phonemes.append(Sound(
                                 id=sound_id,
                                 grapheme=str(sound),
                                 graphemes_in_source = set([segment]),
-                                occs = {lid: [(i, fid)]},
+                                occs = {lid: [(i, new_form)]},
                                 data=sound.__dict__,
-                                clts=sound
+                                obj=sound
                                 ))
                         if sound.type == 'unknownsound':
                             log.warning("warning: unknown sound {0}".format(segment))
                             valid_bipa = False
                         sounds += [sound]
+                if valid_bipa:
+                    new_form.tokens = [str(sound) for sound in sounds]
                 forms += [(valid_bipa, lid, cid, pid, fid, dsid, sounds, form)]
         
-        self.sounds = phonemes
-        self.languages = DictList(languages)
+        self.languages = languages
         self.concepts = DictList(concepts)
         self.senses = DictList(senses)
+        self.sounds = phonemes
         self.forms = []
         self.objects = DictList(objects)
         for valid_bipa, lid, cid, pid, fid, dsid, sounds, form in forms:
@@ -146,18 +177,18 @@ class Wordlist:
                         id=fid,
                         concept=self.concepts[cid] if cid else None,
                         language=self.languages[lid],
-                        sounds = [self.sounds[sound.name] for sound in
-                            sounds],
+                        #sounds = [self.sounds[sound.name] for sound in
+                        #    sounds],
                         tokens = lingpy.basictypes.lists(
                             [str(sound) for sound in sounds]
                             ) if valid_bipa else None,
                         sense=self.senses[pid],
-                        cldf=form,
+                        obj=form,
                         data=form.data,
                         dataset=dsid,
                         wordlist=self
                         )
-            
+
             self.forms.append(new_form)
 
             objects += [new_form]
@@ -190,6 +221,7 @@ class Wordlist:
 
         # add concepts here
         self.forms = DictList(self.forms)
+        self.graphemes = graphemes
         self.bipa_forms = DictList([f for f in self.forms if f.tokens])
         self.segmented_forms = DictList([f for f in self.forms if f.segments])
     
