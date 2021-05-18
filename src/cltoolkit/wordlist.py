@@ -61,7 +61,8 @@ class Wordlist:
                 DictList([]), DictList([]), DictList([]), DictList([]), DictList([]), 
                 DictList([]), DictList([]))
         graphemes = {}
-        for dataset in progressbar(self.datasets, desc="loading datasets"):
+        for dataset in self.datasets:
+            log.info("loading {0}".format(dataset))
             dsid = dataset.metadata_dict["rdf:ID"]
             # add languages to the dataset
             for language in dataset.objects("LanguageTable"):
@@ -98,13 +99,14 @@ class Wordlist:
                                 forms=DictList([])
                                 )
                     self.concepts.append(new_concept)
+                    self.objects.append(new_concept)
                 self.senses.append(new_sense)
-                self.objects.extend([new_sense, new_concept])
+                self.objects.append(new_sense)
 
             # assemble forms
             # TODO: make this only in this run that all is added already! TODO
             # so we create a grapheme, we create a sound from the grapheme
-            for form in dataset.objects("FormTable"):
+            for form in progressbar(dataset.objects("FormTable"), desc="loading forms"):
                 valid_bipa = True
                 lid, cid, pid, fid = (
                         dsid+"-"+form.data["Language_ID"], 
