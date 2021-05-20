@@ -10,7 +10,7 @@ from importlib import import_module
 from pyclts import CLTS
 import lingpy
 
-from cltoolkit.util import progressbar, DictList, identity
+from cltoolkit.util import progressbar, DictList, identity, lingpy_columns
 from cltoolkit import log
 from cltoolkit.models import (
         Language, Concept, ConceptInLanguage, Grapheme,
@@ -208,6 +208,44 @@ class Wordlist:
     def __len__(self):
         return len(self.forms)
 
+    def as_lingpy(
+            self,
+            language_filter=None,
+            sense_filter=None,
+            form_filter=None,
+            columns=None,
+            transform=None,
+            ):
+        transform = lingpy.Wordlist
+        if not form_filter:
+            form_filter = identity
+        if not language_filter:
+            language_filter = identity
+        if not sense_filter:
+            sense_filter = identity
+        columns = columns or lingpy_columns()
+        D = {0: [x[1] for x in columns]}
+        idx = 1
+        for form in self.forms:
+            if form_filter(form) and language_filter(form.language) and sense_filter(form.sense):
+                row = []
+                for (obj, att), name in columns:
+                    if obj == "form":
+                        row += [getattr(form, att)]
+                    elif obj == "language":
+                        row += [getattr(form.language, att)]
+                    elif obj == "concept":
+                        if form.concept:
+                            row += [getattr(form.concept, att)]
+                        else:
+                            row += ['']
+                    elif obj == "sense":
+                        row += [getattr(form.sense, att)]
+                D[idx] = row
+                idx += 1
+        return transform(D)
+
+
     def iter_forms_by_concepts(
             self, 
             concepts=None, 
@@ -219,7 +257,7 @@ class Wordlist:
         """
         Iterate over the concepts in the data and return forms for a given language.
 
-        :param concepts: List of concept identifiers. If not specified, will use all concepts linked to concepticon.
+        :param concepts: List of concept identifiers, all concepts if not specified.
         :param language: List of language identifiers, all languages if not specified.
         :param aspect: Select attribute of the Form object instead of the Form object.
         :param filter_by: Use a function to filter the data to be output.  

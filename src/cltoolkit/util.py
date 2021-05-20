@@ -125,3 +125,13 @@ class DictList(list):
         elif item in self._d:
             return True
         return False
+
+
+def lingpy_columns():
+    return [(("form", "id"), "local_id"),
+                (("language", "id"), "doculect"),
+                (("concept", "id"), "concept"),
+                (("sense", "name"), "concept_in_source"),
+                (("form", "value"), "value"),
+                (("form", "form"), "form"),
+                (("form", "tokens"), "tokens")]
