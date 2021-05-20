@@ -10,6 +10,10 @@ from pathlib import Path
 import cltoolkit
 
 
+def identity(x):
+    return x
+
+
 def cltoolkit_path(*comps):
     return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()
 
@@ -47,7 +51,6 @@ class GetValueFromDict(GetDataFromObject):
 GetValueFromData = partial(GetValueFromDict, data="data")
 
 
-
 class DictList(list):
     """
     A `list` that acts like a `dict` when a `str` is passed to `__getitem__`.
@@ -75,8 +78,27 @@ class DictList(list):
             return self[self._d[item][0]]
         return super(DictList, self).__getitem__(item)
 
+
     def __add__(self, other):
-        self.append(other)
+        for item in other:
+            idf = self._key(item)
+            if idf not in self:
+                list.append(self, item)
+                self._d[idf] += [len(self)-1]
+        return self
+
+    def __iadd__(self, other):
+        self.extend(other)
+
+    def remove(self, item):
+        if not isinstance(item, (int, slice)):
+            if item not in self._d:
+                raise KeyError("key not found")
+            super(DictList, self).pop(self._d[item][0])
+            del self._d[item]
+        else:
+            del self._d[self[item].id]
+            super(DictList, self).pop(item)
 
 
     def get(self, item, default=None):
