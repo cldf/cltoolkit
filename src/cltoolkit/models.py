@@ -56,6 +56,8 @@ class Language(CLBaseWithForms):
     """
     Base class for handling languages.
     """
+    senses = attr.ib(default=None)
+    concepts = attr.ib(default=None)
     glottocode = GetValueFromData("Glottocode")
     name = GetValueFromData("Name")
     macroarea = GetValueFromData("Macroarea")
@@ -63,11 +65,10 @@ class Language(CLBaseWithForms):
     longitude = GetValueFromData("longitude")
     family = GetValueFromData("Family")
     subgroup = GetValueFromData("SubGroup")
-    senses = attr.ib(default=None, repr=False)
-    concepts = attr.ib(default=None, repr=False)
+
 
     @cached_property
-    def inventory(self):
+    def sound_inventory(self):
         sounds = DictList([])
         for sound in self.wordlist.sounds:
             if self.id in sound.occs:
@@ -140,7 +141,7 @@ class Concept(CLCoreWithForms):
                 )
 
     def __repr__(self):
-        return "<Concept «"+ self.name+"»>"
+        return "<Concept "+ self.name+">"
 
 
 @attr.s(repr=False)
@@ -205,14 +206,19 @@ class Sound(Grapheme):
     def __str__(self):
         return self.grapheme
 
+    def __eq__(self, other):
+        return self.grapheme == other.grapheme
+
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.grapheme+">"
 
     def similarity(self, other):
-        if self.type not in ["marker", "unknownsound"]:
-            return self.sound.similarity(other.sound)
-        if self == other:
-            return 1
+        if self.type not in ["marker", "unknownsound"] and other.type not in ["marker", "unknownsound"]:
+            return self.obj.similarity(other.obj)
+        elif self.type in ["marker", "unknownsound"] and other.type in ["marker", "unknownsound"]:
+            if self == other:
+                return 1
+            return 0
         return 0
 
     @classmethod
@@ -301,9 +307,9 @@ class Inventory:
             try:
                 sounds[str(sound)].graphemes_in_source.append(itm)
             except KeyError:
-                sounds[str(sound)] = Phoneme(
+                sounds[str(sound)] = Sound(
                     id=sound.name.replace(' ','_'),
-                    clts=sound,
+                    obj=sound,
                     wordlist=wordlist,
                     dataset=dataset,
                     grapheme=str(sound),
