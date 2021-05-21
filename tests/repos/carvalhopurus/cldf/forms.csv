@@ -1,7 +1,7 @@
 ID,Local_ID,Language_ID,Parameter_ID,Value,Form,Segments,Comment,Source,Cognacy,Loan,Graphemes,Profile,Concept_in_Source,Value_in_Source
 ProtoPurus-1_body-1,,ProtoPurus,1_body,*-mane,mane,m a n e,,Carvalho2021,,,^m a n e$,default,,
 Inapari-1_body-1,,Inapari,1_body,maná-ʔa-ti ,maná-ʔa-ti,m a n á/a + ʔ a + t i,,,,,^m a n á - ʔ a - t i$,default,,maná-ʔa-ti (P95:38)
-Apurina-1_body-1,,Apurina,1_body,-mane ,-mane,m a n e,,,,,^- m a n e$,default,,-mane (F00:264)
+Apurina-1_body-1,,Apurina,1_body,-mane ,-mane,m a + n e,,,,,^- m a n e$,default,,-mane (F00:264)
 Yine-1_body-1,,Yine,1_body,-mane ,-mane,m a n e,,,,,^- m a n e$,default,,-mane (N86:143)
 ProtoPurus-2_head-1,,ProtoPurus,2_head,*-kɨwɨ,kɨwɨ,k ɨ w ɨ,,Carvalho2021,,,^k ɨ w ɨ$,default,,
 Inapari-2_head-1,,Inapari,2_head,hɨwɨ́-ti ,hɨwɨ́-ti,h ɨ w ɨ́/ɨ + t i,,,,,^h ɨ w ɨ́ - t i$,default,,hɨwɨ́-ti (P95:32)
