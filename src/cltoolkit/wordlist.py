@@ -49,7 +49,7 @@ class Wordlist:
                 'lexibank_'+ds).Dataset().cldf_dir.joinpath('cldf-metadata.json'))]
         return cls.from_datasets(dsets, load=load)
 
-    def __getite__(self, idf):
+    def __getitem__(self, idf):
         return self.objects[idf]
 
     def _add_languages(self, dsid, dataset):
@@ -293,26 +293,16 @@ class Wordlist:
 
     @property
     def height(self):
-        return len(self.languages)
+        return len(self.concepts)
 
     @property
     def width(self):
-        return len(self.concepts)
+        return len(self.languages)
 
-    def filter_data(
-            self,
-            tokens=100,
-            forms=100, 
-            concepts=None,
-            languages=None
-            ):
-        blacklist = set()
-        for language in self.languages:
-            if len(language.forms) < forms:
-                blacklist.update([f.id for f in language.forms])
-            if len([form.tokens for f in language.forms if f.toknes]):
-                pass
 
+    @property
+    def length(self):
+        return len(self)
 
     def coverage(self, concepts="concepts", aspect="bipa_forms"):
         out = {}

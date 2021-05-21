@@ -18,6 +18,11 @@ def cltoolkit_path(*comps):
     return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()
 
 
+def cltoolkit_test_path(*comps):
+    return Path(cltoolkit.__file__).parent.parent.parent.joinpath("tests",
+            *comps).as_posix()
+
+
 def syllables(form):
     out = []
     for morpheme in form.tokens.n:
