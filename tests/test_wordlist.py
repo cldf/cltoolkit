@@ -1,22 +1,29 @@
 import pytest
 from cltoolkit import Wordlist
 from pycldf import Dataset
-from pathlib import Path
-from tabulate import tabulate
 from pyclts import CLTS
-from cltoolkit.util import cltoolkit_path
+from cltoolkit.util import cltoolkit_test_path
+
+import sys
 
 
 def test_Wordlist():
-    clts = CLTS(cltoolkit_path("repos", "clts"))
+    # for lexibank load testing
+    sys.path.append(cltoolkit_test_path("repos", "carvalhopurus"))
+    sys.path.append(cltoolkit_test_path("repos", "wangbcd"))
+
+    clts = CLTS(cltoolkit_test_path("repos", "clts"))
     datasets =[
-            Dataset.from_metadata(Path("repos", "carvalhopurus", "cldf",
+            Dataset.from_metadata(cltoolkit_test_path("repos", "carvalhopurus", "cldf",
             "cldf-metadata.json")),
-            Dataset.from_metadata(Path("repos", "wangbcd", "cldf",
+            Dataset.from_metadata(cltoolkit_test_path("repos", "wangbcd", "cldf",
             "cldf-metadata.json"))
             ]
     wl = Wordlist.from_datasets(datasets, load=False)
+    wl2 = Wordlist.from_lexibank(["carvalhopurus", "wangbcd"])
     wl = Wordlist.from_datasets(datasets, load=True)
+
+    assert wl2.height == wl.height
 
     # getitem
     apurina = wl["carvalhopurus-Apurina"]
@@ -26,7 +33,7 @@ def test_Wordlist():
     assert wl.length == 2380
     assert len(wl.languages["wangbcd-Meixian"].forms) == 0
     assert len(wl.languages["carvalhopurus-Yine"].segmented_forms) == 195
-    assert len(wl.languages["carvalhopurus-Yine"].inventory) == 29
+    assert len(wl.languages["carvalhopurus-Yine"].sound_inventory) == 29
     assert len(wl.languages["carvalhopurus-Apurina"].segmented_forms) == 128
     assert len(wl.languages["carvalhopurus-Apurina"].bipa_forms) == 127
     assert len(wl.languages["carvalhopurus-Apurina"].concepts) == 105
