@@ -13,11 +13,10 @@ import lingpy
 from cltoolkit.util import progressbar, DictList, identity, lingpy_columns
 from cltoolkit import log
 from cltoolkit.models import (
-        Language, Concept, ConceptInLanguage, Grapheme,
-        SenseInLanguage, Form, Sense, Sound, Phoneme)
+        Language, Concept, Grapheme,
+        Form, Sense, Sound)
 
 from functools import reduce
-
 import attr
 
 
@@ -83,16 +82,19 @@ class Wordlist:
                         data=concept.data,
                         forms=DictList([]),
                         )
-            if concept_id:
+            if concept_id and concept_id not in self.concepts:
                 new_concept = Concept.from_sense(
                             new_sense,
                             id=concept_id,
                             name=concept_id.lower(),
                             wordlist=self,
-                            forms=DictList([])
+                            forms=DictList([]),
+                            senses=DictList([])
                             )
                 self.concepts.append(new_concept)
                 self.objects.append(new_concept)
+            if concept_id:
+                self.concepts[concept_id].senses.append(new_sense)
             self.senses.append(new_sense)
             self.objects.append(new_sense)
 
@@ -161,7 +163,7 @@ class Wordlist:
             self.objects.append(new_form)
             if cid and cid not in self.languages[lid].concepts:
                 self.languages[lid].concepts.append(
-                    ConceptInLanguage.from_concept(
+                    Concept.from_concept(
                         self.concepts[cid],
                         self.languages[lid],
                         senses=DictList([]),
@@ -177,7 +179,7 @@ class Wordlist:
             
             if pid not in self.languages[lid].senses:
                 self.languages[lid].senses.append(
-                        SenseInLanguage.from_sense(
+                        Sense.from_sense(
                             self.senses[pid], self.languages[lid], DictList([])
                             ))
             self.languages[lid].senses[pid].forms.append(new_form)

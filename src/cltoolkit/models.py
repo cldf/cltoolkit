@@ -71,7 +71,7 @@ class Language(CLBaseWithForms):
         sounds = DictList([])
         for sound in self.wordlist.sounds:
             if self.id in sound.occs:
-                sounds.append(Phoneme.from_sound(sound, language=self))
+                sounds.append(Sound.from_sound(sound, language=self))
         return Inventory(language=self, ts=self.wordlist.ts,
                 sounds=sounds)
 
@@ -82,15 +82,14 @@ class Sense(CLBaseWithForms):
     """
     Concepts in source are the original concepts in the individual wordlists.
     """
+    language = attr.ib(default=None)
     name = GetValueFromData("Name")
 
     def __repr__(self):
         return '<Sense '+self.id+'>'
 
-
-@attr.s(repr=False)
-class SenseInLanguage(Sense):
-    language = attr.ib(default=None)
+    def __eq__(self, other):
+        return self.name == other.name
 
     @classmethod
     def from_sense(cls, sense, language, forms):
@@ -109,36 +108,24 @@ class Concept(CLCoreWithForms):
     """
     Base class for the concepts in a dataset.
     """
-    name = attr.ib(default=None, repr=False)
-    concepticon_id = attr.ib(default=None, repr=False)
-    concepticon_gloss = attr.ib(default=None, repr=False)
+    language = attr.ib(default=None)
+    senses = attr.ib(default=None)
+    name = attr.ib(default=None)
+    concepticon_id = attr.ib(default=None)
+    concepticon_gloss = attr.ib(default=None)
 
     @classmethod
     def from_sense(
-            cls, concept, id=None, name=None, wordlist=None, forms=None):
+            cls, concept, id=None, name=None, wordlist=None, forms=None,
+            senses=None):
         return cls(
                 name=name,
                 id=id,
                 concepticon_id=concept.data["Concepticon_ID"],
                 concepticon_gloss=concept.data["Concepticon_Gloss"],
                 forms=forms,
+                senses=senses
                 )
-
-    def __repr__(self):
-        return "<Concept «"+ self.name+"»>"
-
-
-@attr.s(repr=False)
-class ConceptInLanguage(Concept):
-    """
-    Base class for concepts in individual languages.
-    """
-    language = attr.ib(default=None)
-    concept = attr.ib(default=None)
-    senses = attr.ib(default=None)
-
-    def __repr__(self):
-        return "<ConceptInLanguage «"+ self.name+"»>"
 
     @classmethod
     def from_concept(cls, concept, language, forms=None,
@@ -146,12 +133,14 @@ class ConceptInLanguage(Concept):
         return cls(
                 id=concept.id,
                 name=concept.name,
-                concept=concept,
                 concepticon_id=concept.concepticon_id,
                 concepticon_gloss=concept.concepticon_gloss,
                 senses=senses,
                 forms=forms,
                 )
+
+    def __repr__(self):
+        return "<Concept «"+ self.name+"»>"
 
 
 @attr.s(repr=False)
@@ -181,8 +170,6 @@ class Form(CLBase):
 
 @attr.s(repr=False)
 class Grapheme(CLBaseWithForms):
-
-    # id, wordlist, data, forms, cldf = clts
     occs = attr.ib(default=None)
     
 
@@ -193,6 +180,7 @@ class Sound(Grapheme):
     """
     grapheme = attr.ib(default=None)
     graphemes_in_source = attr.ib(default=None)
+    language = attr.ib(default=None)
 
     type = GetValueFromData("type")
     name = GetAttributeFromObject("name", data="obj")
@@ -227,20 +215,10 @@ class Sound(Grapheme):
             return 1
         return 0
 
-
-@attr.s(repr=False)
-class Phoneme(Sound):
-    """
-    Base class for handling sounds in individual languages.
-    """
-    language = attr.ib(default=None)
-    sound = attr.ib(default=None)
-
     @classmethod
     def from_sound(cls, sound, language):
         return cls(
                 id=sound.id,
-                sound=sound,
                 language=language,
                 data=sound.data,
                 obj=sound.obj,
@@ -249,6 +227,7 @@ class Phoneme(Sound):
                 grapheme=sound.grapheme,
                 occs=sound.occs[language.id]
                 )
+
 
 
 class GetSubInventoryByType:
@@ -270,7 +249,6 @@ class GetSubInventoryByProperty(GetSubInventoryByType):
 
     def __get__(self, obj, objtype=None):
         out = []
-        # todo manage "contains" statement here
         sounds = self.select_sounds(obj.sounds)
         sound_set = set([sound.grapheme for sound in sounds])
         for v in sounds:
