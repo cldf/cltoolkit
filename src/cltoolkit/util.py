@@ -20,6 +20,7 @@ def jaccard(a, b):
         return i / u
     return 0
 
+
 def cltoolkit_path(*comps):
     return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()
 
@@ -33,11 +34,8 @@ def syllables(form):
     out = []
     for morpheme in form.tokens.n:
         for syllable in syllabify(morpheme, output='nested'):
-            if not '+' in syllable:
-                yield syllable
-            else:
-                log.warning('problematic syllable encountered in {0}'.format(
-                    form.id))
+            yield syllable
+
 
 
 class GetDataFromObject:
@@ -76,53 +74,44 @@ class DictList(list):
         If `key` does not return unique values for all items, you may pass `multi=True` to
         retrieve `list`s of matching items for `l[key]`.
         """
-        self._d = defaultdict(list)
+        self._d = {}
         self._key = key
         list.__init__(self, items)
         for i, o in enumerate(self):
-            self._d[key(o)].append(i)
+            if key(o) in self._d:
+                raise KeyError("non-unique IDs encountered in DictList")
+            self._d[key(o)] = i
 
     def __getitem__(self, item):
         if not isinstance(item, (int, slice)):
             if item not in self._d:
-                raise KeyError("key not found")
-            return self[self._d[item][0]]
+                raise KeyError("key not found in DictList")
+            return self[self._d[item]]
         return super(DictList, self).__getitem__(item)
 
 
     def __add__(self, other):
         for item in other:
-            idf = self._key(item)
-            if idf not in self:
-                list.append(self, item)
-                self._d[idf] += [len(self)-1]
+            self.append(item)
         return self
 
     def __iadd__(self, other):
         self.extend(other)
-
-    def remove(self, item):
-        if not isinstance(item, (int, slice)):
-            if item not in self._d:
-                raise KeyError("key not found")
-            super(DictList, self).pop(self._d[item][0])
-            del self._d[item]
-        else:
-            del self._d[self[item].id]
-            super(DictList, self).pop(item)
-
+        return self
 
     def get(self, item, default=None):
         try: 
-            self.__getitem__(item)
+            return self.__getitem__(item)
         except KeyError:
             return default
 
     def append(self, item):
         idf = self._key(item)
-        if idf not in self:
-            list.append(self, item)
-            self._d[idf] += [len(self)-1]
+        if idf in self:
+            raise KeyError("key already exists in DictList")
+        list.append(self, item)
+        self._d[idf] = len(self)-1
+        
 
     def extend(self, others):
         for other in others:

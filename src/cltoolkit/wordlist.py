@@ -131,9 +131,7 @@ class Wordlist:
                 for i, (segment, sound) in enumerate(
                         zip(new_form.segments, sounds)):
                     gid = dsid+'-'+segment
-                    try:
-                        self.graphemes[gid].forms.append(new_form)
-                    except KeyError:
+                    if gid not in self.graphemes:
                         self.graphemes.append(Grapheme(
                                 id=gid,
                                 grapheme=segment,
@@ -142,14 +140,15 @@ class Wordlist:
                                 obj=sound,
                                 occs=OrderedDict(),
                                 forms=DictList([new_form])))
+                    if new_form not in self.graphemes[gid].forms:
+                        self.graphemes[gid].forms.append(new_form)
                     try:
                         self.graphemes[gid].occs[lid].append((i, new_form))
                     except KeyError:
                         self.graphemes[gid].occs[lid] = [(i, new_form)]
                     if valid_bipa:
-                        try:
-                            self.sounds[str(sound)].forms.append(new_form)
-                        except KeyError:
+                        sid = str(sound)
+                        if sid not in self.sounds:
                             self.sounds.append(Sound.from_grapheme(
                                     self.graphemes[gid],
                                     graphemes_in_source=DictList([]),
@@ -157,14 +156,16 @@ class Wordlist:
                                     obj=sound,
                                     occs=OrderedDict(),
                                     forms=DictList([new_form]),
-                                    id=str(sound)))
-                        self.sounds[str(sound)].graphemes_in_source.append(
-                                self.graphemes[gid])
+                                    id=sid))
+                        if new_form not in self.sounds[sid].forms:
+                            self.sounds[sid].forms.append(new_form)
+                        if gid not in self.sounds[sid].graphemes_in_source:
+                            self.sounds[sid].graphemes_in_source.append(
+                                    self.graphemes[gid])
                         try:
-                            self.sounds[str(sound)].occs[lid].append((i, new_form))
+                            self.sounds[sid].occs[lid].append((i, new_form))
                         except KeyError:
-                            self.sounds[str(sound)].occs[lid] = [(i, new_form)]
-            self.forms.append(new_form)
+                            self.sounds[sid].occs[lid] = [(i, new_form)]
             self.objects.append(new_form)
             if cid and cid not in self.languages[lid].concepts:
                 self.languages[lid].concepts.append(
@@ -180,7 +181,8 @@ class Wordlist:
             if cid:
                 self.languages[lid].concepts[cid].forms.append(new_form)
                 self.concepts[cid].forms.append(new_form)
-                self.languages[lid].concepts[cid].senses.append(self.senses[pid])
+                if not pid in self.languages[lid].concepts[cid].senses:
+                    self.languages[lid].concepts[cid].senses.append(self.senses[pid])
             
             if pid not in self.languages[lid].senses:
                 self.languages[lid].senses.append(
