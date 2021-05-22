@@ -130,35 +130,40 @@ class Wordlist:
                     valid_bipa = True
                 for i, (segment, sound) in enumerate(
                         zip(new_form.segments, sounds)):
+                    gid = dsid+'-'+segment
                     try:
-                        self.graphemes[segment].forms.append(new_form)
+                        self.graphemes[gid].forms.append(new_form)
                     except KeyError:
                         self.graphemes.append(Grapheme(
-                                id=segment, 
+                                id=gid,
+                                grapheme=segment,
                                 dataset=dsid,
                                 wordlist=self, 
                                 obj=sound,
                                 occs=OrderedDict(),
                                 forms=DictList([new_form])))
                     try:
-                        self.graphemes[segment].occs[lid].append((i, new_form))
+                        self.graphemes[gid].occs[lid].append((i, new_form))
                     except KeyError:
-                        self.graphemes[segment].occs[lid] = [(i, new_form)]
+                        self.graphemes[gid].occs[lid] = [(i, new_form)]
                     if valid_bipa:
                         try:
-                            self.sounds[sound.name].forms.append(new_form)
+                            self.sounds[str(sound)].forms.append(new_form)
                         except KeyError:
                             self.sounds.append(Sound.from_grapheme(
-                                    self.graphemes[segment],
-                                    graphemes_in_source=[],
+                                    self.graphemes[gid],
+                                    graphemes_in_source=DictList([]),
                                     grapheme=str(sound),
+                                    obj=sound,
                                     occs=OrderedDict(),
                                     forms=DictList([new_form]),
-                                    id=sound.name))
+                                    id=str(sound)))
+                        self.sounds[str(sound)].graphemes_in_source.append(
+                                self.graphemes[gid])
                         try:
-                            self.sounds[sound.name].occs[lid].append((i, new_form))
+                            self.sounds[str(sound)].occs[lid].append((i, new_form))
                         except KeyError:
-                            self.sounds[sound.name].occs[lid] = [(i, new_form)]
+                            self.sounds[str(sound)].occs[lid] = [(i, new_form)]
             self.forms.append(new_form)
             self.objects.append(new_form)
             if cid and cid not in self.languages[lid].concepts:
@@ -246,7 +251,6 @@ class Wordlist:
                 D[idx] = row
                 idx += 1
         return transform(D)
-
 
     def iter_forms_by_concepts(
             self, 

@@ -8,11 +8,17 @@ from functools import partial
 from tqdm import tqdm as progressbar
 from pathlib import Path
 import cltoolkit
-
+import statistics
 
 def identity(x):
     return x
 
+
+def jaccard(a, b):
+    i, u = len(a.intersection(b)), len(a.union(b))
+    if u:
+        return i / u
+    return 0
 
 def cltoolkit_path(*comps):
     return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()

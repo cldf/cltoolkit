@@ -4,20 +4,23 @@ Basic models.
 
 from collections import OrderedDict
 import attr
-from cltoolkit.util import GetValueFromData, GetAttributeFromObject, DictList
+from cltoolkit.util import GetValueFromData, GetAttributeFromObject, DictList, jaccard
 import lingpy
 from pycldf.util import DictTuple
 from pyclts import CLTS
 from functools import cached_property
+import statistics
 
 
 
 @attr.s(repr=False)
 class CLCore:
+    """
+    Base class to represent data in a wordlist.
+    """
     id = attr.ib()
     wordlist = attr.ib(default=None)
     data = attr.ib(default=None)
-
 
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.id+">"
@@ -25,6 +28,9 @@ class CLCore:
 
 @attr.s(repr=False)
 class CLCoreWithForms(CLCore):
+    """
+    Base class to represent data in a wordlist that contains forms.
+    """
     forms = attr.ib(default=None)
     
     @cached_property
@@ -39,7 +45,7 @@ class CLCoreWithForms(CLCore):
 @attr.s(repr=False)
 class CLBase(CLCore):
     """
-    Base class.
+    Base class to represent data in a wordlist from a specific dataset.
     """
     obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
@@ -47,6 +53,9 @@ class CLBase(CLCore):
 
 @attr.s(repr=False)
 class CLBaseWithForms(CLCoreWithForms):
+    """
+    Base class to represent data in a wordlist from a specific dataset with forms.
+    """
     obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
@@ -55,6 +64,10 @@ class CLBaseWithForms(CLCoreWithForms):
 class Language(CLBaseWithForms):
     """
     Base class for handling languages.
+
+    .. note::
+       
+       A language variety is defined for a specific dataset only. 
     """
     senses = attr.ib(default=None)
     concepts = attr.ib(default=None)
@@ -77,11 +90,14 @@ class Language(CLBaseWithForms):
                 sounds=sounds)
 
 
-
-@attr.s(repr=False)
+@attr.s(repr=False, cmp=False)
 class Sense(CLBaseWithForms):
     """
     Concepts in source are the original concepts in the individual wordlists.
+
+    .. note::
+       
+       Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined for all datasets.
     """
     language = attr.ib(default=None)
     name = GetValueFromData("Name")
@@ -90,7 +106,9 @@ class Sense(CLBaseWithForms):
         return '<Sense '+self.id+'>'
 
     def __eq__(self, other):
-        return self.name == other.name
+        if isinstance(other, self.__class__):
+            return self.name == other.name
+        return False
 
     @classmethod
     def from_sense(cls, sense, language, forms):
@@ -104,10 +122,19 @@ class Sense(CLBaseWithForms):
                 language=language)
 
 
-@attr.s(repr=False)
+@attr.s(repr=False, cmp=False)
 class Concept(CLCoreWithForms):
     """
     Base class for the concepts in a dataset.
+
+    .. note::
+       
+       Unlike senses in a wordlist, which are dataset-specific, concepts in a
+       wordlist are defined for all datasets. As a result, they lack a
+       reference to the original dataset in which they occur, but they have an
+       attribute `senses` which is a reference to the original senses as they
+       occur in different datasets.
+
     """
     language = attr.ib(default=None)
     senses = attr.ib(default=None)
@@ -146,6 +173,15 @@ class Concept(CLCoreWithForms):
 
 @attr.s(repr=False)
 class Form(CLBase):
+    """
+    Base class for handling the form part of linguistic signs.
+
+    :param concept: The concept (if any) expressed by the form.
+    :param language: The language in which the form occurs.
+    :param sense: The meaning expressed by the form.
+    :param tokens: The segmented strings defined by the B(road) IPA.
+    
+    """
     
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
@@ -157,13 +193,15 @@ class Form(CLBase):
 
     @property
     def sounds(self):
-        return [self.wordlist.sounds[self.wordlist.ts[t].name] for t in
-                self.tokens]
+        if self.tokens:
+            return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in
+                    self.tokens]
 
     @property
     def graphemes(self):
-        return [self.wordlist.graphemes["grapheme-"+s] for s in
-                self.segments]
+        if self.segments:
+            return [self.wordlist.graphemes[self.dataset+'-'+s] for s in
+                    self.segments]
 
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.form+">"
@@ -171,34 +209,41 @@ class Form(CLBase):
 
 @attr.s(repr=False)
 class Grapheme(CLBaseWithForms):
+    grapheme = attr.ib(default=None)
     occs = attr.ib(default=None)
+    language = attr.ib(default=None)
+
+    def __str__(self):
+        return self.grapheme
     
 
-@attr.s(repr=False)
-class Sound(Grapheme):
+@attr.s(repr=False, cmp=False)
+class Sound(CLCoreWithForms):
     """
     All sounds in a dataset.
     """
     grapheme = attr.ib(default=None)
+    occs = attr.ib(default=None)
     graphemes_in_source = attr.ib(default=None)
     language = attr.ib(default=None)
+    obj = attr.ib(default=None)
 
-    type = GetValueFromData("type")
+    type = GetAttributeFromObject("type", data="obj")
     name = GetAttributeFromObject("name", data="obj")
     featureset = GetAttributeFromObject("featureset", data="obj")
 
     @classmethod
     def from_grapheme(cls, grapheme_, grapheme=None, occs=None, forms=None,
-            id=None, graphemes_in_source=None):
+            id=None, graphemes_in_source=None, obj=None):
         return cls(
                 id=id, 
                 grapheme=grapheme,
                 wordlist=grapheme_.wordlist,
                 occs=occs,
-                data=grapheme_.obj.__dict__,
+                data=obj.__dict__,
                 graphemes_in_source=graphemes_in_source,
                 forms=forms,
-                obj=grapheme_.obj)
+                obj=obj)
 
     def __len__(self):
         return len(self.occs or [])
@@ -207,7 +252,9 @@ class Sound(Grapheme):
         return self.grapheme
 
     def __eq__(self, other):
-        return self.grapheme == other.grapheme
+        if isinstance(other, self.__class__):
+            return self.grapheme == other.grapheme
+        return False
 
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.grapheme+">"
@@ -224,11 +271,10 @@ class Sound(Grapheme):
     @classmethod
     def from_sound(cls, sound, language):
         return cls(
-                id=sound.id,
+                id=str(sound),
                 language=language,
                 data=sound.data,
                 obj=sound.obj,
-                dataset=sound.dataset,
                 wordlist=sound.wordlist,
                 grapheme=sound.grapheme,
                 occs=sound.occs[language.id]
@@ -308,15 +354,15 @@ class Inventory:
                 sounds[str(sound)].graphemes_in_source.append(itm)
             except KeyError:
                 sounds[str(sound)] = Sound(
-                    id=sound.name.replace(' ','_'),
+                    id=str(sound),
                     obj=sound,
                     wordlist=wordlist,
-                    dataset=dataset,
                     grapheme=str(sound),
                     graphemes_in_source=[sound.grapheme],
                     occs=[],
-                    data=sound.__dict__)
-        return cls(sounds=DictTuple(sounds.values()), ts=ts, language=language)
+                    data=sound.__dict__
+                    )
+        return cls(sounds=DictList(sounds.values()), ts=ts, language=language)
 
     def __len__(self):
         return len(self.sounds)
@@ -349,7 +395,10 @@ class Inventory:
             for soundA in soundsA:
                 best_match, best_sim = None, 0
                 for soundB in soundsB:
-                    current_sim = soundA.similarity(soundB)
+                    if soundA.type != "unknownsound" and soundB.type != "unknownsound":
+                        current_sim = soundA.similarity(soundB)
+                    else:
+                        current_sim = 0
                     if current_sim > best_sim:
                         best_match = soundB
                         best_sim = current_sim
@@ -373,6 +422,6 @@ class Inventory:
                 ]
             elif soundsA or soundsB:
                 scores += [0]
-        if not scores:
+        if not scores or not sum(scores):
             return 0
         return statistics.mean(scores)
