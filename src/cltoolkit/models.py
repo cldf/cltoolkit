@@ -8,7 +8,7 @@ from cltoolkit.util import GetValueFromData, GetAttributeFromObject, DictList, j
 import lingpy
 from pycldf.util import DictTuple
 from pyclts import CLTS
-from functools import cached_property
+from clldutils.misc import lazyproperty as cached_property
 import statistics
 
 
