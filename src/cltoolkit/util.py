@@ -9,12 +9,52 @@ from tqdm import tqdm as progressbar
 from pathlib import Path
 import cltoolkit
 import statistics
+from pycldf import Dataset
+
+
+def valid_tokens(sounds):
+    """
+    Make sure tokens conform to transcription system.
+
+    :param sounds: List of Sound objects (pyclts.Sound).
+    """
+    if not sounds:
+        return []
+    tokens = [s for s in sounds]
+    while True:
+        if str(tokens[0]) in ["+", "_"]:
+            tokens = tokens[1:]
+        else:
+            break
+    while True:
+        if str(tokens[-1]) in ["+", "_"]:
+            tokens = tokens[:-1]
+        else:
+            break
+    out = []
+    for i, token in enumerate(tokens):
+        if str(tokens[i]) in ["+", "_"] and i > 0 and str(tokens[i-1]) in ["+", "_"]:
+            pass
+        elif str(token) == "_":
+            out.append("+")
+        elif token.type == 'unknownsound':
+            return []
+        else:
+            out.append(str(token))
+    return out
+
 
 def identity(x):
+    """
+    Identity function used as a default for passing functions.
+    """
     return x
 
 
 def jaccard(a, b):
+    """
+    Returns the Jaccard distance between two sets.
+    """
     i, u = len(a.intersection(b)), len(a.union(b))
     if u:
         return i / u
@@ -31,6 +71,9 @@ def cltoolkit_test_path(*comps):
 
 
 def syllables(form):
+    """
+    Return the syllables of a given form with tokens.
+    """
     out = []
     for morpheme in form.tokens.n:
         for syllable in syllabify(morpheme, output='nested'):
@@ -127,7 +170,22 @@ class DictList(list):
         return False
 
 
+def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json'):
+    """
+    Return `pycldf` dataset instances by searching for their identifiers.
+    """
+    datasets = []
+    for path in Path("").glob(path):
+        if [did for did in ids if did in path.as_posix()]:
+            datasets += [Dataset.from_metadata(path)]
+    return datasets
+
+
+
 def lingpy_columns():
+    """
+    Define basic columns for export to LingPy wordlists.
+    """
     return [(("form", "id"), "local_id"),
                 (("language", "id"), "doculect"),
                 (("concept", "id"), "concept"),

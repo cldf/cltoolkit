@@ -9,8 +9,17 @@ from cltoolkit.util import (
         cltoolkit_test_path,
         syllables,
         DictList,
+        valid_tokens,
         lingpy_columns
         )
+from pyclts import CLTS
+
+def test_valid_tokens():
+    ts = CLTS(cltoolkit_test_path("repos", "clts")).bipa
+    sounds = [
+            ts[x] for x in ["_", "+", "a:", "b", "+", "_", "+", "c", "_",
+            "_"]]
+    assert valid_tokens(sounds)[0] == "aː"
 
 
 def test_identity():

@@ -149,8 +149,8 @@ class Concept(CLCoreWithForms):
         return cls(
                 name=name,
                 id=id,
-                concepticon_id=concept.data["Concepticon_ID"],
-                concepticon_gloss=concept.data["Concepticon_Gloss"],
+                concepticon_id=concept.data.get("Concepticon_ID", ""),
+                concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
                 forms=forms,
                 senses=senses
                 )

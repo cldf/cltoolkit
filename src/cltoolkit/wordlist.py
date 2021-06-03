@@ -10,7 +10,9 @@ from importlib import import_module
 from pyclts import CLTS
 import lingpy
 
-from cltoolkit.util import progressbar, DictList, identity, lingpy_columns
+from cltoolkit.util import (
+        progressbar, DictList, identity, lingpy_columns,
+        valid_tokens)
 from cltoolkit import log
 from cltoolkit.models import (
         Language, Concept, Grapheme,
@@ -29,14 +31,23 @@ class Wordlist:
 
     datasets = attr.ib(default=[])
     ts = attr.ib(default=CLTS().transcriptionsystem_dict['bipa'])
+    concept_id_factory = attr.ib(default=lambda x: x["Concepticon_Gloss"])
 
     @classmethod
-    def from_datasets(cls, datasets, load=True):
+    def from_datasets(
+            cls, 
+            datasets, 
+            load=True, 
+            id_factory=lambda x: x.metadata_dict["rdf:ID"],
+            concept_id_factory=lambda x: x["Concepticon_Gloss"]
+            ):
         """
         Initialize from multiple datasets already loaded via pycldf.
         """
-        this_class = cls(datasets=DictTuple(
-            datasets, key=lambda x: x.metadata_dict["rdf:ID"]))
+        this_class = cls(
+                datasets=DictTuple(datasets, key=id_factory),
+                concept_id_factory=concept_id_factory
+                )
         if load:
             this_class.load()
         return this_class
@@ -74,7 +85,7 @@ class Wordlist:
         """Append senses (concepts) to the wordlist."""
         
         for concept in dataset.objects("ParameterTable"):
-            concept_id = concept.data["Concepticon_Gloss"]
+            concept_id = self.concept_id_factory(concept.data)
             new_sense = Sense(
                         id=dsid+'-'+concept.id,
                         wordlist=self,
@@ -104,10 +115,9 @@ class Wordlist:
                 dataset.objects("FormTable"), 
                 desc="loading forms for {0}".format(dsid)
                 ):
-            valid_bipa = True
             lid, cid, pid, fid = (
-                    dsid+"-"+form.data["Language_ID"], 
-                    form.parameter.data["Concepticon_Gloss"],
+                    dsid+"-"+form.cldf.languageReference, 
+                    self.concept_id_factory(form.parameter.data),
                     dsid+"-"+form.parameter.id,
                     dsid+"-"+form.id
                     )
@@ -124,10 +134,7 @@ class Wordlist:
             self.forms.append(new_form)
             sounds = [self.ts[s] for s in new_form.segments]
             if sounds:
-                valid_bipa = False
-                if not [s for s in sounds if s.type == "unknownsound"]:
-                    new_form.tokens = [str(s) for s in sounds]
-                    valid_bipa = True
+                new_form.tokens = valid_tokens(sounds)
                 for i, (segment, sound) in enumerate(
                         zip(new_form.segments, sounds)):
                     gid = dsid+'-'+segment
@@ -146,7 +153,7 @@ class Wordlist:
                         self.graphemes[gid].occs[lid].append((i, new_form))
                     except KeyError:
                         self.graphemes[gid].occs[lid] = [(i, new_form)]
-                    if valid_bipa:
+                    if new_form.tokens:
                         sid = str(sound)
                         if sid not in self.sounds:
                             self.sounds.append(Sound.from_grapheme(
@@ -203,9 +210,9 @@ class Wordlist:
                 DictList([]), DictList([]), DictList([]), DictList([]), DictList([]), 
                 DictList([]), DictList([]))
         graphemes = {}
-        for dataset in self.datasets:
-            log.info("loading {0}".format(dataset))
-            dsid = dataset.metadata_dict["rdf:ID"]
+        for dsid in self.datasets._d.keys():
+            log.info("loading {0}".format(dsid))
+            dataset = self.datasets[dsid]
             self._add_languages(dsid, dataset)
             self._add_senses(dsid, dataset)
             self._add_forms(dsid, dataset)
