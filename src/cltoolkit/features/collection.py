@@ -11,7 +11,7 @@ from cltoolkit.util import cltoolkit_path
 
 
 def feature_data():
-    return json.load(open(cltookit_path('features', 'features.json')))
+    return json.load(open(cltoolkit_path('features', 'features.json')))
 
 
 @attr.s(repr=False)

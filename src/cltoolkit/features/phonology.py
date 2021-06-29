@@ -6,18 +6,18 @@ from functools import partial
 
 
 def base_inventory_query(language, attr=None):
-    return len(getattr(language.inventory, attr))
+    return len(getattr(language.sound_inventory, attr))
 
 
 def base_yes_no_query(language, attr=None):
-    out = getattr(language.inventory, attr)
+    out = getattr(language.sound_inventory, attr)
     if out:
         return 1
     return 0
 
 def base_ratio(language, attr1=None, attr2=None):
-    return len(getattr(language.inventory, attr1)) / len(
-            getattr(language.inventory, attr2))
+    return len(getattr(language.sound_inventory, attr1)) / len(
+            getattr(language.sound_inventory, attr2))
 
 
 vowel_quality_size = partial(base_inventory_query, attr="vowels_by_quality")
@@ -40,7 +40,7 @@ cv_sounds_ratio = partial(
 
 def plosive_fricative_voicing(language):
     """WALS Feature 4A, check for voiced and unvoiced sounds"""
-    inv = language.inventory
+    inv = language.sound_inventory
     voiced = set([sound.clts.manner for sound in inv.consonants if
         (sound.clts.phonation=='voiced' and sound.clts.manner in
             ['stop', 'fricative']) or ( sound.clts.breathiness and
@@ -61,7 +61,7 @@ def has_ptk(language):
     """
     WALS Feature 5A, check for presence of certain sounds.
     """
-    inv = language.inventory
+    inv = language.sound_inventory
     sounds = [sound.clts.s for sound in inv.consonants]
     
     if not 'p' in sounds and not 'g' in sounds:
@@ -81,7 +81,7 @@ def has_uvular(language):
     """
     WALS Feature 6A, check for uvular sounds.
     """
-    inv = language.inventory
+    inv = language.sound_inventory
     uvulars = set([sound.clts.manner for sound in inv.consonants if
             sound.clts.place=='uvular'])
     if len(uvulars) == 0:
@@ -98,7 +98,7 @@ def has_uvular(language):
 def has_glottalized(language):
     """
     WALS Feature 7A, check for glottalized or implosive consonants."""
-    inv = language.inventory
+    inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
             sound.clts.ejection and sound.clts.manner in 
             ['stop', 'affricate']]
@@ -128,7 +128,7 @@ def has_glottalized(language):
 def has_laterals(language):
     """
     WALS Feature 8A, check for lateral sounds."""
-    inv = language.inventory
+    inv = language.sound_inventory
     laterals = set([sound.clts.manner for sound in
         inv.consonants if
         sound.clts.airstream == 'lateral'])
@@ -149,7 +149,7 @@ def has_laterals(language):
 def has_engma(language):
     """
     WALS Feature 9A, check for nasals."""
-    inv = language.inventory
+    inv = language.sound_inventory
     consonants = [sound.clts.s for sound in inv.consonants]
     if 'ŋ' in consonants:
         for fid, pos in inv.sounds['ŋ'].occs:
@@ -174,10 +174,10 @@ def has_rounded_vowels(language):
     """
     WALS Feature 11A, check for front rounded vowels.
     """
-    high = [sound for sound in language.inventory.vowels if
+    high = [sound for sound in language.sound_inventory.vowels if
             sound.clts.roundedness == 'rounded' and sound.clts.height in
             ['open', 'near-open']]
-    mid = [sound for sound in language.inventory.vowels if
+    mid = [sound for sound in language.sound_inventory.vowels if
             sound.clts.roundedness == 'rounded' and
             sound.clts.height in ['open-mid', 'mid']]
     if not high and not mid:
@@ -233,7 +233,7 @@ def lacks_common_consonants(language):
     """
     WALS Feature 18A, check for absence of common consonants.
     """
-    inv = language.inventory
+    inv = language.sound_inventory
     bilabials = [sound for sound in inv.consonants if 'bilabial' in
             sound.clts.featureset]
     fricatives = [sound for sound in inv.consonants if 'fricative' in
