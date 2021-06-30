@@ -74,8 +74,8 @@ class Language(CLBaseWithForms):
     glottocode = GetValueFromData("Glottocode")
     name = GetValueFromData("Name")
     macroarea = GetValueFromData("Macroarea")
-    latitude = GetValueFromData("latitude")
-    longitude = GetValueFromData("longitude")
+    latitude = GetValueFromData("Latitude")
+    longitude = GetValueFromData("Longitude")
     family = GetValueFromData("Family")
     subgroup = GetValueFromData("SubGroup")
 

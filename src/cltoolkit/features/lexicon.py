@@ -50,3 +50,11 @@ has_red_yellow_colexified = partial(
         alist=["RED"],
         blist=["YELLOW", "BRIGHT YELLOW", "DARK YELLOW"],
         )
+
+
+has_leg_and_foot_colexified = partial(
+        has_a_b_colexified,
+        alist=["FOOT"],
+        blist=["LEG"],
+        ablist=["FOOT OR LEG"]
+        )

@@ -99,6 +99,42 @@
     "note": ""
   },
   {
+    "id": "LacksCommonConsonants",
+    "name": "gaps in plosives",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "lacks_common_consonants",
+    "note": ""
+  },
+  {
+    "id": "HasUncommonConsonants",
+    "name": "has uncommon consonants",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_uncommon_consonants",
+    "note": ""
+  },
+  {
+    "id": "LegAndFoot",
+    "name": "has the same word form for foot and leg",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_leg_and_foot_colexified",
+    "note": ""
+  },
+  {
+    "id": "PlosiveFricativeVoicing",
+    "name": "voicing in plosives and fricatives",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "plosive_fricative_voicing",
+    "note": ""
+  },
+  {
     "id": "UvularConsonants",
     "name": "presence of uvular consonants",
     "type": "integer",
@@ -114,6 +150,15 @@
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_glottalized",
+    "note": ""
+  },
+  {
+    "id": "HasLaterals",
+    "name": "presence of glottalized consonants",
+    "type": "integer",
+    "target": "inventory",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_laterals",
     "note": ""
   },
   {
