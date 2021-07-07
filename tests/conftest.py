@@ -34,22 +34,3 @@ def ds_wangbcd(repos):
 @pytest.fixture
 def ds_dummy(repos):
     return Dataset.from_metadata(repos / "dummy" / "cldf" / "cldf-metadata.json")
-
-
-#@pytest.fixture
-#def fixtures(tmpdir, tests_dir):
-#    shutil.copytree(str(tests_dir / 'fixtures'), str(tmpdir.join('fixtures')))
-#    return Path(str(tmpdir)) / 'fixtures'
-#
-#
-#@pytest.fixture
-#def tmp_repos(tmpdir, tests_dir):
-#    shutil.copytree(str(tests_dir / 'repos'), str(tmpdir.join('repos')))
-#    return Path(str(tmpdir)) / 'repos'
-
-
-#@pytest.fixture(scope='session')
-#def bipa(api):
-#    return api.bipa
-
-

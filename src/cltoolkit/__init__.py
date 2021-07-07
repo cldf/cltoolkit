@@ -1,2 +1,7 @@
+import pathlib
+
 from cltoolkit.wordlist import Wordlist
-#from cltoolkit.inventories import InventoryData
+
+__version__ = "0.1.0.dev0"
+
+pkg_path = pathlib.Path(__file__).parent

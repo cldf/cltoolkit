@@ -1,15 +1,24 @@
 """
 Utility functions for lexicore.
 """
-from collections import OrderedDict, defaultdict
+import inspect
+import pathlib
+import functools
+
 from lingpy.sequence.sound_classes import syllabify
-from cltoolkit import log
-from functools import partial
-from tqdm import tqdm as progressbar
-from pathlib import Path
-import cltoolkit
-import statistics
 from pycldf import Dataset
+from pycldf.util import DictTuple as BaseDictTuple
+from pylexibank import Dataset as LexiSet
+
+__all__ = [
+    'valid_tokens', 'identity', 'jaccard', 'iter_syllables',
+    'DictTuple', 'NestedAttribute', 'MutatedDataValue', 'MutatedNestedDictValue']
+
+
+def dataset_from_module(mod):
+    for _, obj in inspect.getmembers(mod):
+        if inspect.isclass(obj) and issubclass(obj, LexiSet) and not obj.__subclasses__():
+            return Dataset.from_metadata(obj().cldf_dir / 'cldf-metadata.json')
 
 
 def valid_tokens(sounds):
@@ -56,104 +65,83 @@ def jaccard(a, b):
     Returns the Jaccard distance between two sets.
     """
     i, u = len(a.intersection(b)), len(a.union(b))
-    if u:
-        return i / u
-    return 0
+    return i / u if u else 0
 
 
-def cltoolkit_path(*comps):
-    return Path(cltoolkit.__file__).parent.joinpath(*comps).as_posix()
-
-
-def syllables(form):
+def iter_syllables(form):
     """
     Return the syllables of a given form with tokens.
     """
-    out = []
     for morpheme in form.tokens.n:
         for syllable in syllabify(morpheme, output='nested'):
             yield syllable
 
 
-
-class GetDataFromObject:
-    def __init__(self, attr, data=None, transform=None):
-        if not transform:
-            self.transform = lambda x: x
-        else:
-            self.transform = transform
-        self.attr, self.data = attr, data
-
-
-class GetAttributeFromObject(GetDataFromObject):
-    def __get__(self, obj, objtype=None):
-        return getattr(getattr(obj, self.data), self.attr, None)
-
-
-class GetValueFromDict(GetDataFromObject):
-    def __get__(self, obj, objtype=None):
-        return self.transform(getattr(obj, self.data).get(self.attr, None))
-
-
-GetValueFromData = partial(GetValueFromDict, data="data")
-
-
-class DictList(list):
+class NestedAttribute:
     """
-    A `list` that acts like a `dict` when a `str` is passed to `__getitem__`.
+    A descriptor implementing a nested attribute getter.
 
-    Extends upon the DictTuple class of pycldf.util.
+    Used to implement Facade-pattern-style access to complex attribute data.
+
+    .. code-block:: python
+
+        >>> class C:
+        ...     a = 'ABC'
+        ...     b = NestedAttribute('a', 'lower')
+        ...
+        >>> C().b()
+        'abc'
+
+    .. seealso:: https://en.wikipedia.org/wiki/Facade_pattern
     """
-    def __new__(cls, items, **kw):
-        return super(DictList, cls).__new__(cls, list(items))
+    def __init__(self, outer_attribute, inner_attribute):
+        self._outer = outer_attribute
+        self._inner = inner_attribute
 
-    def __init__(self, items, key=lambda i: i.id):
-        """
-        If `key` does not return unique values for all items, you may pass `multi=True` to
-        retrieve `list`s of matching items for `l[key]`.
-        """
-        self._d = {}
-        self._key = key
-        list.__init__(self, items)
-        for i, o in enumerate(self):
-            if key(o) in self._d:
-                raise KeyError("non-unique IDs encountered in DictList")
-            self._d[key(o)] = i
-
-    def __getitem__(self, item):
-        if not isinstance(item, (int, slice)):
-            if item not in self._d:
-                raise KeyError("key not found in DictList")
-            return self[self._d[item]]
-        return super(DictList, self).__getitem__(item)
+    def __get__(self, obj, objtype=None):
+        return getattr(getattr(obj, self._outer), self._inner, None)
 
 
-    def __add__(self, other):
-        for item in other:
-            self.append(item)
-        return self
+class MutatedNestedDictValue:
+    """
+    Descriptor to retrieve a mutated value of a nested `dict`.
 
-    def __iadd__(self, other):
-        self.extend(other)
-        return self
+    Used to implement Facade-pattern-style access to complex attribute data.
 
+    .. code-block:: python
+
+        >>> class C:
+        ...     a = {'x': 5}
+        ...     b = MutatedNestedDictValue('a', 'x', transform=lambda x: x + 5)
+        ...
+        >>> C().b
+        10
+
+    .. seealso:: https://en.wikipedia.org/wiki/Facade_pattern
+    """
+    def __init__(self, attribute, key, transform=identity):
+        self.transform = transform
+        self.attr, self.key = attribute, key
+
+    def __get__(self, obj, objtype=None):
+        return self.transform(getattr(obj, self.attr).get(self.key, None))
+
+
+MutatedDataValue = functools.partial(MutatedNestedDictValue, 'data')
+
+
+class DictTuple(BaseDictTuple):
     def get(self, item, default=None):
-        try: 
+        try:
             return self.__getitem__(item)
         except KeyError:
             return default
 
-    def append(self, item):
-        idf = self._key(item)
-        if idf in self:
-            raise KeyError("key already exists in DictList")
-        list.append(self, item)
-        self._d[idf] = len(self)-1
-        
-
-    def extend(self, others):
-        for other in others:
-            self.append(other)
+    def __getitem__(self, item):
+        if not isinstance(item, (int, slice)):
+            if item not in self._d:
+                raise KeyError(item)
+        return super(DictTuple, self).__getitem__(item)
 
     def __contains__(self, item):
         if hasattr(item, "id"):
@@ -164,17 +152,20 @@ class DictList(list):
             return True
         return False
 
+    def items(self):
+        for k, v in self._d.items():
+            yield k, self[v[0]]
 
-def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json'):
+
+def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json', base_dir="."):
     """
     Return `pycldf` dataset instances by searching for their identifiers.
     """
     datasets = []
-    for path in Path("").glob(path):
+    for path in pathlib.Path(base_dir).glob(path):
         if [did for did in ids if did in path.as_posix()]:
             datasets += [Dataset.from_metadata(path)]
     return datasets
-
 
 
 def lingpy_columns():

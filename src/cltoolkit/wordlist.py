@@ -1,154 +1,165 @@
 """
 Class for handling wordlist data.
 """
-from collections import OrderedDict, defaultdict
-import pycldf
-from pycldf.util import DictTuple
+import importlib
+import collections
 
-from importlib import import_module
-
+from cldfbench.dataset import dataset_from_module
 from pyclts import CLTS
 import lingpy
+from tqdm import tqdm as progressbar
 
-from cltoolkit.util import (
-        progressbar, DictList, identity, lingpy_columns,
-        valid_tokens)
+from cltoolkit.util import identity, lingpy_columns, valid_tokens, dataset_from_module, DictTuple
 from cltoolkit import log
-from cltoolkit.models import (
-        Language, Concept, Grapheme,
-        Form, Sense, Sound)
-
-from functools import reduce
-import attr
+from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound
 
 
-@attr.s(repr=False)
+def idjoin(*comps):
+    return '-'.join(comps)
+
+
 class Wordlist:
-
     """
     A collection of one or more lexibank datasets, aligned by concept.
     """
+    def __init__(self, datasets, ts=None, concept_id_factory=lambda x: x["Concepticon_Gloss"]):
+        self.datasets = DictTuple(datasets, key=lambda x: x.metadata_dict["rdf:ID"])
+        self.ts = ts or CLTS().transcriptionsystem_dict['bipa']
+        self.concept_id_factory = concept_id_factory
 
-    datasets = attr.ib(default=[])
-    ts = attr.ib(default=CLTS().transcriptionsystem_dict['bipa'])
-    concept_id_factory = attr.ib(default=lambda x: x["Concepticon_Gloss"])
+        # During data loading, we use flexible, mutable dicts.
+        self.languages = collections.OrderedDict()
+        self.concepts = collections.OrderedDict()
+        self.forms = collections.OrderedDict()
+        self.senses = collections.OrderedDict()
+        self.graphemes = collections.OrderedDict()
+        self.sounds = collections.OrderedDict()
+
+        for dsid, dataset in self.datasets.items():
+            log.info("loading {0}".format(dsid))
+            self._add_languages(dsid, dataset)
+            self._add_senses(dsid, dataset)
+            self._add_forms(dsid, dataset)
+
+        self.bipa_forms = DictTuple([f for f in self.forms.values() if f.tokens])
+        self.segmented_forms = DictTuple([f for f in self.forms.values() if f.segments])
+        log.info("loaded wordlist with {0} concepts and {1} languages".format(
+            self.height, self.width))
+
+        # Once the data is loaded, we "freeze" it, making read-only access more flexible.
+        self.languages = DictTuple(self.languages.values())
+        self.concepts = DictTuple(self.concepts.values())
+        self.forms = DictTuple(self.forms.values())
+        self.senses = DictTuple(self.senses.values())
+        self.graphemes = DictTuple(self.graphemes.values())
+        self.sounds = DictTuple(self.sounds.values())
+
+        for l in self.languages:
+            l.forms = DictTuple(l.forms.values())
+            l.senses = DictTuple(l.senses.values())
+            l.concepts = DictTuple(l.concepts.values())
+            for c in l.concepts:
+                c.forms = DictTuple(c.forms.values())
+                c.senses = DictTuple(c.senses.values())
+            for s in l.senses:
+                s.forms = DictTuple(s.forms.values())
+
+        for s in self.senses:
+            s.forms = DictTuple(s.forms.values())
+
+        for c in self.concepts:
+            c.forms = DictTuple(c.forms.values())
+            c.senses = DictTuple(c.senses.values())
+
+        for g in self.graphemes:
+            g.forms = DictTuple(g.forms.values())
+
+        for s in self.sounds:
+            s.graphemes_in_source = DictTuple(s.graphemes_in_source.values())
+            s.forms = DictTuple(s.forms.values())
 
     @classmethod
-    def from_datasets(
-            cls, 
-            datasets, 
-            load=True, 
-            id_factory=lambda x: x.metadata_dict["rdf:ID"],
-            concept_id_factory=lambda x: x["Concepticon_Gloss"]
-            ):
-        """
-        Initialize from multiple datasets already loaded via pycldf.
-        """
-        this_class = cls(
-                datasets=DictTuple(datasets, key=id_factory),
-                concept_id_factory=concept_id_factory
-                )
-        if load:
-            this_class.load()
-        return this_class
-
-    @classmethod
-    def from_lexibank(cls, datasets, load=True):
-        dsets = []
-        for ds in datasets:
-            dsets += [pycldf.Dataset.from_metadata(import_module(
-                'lexibank_'+ds).Dataset().cldf_dir.joinpath('cldf-metadata.json'))]
-        return cls.from_datasets(dsets, load=load)
-
-    def __getitem__(self, idf):
-        return self.objects[idf]
+    def from_lexibank(cls, datasets, **kw):
+        dsets = [dataset_from_module(importlib.import_module('lexibank_' + ds)) for ds in datasets]
+        return cls(dsets, **kw)
 
     def _add_languages(self, dsid, dataset):
         """Append languages to the wordlist.
         """
         for language in dataset.objects("LanguageTable"):
-            language_id = dsid+"-"+language.id
-            self.languages.append(
-                    Language(
-                        id=language_id, 
-                        wordlist=self, 
-                        data=language.data,
-                        obj=language, 
-                        dataset=dsid,
-                        forms=DictList([]),
-                        senses=DictList([]),
-                        concepts=DictList([]),
-                    ))
-            self.objects.append(self.languages[-1])
+            language_id = idjoin(dsid, language.id)
+            self.languages[language_id] = Language(
+                id=language_id,
+                wordlist=self,
+                data=language.data,
+                obj=language,
+                dataset=dsid,
+                forms=collections.OrderedDict(),
+                senses=collections.OrderedDict(),
+                concepts=collections.OrderedDict(),
+            )
 
     def _add_senses(self, dsid, dataset):
         """Append senses (concepts) to the wordlist."""
-        
         for concept in dataset.objects("ParameterTable"):
             concept_id = self.concept_id_factory(concept.data)
             new_sense = Sense(
-                        id=dsid+'-'+concept.id,
-                        wordlist=self,
-                        dataset=dsid,
-                        data=concept.data,
-                        forms=DictList([]),
-                        )
+                id=idjoin(dsid, concept.id),
+                wordlist=self,
+                dataset=dsid,
+                data=concept.data,
+                forms=collections.OrderedDict(),
+            )
             if concept_id and concept_id not in self.concepts:
                 new_concept = Concept.from_sense(
-                            new_sense,
-                            id=concept_id,
-                            name=concept_id.lower(),
-                            wordlist=self,
-                            forms=DictList([]),
-                            senses=DictList([])
-                            )
-                self.concepts.append(new_concept)
-                self.objects.append(new_concept)
+                    new_sense,
+                    id=concept_id,
+                    name=concept_id.lower(),
+                    wordlist=self,
+                    forms=collections.OrderedDict(),
+                    senses=collections.OrderedDict(),
+                )
+                self.concepts[new_concept.id] = new_concept
             if concept_id:
-                self.concepts[concept_id].senses.append(new_sense)
-            self.senses.append(new_sense)
-            self.objects.append(new_sense)
+                self.concepts[concept_id].senses[new_sense.id] = new_sense
+            self.senses[new_sense.id] = new_sense
 
     def _add_forms(self, dsid, dataset):
         """Add forms to the dataset."""
         for form in progressbar(
-                dataset.objects("FormTable"), 
-                desc="loading forms for {0}".format(dsid)
-                ):
+                dataset.objects("FormTable"), desc="loading forms for {0}".format(dsid)):
             lid, cid, pid, fid = (
-                    dsid+"-"+form.cldf.languageReference, 
-                    self.concept_id_factory(form.parameter.data),
-                    dsid+"-"+form.parameter.id,
-                    dsid+"-"+form.id
-                    )
+                idjoin(dsid, form.cldf.languageReference),
+                self.concept_id_factory(form.parameter.data),
+                idjoin(dsid, form.parameter.id),
+                idjoin(dsid, form.id)
+            )
             new_form = Form(
-                    id=fid,
-                    concept=self.concepts[cid] if cid else None,
-                    language=self.languages[lid],
-                    sense=self.senses[pid],
-                    obj=form,
-                    data=form.data,
-                    dataset=dsid,
-                    wordlist=self
-                    )
-            self.forms.append(new_form)
+                id=fid,
+                concept=self.concepts[cid] if cid else None,
+                language=self.languages[lid],
+                sense=self.senses[pid],
+                obj=form,
+                data=form.data,
+                dataset=dsid,
+                wordlist=self
+            )
+            self.forms[new_form.id] = new_form
             sounds = [self.ts[s] for s in new_form.segments]
             if sounds:
                 new_form.tokens = valid_tokens(sounds)
-                for i, (segment, sound) in enumerate(
-                        zip(new_form.segments, sounds)):
-                    gid = dsid+'-'+segment
+                for i, (segment, sound) in enumerate(zip(new_form.segments, sounds)):
+                    gid = idjoin(dsid, segment)
                     if gid not in self.graphemes:
-                        self.graphemes.append(Grapheme(
-                                id=gid,
-                                grapheme=segment,
-                                dataset=dsid,
-                                wordlist=self, 
-                                obj=sound,
-                                occs=OrderedDict(),
-                                forms=DictList([new_form])))
-                    if new_form not in self.graphemes[gid].forms:
-                        self.graphemes[gid].forms.append(new_form)
+                        self.graphemes[gid] = Grapheme(
+                            id=gid,
+                            grapheme=segment,
+                            dataset=dsid,
+                            wordlist=self, 
+                            obj=sound,
+                            occs=collections.OrderedDict(),
+                            forms=collections.OrderedDict([(new_form.id, new_form)]))
+                    self.graphemes[gid].forms[new_form.id] = new_form
                     try:
                         self.graphemes[gid].occs[lid].append((i, new_form))
                     except KeyError:
@@ -156,89 +167,54 @@ class Wordlist:
                     if new_form.tokens:
                         sid = str(sound)
                         if sid not in self.sounds:
-                            self.sounds.append(Sound.from_grapheme(
-                                    self.graphemes[gid],
-                                    graphemes_in_source=DictList([]),
-                                    grapheme=str(sound),
-                                    obj=sound,
-                                    occs=OrderedDict(),
-                                    forms=DictList([new_form]),
-                                    id=sid))
-                        if new_form not in self.sounds[sid].forms:
-                            self.sounds[sid].forms.append(new_form)
-                        if gid not in self.sounds[sid].graphemes_in_source:
-                            self.sounds[sid].graphemes_in_source.append(
-                                    self.graphemes[gid])
+                            self.sounds[sid] = Sound.from_grapheme(
+                                self.graphemes[gid],
+                                graphemes_in_source=collections.OrderedDict(),
+                                grapheme=str(sound),
+                                obj=sound,
+                                occs=collections.OrderedDict(),
+                                forms=collections.OrderedDict([(new_form.id, new_form)]),
+                                id=sid)
+                        self.sounds[sid].forms[new_form.id] = new_form
+                        self.sounds[sid].graphemes_in_source[gid] = self.graphemes[gid]
                         try:
                             self.sounds[sid].occs[lid].append((i, new_form))
                         except KeyError:
                             self.sounds[sid].occs[lid] = [(i, new_form)]
-            self.objects.append(new_form)
             if cid and cid not in self.languages[lid].concepts:
-                self.languages[lid].concepts.append(
-                    Concept.from_concept(
-                        self.concepts[cid],
-                        self.languages[lid],
-                        senses=DictList([]),
-                        wordlist=self,
-                        dataset=dsid,
-                        forms=DictList([]),
-                    ))
-            
+                self.languages[lid].concepts[cid] = Concept.from_concept(
+                    self.concepts[cid],
+                    self.languages[lid],
+                    senses=collections.OrderedDict(),
+                    wordlist=self,
+                    dataset=dsid,
+                    forms=collections.OrderedDict(),
+                )
+
             if cid:
-                self.languages[lid].concepts[cid].forms.append(new_form)
-                self.concepts[cid].forms.append(new_form)
-                if not pid in self.languages[lid].concepts[cid].senses:
-                    self.languages[lid].concepts[cid].senses.append(self.senses[pid])
+                self.languages[lid].concepts[cid].forms[new_form.id] = new_form
+                self.concepts[cid].forms[new_form.id] = new_form
+                if pid not in self.languages[lid].concepts[cid].senses:
+                    self.languages[lid].concepts[cid].senses[pid] = self.senses[pid]
             
             if pid not in self.languages[lid].senses:
-                self.languages[lid].senses.append(
-                        Sense.from_sense(
-                            self.senses[pid], self.languages[lid], DictList([])
-                            ))
-            self.languages[lid].senses[pid].forms.append(new_form)
-            self.languages[lid].forms.append(new_form)
-            self.senses[pid].forms.append(new_form)
+                self.languages[lid].senses[pid] = Sense.from_sense(
+                    self.senses[pid], self.languages[lid], collections.OrderedDict())
+            self.languages[lid].senses[pid].forms[new_form.id] = new_form
+            self.languages[lid].forms[new_form.id] = new_form
+            self.senses[pid].forms[new_form.id] = new_form
 
-    def load(self):
-        """
-        Load the data.
-        """
-        (self.languages, self.concepts, self.forms, self.objects, self.senses,
-                self.graphemes,
-                self.sounds) = (
-                DictList([]), DictList([]), DictList([]), DictList([]), DictList([]), 
-                DictList([]), DictList([]))
-        graphemes = {}
-        for dsid in self.datasets._d.keys():
-            log.info("loading {0}".format(dsid))
-            dataset = self.datasets[dsid]
-            self._add_languages(dsid, dataset)
-            self._add_senses(dsid, dataset)
-            self._add_forms(dsid, dataset)
-        self.bipa_forms = DictList([f for f in self.forms if f.tokens])
-        self.segmented_forms = DictList([f for f in self.forms if f.segments])
-        log.info("loaded wordlist with {0} concepts and {1} languages".format(
-            self.height, self.width))
-    
     def __len__(self):
         return len(self.forms)
 
     def as_lingpy(
             self,
-            language_filter=None,
-            sense_filter=None,
-            form_filter=None,
+            language_filter=identity,
+            sense_filter=identity,
+            form_filter=identity,
             columns=None,
-            transform=None,
-            ):
+    ):
         transform = lingpy.Wordlist
-        if not form_filter:
-            form_filter = identity
-        if not language_filter:
-            language_filter = identity
-        if not sense_filter:
-            sense_filter = identity
         columns = columns or lingpy_columns()
         D = {0: [x[1] for x in columns]}
         idx = 1
@@ -312,7 +288,6 @@ class Wordlist:
     def width(self):
         return len(self.languages)
 
-
     @property
     def length(self):
         return len(self)
@@ -325,4 +300,3 @@ class Wordlist:
                 if getattr(concept, aspect):
                     out[language.id] += 1
         return out
-    

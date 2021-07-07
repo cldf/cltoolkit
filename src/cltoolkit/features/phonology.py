@@ -1,7 +1,7 @@
 """Miscellaneous features collected typological databases.
 """
 from collections import defaultdict, OrderedDict
-from cltoolkit.util import syllables
+from cltoolkit.util import iter_syllables
 from functools import partial
 
 
@@ -202,7 +202,7 @@ def syllable_complexity(language):
     
     preceding, following = defaultdict(list), defaultdict(list)
     for form in language.forms:
-        for syllable in syllables(form):
+        for syllable in iter_syllables(form):
             sounds, count = [], 0
             for sound in map(lambda x: language.wordlist.ts[x], syllable):
                 if sound.type == 'marker':

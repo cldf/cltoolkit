@@ -9,15 +9,13 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd):
 
     with sys_path(repos / "carvalhopurus"):
         with sys_path(repos / "wangbcd"):
-            _ = Wordlist.from_datasets(datasets, load=False)
             wl2 = Wordlist.from_lexibank(["carvalhopurus", "wangbcd"])
-            wl = Wordlist.from_datasets(datasets, load=True)
+            wl = Wordlist(datasets)
 
             assert wl2.height == wl.height
 
-            # getitem
-            apurina = wl["carvalhopurus-Apurina"]
-    
+            apurina = wl.languages["carvalhopurus-Apurina"]
+
             assert wl.height == 305
             assert wl.width == 12
             assert wl.length == 2380

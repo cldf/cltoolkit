@@ -1,10 +1,10 @@
 """
 Basic models.
 """
-
+import collections
 from collections import OrderedDict
 import attr
-from cltoolkit.util import GetValueFromData, GetAttributeFromObject, DictList, jaccard
+from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
 import lingpy
 from pycldf.util import DictTuple
 from pyclts import CLTS
@@ -35,11 +35,11 @@ class CLCoreWithForms(CLCore):
     
     @cached_property
     def bipa_forms(self):
-        return DictList([f for f in self.forms if f.tokens])
+        return DictTuple([f for f in self.forms if f.tokens])
 
     @cached_property
     def segmented_forms(self):
-        return DictList([f for f in self.forms if f.segments])
+        return DictTuple([f for f in self.forms if f.segments])
 
 
 @attr.s(repr=False)
@@ -71,23 +71,21 @@ class Language(CLBaseWithForms):
     """
     senses = attr.ib(default=None)
     concepts = attr.ib(default=None)
-    glottocode = GetValueFromData("Glottocode")
-    name = GetValueFromData("Name")
-    macroarea = GetValueFromData("Macroarea")
-    latitude = GetValueFromData("Latitude")
-    longitude = GetValueFromData("Longitude")
-    family = GetValueFromData("Family")
-    subgroup = GetValueFromData("SubGroup")
-
+    glottocode = MutatedDataValue("Glottocode")
+    name = MutatedDataValue("Name")
+    macroarea = MutatedDataValue("Macroarea")
+    latitude = MutatedDataValue("Latitude")
+    longitude = MutatedDataValue("Longitude")
+    family = MutatedDataValue("Family")
+    subgroup = MutatedDataValue("SubGroup")
 
     @cached_property
     def sound_inventory(self):
-        sounds = DictList([])
+        sounds = []
         for sound in self.wordlist.sounds:
             if self.id in sound.occs:
                 sounds.append(Sound.from_sound(sound, language=self))
-        return Inventory(language=self, ts=self.wordlist.ts,
-                sounds=sounds)
+        return Inventory(language=self, ts=self.wordlist.ts, sounds=DictTuple(sounds))
 
 
 @attr.s(repr=False, eq=False)
@@ -100,7 +98,7 @@ class Sense(CLBaseWithForms):
        Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined for all datasets.
     """
     language = attr.ib(default=None)
-    name = GetValueFromData("Name")
+    name = MutatedDataValue("Name")
 
     def __repr__(self):
         return '<Sense '+self.id+'>'
@@ -187,9 +185,9 @@ class Form(CLBase):
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
     tokens = attr.ib(default=None, repr=False)
-    value = GetValueFromData("Value")
-    form = GetValueFromData("Form")
-    segments = GetValueFromData("Segments", transform=lingpy.basictypes.lists)
+    value = MutatedDataValue("Value")
+    form = MutatedDataValue("Form")
+    segments = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
 
     @property
     def sounds(self):
@@ -228,9 +226,9 @@ class Sound(CLCoreWithForms):
     language = attr.ib(default=None)
     obj = attr.ib(default=None)
 
-    type = GetAttributeFromObject("type", data="obj")
-    name = GetAttributeFromObject("name", data="obj")
-    featureset = GetAttributeFromObject("featureset", data="obj")
+    type = NestedAttribute("obj", "type")
+    name = NestedAttribute("obj", "name")
+    featureset = NestedAttribute("obj", "featureset")
 
     @classmethod
     def from_grapheme(cls, grapheme_, grapheme=None, occs=None, forms=None,
@@ -362,7 +360,7 @@ class Inventory:
                     occs=[],
                     data=sound.__dict__
                     )
-        return cls(sounds=DictList(sounds.values()), ts=ts, language=language)
+        return cls(sounds=DictTuple(sounds.values()), ts=ts, language=language)
 
     def __len__(self):
         return len(self.sounds)

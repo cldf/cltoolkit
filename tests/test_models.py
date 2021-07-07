@@ -1,14 +1,13 @@
 from cltoolkit import Wordlist
-from pycldf import Dataset
 from cltoolkit.models import (
         CLCore, CLCoreWithForms, CLBase, CLBaseWithForms,
-        Language, Sense, Concept, Form, Grapheme, Sound, 
+        Language, Sense, Form, Sound,
         Inventory)
 
 
 def test_core_models(clts, ds_dummy):
     datasets = [ds_dummy]
-    wl = Wordlist.from_datasets(datasets, load=True)
+    wl = Wordlist(datasets)
 
     clc = CLCore(id="a", wordlist=wl, data={})
     assert clc.__repr__() == "<CLCore a>"
@@ -27,7 +26,6 @@ def test_core_models(clts, ds_dummy):
             wl.forms[1]])
     assert len(clbwf.bipa_forms) == 2
     assert len(clbwf.segmented_forms) == 2
-
 
     lng = Language(
             id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],
@@ -53,7 +51,6 @@ def test_core_models(clts, ds_dummy):
     soundB = Sound(id="Z", grapheme="Z", wordlist=wl, obj=clts.bipa["Z"], data={"name": "dummy sound", "type": "marker", "featureset": frozenset(["f"])})
     assert soundB.similarity(sound) == 0
 
-
     assert sound.similarity(wl.sounds[0]) == 0.0
     assert sound.similarity(sound) == 1
 
@@ -72,9 +69,7 @@ def test_core_models(clts, ds_dummy):
     assert str(form.graphemes[0]) == str(form.sounds[0])
     
 
-
 def test_inventory():
-
     invA = Inventory.from_list("a", "u", "p", "k")
     invB = Inventory.from_list("a", "u", "b", "g")
     invC = Inventory.from_list("aː", "a", "u:", "b")
@@ -93,7 +88,6 @@ def test_inventory():
     assert Inventory.from_list("p", "t", "k", ).approximate_similarity(
             Inventory.from_list("a", "e", "u"), aspects=["consonants",
                 "vowels"]) == 0.0
-
 
     for sound in invA:
         assert isinstance(sound, Sound)
