@@ -41,14 +41,6 @@ format = %(asctime)s [%(levelname)s] %(message)s
 _logger = None
 
 
-class CustomFilter(logging.Filter):
-    def filter(self, record):
-        if getattr(record, 'lines', None):
-            for line in record.lines:
-                record.msg = record.msg + '\n\t' + '%s' % (line,)
-        return super(CustomFilter, self).filter(record)
-
-
 def get_logger(config_dir=None, force_default_config=False, test=False):
     """Get a logger configured according to the lingpy log config file.
 
@@ -62,67 +54,23 @@ def get_logger(config_dir=None, force_default_config=False, test=False):
     global _logger
     if _logger is None or force_default_config or test:
         _logger = logging.getLogger('lingpy')
-        _logger.addFilter(CustomFilter())
         testing = len(sys.argv) and sys.argv[0].endswith('nosetests')
-        if not (force_default_config or test) and testing:
+        if not (force_default_config or test) and testing:  # pragma: no cover
             _logger.setLevel(logging.CRITICAL)
-        #else:
-        #    cfg = Config('logging', default=LOGGING, config_dir=config_dir)
-        #    remove = False
-        #    if cfg.path.exists() and not force_default_config:
-        #        fname = text_type(cfg.path)
-        #    else:
-        #        with NamedTemporaryFile(delete=False) as fp:
-        #            fp.write(LOGGING.encode('utf8'))
-        #            fname = fp.name
-        #            remove = True
-        #    fileConfig(fname, disable_existing_loggers=False)
-        #    if remove:
-        #        os.remove(fname)
     return _logger
-
-
-def get_level():
-    return get_logger().getEffectiveLevel()
 
 
 def info(msg, **kw):
     get_logger().info(msg, **kw)
 
 
-def warning(msg):
+def warning(msg):  # pragma: no cover
     get_logger().warning(msg)
 
 
-def debug(msg, **kw):
+def debug(msg, **kw):  # pragma: no cover
     get_logger().debug(msg, **kw)
 
 
-def error(msg, **kw):
+def error(msg, **kw):  # pragma: no cover
     get_logger().error(msg, **kw)
-
-
-class Logging(object):
-    """
-    A context manager to execute a block of code at a specific logging level.
-    """
-    def __init__(self, level=logging.DEBUG, logger=None):
-        self.level = level
-        self.logger = logger or get_logger()
-        self.linpy_logger_level = self.logger.getEffectiveLevel()
-        root = logging.getLogger()
-        self.root_logger_level = root.getEffectiveLevel()
-        self.root_handler_level = root.handlers[0].level
-
-    def __enter__(self):
-        self.logger.setLevel(self.level)
-        root = logging.getLogger()
-        root.setLevel(self.level)
-        root.handlers[0].setLevel(self.level)
-        return self.logger
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.logger.setLevel(self.linpy_logger_level)
-        root = logging.getLogger()
-        root.setLevel(self.root_logger_level)
-        root.handlers[0].setLevel(self.root_handler_level)

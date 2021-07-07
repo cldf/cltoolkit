@@ -1,17 +1,17 @@
 """
 Basic handler for feature collections.
 """
+import importlib
+
 import attr
-from importlib import import_module
-from csvw.dsv import UnicodeDictReader
-from collections import OrderedDict
-import json
 from pycldf.util import DictTuple
-from cltoolkit.util import cltoolkit_path
+from clldutils import jsonlib
+
+from cltoolkit import pkg_path
 
 
 def feature_data():
-    return json.load(open(cltoolkit_path('features', 'features.json')))
+    return jsonlib.load(pkg_path / 'features' / 'features.json')
 
 
 @attr.s(repr=False)
@@ -28,31 +28,25 @@ class Feature:
         return self.function(param)
 
     def __repr__(self):
-        return "<Feature "+self.id+">"
+        return "<Feature " + self.id + ">"
 
 
-@attr.s
 class FeatureCollection:
-    features = attr.ib(default=None)
-    
+    def __init__(self, features):
+        self.features = DictTuple(features)
+
     @classmethod
     def from_metadata(cls, path):
-        with open(path) as f:
-            data = json.load(f)
-        return cls.from_data(data)
+        return cls.from_data(jsonlib.load(path))
 
     @classmethod
     def from_data(cls, data):
         features = []
-        
+
         for vals in data:
-            
-            vals["function"] = getattr(
-                    import_module(vals["module"]), vals["function"])
+            vals["function"] = getattr(importlib.import_module(vals["module"]), vals["function"])
             features += [Feature(**vals)]
-        return cls(features=DictTuple(features))
+        return cls(features)
 
-    def apply_to_language(self, feature, language):
+    def __call__(self, feature, language):
         return self.features[feature](language)
-        
-

@@ -2,8 +2,8 @@
 """
 from functools import partial
 
+
 def has_a_b_colexified(language, alist=None, blist=None, ablist=None):
-    
     aforms, bforms, abforms = [], [], []
     for xlist, xforms in zip([alist, blist, ablist], [aforms, bforms, abforms]):
         if xlist:
