@@ -12,10 +12,7 @@ def base_inventory_query(language, attr=None):
 
 
 def base_yes_no_query(language, attr=None):
-    out = getattr(language.sound_inventory, attr)
-    if out:
-        return 1
-    return 0
+    return int(bool(getattr(language.sound_inventory, attr)))
 
 
 def base_ratio(language, attr1=None, attr2=None):
@@ -40,9 +37,16 @@ cv_sounds_ratio = functools.partial(
         attr2="vowel_sounds")
 
 
-
 def plosive_fricative_voicing(language):
-    """WALS Feature 4A, check for voiced and unvoiced sounds"""
+    """
+    WALS Feature 4A, check for voiced and unvoiced sounds
+
+    Values:
+    - 1: no voicing contrast
+    - 2: in plosives alone
+    - 3: in fricatives alone
+    - 4: in both plosives and fricatives
+    """
     inv = language.sound_inventory
     voiced = set([sound.obj.manner for sound in inv.consonants if
         (sound.obj.phonation=='voiced' and sound.obj.manner in
@@ -52,11 +56,11 @@ def plosive_fricative_voicing(language):
                     ['stop', 'fricative'])])
     if not voiced:
         return 1
-    elif len(voiced) == 2:
+    if len(voiced) == 2:
         return 4
-    elif 'stop' in voiced:
+    if 'stop' in voiced:
         return 2
-    elif 'fricative' in voiced:
+    if 'fricative' in voiced:
         return 3
 
 
