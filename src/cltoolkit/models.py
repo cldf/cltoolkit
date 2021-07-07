@@ -12,7 +12,6 @@ from clldutils.misc import lazyproperty as cached_property
 import statistics
 
 
-
 @attr.s(repr=False)
 class CLCore:
     """

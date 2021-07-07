@@ -6,12 +6,34 @@ from cltoolkit.util import (
     jaccard,
     iter_syllables,
     valid_tokens,
+    DictTuple,
+    datasets_by_id,
 )
+
+
+def test_datasets_by_id(tests_dir):
+    assert len(datasets_by_id('wangbcd', base_dir=tests_dir)) == 1
+
+
+def test_DictTuple():
+    class C:
+        id = 5
+
+    d = DictTuple(list('abcde'), key=identity)
+    assert 'a' in d
+    assert d['a'] == d[0]
+    assert d.get('x', 5) == 5
+
+    d = DictTuple([C()])
+    assert C() in d
+    assert 5 in d
 
 
 def test_valid_tokens(clts):
     sounds = [clts.bipa[x] for x in ["_", "+", "a:", "b", "+", "_", "+", "c", "_", "_"]]
     assert valid_tokens(sounds)[0] == "aː"
+    assert valid_tokens([]) == []
+    assert valid_tokens([clts.bipa['a'], clts.bipa['_'], clts.bipa['b']]) == ['a', '+', 'b']
 
 
 def test_identity():

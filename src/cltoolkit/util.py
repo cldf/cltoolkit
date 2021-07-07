@@ -30,19 +30,13 @@ def valid_tokens(sounds):
     if not sounds:
         return []
     tokens = [s for s in sounds]
-    while True:
-        if str(tokens[0]) in ["+", "_"]:
-            tokens = tokens[1:]
-        else:
-            break
-    while True:
-        if str(tokens[-1]) in ["+", "_"]:
-            tokens = tokens[:-1]
-        else:
-            break
+    while str(tokens[0]) in ["+", "_"]:
+        tokens = tokens[1:]
+    while str(tokens[-1]) in ["+", "_"]:
+        tokens = tokens[:-1]
     out = []
     for i, token in enumerate(tokens):
-        if str(tokens[i]) in ["+", "_"] and i > 0 and str(tokens[i-1]) in ["+", "_"]:
+        if str(tokens[i]) in ["+", "_"] and i > 0 and str(tokens[i - 1]) in ["+", "_"]:
             pass
         elif str(token) == "_":
             out.append("+")
@@ -144,13 +138,7 @@ class DictTuple(BaseDictTuple):
         return super(DictTuple, self).__getitem__(item)
 
     def __contains__(self, item):
-        if hasattr(item, "id"):
-            if item.id in self._d:
-                return True
-            return False
-        elif item in self._d:
-            return True
-        return False
+        return getattr(item, 'id', item) in self._d
 
     def items(self):
         for k, v in self._d.items():
@@ -163,8 +151,8 @@ def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json', base_dir="."):
     """
     datasets = []
     for path in pathlib.Path(base_dir).glob(path):
-        if [did for did in ids if did in path.as_posix()]:
-            datasets += [Dataset.from_metadata(path)]
+        if any(did in str(path) for did in ids):
+            datasets.append(Dataset.from_metadata(path))
     return datasets
 
 

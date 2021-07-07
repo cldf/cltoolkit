@@ -1,8 +1,10 @@
 """Miscellaneous features collected typological databases.
 """
-from collections import defaultdict, OrderedDict
+import functools
+import collections
+
 from cltoolkit.util import iter_syllables
-from functools import partial
+from cltoolkit import log
 
 
 def base_inventory_query(language, attr=None):
@@ -21,18 +23,18 @@ def base_ratio(language, attr1=None, attr2=None):
             getattr(language.sound_inventory, attr2))
 
 
-vowel_quality_size = partial(base_inventory_query, attr="vowels_by_quality")
-consonant_quality_size = partial(base_inventory_query, attr="consonants_by_quality")
-vowel_size = partial(base_inventory_query, attr="vowels")
-consonant_size = partial(base_inventory_query, attr="consonants")
-vowel_sound_size = partial(base_inventory_query, attr="vowel_sounds")
-consonant_sound_size = partial(base_inventory_query, attr="consonant_sounds")
-has_tones = partial(base_yes_no_query, attr="tones")
-cv_ratio = partial(base_ratio, attr1="consonants", attr2="vowels")
-cv_quality_ratio = partial(
+vowel_quality_size = functools.partial(base_inventory_query, attr="vowels_by_quality")
+consonant_quality_size = functools.partial(base_inventory_query, attr="consonants_by_quality")
+vowel_size = functools.partial(base_inventory_query, attr="vowels")
+consonant_size = functools.partial(base_inventory_query, attr="consonants")
+vowel_sound_size = functools.partial(base_inventory_query, attr="vowel_sounds")
+consonant_sound_size = functools.partial(base_inventory_query, attr="consonant_sounds")
+has_tones = functools.partial(base_yes_no_query, attr="tones")
+cv_ratio = functools.partial(base_ratio, attr1="consonants", attr2="vowels")
+cv_quality_ratio = functools.partial(
         base_ratio, attr1="consonants_by_quality",
         attr2="vowels_by_quality")
-cv_sounds_ratio = partial(
+cv_sounds_ratio = functools.partial(
         base_ratio,
         attr1="consonant_sounds",
         attr2="vowel_sounds")
@@ -200,13 +202,13 @@ def syllable_complexity(language):
     syllables.
     """
     
-    preceding, following = defaultdict(list), defaultdict(list)
+    preceding, following = collections.defaultdict(list), collections.defaultdict(list)
     for form in language.forms:
         for syllable in iter_syllables(form):
             sounds, count = [], 0
             for sound in map(lambda x: language.wordlist.ts[x], syllable):
                 if sound.type == 'marker':
-                    log.warning(syllable, morpheme, form.id, form.segments)
+                    log.warning(syllable, form.id, form.segments)
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
                         not 'syllabic' in sound.featureset:
                     count += 1
@@ -227,7 +229,6 @@ def syllable_complexity(language):
     p = max(preceding)
     f = max(following)
     return 2 * (p*f)/(p+f)
-
 
 
 def lacks_common_consonants(language):
@@ -281,6 +282,3 @@ def has_uncommon_consonants(language):
         return 3
     if clicks:
         return 2
-
-
-
