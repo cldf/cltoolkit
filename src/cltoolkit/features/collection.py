@@ -7,11 +7,11 @@ from csvw.dsv import UnicodeDictReader
 from collections import OrderedDict
 import json
 from pycldf.util import DictTuple
-from cltoolkit.util import cltoolkit_path
+from cltoolkit import pkg_path
 
 
 def feature_data():
-    return json.load(open(cltoolkit_path('features', 'features.json')))
+    return json.load(open(pkg_path.joinpath('features', 'features.json')))
 
 
 @attr.s(repr=False)
