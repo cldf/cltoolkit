@@ -1,6 +1,7 @@
 """
 Basic handler for feature collections.
 """
+import textwrap
 import importlib
 
 import attr
@@ -23,6 +24,10 @@ class Feature:
     module = attr.ib()
     function = attr.ib()
     note = attr.ib()
+
+    def help(self):
+        if self.function.__doc__:
+            print(textwrap.dedent(self.function.__doc__))
 
     def __call__(self, param):
         return self.function(param)
