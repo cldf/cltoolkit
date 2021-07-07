@@ -1,25 +1,13 @@
-import pytest
 from cltoolkit import Wordlist
 from pycldf import Dataset
-from pathlib import Path
-from tabulate import tabulate
-from pyclts import CLTS
 from cltoolkit.models import (
         CLCore, CLCoreWithForms, CLBase, CLBaseWithForms,
         Language, Sense, Concept, Form, Grapheme, Sound, 
         Inventory)
-from cltoolkit.util import cltoolkit_test_path
-
-import sys
-
-def test_core_models():
 
 
-    clts = CLTS(cltoolkit_test_path("repos", "clts"))
-    datasets =[
-            Dataset.from_metadata(cltoolkit_test_path("repos", "dummy", "cldf",
-            "cldf-metadata.json"))
-            ]
+def test_core_models(clts, ds_dummy):
+    datasets = [ds_dummy]
     wl = Wordlist.from_datasets(datasets, load=True)
 
     clc = CLCore(id="a", wordlist=wl, data={})

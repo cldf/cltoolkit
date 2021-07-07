@@ -90,7 +90,7 @@ class Language(CLBaseWithForms):
                 sounds=sounds)
 
 
-@attr.s(repr=False, cmp=False)
+@attr.s(repr=False, eq=False)
 class Sense(CLBaseWithForms):
     """
     Concepts in source are the original concepts in the individual wordlists.
@@ -122,7 +122,7 @@ class Sense(CLBaseWithForms):
                 language=language)
 
 
-@attr.s(repr=False, cmp=False)
+@attr.s(repr=False, eq=False)
 class Concept(CLCoreWithForms):
     """
     Base class for the concepts in a dataset.
@@ -217,7 +217,7 @@ class Grapheme(CLBaseWithForms):
         return self.grapheme
     
 
-@attr.s(repr=False, cmp=False)
+@attr.s(repr=False, eq=False)
 class Sound(CLCoreWithForms):
     """
     All sounds in a dataset.
