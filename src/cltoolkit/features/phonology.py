@@ -67,6 +67,13 @@ def plosive_fricative_voicing(language):
 def has_ptk(language):
     """
     WALS Feature 5A, check for presence of certain sounds.
+
+    Values:
+    - 1: no p and no g in the inventory
+    - 2: no g in the inventory
+    - 3: no p in the inventory
+    - 4: has less than 6 values of [p t t̪ k b d d̪ g]
+    - 5: has at least 6 values of [p t t̪ k b d d̪ g]
     """
     inv = language.sound_inventory
     sounds = [sound.obj.s for sound in inv.consonants]
@@ -87,6 +94,12 @@ def has_ptk(language):
 def has_uvular(language):
     """
     WALS Feature 6A, check for uvular sounds.
+
+    Values:
+    - 1: no uvulars
+    - 2: has one uvular and this one is a stop
+    - 3: has one uvular and this one is no stop
+    - 4: has uvulars
     """
     inv = language.sound_inventory
     uvulars = set([sound.obj.manner for sound in inv.consonants if
@@ -104,7 +117,18 @@ def has_uvular(language):
 
 def has_glottalized(language):
     """
-    WALS Feature 7A, check for glottalized or implosive consonants."""
+    WALS Feature 7A, check for glottalized or implosive consonants.
+    
+    Values:
+    - 1: no ejectives, no implosives
+    - 2: has ejective stops or affricates, but no implosives
+    - 3: has implosive stops or affricates but no ejectives
+    - 4: has ejectives resonants
+    - 5: has ejectives and implosives but no ejective resonants
+    - 6: has ejectives and ejective resonants, but no implosives
+    - 7: has implosives and ejective resonants but no ejective stops
+    - 8: 
+    """
     inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
             sound.obj.ejection and sound.obj.manner in 
@@ -134,7 +158,17 @@ def has_glottalized(language):
 
 def has_laterals(language):
     """
-    WALS Feature 8A, check for lateral sounds."""
+    WALS Feature 8A, check for lateral sounds.
+    
+    Values:
+    - 1: no laterals
+    - 2: one lateral, and the lateral is l
+    - 3: has laterals, but no stops and no l
+    - 4: has laterals, including l and stops
+    - 5: has laterals, including stops, but no l
+    - 6: 
+
+    """
     inv = language.sound_inventory
     laterals = set([sound.obj.manner for sound in
         inv.consonants if
@@ -155,7 +189,13 @@ def has_laterals(language):
 
 def has_engma(language):
     """
-    WALS Feature 9A, check for nasals."""
+    WALS Feature 9A, check for nasals.
+    
+    Values:
+    - 1: ŋ occurs in the beginning of a word
+    - 2: ŋ occurs but not in the beginning off words
+    - 3: no ŋ
+    """
     inv = language.sound_inventory
     consonants = [sound.obj.s for sound in inv.consonants]
     if 'ŋ' in consonants:
