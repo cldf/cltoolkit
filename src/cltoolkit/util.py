@@ -6,6 +6,7 @@ import pathlib
 import functools
 
 from lingpy.sequence.sound_classes import syllabify
+from lingpy.basictypes import lists
 from pycldf import Dataset
 from pycldf.util import DictTuple as BaseDictTuple
 from pylexibank import Dataset as LexiSet
@@ -44,7 +45,7 @@ def valid_tokens(sounds):
             return []
         else:
             out.append(str(token))
-    return out
+    return lists(out)
 
 
 def identity(x):
