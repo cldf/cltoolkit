@@ -167,7 +167,7 @@
     "type": "integer",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
-    "function": "syllable_complexity",
+    "function": "syllable_structure",
     "note": ""
   },
   {

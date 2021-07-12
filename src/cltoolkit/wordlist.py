@@ -11,7 +11,7 @@ from tqdm import tqdm as progressbar
 
 from cltoolkit.util import identity, lingpy_columns, valid_tokens, dataset_from_module, DictTuple
 from cltoolkit import log
-from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound
+from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound, Cognate
 
 
 def idjoin(*comps):
@@ -142,6 +142,7 @@ class Wordlist:
                 obj=form,
                 data=form.data,
                 dataset=dsid,
+                cognates={},
                 wordlist=self
             )
             self.forms[new_form.id] = new_form
@@ -206,6 +207,40 @@ class Wordlist:
 
     def __len__(self):
         return len(self.forms)
+    
+    def load_cognates(self):
+        self.cognates = collections.OrderedDict()
+        for dsid, dataset in self.datasets.items():
+            self._add_cognates(dsid, dataset)
+
+    def _add_cognates(self, dsid, dataset):
+        """
+        Add cognate sets for the data that has been loaded.
+        """
+        # check if there is a contribution reference in the cognate table
+        # add this later, as it is not yet clear how to do this best
+        for cog in progressbar(
+                dataset.objects("CognateTable"), desc="loading cognates for {0}".format(dsid)):
+            # note that the cognateset Reference can be None, this needs to be
+            # caught up here
+            if cog.cldf.cognatesetReference:
+                form_id = idjoin(dsid, cog.cldf.formReference)
+                cogset = Cognate(
+                        id=idjoin(dsid, cog.cldf.cognatesetReference),
+                        wordlist=self,
+                        obj=cog.cldf, 
+                        dataset=dsid,
+                        data=cog.data,
+                        form=self.forms[form_id],
+                        contribution=cog.data.get("contribution", "default")
+                        )
+                try:
+                    self.forms[form_id].cognates[cogset.contribution] = cogset
+                except:
+                    self.forms[form_id].cognates = {cogset.contribution: cogset}
+                self.cognates[cogset.id] = cogset
+        self.cognates = DictTuple(self.cognates.values())
+
 
     def as_lingpy(
             self,
@@ -226,6 +261,11 @@ class Wordlist:
                         row += [getattr(form, att)]
                     elif obj == "language":
                         row += [getattr(form.language, att)]
+                    elif obj == "cognates":
+                        # we need to check if a cognate set exists for the
+                        # reference, if not, we provide a fake-cognate object
+                        # with an ID that is empty
+                        row += [form.cognates.get(att, Cognate(id="")).id]
                     elif obj == "concept":
                         if form.concept:
                             row += [getattr(form.concept, att)]

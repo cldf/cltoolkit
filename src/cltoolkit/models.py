@@ -187,6 +187,7 @@ class Form(CLBase):
     value = MutatedDataValue("Value")
     form = MutatedDataValue("Form")
     segments = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
+    cognates = attr.ib(default=None, repr=False)
 
     @property
     def sounds(self):
@@ -202,6 +203,13 @@ class Form(CLBase):
 
     def __repr__(self):
         return "<"+self.__class__.__name__+" "+self.form+">"
+
+
+@attr.s(repr=False)
+class Cognate(CLBase):
+    
+    form = attr.ib(default=None, repr=False)
+    contribution = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)

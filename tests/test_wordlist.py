@@ -1,6 +1,7 @@
 from cltoolkit import Wordlist
 
 from clldutils.path import sys_path
+from cltoolkit.util import lingpy_columns
 
 
 def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd):
@@ -48,6 +49,11 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd):
                 assert str(forms[0][0].segments) == "m a + n e"
 
             assert wl.coverage(aspect="segmented_forms")[apurina.id] == len(apurina.concepts)
+    
+    wl = Wordlist(datasets=[datasets[0]])
+    wl.load_cognates()
+    lpwl = wl.as_lingpy(columns=lingpy_columns(cognates="default"))
+    assert "cognacy" in lpwl.columns
 
 
 #

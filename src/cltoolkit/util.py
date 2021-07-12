@@ -157,14 +157,18 @@ def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json', base_dir="."):
     return datasets
 
 
-def lingpy_columns():
+def lingpy_columns(**kw):
     """
     Define basic columns for export to LingPy wordlists.
     """
-    return [(("form", "id"), "local_id"),
+    base = [(("form", "id"), "local_id"),
                 (("language", "id"), "doculect"),
                 (("concept", "id"), "concept"),
                 (("sense", "name"), "concept_in_source"),
                 (("form", "value"), "value"),
                 (("form", "form"), "form"),
                 (("form", "tokens"), "tokens")]
+    if "cognates" in kw:
+        base += [(("cognates", kw["cognates"]), "cognacy")]
+
+    return base

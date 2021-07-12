@@ -237,18 +237,50 @@ def has_rounded_vowels(language):
         return 4
 
 
-def syllable_complexity(language):
+
+def syllable_structure(language):
     """
     WALS Feature 12A, check for syllable complexity.
 
-    This feature is handled differently in our implementation, since we
-    only measure the harmonic mean between preceding and following
-    syllables.
+    Values:
+    - 1: simple syllable structure (only CV attested)
+    - 2: moderately complex structure
+    - 3: complex syllable structure
+    """
+    preceding, following = syllable_complexity(language)
+    p, f = max(preceding), max(following)
+    if f == 0 and p <= 1:
+        return 1
+    if p == 1 and f == 1:
+        return 2
+    if p == 2:
+        for form, sounds, i in preceding[2]:
+            if sounds[1].manner not in ["trill", "approximant", "tap"]:
+                return 3
+        return 2
+    return 3
+
+
+
+
+def syllable_complexity(language):
+    """
+    Compute the major syllabic patterns for a language.
+
+    .. note::
+
+       The computation follows the automated syllabification process described in
+       List (2014) based on sonority. Based on this syllabification, we calculate
+       the number of consonants preceding the syllable nucleus and those following
+       it. For a given syllable, we store the form, the consonantal sounds, and
+       the index of the syllable in the word. These values are returned in the
+       form of two dictionaries, in which the number of sounds is the key.
+    
     """
     
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
     for form in language.forms:
-        for syllable in iter_syllables(form):
+        for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
             for sound in map(lambda x: language.wordlist.ts[x], syllable):
                 if sound.type == 'marker':
@@ -259,7 +291,7 @@ def syllable_complexity(language):
                     sounds += [sound]
                 else:
                     break
-            preceding[count] += [sounds]
+            preceding[count] += [(form, sounds, i)]
             sounds, count = [], 0
             for sound in map(lambda x: language.wordlist.ts[x], syllable[::-1]):
                 if sound.type not in ['vowel', 'diphthong']:
@@ -270,9 +302,7 @@ def syllable_complexity(language):
                     break
             following[count] += [sounds]
 
-    p = max(preceding)
-    f = max(following)
-    return 2 * (p*f)/(p+f)
+    return preceding, following
 
 
 def lacks_common_consonants(language):

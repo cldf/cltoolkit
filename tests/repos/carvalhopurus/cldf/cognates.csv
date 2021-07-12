@@ -1,5 +1,5 @@
 ID,Form_ID,Form,Cognateset_ID,Doubt,Cognate_Detection_Method,Source,Alignment,Alignment_Method,Alignment_Source
-ProtoPurus-1_body-1-1,ProtoPurus-1_body-1,mane,1,false,expert,Carvalho2021,,,
+ProtoPurus-1_body-1-1,ProtoPurus-1_body-1,mane,,false,expert,Carvalho2021,,,
 Inapari-1_body-1-1,Inapari-1_body-1,maná-ʔa-ti,1,false,expert,Carvalho2021,,,
 Apurina-1_body-1-1,Apurina-1_body-1,-mane,1,false,expert,Carvalho2021,,,
 Yine-1_body-1-1,Yine-1_body-1,-mane,1,false,expert,Carvalho2021,,,
