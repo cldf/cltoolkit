@@ -24,6 +24,7 @@ class Feature:
     module = attr.ib()
     function = attr.ib()
     note = attr.ib()
+    categories = attr.ib(default=None)
 
     def help(self):
         if self.function.__doc__:

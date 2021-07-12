@@ -38,7 +38,7 @@
   {
     "id": "CVRatio",
     "name": "consonant and vowel ratio",
-    "type": "integer",
+    "type": "float",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_ratio",
@@ -47,7 +47,7 @@
   {
     "id": "CVQualityRatio",
     "name": "consonant and vowel ratio (by quality)",
-    "type": "integer",
+    "type": "float",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_quality_ratio",
@@ -56,7 +56,7 @@
   {
     "id": "CVSoundRatio",
     "name": "consonant and vowel ratio (including diphthongs and clusters)",
-    "type": "integer",
+    "type": "float",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_sounds_ratio",
@@ -65,20 +65,30 @@
   {
     "id": "HasNasalVowels",
     "name": "has nasal vowels or not",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_nasal_vowels",
-    "note": ""
+    "categories": {
+      1: "has nasal vowels",
+      2: "does not have nasal vowels"
+    },
+    "note": "WALS 10A"
   },
   {
     "id": "HasRoundedVowels",
     "name": "has rounded vowels or not",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_rounded_vowels",
-    "note": ""
+    "note": "WALS 11A",
+    "categories": {
+      1: "no high and no mid vowels",
+      2: "high and mid vowels",
+      3: "high and no mid vowels",
+      4: "mid and no high vowels"
+    }
   },
   {
     "id": "VelarNasal",
@@ -87,43 +97,74 @@
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_engma",
-    "note": ""
+    "note": "WALS 9A",
+    "categories": {
+      1: "velar nasal occurs in syllable-initial position",
+      2: "velar nasal occurs but not in syllable-initial position",
+      3: "velar nasal is missing"
   },
   {
     "id": "PlosiveVoicingGaps",
     "name": "voicing and gaps in plosives",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_ptk",
-    "note": ""
+    "note": "WALS 5A",
+    "categories": {
+      1: "no p and no g in the inventory",
+      2: "no g in the inventory",
+      3: "no p in the inventory",
+      4: "has less than 6 values of [p t t̪ k b d d̪ g]",
+      5: "has at least 6 values of [p t t̪ k b d d̪ g]"
+    }
   },
   {
     "id": "LacksCommonConsonants",
     "name": "gaps in plosives",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "lacks_common_consonants",
-    "note": ""
+    "note": "WALS 18A",
+    "categories": {
+      1: "bilabials and fricatives and nasals occur",
+      2: "bilabials do not occur, fricatives and nasals occur",
+      3: "fricatives do not occur, bilabials and nasals occur",
+      4: "nasals do not occur, bilabials and fricatives occur",
+      5: "bilabials and nasals do not occur, fricatives occur",
+      6: "all other cases"
+    }
   },
   {
     "id": "HasUncommonConsonants",
     "name": "has uncommon consonants",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_uncommon_consonants",
-    "note": ""
+    "note": "WALS 19A",
+    "categories": {
+      1: "no clicsk and no dental fricatives and no labiovelars and no pharyngeals",
+      2: "clicks and pharyngeals and dental fricatives",
+      3: "pharyngeals and dental fricatives",
+      4: "dentral fricatives",
+      5: "pharyngeals",
+      6: "labiovelars",
+      7: "clicks"
+    }
   },
   {
     "id": "LegAndFoot",
     "name": "has the same word form for foot and leg",
-    "type": "integer",
+    "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_leg_and_foot_colexified",
-    "note": ""
+    "note": {
+      true: "colexifies foot and leg",
+      false: "does not colexify foot and leg"
+    }
   },
   {
     "id": "PlosiveFricativeVoicing",
@@ -164,46 +205,70 @@
   {
     "id": "SyllableStructure",
     "name": "complexity of the syllable structure",
-    "type": "integer",
+    "type": "categorical",
     "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_structure",
-    "note": ""
+    "note": "WALS 12A",
+    "categories": {
+      1: "simple syllable structure (only CV attested)",
+      2: "moderately complex syllable structure (C(C)VC attested)",
+      3: "complex syllable structure"
+    }
   },
   {
     "id": "HandAndArm",
     "name": "hand and arm distinguished or not",
-    "type": "integer",
+    "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_hand_arm_colexified",
-    "note": ""
+    "note": "WALS 129A",
+    "categories": {
+      true: "colexifies hand and arm",
+      false: "does not colexify hand and arm",
+      null: "missing data"
+    }
   },
   {
     "id": "FingerAndHand",
     "name": "hand and finger distinguished or not",
-    "type": "integer",
+    "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_hand_colexified",
-    "note": ""
+    "note": "WALS 130A",
+    "categories": {
+      true: "colexifies finger and hand",
+      false: "does not colexify finger and hand",
+      null: "missing data" 
+    }
   },
   {
     "id": "GreenAndBlue",
     "name": "green and blue colexified or not",
-    "type": "integer",
+    "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_green_blue_colexified",
-    "note": ""
+    "note": "",
+    "categories": {
+      true: "colexifies green and blue",
+      false: "does not colexify green and blue",
+      null: "missing data"
   },
   {
     "id": "RedAndYellow",
     "name": "red and yellow colexified or not",
-    "type": "integer",
+    "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_red_yellow_colexified",
-    "note": ""
+    "note": "",
+    "categories": {
+      true: "colexifies red and yellow",
+      false: "does not colexify red and yellow",
+      null: "missing data"
+    }
   }
 ]
