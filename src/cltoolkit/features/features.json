@@ -162,9 +162,11 @@
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_leg_and_foot_colexified",
-    "note": {
+    "note": "",
+    "categories": {
       "true": "colexifies foot and leg",
-      "false": "does not colexify foot and leg"
+      "false": "does not colexify foot and leg",
+      "null": "missing data"
     }
   },
   {
@@ -218,26 +220,40 @@
     }
   },
   {
-    "id": "HandAndArm",
-    "name": "hand and arm distinguished or not",
+    "id": "ArmAndHand",
+    "name": "arm and hand distinguished or not",
     "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_hand_arm_colexified",
+    "function": "has_arm_and_hand_colexified",
     "note": "WALS 129A",
     "categories": {
-      "true": "colexifies hand and arm",
-      "false": "does not colexify hand and arm",
+      "true": "colexifies arm and hand",
+      "false": "does not colexify arm and hand",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "BarkAndSkin",
+    "name": "bark and skin distinguished or not",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_bark_and_skin_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies arm and hand",
+      "false": "does not colexify arm and hand",
       "null": "missing data"
     }
   },
   {
     "id": "FingerAndHand",
-    "name": "hand and finger distinguished or not",
+    "name": "finger andhand distinguished or not",
     "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_finger_hand_colexified",
+    "function": "has_finger_and_hand_colexified",
     "note": "WALS 130A",
     "categories": {
       "true": "colexifies finger and hand",
@@ -251,7 +267,7 @@
     "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_green_blue_colexified",
+    "function": "has_green_and_blue_colexified",
     "note": "",
     "categories": {
       "true": "colexifies green and blue",
@@ -265,11 +281,81 @@
     "type": "bool",
     "target": "inventory",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_red_yellow_colexified",
+    "function": "has_red_and_yellow_colexified",
     "note": "",
     "categories": {
       "true": "colexifies red and yellow",
       "false": "does not colexify red and yellow",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "FootAndToe",
+    "name": "foot and toe colexified or not",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_toe_and_foot_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies toe and foot",
+      "false": "does not colexify red toe and foot",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "EyeInTear",
+    "name": "eye partially colexified in tear",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_eye_in_tear",
+    "note": "",
+    "categories": {
+      "true": "eye partially colexified in tear",
+      "false": "eye not partially colexified in tear",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "WaterInTear",
+    "name": "water partially colexified in tear",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_water_in_tear",
+    "note": "",
+    "categories": {
+      "true": "water partially colexified in tear",
+      "false": "water not partially colexified in tear",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "TreeInBark",
+    "name": "tree partially colexified in bark",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_tree_in_bark",
+    "note": "",
+    "categories": {
+      "true": "tree partially colexified in bark",
+      "false": "tree not partially colexified in bark",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "SkinInBark",
+    "name": "skin partially colexified in bark",
+    "type": "bool",
+    "target": "inventory",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_skin_in_bark",
+    "note": "",
+    "categories": {
+      "true": "skin partially colexified in bark",
+      "false": "skin not partially colexified in bark",
       "null": "missing data"
     }
   }
