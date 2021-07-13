@@ -212,15 +212,17 @@ class Wordlist:
         self.cognates = collections.OrderedDict()
         for dsid, dataset in self.datasets.items():
             self._add_cognates(dsid, dataset)
+        # TODO not sure this is the best way to handle this but loading this
+        # multiple times seems also not useful
 
     def _add_cognates(self, dsid, dataset):
         """
         Add cognate sets for the data that has been loaded.
         """
-        # check if there is a contribution reference in the cognate table
-        # add this later, as it is not yet clear how to do this best
         for cog in progressbar(
                 dataset.objects("CognateTable"), desc="loading cognates for {0}".format(dsid)):
+            contribution_id = getattr(
+                    cog.cldf, "contributionReference", "default") 
             # note that the cognateset Reference can be None, this needs to be
             # caught up here
             if cog.cldf.cognatesetReference:
