@@ -4,7 +4,6 @@ Class for handling wordlist data.
 import importlib
 import collections
 
-from cldfbench.dataset import dataset_from_module
 from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
@@ -118,7 +117,6 @@ class Wordlist:
                     new_sense,
                     id=concept_id,
                     name=concept_id.lower(),
-                    wordlist=self,
                     forms=collections.OrderedDict(),
                     senses=collections.OrderedDict(),
                 )
@@ -159,7 +157,7 @@ class Wordlist:
                             id=gid,
                             grapheme=segment,
                             dataset=dsid,
-                            wordlist=self, 
+                            wordlist=self,
                             obj=sound,
                             occs=collections.OrderedDict(),
                             forms=collections.OrderedDict([(new_form.id, new_form)]))
@@ -188,10 +186,7 @@ class Wordlist:
             if cid and cid not in self.languages[lid].concepts:
                 self.languages[lid].concepts[cid] = Concept.from_concept(
                     self.concepts[cid],
-                    self.languages[lid],
                     senses=collections.OrderedDict(),
-                    wordlist=self,
-                    dataset=dsid,
                     forms=collections.OrderedDict(),
                 )
 
@@ -200,7 +195,7 @@ class Wordlist:
                 self.concepts[cid].forms[new_form.id] = new_form
                 if pid not in self.languages[lid].concepts[cid].senses:
                     self.languages[lid].concepts[cid].senses[pid] = self.senses[pid]
-            
+
             if pid not in self.languages[lid].senses:
                 self.languages[lid].senses[pid] = Sense.from_sense(
                     self.senses[pid], self.languages[lid], collections.OrderedDict())
@@ -210,7 +205,7 @@ class Wordlist:
 
     def __len__(self):
         return len(self.forms)
-    
+
     def load_cognates(self):
         self.cognates = collections.OrderedDict()
         for dsid, dataset in self.datasets.items():
@@ -224,28 +219,25 @@ class Wordlist:
         """
         for cog in progressbar(
                 dataset.objects("CognateTable"), desc="loading cognates for {0}".format(dsid)):
-            contribution_id = getattr(
-                    cog.cldf, "contributionReference", "default") 
             # note that the cognateset Reference can be None, this needs to be
             # caught up here
             if cog.cldf.cognatesetReference:
                 form_id = idjoin(dsid, cog.cldf.formReference)
                 cogset = Cognate(
-                        id=idjoin(dsid, cog.cldf.cognatesetReference),
-                        wordlist=self,
-                        obj=cog.cldf, 
-                        dataset=dsid,
-                        data=cog.data,
-                        form=self.forms[form_id],
-                        contribution=cog.data.get("contribution", "default")
-                        )
+                    id=idjoin(dsid, cog.cldf.cognatesetReference),
+                    wordlist=self,
+                    obj=cog.cldf,
+                    dataset=dsid,
+                    data=cog.data,
+                    form=self.forms[form_id],
+                    contribution=cog.data.get("contribution", "default")
+                )
                 try:
                     self.forms[form_id].cognates[cogset.contribution] = cogset
                 except:
                     self.forms[form_id].cognates = {cogset.contribution: cogset}
                 self.cognates[cogset.id] = cogset
         self.cognates = DictTuple(self.cognates.values())
-
 
     def as_lingpy(
             self,
@@ -283,43 +275,43 @@ class Wordlist:
         return transform(D)
 
     def iter_forms_by_concepts(
-            self, 
-            concepts=None, 
+            self,
+            concepts=None,
             languages=None,
             aspect=None,
             filter_by=None,
             flat=False,
-            ):
+    ):
         """
         Iterate over the concepts in the data and return forms for a given language.
 
         :param concepts: List of concept identifiers, all concepts if not specified.
         :param language: List of language identifiers, all languages if not specified.
         :param aspect: Select attribute of the Form object instead of the Form object.
-        :param filter_by: Use a function to filter the data to be output.  
+        :param filter_by: Use a function to filter the data to be output.
         :param flatten: Return a one-dimensional array of the data.
 
         .. note::
 
           The function returns for each concept (selected by ID) the form for
           each language, or the specific aspect (attribute) of the form,
-          provided this exists. 
+          provided this exists.
 
         """
-        flatten = identity if not flat else lambda x: [item for sublist in x
-                for item in sublist]
+        flatten = identity if not flat else \
+            lambda x: [item for sublist in x for item in sublist]
         transform = identity if not aspect else lambda x: getattr(x, aspect)
         concepts = [self.concepts[c] for c in concepts] if concepts else self.concepts
-        languages = [self.languages[l] for l in languages] if languages else self.languages
+        languages = [self.languages[i] for i in languages] if languages else self.languages
         for concept in concepts:
             out = []
             for language in languages:
                 try:
                     out.append(
-                            list(filter(
-                                filter_by,
-                                [transform(f) for f in language.concepts[concept.id].forms]
-                                )))
+                        list(filter(
+                            filter_by,
+                            [transform(f) for f in language.concepts[concept.id].forms]
+                        )))
                 except KeyError:
                     out.append([])
             if any(out):
