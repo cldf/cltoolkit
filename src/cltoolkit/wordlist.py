@@ -5,7 +5,7 @@ import importlib
 import collections
 
 from cldfbench.dataset import dataset_from_module
-from pyclts import CLTS
+from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
 
@@ -22,9 +22,12 @@ class Wordlist:
     """
     A collection of one or more lexibank datasets, aligned by concept.
     """
-    def __init__(self, datasets, ts=None, concept_id_factory=lambda x: x["Concepticon_Gloss"]):
+    def __init__(self,
+                 datasets,
+                 ts: TranscriptionSystem,
+                 concept_id_factory=lambda x: x["Concepticon_Gloss"]):
         self.datasets = DictTuple(datasets, key=lambda x: x.metadata_dict["rdf:ID"])
-        self.ts = ts or CLTS().transcriptionsystem_dict['bipa']
+        self.ts = ts
         self.concept_id_factory = concept_id_factory
 
         # During data loading, we use flexible, mutable dicts.
@@ -79,9 +82,9 @@ class Wordlist:
             s.forms = DictTuple(s.forms.values())
 
     @classmethod
-    def from_lexibank(cls, datasets, **kw):
+    def from_lexibank(cls, datasets, ts: TranscriptionSystem, **kw):
         dsets = [dataset_from_module(importlib.import_module('lexibank_' + ds)) for ds in datasets]
-        return cls(dsets, **kw)
+        return cls(dsets, ts, **kw)
 
     def _add_languages(self, dsid, dataset):
         """Append languages to the wordlist.

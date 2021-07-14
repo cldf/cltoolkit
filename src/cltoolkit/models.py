@@ -1,15 +1,18 @@
 """
 Basic models.
 """
+import typing
+import statistics
 import collections
-from collections import OrderedDict
+
 import attr
-from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
 import lingpy
 from pycldf.util import DictTuple
-from pyclts import CLTS
 from clldutils.misc import lazyproperty as cached_property
-import statistics
+import pyclts
+from pyclts.models import Sound, Symbol
+
+from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
 
 
 @attr.s(repr=False)
@@ -344,15 +347,13 @@ class Inventory:
 
     @classmethod
     def from_list(
-            cls, 
-            *list_of_sounds, 
+            cls,
+            ts: pyclts.TranscriptionSystem,
+            *list_of_sounds: typing.Union[Sound, Symbol, str],
             language=None, 
-            ts=None, 
-            wordlist=None, 
-            dataset=None
-            ):
-        ts = ts or CLTS().bipa
-        sounds = OrderedDict()
+            wordlist=None,
+        ):
+        sounds = collections.OrderedDict()
         for itm in list_of_sounds:
             sound = ts[itm]
             try:
