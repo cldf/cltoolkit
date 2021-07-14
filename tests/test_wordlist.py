@@ -4,14 +4,14 @@ from clldutils.path import sys_path
 from cltoolkit.util import lingpy_columns
 
 
-def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd):
+def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
     # for lexibank load testing
     datasets = [ds_carvalhopurus, ds_wangbcd]
 
     with sys_path(repos / "carvalhopurus"):
         with sys_path(repos / "wangbcd"):
-            wl2 = Wordlist.from_lexibank(["carvalhopurus", "wangbcd"])
-            wl = Wordlist(datasets)
+            wl2 = Wordlist.from_lexibank(["carvalhopurus", "wangbcd"], clts.bipa)
+            wl = Wordlist(datasets, clts.bipa)
 
             assert wl2.height == wl.height
 
@@ -50,7 +50,7 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd):
 
             assert wl.coverage(aspect="segmented_forms")[apurina.id] == len(apurina.concepts)
     
-    wl = Wordlist(datasets=[datasets[0]])
+    wl = Wordlist([datasets[0]], clts.bipa)
     wl.load_cognates()
     lpwl = wl.as_lingpy(columns=lingpy_columns(cognates="default"))
     assert "cognacy" in lpwl.columns

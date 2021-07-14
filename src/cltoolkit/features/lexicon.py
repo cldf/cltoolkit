@@ -25,6 +25,7 @@ def has_a_b_colexified(language, alist=None, blist=None, ablist=None):
     if abforms:
         return True
 
+
 def has_a_in_b(
         language, alist=None, blist=None):
     """
@@ -82,38 +83,38 @@ has_leg_and_foot_colexified = partial(
 )
 
 has_toe_and_foot_colexified = partial(
-        has_a_b_colexified,
-        alist=["FOOT", "FOOT OR LEG"],
-        blist=["TOE", "FINGER OR TOE"]
+    has_a_b_colexified,
+    alist=["FOOT", "FOOT OR LEG"],
+    blist=["TOE", "FINGER OR TOE"]
 )
 
 has_eye_in_tear = partial(
-        has_a_in_b,
-        alist=["EYE"],
-        blist=["TEAR (OF EYE)"]
+    has_a_in_b,
+    alist=["EYE"],
+    blist=["TEAR (OF EYE)"]
 )
 
 has_water_in_tear = partial(
-        has_a_in_b,
-        alist=["WATER"],
-        blist=["TEAR (OF EYE)"]
+    has_a_in_b,
+    alist=["WATER"],
+    blist=["TEAR (OF EYE)"]
 )
 
 has_bark_and_skin_colexified = partial(
-        has_a_b_colexified,
-        alist=["BARK", "BARK OR SHELL"],
-        blist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
-        clist=["BARK OR SKIN"]
-        )
+    has_a_b_colexified,
+    alist=["BARK", "BARK OR SHELL"],
+    blist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
+    clist=["BARK OR SKIN"]
+)
 
 has_skin_in_bark = partial(
-        has_a_in_b,
-        alist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
-        blist=["BARK"]
+    has_a_in_b,
+    alist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
+    blist=["BARK"]
 )
 
 has_tree_in_bark = partial(
-        has_a_in_b,
-        alist=["TREE", "TREE OR WOOD"],
-        blist=["BARK"]
+    has_a_in_b,
+    alist=["TREE", "TREE OR WOOD"],
+    blist=["BARK"]
 )
