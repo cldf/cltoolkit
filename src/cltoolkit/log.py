@@ -1,11 +1,6 @@
 """Logging utilities"""
-from __future__ import unicode_literals, print_function, absolute_import, division
-import os
 import sys
 import logging
-from logging.config import fileConfig
-from tempfile import NamedTemporaryFile
-import warnings
 
 
 LOGGING = """

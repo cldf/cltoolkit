@@ -10,6 +10,8 @@ from clldutils import jsonlib
 
 from cltoolkit import pkg_path
 
+__all__ = ['feature_data', 'Feature', 'FeatureCollection']
+
 
 def feature_data():
     return jsonlib.load(pkg_path / 'features' / 'features.json')

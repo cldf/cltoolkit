@@ -1,15 +1,17 @@
 """
 Basic models.
 """
-import collections
-from collections import OrderedDict
-import attr
-from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
-import lingpy
-from pycldf.util import DictTuple
-from pyclts import CLTS
-from clldutils.misc import lazyproperty as cached_property
+import typing
 import statistics
+import collections
+
+import attr
+import lingpy
+from clldutils.misc import lazyproperty as cached_property
+import pyclts
+from pyclts.models import Sound as CLTSSound, Symbol
+
+from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
 
 
 @attr.s(repr=False)
@@ -22,7 +24,7 @@ class CLCore:
     data = attr.ib(default=None)
 
     def __repr__(self):
-        return "<"+self.__class__.__name__+" "+self.id+">"
+        return "<" + self.__class__.__name__ + " " + self.id + ">"
 
 
 @attr.s(repr=False)
@@ -31,7 +33,7 @@ class CLCoreWithForms(CLCore):
     Base class to represent data in a wordlist that contains forms.
     """
     forms = attr.ib(default=None)
-    
+
     @cached_property
     def bipa_forms(self):
         return DictTuple([f for f in self.forms if f.tokens])
@@ -65,8 +67,8 @@ class Language(CLBaseWithForms):
     Base class for handling languages.
 
     .. note::
-       
-       A language variety is defined for a specific dataset only. 
+
+       A language variety is defined for a specific dataset only.
     """
     senses = attr.ib(default=None)
     concepts = attr.ib(default=None)
@@ -93,14 +95,15 @@ class Sense(CLBaseWithForms):
     Concepts in source are the original concepts in the individual wordlists.
 
     .. note::
-       
-       Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined for all datasets.
+
+       Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined
+       for all datasets.
     """
     language = attr.ib(default=None)
     name = MutatedDataValue("Name")
 
     def __repr__(self):
-        return '<Sense '+self.id+'>'
+        return '<Sense ' + self.id + '>'
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -110,13 +113,13 @@ class Sense(CLBaseWithForms):
     @classmethod
     def from_sense(cls, sense, language, forms):
         return cls(
-                id=sense.id,
-                data=sense.data,
-                obj=sense.obj,
-                forms=forms,
-                dataset=sense.dataset,
-                wordlist=sense.wordlist,
-                language=language)
+            id=sense.id,
+            data=sense.data,
+            obj=sense.obj,
+            forms=forms,
+            dataset=sense.dataset,
+            wordlist=sense.wordlist,
+            language=language)
 
 
 @attr.s(repr=False, eq=False)
@@ -125,7 +128,7 @@ class Concept(CLCoreWithForms):
     Base class for the concepts in a dataset.
 
     .. note::
-       
+
        Unlike senses in a wordlist, which are dataset-specific, concepts in a
        wordlist are defined for all datasets. As a result, they lack a
        reference to the original dataset in which they occur, but they have an
@@ -140,32 +143,29 @@ class Concept(CLCoreWithForms):
     concepticon_gloss = attr.ib(default=None)
 
     @classmethod
-    def from_sense(
-            cls, concept, id=None, name=None, wordlist=None, forms=None,
-            senses=None):
+    def from_sense(cls, concept, id=None, name=None, forms=None, senses=None):
         return cls(
-                name=name,
-                id=id,
-                concepticon_id=concept.data.get("Concepticon_ID", ""),
-                concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
-                forms=forms,
-                senses=senses
-                )
+            name=name,
+            id=id,
+            concepticon_id=concept.data.get("Concepticon_ID", ""),
+            concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
+            forms=forms,
+            senses=senses
+        )
 
     @classmethod
-    def from_concept(cls, concept, language, forms=None,
-            senses=None, wordlist=None, dataset=None):
+    def from_concept(cls, concept, forms=None, senses=None):
         return cls(
-                id=concept.id,
-                name=concept.name,
-                concepticon_id=concept.concepticon_id,
-                concepticon_gloss=concept.concepticon_gloss,
-                senses=senses,
-                forms=forms,
-                )
+            id=concept.id,
+            name=concept.name,
+            concepticon_id=concept.concepticon_id,
+            concepticon_gloss=concept.concepticon_gloss,
+            senses=senses,
+            forms=forms,
+        )
 
     def __repr__(self):
-        return "<Concept "+ self.name+">"
+        return "<Concept " + self.name + ">"
 
 
 @attr.s(repr=False)
@@ -177,9 +177,7 @@ class Form(CLBase):
     :param language: The language in which the form occurs.
     :param sense: The meaning expressed by the form.
     :param tokens: The segmented strings defined by the B(road) IPA.
-    
     """
-    
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
@@ -198,16 +196,15 @@ class Form(CLBase):
     @property
     def graphemes(self):
         if self.segments:
-            return [self.wordlist.graphemes[self.dataset+'-'+s] for s in
+            return [self.wordlist.graphemes[self.dataset + '-' + s] for s in
                     self.segments]
 
     def __repr__(self):
-        return "<"+self.__class__.__name__+" "+self.form+">"
+        return "<" + self.__class__.__name__ + " " + self.form + ">"
 
 
 @attr.s(repr=False)
 class Cognate(CLBase):
-    
     form = attr.ib(default=None, repr=False)
     contribution = attr.ib(default=None, repr=False)
 
@@ -220,7 +217,7 @@ class Grapheme(CLBaseWithForms):
 
     def __str__(self):
         return self.grapheme
-    
+
 
 @attr.s(repr=False, eq=False)
 class Sound(CLCoreWithForms):
@@ -238,17 +235,18 @@ class Sound(CLCoreWithForms):
     featureset = NestedAttribute("obj", "featureset")
 
     @classmethod
-    def from_grapheme(cls, grapheme_, grapheme=None, occs=None, forms=None,
+    def from_grapheme(
+            cls, grapheme_, grapheme=None, occs=None, forms=None,
             id=None, graphemes_in_source=None, obj=None):
         return cls(
-                id=id, 
-                grapheme=grapheme,
-                wordlist=grapheme_.wordlist,
-                occs=occs,
-                data=obj.__dict__,
-                graphemes_in_source=graphemes_in_source,
-                forms=forms,
-                obj=obj)
+            id=id,
+            grapheme=grapheme,
+            wordlist=grapheme_.wordlist,
+            occs=occs,
+            data=obj.__dict__,
+            graphemes_in_source=graphemes_in_source,
+            forms=forms,
+            obj=obj)
 
     def __len__(self):
         return len(self.occs or [])
@@ -262,10 +260,11 @@ class Sound(CLCoreWithForms):
         return False
 
     def __repr__(self):
-        return "<"+self.__class__.__name__+" "+self.grapheme+">"
+        return "<" + self.__class__.__name__ + " " + self.grapheme + ">"
 
     def similarity(self, other):
-        if self.type not in ["marker", "unknownsound"] and other.type not in ["marker", "unknownsound"]:
+        if self.type not in ["marker", "unknownsound"] and \
+                other.type not in ["marker", "unknownsound"]:
             return self.obj.similarity(other.obj)
         elif self.type in ["marker", "unknownsound"] and other.type in ["marker", "unknownsound"]:
             if self == other:
@@ -276,23 +275,20 @@ class Sound(CLCoreWithForms):
     @classmethod
     def from_sound(cls, sound, language):
         return cls(
-                id=str(sound),
-                language=language,
-                data=sound.data,
-                obj=sound.obj,
-                wordlist=sound.wordlist,
-                grapheme=sound.grapheme,
-                occs=sound.occs[language.id]
-                )
-
+            id=str(sound),
+            language=language,
+            data=sound.data,
+            obj=sound.obj,
+            wordlist=sound.wordlist,
+            grapheme=sound.grapheme,
+            occs=sound.occs[language.id],
+        )
 
 
 class GetSubInventoryByType:
     def __init__(self, types):
         def select_sounds(inventory):
-            return DictTuple( 
-                [v for v in inventory if v.type in types]
-            )
+            return DictTuple([v for v in inventory if v.type in types])
         self.select_sounds = select_sounds
 
     def __get__(self, obj, objtype=None):
@@ -344,15 +340,13 @@ class Inventory:
 
     @classmethod
     def from_list(
-            cls, 
-            *list_of_sounds, 
-            language=None, 
-            ts=None, 
-            wordlist=None, 
-            dataset=None
-            ):
-        ts = ts or CLTS().bipa
-        sounds = OrderedDict()
+            cls,
+            ts: pyclts.TranscriptionSystem,
+            *list_of_sounds: typing.Union[CLTSSound, Symbol, str],
+            language=None,
+            wordlist=None,
+    ):
+        sounds = collections.OrderedDict()
         for itm in list_of_sounds:
             sound = ts[itm]
             try:
@@ -366,7 +360,7 @@ class Inventory:
                     graphemes_in_source=[sound.grapheme],
                     occs=[],
                     data=sound.__dict__
-                    )
+                )
         return cls(sounds=DictTuple(sounds.values()), ts=ts, language=language)
 
     def __len__(self):

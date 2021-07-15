@@ -17,7 +17,7 @@ def base_yes_no_query(language, attr=None):
 
 def base_ratio(language, attr1=None, attr2=None):
     return len(getattr(language.sound_inventory, attr1)) / len(
-            getattr(language.sound_inventory, attr2))
+        getattr(language.sound_inventory, attr2))
 
 def sound_symbolism(language, concepts, sounds, by_letter=True):
     forms = []
@@ -85,12 +85,12 @@ consonant_sound_size = functools.partial(base_inventory_query, attr="consonant_s
 has_tones = functools.partial(base_yes_no_query, attr="tones")
 cv_ratio = functools.partial(base_ratio, attr1="consonants", attr2="vowels")
 cv_quality_ratio = functools.partial(
-        base_ratio, attr1="consonants_by_quality",
-        attr2="vowels_by_quality")
+    base_ratio, attr1="consonants_by_quality",
+    attr2="vowels_by_quality")
 cv_sounds_ratio = functools.partial(
-        base_ratio,
-        attr1="consonant_sounds",
-        attr2="vowel_sounds")
+    base_ratio,
+    attr1="consonant_sounds",
+    attr2="vowel_sounds")
 
 
 def plosive_fricative_voicing(language):
@@ -104,12 +104,10 @@ def plosive_fricative_voicing(language):
     - 4: in both plosives and fricatives
     """
     inv = language.sound_inventory
-    voiced = set([sound.obj.manner for sound in inv.consonants if
-        (sound.obj.phonation=='voiced' and sound.obj.manner in
-            ['stop', 'fricative']) or (sound.obj.breathiness and
-                sound.obj.manner in ['stop', 'fricative']) or (
-                    sound.obj.voicing and sound.obj.manner in
-                    ['stop', 'fricative'])])
+    voiced = {
+        sound.obj.manner for sound in inv.consonants if
+        sound.obj.manner in ['stop', 'fricative'] and  # noqa: W504
+        (sound.obj.phonation == 'voiced' or sound.obj.breathiness or sound.obj.voicing)}
     if not voiced:
         return 1
     if len(voiced) == 2:
@@ -133,15 +131,15 @@ def has_ptk(language):
     """
     inv = language.sound_inventory
     sounds = [sound.obj.s for sound in inv.consonants]
-    
-    if not 'p' in sounds and not 'g' in sounds:
+
+    if 'p' not in sounds and 'g' not in sounds:
         return 1
-    elif not 'g' in sounds:
+    elif 'g' not in sounds:
         return 2
-    elif not 'p' in sounds:
+    elif 'p' not in sounds:
         return 3
     elif len(set([x for x in sounds if x in ['p', 't', 't̪', 'k', 'b', 'd',
-        'g', 'd̪']])) >= 6:
+                                             'g', 'd̪']])) >= 6:
         return 5
     else:
         return 4
@@ -159,7 +157,7 @@ def has_uvular(language):
     """
     inv = language.sound_inventory
     uvulars = set([sound.obj.manner for sound in inv.consonants if
-            sound.obj.place=='uvular'])
+                   sound.obj.place == 'uvular'])
     if len(uvulars) == 0:
         return 1
     elif len(uvulars) == 1:
@@ -174,7 +172,7 @@ def has_uvular(language):
 def has_glottalized(language):
     """
     WALS Feature 7A, check for glottalized or implosive consonants.
-    
+
     Values:
     - 1: no ejectives, no implosives
     - 2: has ejective stops or affricates, but no implosives
@@ -183,17 +181,17 @@ def has_glottalized(language):
     - 5: has ejectives and implosives but no ejective resonants
     - 6: has ejectives and ejective resonants, but no implosives
     - 7: has implosives and ejective resonants but no ejective stops
-    - 8: 
+    - 8:
     """
     inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
-            sound.obj.ejection and sound.obj.manner in 
-            ['stop', 'affricate']]
-    resonants = [sound for sound in inv.consonants if 
-            sound.obj.ejection and sound.obj.manner not in
-            ['stop', 'affricate']]
-    implosives = [sound for sound in inv.consonants if 
-            sound.obj.manner == 'implosive']
+                 sound.obj.ejection and sound.obj.manner in
+                 ['stop', 'affricate']]
+    resonants = [sound for sound in inv.consonants if
+                 sound.obj.ejection and sound.obj.manner not in
+                 ['stop', 'affricate']]
+    implosives = [sound for sound in inv.consonants if
+                  sound.obj.manner == 'implosive']
     if not ejectives and not implosives and not resonants:
         return 1
     elif ejectives and not implosives and not resonants:
@@ -215,29 +213,28 @@ def has_glottalized(language):
 def has_laterals(language):
     """
     WALS Feature 8A, check for lateral sounds.
-    
+
     Values:
     - 1: no laterals
     - 2: one lateral, and the lateral is l
     - 3: has laterals, but no stops and no l
     - 4: has laterals, including l and stops
     - 5: has laterals, including stops, but no l
-    - 6: 
-
+    - 6:
     """
     inv = language.sound_inventory
     laterals = set([sound.obj.manner for sound in
-        inv.consonants if
-        sound.obj.airstream == 'lateral'])
+                    inv.consonants if
+                    sound.obj.airstream == 'lateral'])
     if not laterals:
         return 1
     elif len(laterals) == 1 and 'l' in inv.sounds:
         return 2
-    elif not 'stop' in laterals and not 'l' in inv.sounds:
+    elif 'stop' not in laterals and 'l' not in inv.sounds:
         return 3
     elif 'stop' in laterals and 'l' in inv.sounds:
         return 4
-    elif 'stop' in laterals and not 'l' in inv.sounds:
+    elif 'stop' in laterals and 'l' not in inv.sounds:
         return 5
     else:
         return 6
@@ -246,7 +243,7 @@ def has_laterals(language):
 def has_engma(language):
     """
     WALS Feature 9A, check for nasals.
-    
+
     Values:
     - 1: ŋ occurs in the beginning of a word
     - 2: ŋ occurs but not in the beginning off words
@@ -267,7 +264,7 @@ def has_nasal_vowels(language):
     WALS Feature 10A, check for nasal vowels.
     """
     vowels = [sound for sound in language.sound_inventory.vowels if
-            sound.obj.nasalization]
+              sound.obj.nasalization]
     if vowels:
         return 1
     return 2
@@ -281,8 +278,7 @@ def has_rounded_vowels(language):
             sound.obj.roundedness == 'rounded' and sound.obj.height in
             ['open', 'near-open']]
     mid = [sound for sound in language.sound_inventory.vowels if
-            sound.obj.roundedness == 'rounded' and
-            sound.obj.height in ['open-mid', 'mid']]
+           sound.obj.roundedness == 'rounded' and sound.obj.height in ['open-mid', 'mid']]
     if not high and not mid:
         return 1
     elif high and mid:
@@ -291,7 +287,6 @@ def has_rounded_vowels(language):
         return 3
     else:
         return 4
-
 
 
 def syllable_structure(language):
@@ -317,8 +312,6 @@ def syllable_structure(language):
     return 3
 
 
-
-
 def syllable_complexity(language):
     """
     Compute the major syllabic patterns for a language.
@@ -331,9 +324,8 @@ def syllable_complexity(language):
        it. For a given syllable, we store the form, the consonantal sounds, and
        the index of the syllable in the word. These values are returned in the
        form of two dictionaries, in which the number of sounds is the key.
-    
     """
-    
+
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
     for form in language.forms:
         for i, syllable in enumerate(iter_syllables(form)):
@@ -342,7 +334,7 @@ def syllable_complexity(language):
                 if sound.type == 'marker':
                     log.warning(syllable, form.id, form.segments)
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
-                        not 'syllabic' in sound.featureset:
+                        'syllabic' not in sound.featureset:
                     count += 1
                     sounds += [sound]
                 else:
@@ -367,11 +359,11 @@ def lacks_common_consonants(language):
     """
     inv = language.sound_inventory
     bilabials = [sound for sound in inv.consonants if 'bilabial' in
-            sound.obj.featureset]
+                 sound.obj.featureset]
     fricatives = [sound for sound in inv.consonants if 'fricative' in
-            sound.obj.featureset]
+                  sound.obj.featureset]
     nasals = [sound for sound in inv.consonants if 'nasal' in
-            sound.obj.featureset]
+              sound.obj.featureset]
     if bilabials and fricatives and nasals:
         return 1
     elif not bilabials and fricatives and nasals:
@@ -392,12 +384,13 @@ def has_uncommon_consonants(language):
     """
     inv = language.sound_inventory
     clicks = [sound for sound in inv.consonants if sound.obj.manner == "click"]
-    labiovelars = [sound for sound in inv.consonants if sound.obj.labialization ==
-            "labialized" and sound.obj.place in ["velar", "uvular"]]
+    labiovelars = [sound for sound in inv.consonants if sound.obj.labialization ==  # noqa: W504
+                   "labialized" and sound.obj.place in ["velar", "uvular"]]
     dentalfrics = [sound for sound in inv.consonants if sound.obj.place == "dental"
-            and not sound.obj.airstream == "sibilant" and sound.obj.manner == "fricative"]
-    pharyngeals = [sound for sound in inv.consonants if \
-            sound.obj.place == "pharyngeal" or sound.obj.pharyngealization == "pharyngealized"]
+                   and not sound.obj.airstream == "sibilant" and sound.obj.manner == "fricative"]
+    pharyngeals = [sound for sound in inv.consonants if
+                   sound.obj.place == "pharyngeal" or  # noqa: W504
+                   sound.obj.pharyngealization == "pharyngealized"]
     if not clicks and not dentalfrics and not labiovelars and not pharyngeals:
         return 1
     if clicks and pharyngeals and dentalfrics:
