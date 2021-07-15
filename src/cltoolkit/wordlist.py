@@ -3,6 +3,7 @@ Class for handling wordlist data.
 """
 import importlib
 import collections
+from typing import Optional
 
 from pyclts import TranscriptionSystem
 import lingpy
@@ -20,10 +21,15 @@ def idjoin(*comps):
 class Wordlist:
     """
     A collection of one or more lexibank datasets, aligned by concept.
+
+    :param datasets: The datasets you want to load, provided as list of
+       pycldf.Datasets.
+    :param ts: A TranscriptionSystem (as provided  by pyclts), if you want to
+       work with phonological features from CLTS.
     """
     def __init__(self,
                  datasets,
-                 ts: TranscriptionSystem,
+                 ts: Optional[TranscriptionSystem] = None,
                  concept_id_factory=lambda x: x["Concepticon_Gloss"]):
         self.datasets = DictTuple(datasets, key=lambda x: x.metadata_dict["rdf:ID"])
         self.ts = ts
@@ -147,7 +153,7 @@ class Wordlist:
                 wordlist=self
             )
             self.forms[new_form.id] = new_form
-            sounds = [self.ts[s] for s in new_form.segments]
+            sounds = [self.ts[s] for s in new_form.segments] if self.ts else None
             if sounds:
                 new_form.tokens = valid_tokens(sounds)
                 for i, (segment, sound) in enumerate(zip(new_form.segments, sounds)):

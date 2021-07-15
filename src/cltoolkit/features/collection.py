@@ -26,6 +26,7 @@ class Feature:
     function = attr.ib()
     note = attr.ib()
     categories = attr.ib(default=None)
+    requires = attr.ib(default=None)
 
     def help(self):
         if self.function.__doc__:
