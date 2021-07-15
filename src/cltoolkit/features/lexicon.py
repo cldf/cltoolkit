@@ -43,6 +43,34 @@ def has_a_in_b(
     for aform, bform in product(aforms, bforms):
         if bform.startswith(aform) and len(aform) > 2 and len(bform) > 5:
             return True
+        elif bform.endswith(aform) and len(aform) > 2 and len(bform) > 5:
+            return True
+    if aforms and bforms:
+        return False
+
+
+def shares_substring(
+        language, alist=None, blist=None):
+    """
+    Check for a common substring in a and b.
+
+    :rtype: bool
+    """
+    aforms, bforms = [], []
+    for xlist, xforms in zip([alist, blist], [aforms, bforms]):
+        if xlist:
+            for x in xlist:
+                if x in language.concepts:
+                    for form in language.concepts[x].forms:
+                        xforms += [form.form]
+    for aform, bform in product(aforms, bforms):
+        for i in range(1, len(aform)-1):
+            morphA = aform[:i]
+            morphB = aform[i:]
+            if len(morphA) >= 3 and morphA in bform and bform != morphA:
+                return True
+            elif len(morphB) >= 3 and morphB in bform and bform != morphA:
+                return True
     if aforms and bforms:
         return False
 
@@ -53,13 +81,11 @@ has_arm_and_hand_colexified = partial(
     blist=["HAND"],
     ablist=["ARM OR HAND"]
 )
-has_arm_and_hand_colexified.__doc__ = \
-    '    Does a single word denote both Hand and Arm?\n' + has_a_b_colexified.__doc__
 
 has_finger_and_hand_colexified = partial(
     has_a_b_colexified,
     alist=["FINGER", "FINGER OR TOE"],
-    blist=["HAND", "HAND OR ARM"],
+    blist=["HAND", "ARM OR HAND"],
 )
 
 has_green_and_blue_colexified = partial(
@@ -104,7 +130,7 @@ has_bark_and_skin_colexified = partial(
     has_a_b_colexified,
     alist=["BARK", "BARK OR SHELL"],
     blist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
-    clist=["BARK OR SKIN"]
+    ablist=["BARK OR SKIN"]
 )
 
 has_skin_in_bark = partial(
@@ -118,3 +144,26 @@ has_tree_in_bark = partial(
     alist=["TREE", "TREE OR WOOD"],
     blist=["BARK"]
 )
+
+
+has_finger_and_toe = partial(
+    has_a_b_colexified,
+    alist=["FINGER"],
+    blist=["TOE"],
+    ablist=["FINGER OR TOE"]
+)
+
+has_hair_and_feather = partial(
+    has_a_b_colexified,
+    alist=["HAIR (BODY)", "HAIR (HEAD)", "HAIR"],
+    blist=["FEATHER", "FUR"],
+    ablist=["FEATHER OR FUR OR HAIR", "HAIR OR FUR"],
+)
+
+has_hear_and_smell = partial(
+    has_a_b_colexified,
+    alist=["HEAR", "EAR OR HEAR", "HEAR OR LISTEN"],
+    blist=["SMELL", "SMELL (PERCEIVE)"]
+)
+
+

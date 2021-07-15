@@ -22,7 +22,6 @@ class Feature:
     id = attr.ib()
     name = attr.ib()
     type = attr.ib()
-    target = attr.ib()
     module = attr.ib()
     function = attr.ib()
     note = attr.ib()

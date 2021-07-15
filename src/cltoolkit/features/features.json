@@ -3,7 +3,6 @@
     "id": "ConsonantQualitySize",
     "name": "consonant quality size",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "consonant_quality_size",
     "note": ""
@@ -12,7 +11,6 @@
     "id": "VowelQualitySize",
     "name": "vowel quality size",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "vowel_quality_size",
     "note": ""
@@ -21,7 +19,6 @@
     "id": "VowelSize",
     "name": "vowel size",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "vowel_size",
     "note": ""
@@ -30,7 +27,6 @@
     "id": "ConsonantSize",
     "name": "consonant size",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "consonant_size",
     "note": ""
@@ -39,7 +35,6 @@
     "id": "CVRatio",
     "name": "consonant and vowel ratio",
     "type": "float",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_ratio",
     "note": ""
@@ -48,7 +43,6 @@
     "id": "CVQualityRatio",
     "name": "consonant and vowel ratio (by quality)",
     "type": "float",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_quality_ratio",
     "note": ""
@@ -57,7 +51,6 @@
     "id": "CVSoundRatio",
     "name": "consonant and vowel ratio (including diphthongs and clusters)",
     "type": "float",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "cv_sounds_ratio",
     "note": ""
@@ -66,7 +59,6 @@
     "id": "HasNasalVowels",
     "name": "has nasal vowels or not",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_nasal_vowels",
     "categories": {
@@ -79,7 +71,6 @@
     "id": "HasRoundedVowels",
     "name": "has rounded vowels or not",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_rounded_vowels",
     "note": "WALS 11A",
@@ -94,7 +85,6 @@
     "id": "VelarNasal",
     "name": "has the velar nasal (engma)",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_engma",
     "note": "WALS 9A",
@@ -108,7 +98,6 @@
     "id": "PlosiveVoicingGaps",
     "name": "voicing and gaps in plosives",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_ptk",
     "note": "WALS 5A",
@@ -124,7 +113,6 @@
     "id": "LacksCommonConsonants",
     "name": "gaps in plosives",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "lacks_common_consonants",
     "note": "WALS 18A",
@@ -141,7 +129,6 @@
     "id": "HasUncommonConsonants",
     "name": "has uncommon consonants",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_uncommon_consonants",
     "note": "WALS 19A",
@@ -159,7 +146,6 @@
     "id": "LegAndFoot",
     "name": "has the same word form for foot and leg",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_leg_and_foot_colexified",
     "note": "",
@@ -173,7 +159,6 @@
     "id": "PlosiveFricativeVoicing",
     "name": "voicing in plosives and fricatives",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "plosive_fricative_voicing",
     "note": ""
@@ -182,7 +167,6 @@
     "id": "UvularConsonants",
     "name": "presence of uvular consonants",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_uvular",
     "note": ""
@@ -191,7 +175,6 @@
     "id": "GlottalizedConsonants",
     "name": "presence of glottalized consonants",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_glottalized",
     "note": ""
@@ -200,7 +183,6 @@
     "id": "HasLaterals",
     "name": "presence of glottalized consonants",
     "type": "integer",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "has_laterals",
     "note": ""
@@ -209,7 +191,6 @@
     "id": "SyllableStructure",
     "name": "complexity of the syllable structure",
     "type": "categorical",
-    "target": "inventory",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_structure",
     "note": "WALS 12A",
@@ -223,7 +204,6 @@
     "id": "ArmAndHand",
     "name": "arm and hand distinguished or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_arm_and_hand_colexified",
     "note": "WALS 129A",
@@ -237,7 +217,6 @@
     "id": "BarkAndSkin",
     "name": "bark and skin distinguished or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_bark_and_skin_colexified",
     "note": "",
@@ -251,7 +230,6 @@
     "id": "FingerAndHand",
     "name": "finger andhand distinguished or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_and_hand_colexified",
     "note": "WALS 130A",
@@ -265,10 +243,9 @@
     "id": "GreenAndBlue",
     "name": "green and blue colexified or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_green_and_blue_colexified",
-    "note": "",
+    "note": "APICS 116, WALS 134A",
     "categories": {
       "true": "colexifies green and blue",
       "false": "does not colexify green and blue",
@@ -279,7 +256,6 @@
     "id": "RedAndYellow",
     "name": "red and yellow colexified or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_red_and_yellow_colexified",
     "note": "",
@@ -293,7 +269,6 @@
     "id": "FootAndToe",
     "name": "foot and toe colexified or not",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_toe_and_foot_colexified",
     "note": "",
@@ -307,7 +282,6 @@
     "id": "EyeInTear",
     "name": "eye partially colexified in tear",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_eye_in_tear",
     "note": "",
@@ -321,7 +295,6 @@
     "id": "WaterInTear",
     "name": "water partially colexified in tear",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_water_in_tear",
     "note": "",
@@ -335,7 +308,6 @@
     "id": "TreeInBark",
     "name": "tree partially colexified in bark",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_tree_in_bark",
     "note": "",
@@ -349,7 +321,6 @@
     "id": "SkinInBark",
     "name": "skin partially colexified in bark",
     "type": "bool",
-    "target": "inventory",
     "module": "cltoolkit.features.lexicon",
     "function": "has_skin_in_bark",
     "note": "",
@@ -358,5 +329,32 @@
       "false": "skin not partially colexified in bark",
       "null": "missing data"
     }
+  },
+  {
+    "id": "FingerAndToe",
+    "name": "finger and toe colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_finger_and_toe",
+    "note": "APICS 113",
+    "categories": {
+      "true": "finger and toe colexified",
+      "false": "finger and toe not colexified",
+      "null": "missing data"
+    }
+  },
+  {
+    "id": "HairAndFeather",
+    "name": "hair and feature colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_hair_and_feather",
+    "note": "APICS 114",
+    "categories": {
+      "true": "hair and feather colexified",
+      "false": "hair and feather not colexified",
+      "null": "missing data"
+    }
   }
+
 ]

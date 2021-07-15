@@ -1,0 +1,9 @@
+ID,Local_ID,Language_ID,Parameter_ID,Value,Form,Segments,Comment,Source,Cognacy,Loan,Graphemes,Profile
+DummyLanguage-all-1,,DummyLanguage,arm,val,mano,,,,,,,
+DummyLanguage-all-2,,DummyLanguage,hand,val,mano,,,,,,,
+DummyLanguage-all-3,,DummyLanguage,handorarm,val,mano,,,,,,,
+DummyLanguage-all-4,,DummyLanguage,water,val,water,,,,,,,
+DummyLanguage-all-5,,DummyLanguage,eye,val,eye,,,,,,,
+DummyLanguage-all-6,,DummyLanguage,tear,val,eyewater,,,,,,,
+DummyLanguage-all-7,,DummyLanguage,he-cat,val,maonan,,,,,,,
+DummyLanguage-all-8,,DummyLanguage,she-cat,val,nymao,,,,,,,

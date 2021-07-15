@@ -4,6 +4,7 @@ import pytest
 
 from pycldf import Dataset
 from pyclts import CLTS
+from pyconcepticon import Concepticon
 
 
 @pytest.fixture
@@ -22,8 +23,18 @@ def clts(repos):
 
 
 @pytest.fixture
+def concepticon(repos):
+    return Concepticon(repos / "concepticon")
+
+
+@pytest.fixture
 def ds_carvalhopurus(repos):
     return Dataset.from_metadata(repos / "carvalhopurus" / "cldf" / "cldf-metadata.json")
+
+
+@pytest.fixture
+def ds_features(repos):
+    return Dataset.from_metadata(repos / "features" / "cldf" / "cldf-metadata.json")
 
 
 @pytest.fixture
