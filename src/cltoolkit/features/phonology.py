@@ -19,6 +19,62 @@ def base_ratio(language, attr1=None, attr2=None):
     return len(getattr(language.sound_inventory, attr1)) / len(
             getattr(language.sound_inventory, attr2))
 
+def sound_symbolism(language, concepts, sounds, by_letter=True):
+    forms = []
+    for concept in concepts:
+        try:
+            forms += list(language.concepts[concept].forms)
+        except:
+            pass
+    for form in forms:
+        for k, soundset in sounds.items():
+            """ iterateu over each item here"""
+            if by_letter:
+                if [token in soundset:
+                    return k
+            else:
+                for features in soundset:
+                    if not set(features).difference(form.sounds[0].featureset):
+                        return k
+    if forms:
+        return len(sounds)+1
+    return len(sounds)+2
+
+
+sound_symbolism_of_bone = functools.partial(
+        sound_symbolism,
+        ["BONE"],
+        {
+            1: [["velar", "stop"]],
+            },
+        by_letter=False
+)
+
+sound_symbolism_of_stone = functools.partial(
+        sound_symbolism,
+        ["STONE"],
+        {
+            1: [["alveolar", "stop"], ["dental", "stop"]],
+            },
+        by_letter=False
+)
+
+
+sound_symbolism_of_I = functools.partial(
+        sound_symbolism,
+        ["I"],
+        {
+            1: [["velar", "nasal"], ["uvular", "nasal"]],
+            2: [
+                ["palatal", "nasal"], ["palatalized", "alveolar"], ["palatalized", "dental"]
+                ]
+            },
+        by_letter=False
+)
+
+
+
+
 
 vowel_quality_size = functools.partial(base_inventory_query, attr="vowels_by_quality")
 consonant_quality_size = functools.partial(base_inventory_query, attr="consonants_by_quality")
