@@ -59,14 +59,14 @@ def sound_match(sound, features):
 
 first_person_with_m = functools.partial(
         starts_with_sound,
-        ["I"],
-        [["bilabial", "nasal"],["labio-dental", "nasal"]]
+        concepts=["I"],
+        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
 )
 
 first_person_with_n = functools.partial(
         starts_with_sound,
-        ["I"],
-        [
+        concepts=["I"],
+        features=[
             ["dental", "nasal"],
             ["retroflex", "nasal"],
             ["alveolar", "nasal"],
@@ -78,8 +78,8 @@ first_person_with_n = functools.partial(
 
 second_person_with_t = functools.partial(
         starts_with_sound,
-        ["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        [
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[
             ["dental", "fricative"],
             ["dental", "affricate"],
             ["dental", "stop"],
@@ -100,8 +100,8 @@ second_person_with_t = functools.partial(
 
 second_person_with_n = functools.partial(
         starts_with_sound,
-        ["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        [
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[
             ["dental", "nasal"], 
             ["retroflex nasal"], 
             ["palatal", "nasal"], 
@@ -113,8 +113,8 @@ second_person_with_n = functools.partial(
 
 second_person_with_m = functools.partial(
         starts_with_sound,
-        ["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        [["bilabial", "nasal"],["labio-dental", "nasal"]]
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
         )
 
 
