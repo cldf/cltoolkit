@@ -64,7 +64,7 @@ def shares_substring(
                     for form in language.concepts[x].forms:
                         xforms += [form.form]
     for aform, bform in product(aforms, bforms):
-        for i in range(1, len(aform)-1):
+        for i in range(1, len(aform) - 1):
             morphA = aform[:i]
             morphB = aform[i:]
             if len(morphA) >= 3 and morphA in bform and bform != morphA:
@@ -165,5 +165,3 @@ has_hear_and_smell = partial(
     alist=["HEAR", "EAR OR HEAR", "HEAR OR LISTEN"],
     blist=["SMELL", "SMELL (PERCEIVE)"]
 )
-
-
