@@ -5,7 +5,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "consonant_quality_size",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "VowelQualitySize",
@@ -13,7 +14,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "vowel_quality_size",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "VowelSize",
@@ -21,7 +23,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "vowel_size",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "ConsonantSize",
@@ -29,7 +32,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "consonant_size",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "CVRatio",
@@ -37,7 +41,8 @@
     "type": "float",
     "module": "cltoolkit.features.phonology",
     "function": "cv_ratio",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "CVQualityRatio",
@@ -45,7 +50,8 @@
     "type": "float",
     "module": "cltoolkit.features.phonology",
     "function": "cv_quality_ratio",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "CVSoundRatio",
@@ -53,7 +59,8 @@
     "type": "float",
     "module": "cltoolkit.features.phonology",
     "function": "cv_sounds_ratio",
-    "note": ""
+    "note": "",
+    "requires": "inventory"
   },
   {
     "id": "HasNasalVowels",
@@ -65,7 +72,8 @@
       "1": "has nasal vowels",
       "2": "does not have nasal vowels"
     },
-    "note": "WALS 10A"
+    "note": "same as WALS 10A",
+    "requires": "inventory"
   },
   {
     "id": "HasRoundedVowels",
@@ -73,13 +81,14 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_rounded_vowels",
-    "note": "WALS 11A",
+    "note": "same as WALS 11A",
     "categories": {
       "1": "no high and no mid vowels",
       "2": "high and mid vowels",
       "3": "high and no mid vowels",
       "4": "mid and no high vowels"
-    }
+    },
+    "requires": "inventory"
   },
   {
     "id": "VelarNasal",
@@ -87,12 +96,13 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_engma",
-    "note": "WALS 9A",
+    "note": "same as WALS 9A",
     "categories": {
       "1": "velar nasal occurs in syllable-initial position",
       "2": "velar nasal occurs but not in syllable-initial position",
       "3": "velar nasal is missing"
-    }
+    },
+    "requires": "wordlist with tokens"
   },
   {
     "id": "PlosiveVoicingGaps",
@@ -100,14 +110,15 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_ptk",
-    "note": "WALS 5A",
+    "note": "same as WALS 5A",
     "categories": {
       "1": "no p and no g in the inventory",
       "2": "no g in the inventory",
       "3": "no p in the inventory",
       "4": "has less than 6 values of [p t t̪ k b d d̪ g]",
       "5": "has at least 6 values of [p t t̪ k b d d̪ g]"
-    }
+    },
+    "requires": "inventory"
   },
   {
     "id": "LacksCommonConsonants",
@@ -115,7 +126,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "lacks_common_consonants",
-    "note": "WALS 18A",
+    "note": "same as WALS 18A",
     "categories": {
       "1": "bilabials and fricatives and nasals occur",
       "2": "bilabials do not occur, fricatives and nasals occur",
@@ -123,7 +134,8 @@
       "4": "nasals do not occur, bilabials and fricatives occur",
       "5": "bilabials and nasals do not occur, fricatives occur",
       "6": "all other cases"
-    }
+    },
+    "requires": "inventory"
   },
   {
     "id": "HasUncommonConsonants",
@@ -131,7 +143,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_uncommon_consonants",
-    "note": "WALS 19A",
+    "note": "same as WALS 19A",
     "categories": {
       "1": "no clicsk and no dental fricatives and no labiovelars and no pharyngeals",
       "2": "clicks and pharyngeals and dental fricatives",
@@ -140,7 +152,8 @@
       "5": "pharyngeals",
       "6": "labiovelars",
       "7": "clicks"
-    }
+    },
+    "requires": "inventory"
   },
   {
     "id": "LegAndFoot",
@@ -153,7 +166,8 @@
       "true": "colexifies foot and leg",
       "false": "does not colexify foot and leg",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "PlosiveFricativeVoicing",
@@ -161,7 +175,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "plosive_fricative_voicing",
-    "note": ""
+    "note": "same as WALS 4A",
+    "requires": "inventory"
   },
   {
     "id": "UvularConsonants",
@@ -169,7 +184,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_uvular",
-    "note": ""
+    "note": "same as WALS 6A",
+    "requires": "inventory"
   },
   {
     "id": "GlottalizedConsonants",
@@ -177,7 +193,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_glottalized",
-    "note": ""
+    "note": "same as WALS 7A",
+    "requires": "inventory"
   },
   {
     "id": "HasLaterals",
@@ -185,7 +202,8 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_laterals",
-    "note": ""
+    "note": "same as WALS 8A",
+    "requires": "inventory"
   },
   {
     "id": "SyllableStructure",
@@ -193,12 +211,13 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_structure",
-    "note": "WALS 12A",
+    "note": "same as WALS 12A",
     "categories": {
       "1": "simple syllable structure (only CV attested)",
       "2": "moderately complex syllable structure (C(C)VC attested)",
       "3": "complex syllable structure"
-    }
+    },
+    "requires": "wordlist with tokens"
   },
   {
     "id": "ArmAndHand",
@@ -206,12 +225,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_arm_and_hand_colexified",
-    "note": "WALS 129A",
+    "note": "same as WALS 129A, same as APICS 112",
     "categories": {
       "true": "colexifies arm and hand",
       "false": "does not colexify arm and hand",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "BarkAndSkin",
@@ -224,7 +244,8 @@
       "true": "colexifies arm and hand",
       "false": "does not colexify arm and hand",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "FingerAndHand",
@@ -232,12 +253,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_and_hand_colexified",
-    "note": "WALS 130A",
+    "note": "same as WALS 130A",
     "categories": {
       "true": "colexifies finger and hand",
       "false": "does not colexify finger and hand",
       "null": "missing data" 
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "GreenAndBlue",
@@ -245,12 +267,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_green_and_blue_colexified",
-    "note": "APICS 116, WALS 134A",
+    "note": "similar to APICS 116, similar to WALS 134A",
     "categories": {
       "true": "colexifies green and blue",
       "false": "does not colexify green and blue",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "RedAndYellow",
@@ -258,12 +281,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_red_and_yellow_colexified",
-    "note": "",
+    "note": "similar to WALS 135A",
     "categories": {
       "true": "colexifies red and yellow",
       "false": "does not colexify red and yellow",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "FootAndToe",
@@ -276,7 +300,8 @@
       "true": "colexifies toe and foot",
       "false": "does not colexify red toe and foot",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "EyeInTear",
@@ -284,12 +309,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_eye_in_tear",
-    "note": "",
+    "note": "similar to APICS 111",
     "categories": {
       "true": "eye partially colexified in tear",
       "false": "eye not partially colexified in tear",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "WaterInTear",
@@ -297,12 +323,13 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_water_in_tear",
-    "note": "",
+    "note": "similar to APICS 111",
     "categories": {
       "true": "water partially colexified in tear",
       "false": "water not partially colexified in tear",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "TreeInBark",
@@ -315,7 +342,8 @@
       "true": "tree partially colexified in bark",
       "false": "tree not partially colexified in bark",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "SkinInBark",
@@ -328,7 +356,8 @@
       "true": "skin partially colexified in bark",
       "false": "skin not partially colexified in bark",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "FingerAndToe",
@@ -336,25 +365,140 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_and_toe",
-    "note": "APICS 113",
+    "note": "similar to APICS 113",
     "categories": {
       "true": "finger and toe colexified",
       "false": "finger and toe not colexified",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
   },
   {
     "id": "HairAndFeather",
-    "name": "hair and feature colexified or not",
+    "name": "hair and feather colexified or not",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_hair_and_feather",
-    "note": "APICS 114",
+    "note": "similar to APICS 114",
     "categories": {
       "true": "hair and feather colexified",
       "false": "hair and feather not colexified",
       "null": "missing data"
-    }
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "HearAndSmell",
+    "name": "hear and smell colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_hear_and_smell",
+    "note": "similar to APICS 115",
+    "categories": {
+      "true": "hear and smell colexified",
+      "false": "hear and smell not colexified",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "FirstPersonWithM",
+    "name": "fist person starts with an m-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "first_person_with_m",
+    "note": "similar to WALS 136B",
+    "categories": {
+      "true": "first person starts with [m] or similar",
+      "false": "first person starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "FirstPersonWithN",
+    "name": "fist person starts with an n-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "first_person_with_n",
+    "note": "see also: FirstPersonWithM, SecondPersonWithT, SecondPersonWithN, SecondPersonWithM",
+    "categories": {
+      "true": "first person starts with [n] or similar",
+      "false": "first person starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "SecondPersonWithT",
+    "name": "second person starts with a t-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "second_person_with_t",
+    "note": "see also: FirstPersonWithM, FirstPersonWithN, SecondPersonWithN, SecondPersonWithM",
+    "categories": {
+      "true": "second person starts with [t] or similar",
+      "false": "second person starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "SecondPersonWithM",
+    "name": "second person starts with an m-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "second_person_with_m",
+    "note": "see also: FirstPersonWithM, FirstPersonWithN, SecondPersonWithT, SecondPersonWithN",
+    "categories": {
+      "true": "second person starts with [n] or similar",
+      "false": "second person starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "SecondPersonWithN",
+    "name": "second person starts with an n-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "second_person_with_n",
+    "note": "see also: FirstPersonWithM, FirstPersonWithN, SecondPersonWithT, SecondPersonWithM",
+    "categories": {
+      "true": "second person starts with [n] or similar",
+      "false": "second person starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "SyllableOnset",
+    "name": "complexity of the syllable onset",
+    "type": "categorical",
+    "module": "cltoolkit.features.phonology",
+    "function": "syllable_onset",
+    "note": "same as APICS 118",
+    "categories": {
+      "1": "simple syllable onset (only CV attested)",
+      "2": "moderately complex syllable onset (C(C)V attested)",
+      "3": "complex syllable onset"
+    },
+    "requires": "wordlist with tokens"
+  },
+  {
+    "id": "SyllableOffset",
+    "name": "complexity of the syllable offset",
+    "type": "categorical",
+    "module": "cltoolkit.features.phonology",
+    "function": "syllable_offset",
+    "note": "same as APICS 118",
+    "categories": {
+      "1": "simple syllable offset (only CV attested)",
+      "2": "moderately complex syllable offset (CVC attested)",
+      "3": "slightly complex syllable offset (CV(C)C attested)",
+      "4": "complex syllable offset"
+    },
+    "requires": "wordlist with tokens"
   }
 
 ]

@@ -1,4 +1,4 @@
-"""Miscellaneous features collected typological databases.
+"""Miscellaneous features collected in typological databases.
 """
 import functools
 import collections
@@ -19,61 +19,103 @@ def base_ratio(language, attr1=None, attr2=None):
     return len(getattr(language.sound_inventory, attr1)) / len(
         getattr(language.sound_inventory, attr2))
 
-def sound_symbolism(language, concepts, sounds, by_letter=True):
+
+def starts_with_sound(language, concepts=None, features=None):
+    """
+    Check if a language has a form for a concept starting with some sound.
+
+    Note:
+    The test can be used to account for certain cases of sound symbolism, or
+    geographic / areal trends in languages to have word forms for certain
+    concepts starting in certain words.
+    """
     forms = []
     for concept in concepts:
-        try:
+        if concept in language.concepts:
             forms += list(language.concepts[concept].forms)
-        except:
-            pass
     for form in forms:
-        for k, soundset in sounds.items():
-            """ iterateu over each item here"""
-            if by_letter:
-                if [token in soundset:
-                    return k
-            else:
-                for features in soundset:
-                    if not set(features).difference(form.sounds[0].featureset):
-                        return k
+        if sound_match(form.sounds[0], features):
+            return True
     if forms:
-        return len(sounds)+1
-    return len(sounds)+2
+        return False
 
 
-sound_symbolism_of_bone = functools.partial(
-        sound_symbolism,
-        ["BONE"],
-        {
-            1: [["velar", "stop"]],
-            },
-        by_letter=False
+
+def sound_match(sound, features):
+    """
+    Match a sound by a subset of features.
+
+    Note:
+    The major idea of this function is to allow for the convenient matching of
+    some sounds by defining them in terms of a part of their features alone.
+    E.g., [m] and its variants can be defined as ["bilabial", "nasal"], since
+    we do not care about the rest of the features.
+    """
+    for feature in features:
+        if not set(feature).difference(sound.featureset):
+            return True
+    return False
+
+
+first_person_with_m = functools.partial(
+        starts_with_sound,
+        concepts=["I"],
+        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
 )
 
-sound_symbolism_of_stone = functools.partial(
-        sound_symbolism,
-        ["STONE"],
-        {
-            1: [["alveolar", "stop"], ["dental", "stop"]],
-            },
-        by_letter=False
+first_person_with_n = functools.partial(
+        starts_with_sound,
+        concepts=["I"],
+        features=[
+            ["dental", "nasal"],
+            ["retroflex", "nasal"],
+            ["alveolar", "nasal"],
+            ["alveolo-palatal", "nasal"],
+            ["retroflex", "nasal"]
+            ]
 )
 
 
-sound_symbolism_of_I = functools.partial(
-        sound_symbolism,
-        ["I"],
-        {
-            1: [["velar", "nasal"], ["uvular", "nasal"]],
-            2: [
-                ["palatal", "nasal"], ["palatalized", "alveolar"], ["palatalized", "dental"]
-                ]
-            },
-        by_letter=False
+second_person_with_t = functools.partial(
+        starts_with_sound,
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[
+            ["dental", "fricative"],
+            ["dental", "affricate"],
+            ["dental", "stop"],
+            ["alveolar", "fricative"],
+            ["alveolar", "affricate"],
+            ["alveolar", "stop"],
+            ["palatal", "fricative"],
+            ["palatal", "affricate"],
+            ["palatal", "stop"],
+            ["alveolo-palatal", "fricative"],
+            ["alveolo-palatal", "affricate"],
+            ["alveolo-palatal", "stop"],
+            ["retroflex-palatal", "fricative"],
+            ["retroflex-palatal", "affricate"],
+            ["retroflex-palatal", "stop"]
+            ]
 )
 
+second_person_with_n = functools.partial(
+        starts_with_sound,
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[
+            ["dental", "nasal"], 
+            ["retroflex nasal"], 
+            ["palatal", "nasal"], 
+            ["alveolo-palatal", "nasal"],
+            ["alveolar", "nasal"]
+            ]
+        )
 
 
+second_person_with_m = functools.partial(
+        starts_with_sound,
+        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
+        )
 
 
 vowel_quality_size = functools.partial(base_inventory_query, attr="vowels_by_quality")
@@ -93,6 +135,52 @@ cv_sounds_ratio = functools.partial(
     attr2="vowel_sounds")
 
 
+def is_voiced(sound):
+    """
+    Check if a sound is voiced or not.
+    """
+    if sound.obj.phonation == "voiced" or sound.obj.breathiness or sound.obj.voicing:
+        return True
+    return False
+
+
+def is_glide(sound):
+    """Check if sound is a glide or a liquid."""
+    return sound.obj.manner in {"trill", "approximant", "tap"}
+
+def is_implosive(sound):
+    """
+    This groups stops and affricates into a group of sounds.
+    """
+    return sound.obj.manner in {"implosive"}
+
+
+def stop_like(sound):
+    """
+    This groups stops and affricates into a group of sounds.
+    """
+    return sound.obj.manner in {"stop", "affricate"}
+
+
+def is_uvular(sound):
+    """
+    Check if a sound is uvular or not.
+    """
+    return sound.obj.place == "uvular"
+
+
+def is_ejective(sound):
+    return sound.obj.ejection
+
+
+def is_nasal(sound):
+    return sound.obj.manner == "nasal"
+
+
+def is_lateral(sound):
+    return sound.obj.airstream == "lateral"
+
+
 def plosive_fricative_voicing(language):
     """
     WALS Feature 4A, check for voiced and unvoiced sounds
@@ -106,8 +194,8 @@ def plosive_fricative_voicing(language):
     inv = language.sound_inventory
     voiced = {
         sound.obj.manner for sound in inv.consonants if
-        sound.obj.manner in ['stop', 'fricative'] and  # noqa: W504
-        (sound.obj.phonation == 'voiced' or sound.obj.breathiness or sound.obj.voicing)}
+        sound.obj.manner in ['stop', 'fricative'] and is_voiced(sound)# noqa: W504
+        }
     if not voiced:
         return 1
     if len(voiced) == 2:
@@ -157,7 +245,7 @@ def has_uvular(language):
     """
     inv = language.sound_inventory
     uvulars = set([sound.obj.manner for sound in inv.consonants if
-                   sound.obj.place == 'uvular'])
+                   is_uvular(sound)])
     if len(uvulars) == 0:
         return 1
     elif len(uvulars) == 1:
@@ -181,17 +269,14 @@ def has_glottalized(language):
     - 5: has ejectives and implosives but no ejective resonants
     - 6: has ejectives and ejective resonants, but no implosives
     - 7: has implosives and ejective resonants but no ejective stops
-    - 8:
     """
     inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
-                 sound.obj.ejection and sound.obj.manner in
-                 ['stop', 'affricate']]
-    resonants = [sound for sound in inv.consonants if
-                 sound.obj.ejection and sound.obj.manner not in
-                 ['stop', 'affricate']]
+                 is_ejective(sound) and stop_like(sound)]
+    resonants = [sound for sound in inv.consonants if 
+                 is_ejective(sound) and not stop_like(sound)]
     implosives = [sound for sound in inv.consonants if
-                  sound.obj.manner == 'implosive']
+                  is_implosive(sound)]
     if not ejectives and not implosives and not resonants:
         return 1
     elif ejectives and not implosives and not resonants:
@@ -206,9 +291,6 @@ def has_glottalized(language):
         return 6
     elif implosives and resonants and not ejectives:
         return 7
-    else:
-        return 8
-
 
 def has_laterals(language):
     """
@@ -220,24 +302,20 @@ def has_laterals(language):
     - 3: has laterals, but no stops and no l
     - 4: has laterals, including l and stops
     - 5: has laterals, including stops, but no l
-    - 6:
     """
     inv = language.sound_inventory
     laterals = set([sound.obj.manner for sound in
-                    inv.consonants if
-                    sound.obj.airstream == 'lateral'])
+                    inv.consonants if is_lateral(sound)])
     if not laterals:
         return 1
     elif len(laterals) == 1 and 'l' in inv.sounds:
         return 2
-    elif 'stop' not in laterals and 'l' not in inv.sounds:
+    elif "affricate" not in laterals and 'stop' not in laterals and 'l' not in inv.sounds:
         return 3
-    elif 'stop' in laterals and 'l' in inv.sounds:
+    elif ('stop' in laterals or "affricate" in laterals) and 'l' in inv.sounds:
         return 4
-    elif 'stop' in laterals and 'l' not in inv.sounds:
+    elif ('stop' in laterals or "affricate" in laterals) and 'l' not in inv.sounds:
         return 5
-    else:
-        return 6
 
 
 def has_engma(language):
@@ -252,7 +330,7 @@ def has_engma(language):
     inv = language.sound_inventory
     consonants = [sound.obj.s for sound in inv.consonants]
     if 'ŋ' in consonants:
-        for fid, pos in inv.sounds['ŋ'].occs:
+        for pos, fid in inv.sounds['ŋ'].occs:
             if pos == 0:
                 return 1
         return 2
@@ -275,18 +353,18 @@ def has_rounded_vowels(language):
     WALS Feature 11A, check for front rounded vowels.
     """
     high = [sound for sound in language.sound_inventory.vowels if
-            sound.obj.roundedness == 'rounded' and sound.obj.height in
-            ['open', 'near-open']]
+            sound.obj.roundedness == 'rounded' and sound.obj.centrality in
+            ['front', 'near-front']]
     mid = [sound for sound in language.sound_inventory.vowels if
-           sound.obj.roundedness == 'rounded' and sound.obj.height in ['open-mid', 'mid']]
+           sound.obj.roundedness == 'rounded' and sound.obj.centrality in ['central']]
     if not high and not mid:
         return 1
     elif high and mid:
         return 2
     elif high and not mid:
         return 3
-    else:
-        return 4
+
+
 
 
 def syllable_structure(language):
@@ -306,7 +384,7 @@ def syllable_structure(language):
         return 2
     if p == 2:
         for form, sounds, i in preceding[2]:
-            if sounds[1].manner not in ["trill", "approximant", "tap"]:
+            if not is_glide(sounds[1]):
                 return 3
         return 2
     return 3
@@ -327,30 +405,77 @@ def syllable_complexity(language):
     """
 
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
-    for form in language.forms:
+    for form in language.bipa_forms:
+        idx = 0
+        sounds_in_form = [s for s in form.sounds if s.type != "marker"]
         for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
-            for sound in map(lambda x: language.wordlist.ts[x], syllable):
-                if sound.type == 'marker':
-                    log.warning(syllable, form.id, form.segments)
+            sounds_in_syllable = []
+            for token in syllable:
+                sounds_in_syllable += [sounds_in_form[idx]]
+                idx += 1
+            for sound in sounds_in_syllable:
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
-                        'syllabic' not in sound.featureset:
+                        'syllabic' not in sound.obj.featureset:
                     count += 1
                     sounds += [sound]
                 else:
                     break
             preceding[count] += [(form, sounds, i)]
             sounds, count = [], 0
-            for sound in map(lambda x: language.wordlist.ts[x], syllable[::-1]):
+            for sound in sounds_in_syllable[::-1]:
                 if sound.type not in ['vowel', 'diphthong']:
                     if sound.type not in ['tone', 'marker']:
                         count += 1
                         sounds += [sound]
                 else:
                     break
-            following[count] += [sounds]
+            following[count] += [(form, sounds, i)]
 
     return preceding, following
+
+
+def syllable_onset(language):
+    """
+    Check for syllable complexity onset (based on APICS 118).
+    """
+    onsets = syllable_complexity(language)[0]
+    if max(onsets) <= 1:
+        return 1
+    elif max(onsets) == 2:
+        for form, sounds, i in onsets[2]:
+            if not is_glide(sounds[1]):
+                return 3
+        return 2
+    else:
+        return 3
+
+
+
+def syllable_offset(language):
+    """
+    Check for syllable complexity offset (based on APICS 119).
+    """
+    offsets = syllable_complexity(language)[1]
+    if max(offsets) == 0:
+        return 1
+    elif max(offsets) == 1:
+        return 2
+    elif max(offsets) == 2:
+        # important: the representation lists offsets in opposite order, so
+        # "karb" is rendered as "br"!
+        for form, sounds, i in offsets[2]:
+            if is_glide(sounds[1]):
+                pass
+            elif is_nasal(sounds[1]):
+                pass
+            elif stop_like(sounds[1]) and stop_like(sounds[0]):
+                pass
+            else:
+                return 4
+        return 3
+    else:
+        return 4
 
 
 def lacks_common_consonants(language):

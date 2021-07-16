@@ -1,2 +1,5 @@
 ID,Name,Glottocode,Glottolog_Name,ISO639P3code,Macroarea,Latitude,Longitude,Family
-DummyLanguage,DummyLanguage,ganc1239,Gan Chinese,gan,Eurasia,27.9896,115.166,Sino-Tibetan
+DummyLanguage,DummyLanguage,,,,Eurasia,27.9896,115.166,
+DummyLanguage1,DummyLanguage2,,,,Eurasia,27.9896,115.166,
+DummyLanguage2,DummyLanguage3,,,,Eurasia,27.9896,115.166,
+DummyLanguage3,DummyLanguage4,,,,Eurasia,27.9896,115.166,
