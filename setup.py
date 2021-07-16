@@ -9,7 +9,7 @@ setup(
     author_email='',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    keywords='',
+    keywords=['Concepticon v2.5.0'],
     license='MIT',
     url='https://github.com/cldf/cltoolkit',
     packages=find_packages(where='src'),

@@ -161,13 +161,14 @@ def lingpy_columns(**kw):
     """
     Define basic columns for export to LingPy wordlists.
     """
-    base = [(("form", "id"), "local_id"),
-                (("language", "id"), "doculect"),
-                (("concept", "id"), "concept"),
-                (("sense", "name"), "concept_in_source"),
-                (("form", "value"), "value"),
-                (("form", "form"), "form"),
-                (("form", "tokens"), "tokens")]
+    base = [
+        (("form", "id"), "local_id"),
+        (("language", "id"), "doculect"),
+        (("concept", "id"), "concept"),
+        (("sense", "name"), "concept_in_source"),
+        (("form", "value"), "value"),
+        (("form", "form"), "form"),
+        (("form", "tokens"), "tokens")]
     if "cognates" in kw:
         base += [(("cognates", kw["cognates"]), "cognacy")]
 

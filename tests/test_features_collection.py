@@ -31,4 +31,4 @@ def test_clts(clts):
                     for featureset in value:
                         for feature in featureset:
                             if feature not in clts.bipa.feature_system:
-                                raise ValueError("feature value {0} not in clts".format(concept))
+                                raise ValueError("feature value {0} not in clts".format(feature))

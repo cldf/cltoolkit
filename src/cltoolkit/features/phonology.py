@@ -4,7 +4,6 @@ import functools
 import collections
 
 from cltoolkit.util import iter_syllables
-from cltoolkit import log
 
 
 def base_inventory_query(language, attr=None):
@@ -40,7 +39,6 @@ def starts_with_sound(language, concepts=None, features=None):
         return False
 
 
-
 def sound_match(sound, features):
     """
     Match a sound by a subset of features.
@@ -58,65 +56,62 @@ def sound_match(sound, features):
 
 
 first_person_with_m = functools.partial(
-        starts_with_sound,
-        concepts=["I"],
-        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
+    starts_with_sound,
+    concepts=["I"],
+    features=[["bilabial", "nasal"], ["labio-dental", "nasal"]]
 )
 
 first_person_with_n = functools.partial(
-        starts_with_sound,
-        concepts=["I"],
-        features=[
-            ["dental", "nasal"],
-            ["retroflex", "nasal"],
-            ["alveolar", "nasal"],
-            ["alveolo-palatal", "nasal"],
-            ["retroflex", "nasal"]
-            ]
+    starts_with_sound,
+    concepts=["I"],
+    features=[
+        ["dental", "nasal"],
+        ["retroflex", "nasal"],
+        ["alveolar", "nasal"],
+        ["alveolo-palatal", "nasal"],
+        ["retroflex", "nasal"]
+    ]
 )
 
-
 second_person_with_t = functools.partial(
-        starts_with_sound,
-        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        features=[
-            ["dental", "fricative"],
-            ["dental", "affricate"],
-            ["dental", "stop"],
-            ["alveolar", "fricative"],
-            ["alveolar", "affricate"],
-            ["alveolar", "stop"],
-            ["palatal", "fricative"],
-            ["palatal", "affricate"],
-            ["palatal", "stop"],
-            ["alveolo-palatal", "fricative"],
-            ["alveolo-palatal", "affricate"],
-            ["alveolo-palatal", "stop"],
-            ["retroflex-palatal", "fricative"],
-            ["retroflex-palatal", "affricate"],
-            ["retroflex-palatal", "stop"]
-            ]
+    starts_with_sound,
+    concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+    features=[
+        ["dental", "fricative"],
+        ["dental", "affricate"],
+        ["dental", "stop"],
+        ["alveolar", "fricative"],
+        ["alveolar", "affricate"],
+        ["alveolar", "stop"],
+        ["palatal", "fricative"],
+        ["palatal", "affricate"],
+        ["palatal", "stop"],
+        ["alveolo-palatal", "fricative"],
+        ["alveolo-palatal", "affricate"],
+        ["alveolo-palatal", "stop"],
+        ["retroflex", "fricative"],
+        ["retroflex", "affricate"],
+        ["retroflex", "stop"]
+    ]
 )
 
 second_person_with_n = functools.partial(
-        starts_with_sound,
-        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        features=[
-            ["dental", "nasal"], 
-            ["retroflex nasal"], 
-            ["palatal", "nasal"], 
-            ["alveolo-palatal", "nasal"],
-            ["alveolar", "nasal"]
-            ]
-        )
-
+    starts_with_sound,
+    concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+    features=[
+        ["dental", "nasal"],
+        ["retroflex", "nasal"],
+        ["palatal", "nasal"],
+        ["alveolo-palatal", "nasal"],
+        ["alveolar", "nasal"]
+    ]
+)
 
 second_person_with_m = functools.partial(
-        starts_with_sound,
-        concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
-        features=[["bilabial", "nasal"],["labio-dental", "nasal"]]
-        )
-
+    starts_with_sound,
+    concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
+    features=[["bilabial", "nasal"], ["labio-dental", "nasal"]]
+)
 
 vowel_quality_size = functools.partial(base_inventory_query, attr="vowels_by_quality")
 consonant_quality_size = functools.partial(base_inventory_query, attr="consonants_by_quality")
@@ -147,6 +142,7 @@ def is_voiced(sound):
 def is_glide(sound):
     """Check if sound is a glide or a liquid."""
     return sound.obj.manner in {"trill", "approximant", "tap"}
+
 
 def is_implosive(sound):
     """
@@ -194,8 +190,8 @@ def plosive_fricative_voicing(language):
     inv = language.sound_inventory
     voiced = {
         sound.obj.manner for sound in inv.consonants if
-        sound.obj.manner in ['stop', 'fricative'] and is_voiced(sound)# noqa: W504
-        }
+        sound.obj.manner in ['stop', 'fricative'] and is_voiced(sound)  # noqa: W504
+    }
     if not voiced:
         return 1
     if len(voiced) == 2:
@@ -273,7 +269,7 @@ def has_glottalized(language):
     inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
                  is_ejective(sound) and stop_like(sound)]
-    resonants = [sound for sound in inv.consonants if 
+    resonants = [sound for sound in inv.consonants if
                  is_ejective(sound) and not stop_like(sound)]
     implosives = [sound for sound in inv.consonants if
                   is_implosive(sound)]
@@ -291,6 +287,7 @@ def has_glottalized(language):
         return 6
     elif implosives and resonants and not ejectives:
         return 7
+
 
 def has_laterals(language):
     """
@@ -363,8 +360,6 @@ def has_rounded_vowels(language):
         return 2
     elif high and not mid:
         return 3
-
-
 
 
 def syllable_structure(language):
@@ -449,7 +444,6 @@ def syllable_onset(language):
         return 2
     else:
         return 3
-
 
 
 def syllable_offset(language):

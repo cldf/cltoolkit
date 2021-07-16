@@ -1,10 +1,9 @@
-from cltoolkit import pkg_path
-from cltoolkit.features.collection import FeatureCollection, feature_data
 from cltoolkit.wordlist import Wordlist
 from cltoolkit.features.lexicon import (
         has_a_b_colexified,
         has_a_in_b,
         shares_substring)
+
 
 def test_colexification(repos, ds_features, clts):
     wl = Wordlist([ds_features], clts.bipa)
@@ -76,10 +75,3 @@ def test_colexification(repos, ds_features, clts):
             alist=["FEMALE GOAT"],
             blist=["MOUTH"]
             ) is None
-
-
-
-
-
-
-
