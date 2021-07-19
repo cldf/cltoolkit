@@ -73,6 +73,16 @@ first_person_with_n = functools.partial(
     ]
 )
 
+
+wind_with_f = functools.partial(
+    starts_with_sound,
+    concepts=["WIND"],
+    features=[
+        ["labio-dental", "fricative"],
+        ["labio-dental", "affricate"]
+        ]
+)
+
 second_person_with_t = functools.partial(
     starts_with_sound,
     concepts=["THOU", "THEE (OBLIQUE CASE OF YOU)"],
@@ -98,13 +108,13 @@ second_person_with_t = functools.partial(
 
 mother_with_m = functools.partial(
     starts_with_sound,
-    concept=["MOTHER"],
+    concepts=["MOTHER"],
     features=[["bilabial", "nasal"]]
 )
 
 father_with_p = functools.partial(
     starts_with_sound,
-    concept=["FATHER"],
+    concepts=["FATHER"],
     features=[["bilabial", "stop"], ["labio-dental", "fricative"]]
 )
 
@@ -331,7 +341,7 @@ def has_laterals(language):
 
 def has_engma(language):
     """
-    WALS Feature 9A, check for nasals.
+    WALS Feature 9A, check for velar nasal.
 
     Values:
     - 1: ŋ occurs in the beginning of a word
@@ -348,15 +358,34 @@ def has_engma(language):
     return 3
 
 
-def has_nasal_vowels(language):
+def has_sounds_with_feature(language, attr=None, features=None):
     """
-    WALS Feature 10A, check for nasal vowels.
+    Check if an inventory contains at least one sound with a certain number of features.
     """
-    vowels = [sound for sound in language.sound_inventory.vowels if
-              sound.obj.nasalization]
-    if vowels:
-        return 1
-    return 2
+    for sound in getattr(language.sound_inventory, attr):
+        for featureset in features:
+            if not set(featureset).difference(sound.featureset):
+                return True
+    return False
+
+
+has_nasal_vowels = functools.partial(
+    has_sounds_with_feature,
+    attr="vowels",
+    features=[["nasalized"]]
+)
+
+has_prenasalized_consonants = functools.partial(
+    has_sounds_with_feature,
+    attr="consonants",
+    features=[["pre-nasalized"]]
+)
+
+has_labiodental_fricative_consonants = functools.partial(
+    has_sounds_with_feature,
+    attr="consonants",
+    features=[["labio-dental", "fricative"], ["labio-dental", "affricate"]]
+)
 
 
 def has_rounded_vowels(language):

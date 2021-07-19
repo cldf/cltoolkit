@@ -127,7 +127,7 @@ def test_features(clts):
     language.sound_inventory = Inventory.from_list(
             clts.bipa,
             "p", "t", "χ", "ɓ", "a")
-    assert has_nasal_vowels(language) == 2
+    assert not has_nasal_vowels(language)
 
 
     assert has_rounded_vowels(language) == 1

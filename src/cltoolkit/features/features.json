@@ -65,12 +65,12 @@
   {
     "id": "HasNasalVowels",
     "name": "has nasal vowels or not",
-    "type": "categorical",
+    "type": "bool",
     "module": "cltoolkit.features.phonology",
     "function": "has_nasal_vowels",
     "categories": {
-      "1": "has nasal vowels",
-      "2": "does not have nasal vowels"
+      "true": "has nasal vowels",
+      "false": "does not have nasal vowels"
     },
     "note": "same as: WALS 10A",
     "requires": "inventory"
@@ -706,6 +706,46 @@
       "true": "mother starts with [m] or similar",
       "false": "mother starts with another sound",
       "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "WindWithF",
+    "name": "wind starts with f-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "wind_with_f",
+    "note": "",
+    "categories": {
+      "true": "wind starts with [f] or similar",
+      "false": "wind starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "HasPrenasalizedConsonants",
+    "name": "inventory has pre-nasalized consonants",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_prenasalized_consonants",
+    "note": "",
+    "categories": {
+      "true": "has pre-nasalized consonants",
+      "false": "has no pre-nasalized consonants"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "HasLabiodentalFricatives",
+    "name": "inventory has labio-dental fricatives or affricates",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "has_labiodental_fricative_consonants",
+    "note": "",
+    "categories": {
+      "true": "has labio-dental fricatives",
+      "false": "has no labio-dental fricatives"
     },
     "requires": "wordlist with segments"
   },
