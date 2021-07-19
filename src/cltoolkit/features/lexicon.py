@@ -64,7 +64,7 @@ def shares_substring(
                     for form in language.concepts[x].forms:
                         xforms += [form.form]
     for aform, bform in product(aforms, bforms):
-        for i in range(1, len(aform)-1):
+        for i in range(1, len(aform) - 1):
             morphA = aform[:i]
             morphB = aform[i:]
             if len(morphA) >= 3 and morphA in bform and bform != morphA:
@@ -153,14 +153,14 @@ has_finger_and_toe = partial(
     ablist=["FINGER OR TOE"]
 )
 
-has_hair_and_feather = partial(
+has_hair_and_feather_colexified = partial(
     has_a_b_colexified,
     alist=["HAIR (BODY)", "HAIR (HEAD)", "HAIR"],
     blist=["FEATHER", "FUR"],
     ablist=["FEATHER OR FUR OR HAIR", "HAIR OR FUR"],
 )
 
-has_hear_and_smell = partial(
+has_hear_and_smell_colexified = partial(
     has_a_b_colexified,
     alist=["HEAR", "EAR OR HEAR", "HEAR OR LISTEN"],
     blist=["SMELL", "SMELL (PERCEIVE)"]
@@ -172,10 +172,93 @@ has_skin_in_lip = partial(
     blist=["LIP"]
 )
 
-
 has_mouth_in_lip = partial(
     has_a_in_b,
-    alist=["MOUTH", ],
+    alist=["MOUTH"],
     blist=["LIP"]
 )
 
+has_foot_in_toe = partial(
+    has_a_in_b,
+    alist=["FOOT", "FOOT OR LEG"],
+    blist=["TOE", "FINGER OR TOE"]
+)
+
+has_hand_in_finger = partial(
+    has_a_in_b,
+    alist=["HAND", "ARM OR HAND"],
+    blist=["FINGER", "FINGER OR TOE"]
+)
+
+has_elbow_and_knee_colexified = partial(
+    has_a_b_colexified,
+    alist=["ELBOW"],
+    blist=["KNEE"]
+)
+
+has_bow_in_elbow = partial(
+    has_a_in_b,
+    alist=["BOW"],
+    blist=["ELBOW"]
+)
+
+has_corner_in_elbow = partial(
+    has_a_in_b,
+    alist=["CORNER"],
+    blist=["ELBOW"]
+)
+
+has_three_in_eight = partial(
+    has_a_in_b,
+    alist=["THREE"],
+    blist=["EIGHT"]
+)
+
+has_three_in_thirteen = partial(
+    has_a_in_b,
+    alist=["THREE"],
+    blist=["THIRTEEN"]
+)
+
+common_substring_in_man_and_woman = partial(
+    shares_substring,
+    alist=["MAN", "MALE PERSON"],
+    blist=["WOMAN", "FEMALE PERSON"]
+)
+
+common_substring_in_boy_and_girl = partial(
+    shares_substring,
+    alist=["BOY", "BOY OR SON"],
+    blist=["GIRL", "DAUGHTER OR GIRL"]
+)
+
+common_substring_in_fear_and_surprise = partial(
+    shares_substring,
+    alist=["FEAR (BE AFRAID)", "FEAR (FRIGHT)", "FEAR OR FRIGHTEN"],
+    blist=["SURPRISE (SOMEBODY)", "SURPRISED", "SURPRISE (FEELING)"]
+)
+
+common_substring_in_elbow_and_knee = partial(
+    shares_substring,
+    alist=["ELBOW"],
+    blist=["KNEE"]
+)
+
+
+has_fear_and_surprise_colexified = partial(
+    has_a_b_colexified,
+    alist=["FEAR (BE AFRAID)", "FEAR (FRIGHT)", "FEAR OR FRIGHTEN"],
+    blist=["SURPRISE (SOMEBODY)", "SURPRISED", "SURPRISE (FEELING)"]
+)
+
+has_see_and_know_colexified = partial(
+    has_a_b_colexified,
+    alist=["SEE"],
+    blist=["KNOW", "KNOW (SOMETHING)"]
+)
+
+has_see_and_understand_colexified = partial(
+    has_a_b_colexified,
+    alist=["SEE"],
+    blist=["UNDERSTAND"]
+)

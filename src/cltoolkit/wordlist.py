@@ -62,14 +62,14 @@ class Wordlist:
         self.graphemes = DictTuple(self.graphemes.values())
         self.sounds = DictTuple(self.sounds.values())
 
-        for l in self.languages:
-            l.forms = DictTuple(l.forms.values())
-            l.senses = DictTuple(l.senses.values())
-            l.concepts = DictTuple(l.concepts.values())
-            for c in l.concepts:
+        for lg in self.languages:
+            lg.forms = DictTuple(lg.forms.values())
+            lg.senses = DictTuple(lg.senses.values())
+            lg.concepts = DictTuple(lg.concepts.values())
+            for c in lg.concepts:
                 c.forms = DictTuple(c.forms.values())
                 c.senses = DictTuple(c.senses.values())
-            for s in l.senses:
+            for s in lg.senses:
                 s.forms = DictTuple(s.forms.values())
 
         for s in self.senses:

@@ -72,7 +72,7 @@
       "1": "has nasal vowels",
       "2": "does not have nasal vowels"
     },
-    "note": "same as WALS 10A",
+    "note": "same as: WALS 10A",
     "requires": "inventory"
   },
   {
@@ -81,7 +81,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_rounded_vowels",
-    "note": "same as WALS 11A",
+    "note": "same as: WALS 11A",
     "categories": {
       "1": "no high and no mid vowels",
       "2": "high and mid vowels",
@@ -96,7 +96,7 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_engma",
-    "note": "same as WALS 9A",
+    "note": "same as: WALS 9A",
     "categories": {
       "1": "velar nasal occurs in syllable-initial position",
       "2": "velar nasal occurs but not in syllable-initial position",
@@ -110,7 +110,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_ptk",
-    "note": "same as WALS 5A",
+    "note": "same as: WALS 5A",
     "categories": {
       "1": "no p and no g in the inventory",
       "2": "no g in the inventory",
@@ -126,7 +126,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "lacks_common_consonants",
-    "note": "same as WALS 18A",
+    "note": "same as: WALS 18A",
     "categories": {
       "1": "bilabials and fricatives and nasals occur",
       "2": "bilabials do not occur, fricatives and nasals occur",
@@ -143,7 +143,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_uncommon_consonants",
-    "note": "same as WALS 19A",
+    "note": "same as: WALS 19A",
     "categories": {
       "1": "no clicsk and no dental fricatives and no labiovelars and no pharyngeals",
       "2": "clicks and pharyngeals and dental fricatives",
@@ -175,7 +175,7 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "plosive_fricative_voicing",
-    "note": "same as WALS 4A",
+    "note": "same as: WALS 4A",
     "requires": "inventory"
   },
   {
@@ -184,7 +184,7 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_uvular",
-    "note": "same as WALS 6A",
+    "note": "same as: WALS 6A",
     "requires": "inventory"
   },
   {
@@ -193,7 +193,7 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_glottalized",
-    "note": "same as WALS 7A",
+    "note": "same as: WALS 7A",
     "requires": "inventory"
   },
   {
@@ -202,7 +202,7 @@
     "type": "integer",
     "module": "cltoolkit.features.phonology",
     "function": "has_laterals",
-    "note": "same as WALS 8A",
+    "note": "same as: WALS 8A",
     "requires": "inventory"
   },
   {
@@ -211,7 +211,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_structure",
-    "note": "same as WALS 12A",
+    "note": "same as: WALS 12A",
     "categories": {
       "1": "simple syllable structure (only CV attested)",
       "2": "moderately complex syllable structure (C(C)VC attested)",
@@ -225,7 +225,7 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_arm_and_hand_colexified",
-    "note": "same as WALS 129A, same as APICS 112",
+    "note": "same as: WALS 129A, APICS 112",
     "categories": {
       "true": "colexifies arm and hand",
       "false": "does not colexify arm and hand",
@@ -253,7 +253,7 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_and_hand_colexified",
-    "note": "same as WALS 130A",
+    "note": "same as: WALS 130A",
     "categories": {
       "true": "colexifies finger and hand",
       "false": "does not colexify finger and hand",
@@ -267,7 +267,7 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_green_and_blue_colexified",
-    "note": "similar to APICS 116, similar to WALS 134A",
+    "note": "similar to: APICS 116, WALS 134A",
     "categories": {
       "true": "colexifies green and blue",
       "false": "does not colexify green and blue",
@@ -281,7 +281,7 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_red_and_yellow_colexified",
-    "note": "similar to WALS 135A",
+    "note": "similar to: WALS 135A",
     "categories": {
       "true": "colexifies red and yellow",
       "false": "does not colexify red and yellow",
@@ -290,8 +290,8 @@
     "requires": "wordlist with forms"
   },
   {
-    "id": "FootAndToe",
-    "name": "foot and toe colexified or not",
+    "id": "ToeAndFoot",
+    "name": "toe and foot colexified or not",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_toe_and_foot_colexified",
@@ -304,15 +304,155 @@
     "requires": "wordlist with forms"
   },
   {
+    "id": "SeeAndKnow",
+    "name": "see and know colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_see_and_know_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies see and know",
+      "false": "does not colexify red see and know",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "SeeAndUnderstand",
+    "name": "see and understand colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_see_and_understand_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies see and understand",
+      "false": "does not colexify red see and understand",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "ElbowAndKnee",
+    "name": "elbow and knee colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_elbow_and_knee_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies elbow and knee",
+      "false": "does not colexify red elbow and knee",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "FearAndSurprise",
+    "name": "fear and surprise colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_fear_and_surprise_colexified",
+    "note": "",
+    "categories": {
+      "true": "colexifies fear and surprise",
+      "false": "does not colexify red fear and surprise",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "CommonSubstringInElbowAndKnee",
+    "name": "elbow and knee are partially colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "common_substring_in_elbow_and_knee",
+    "note": "",
+    "categories": {
+      "true": "common substring in elbow and knee",
+      "false": "no common substring in elbow and knee",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "CommonSubstringInManAndWoman",
+    "name": "man and woman are partially colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "common_substring_in_man_and_woman",
+    "note": "",
+    "categories": {
+      "true": "common substring in man and woman",
+      "false": "no common substring in man and woman",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "CommonSubstringInFearAndSurprise",
+    "name": "fear and surprise are partially colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "common_substring_in_fear_and_surprise",
+    "note": "",
+    "categories": {
+      "true": "common substring in fear and surprise",
+      "false": "no common substring in fear and surprise",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "CommonSubstringInBoyAndGirl",
+    "name": "boy and girl are partially colexified or not",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "common_substring_in_boy_and_girl",
+    "note": "",
+    "categories": {
+      "true": "common substring in boy and girl",
+      "false": "no common substring in boy and girl",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
     "id": "EyeInTear",
     "name": "eye partially colexified in tear",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_eye_in_tear",
-    "note": "similar to APICS 111",
+    "note": "similar to: APICS 111",
     "categories": {
       "true": "eye partially colexified in tear",
       "false": "eye not partially colexified in tear",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "BowInElbow",
+    "name": "bow partially colexified in elbow",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_bow_in_elbow",
+    "note": "",
+    "categories": {
+      "true": "bow partially colexified in elbow",
+      "false": "bow not partially colexified in elbow",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "CornerInElbow",
+    "name": "corner partially colexified in elbow",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_corner_in_elbow",
+    "note": "",
+    "categories": {
+      "true": "corner partially colexified in elbow",
+      "false": "corner not partially colexified in elbow",
       "null": "missing data"
     },
     "requires": "wordlist with forms"
@@ -323,7 +463,7 @@
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_water_in_tear",
-    "note": "similar to APICS 111",
+    "note": "similar to: APICS 111",
     "categories": {
       "true": "water partially colexified in tear",
       "false": "water not partially colexified in tear",
@@ -360,12 +500,96 @@
     "requires": "wordlist with forms"
   },
   {
+    "id": "MouthInLip",
+    "name": "mouth partially colexified in lip",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_mouth_in_lip",
+    "note": "",
+    "categories": {
+      "true": "mouth partially colexified in lip",
+      "false": "mouth not partially colexified in lip",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "SkinInLip",
+    "name": "skin partially colexified in lip",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_skin_in_lip",
+    "note": "",
+    "categories": {
+      "true": "skin partially colexified in lip",
+      "false": "skin not partially colexified in lip",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "HandInFinger",
+    "name": "hand partially colexified in finger",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_hand_in_finger",
+    "note": "",
+    "categories": {
+      "true": "hand partially colexified in finger",
+      "false": "hand not partially colexified in finger",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "FootInToe",
+    "name": "foot partially colexified in toe",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_foot_in_toe",
+    "note": "",
+    "categories": {
+      "true": "foot partially colexified in toe",
+      "false": "foot not partially colexified in toe",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "ThreeInEight",
+    "name": "three partially colexified in eight",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_three_in_eight",
+    "note": "",
+    "categories": {
+      "true": "three partially colexified in eight",
+      "false": "three not partially colexified in eight",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
+    "id": "ThreeInThirteen",
+    "name": "three partially colexified in thirteen",
+    "type": "bool",
+    "module": "cltoolkit.features.lexicon",
+    "function": "has_three_in_thirteen",
+    "note": "",
+    "categories": {
+      "true": "three partially colexified in thirteen",
+      "false": "three not partially colexified in thirteen",
+      "null": "missing data"
+    },
+    "requires": "wordlist with forms"
+  },
+  {
     "id": "FingerAndToe",
     "name": "finger and toe colexified or not",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
     "function": "has_finger_and_toe",
-    "note": "similar to APICS 113",
+    "note": "similar to: APICS 113",
     "categories": {
       "true": "finger and toe colexified",
       "false": "finger and toe not colexified",
@@ -378,8 +602,8 @@
     "name": "hair and feather colexified or not",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_hair_and_feather",
-    "note": "similar to APICS 114",
+    "function": "has_hair_and_feather_colexified",
+    "note": "similar to: APICS 114",
     "categories": {
       "true": "hair and feather colexified",
       "false": "hair and feather not colexified",
@@ -392,8 +616,8 @@
     "name": "hear and smell colexified or not",
     "type": "bool",
     "module": "cltoolkit.features.lexicon",
-    "function": "has_hear_and_smell",
-    "note": "similar to APICS 115",
+    "function": "has_hear_and_smell_colexified",
+    "note": "similar to: APICS 115",
     "categories": {
       "true": "hear and smell colexified",
       "false": "hear and smell not colexified",
@@ -407,7 +631,7 @@
     "type": "bool",
     "module": "cltoolkit.features.phonology",
     "function": "first_person_with_m",
-    "note": "similar to WALS 136B",
+    "note": "similar to: WALS 136B",
     "categories": {
       "true": "first person starts with [m] or similar",
       "false": "first person starts with another sound",
@@ -472,12 +696,40 @@
     "requires": "wordlist with segments"
   },
   {
+    "id": "MotherWithM",
+    "name": "mother starts with m-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "mother_with_m",
+    "note": "see also: FatherWithP",
+    "categories": {
+      "true": "mother starts with [m] or similar",
+      "false": "mother starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
+    "id": "FatherWithP",
+    "name": "father starts with p-sound",
+    "type": "bool",
+    "module": "cltoolkit.features.phonology",
+    "function": "father_with_p",
+    "note": "see also: MotherWithM",
+    "categories": {
+      "true": "father starts with [p] or similar",
+      "false": "father starts with another sound",
+      "null": "missing data"
+    },
+    "requires": "wordlist with segments"
+  },
+  {
     "id": "SyllableOnset",
     "name": "complexity of the syllable onset",
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_onset",
-    "note": "same as APICS 118",
+    "note": "same as: APICS 118",
     "categories": {
       "1": "simple syllable onset (only CV attested)",
       "2": "moderately complex syllable onset (C(C)V attested)",
@@ -491,7 +743,7 @@
     "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "syllable_offset",
-    "note": "same as APICS 118",
+    "note": "same as: APICS 118",
     "categories": {
       "1": "simple syllable offset (only CV attested)",
       "2": "moderately complex syllable offset (CVC attested)",
@@ -500,5 +752,6 @@
     },
     "requires": "wordlist with tokens"
   }
+
 
 ]
