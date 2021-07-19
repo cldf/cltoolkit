@@ -92,9 +92,9 @@ second_person_with_t = functools.partial(
             ["alveolo-palatal", "fricative"],
             ["alveolo-palatal", "affricate"],
             ["alveolo-palatal", "stop"],
-            ["retroflex-palatal", "fricative"],
-            ["retroflex-palatal", "affricate"],
-            ["retroflex-palatal", "stop"]
+            ["retroflex", "fricative"],
+            ["retroflex", "affricate"],
+            ["retroflex", "stop"]
             ]
 )
 

@@ -166,4 +166,16 @@ has_hear_and_smell = partial(
     blist=["SMELL", "SMELL (PERCEIVE)"]
 )
 
+has_skin_in_lip = partial(
+    has_a_in_b,
+    alist=["SKIN", "SKIN (HUMAN)", "SKIN (ANIMAL)"],
+    blist=["LIP"]
+)
+
+
+has_mouth_in_lip = partial(
+    has_a_in_b,
+    alist=["MOUTH", ],
+    blist=["LIP"]
+)
 
