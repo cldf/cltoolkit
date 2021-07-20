@@ -93,7 +93,7 @@
   {
     "id": "VelarNasal",
     "name": "has the velar nasal (engma)",
-    "type": "integer",
+    "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_engma",
     "note": "same as: WALS 9A",
@@ -172,38 +172,68 @@
   {
     "id": "PlosiveFricativeVoicing",
     "name": "voicing in plosives and fricatives",
-    "type": "integer",
+    "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "plosive_fricative_voicing",
     "note": "same as: WALS 4A",
-    "requires": "inventory"
+    "requires": "inventory",
+    "categories": {
+      "1": "no voicing contrast",
+      "2": "in plosives alone",
+      "3": "in fricatives alone",
+      "4": "in both plosives and fricatives"
+    }
   },
   {
     "id": "UvularConsonants",
     "name": "presence of uvular consonants",
-    "type": "integer",
+    "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_uvular",
     "note": "same as: WALS 6A",
-    "requires": "inventory"
+    "requires": "inventory",
+    "categories": {
+      "1": "no uvulars",
+      "2": "has one uvular and this one is a stop",
+      "3": "has one uvular and this one is no stop",
+      "4": "has uvulars"
+    }
   },
   {
     "id": "GlottalizedConsonants",
     "name": "presence of glottalized consonants",
-    "type": "integer",
+    "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_glottalized",
     "note": "same as: WALS 7A",
-    "requires": "inventory"
+    "requires": "inventory",
+    "categories": {
+      "1": "no ejectives, no implosives",
+      "2": "has ejective stops or affricates, but no implosives",
+      "3": "has implosive stops or affricates but no ejectives",
+      "4": "has ejectives resonants",
+      "5": "has ejectives and implosives but no ejective resonants",
+      "6": "has ejectives and ejective resonants, but no implosives",
+      "7": "has implosives and ejective resonants but no ejective stops",
+      "8": "has implosvies, ejective resonants, and ejective stops"
+    }
   },
   {
     "id": "HasLaterals",
-    "name": "presence of glottalized consonants",
-    "type": "integer",
+    "name": "presence of lateral consonants",
+    "type": "categorical",
     "module": "cltoolkit.features.phonology",
     "function": "has_laterals",
     "note": "same as: WALS 8A",
-    "requires": "inventory"
+    "requires": "inventory",
+    "categories": {
+      "1": "no laterals",
+      "2": "only lateral [l]",
+      "3": "has laterals, but no stops in laterals and no [l]",
+      "4": "has laterals, including [l] and stops",
+      "5": "has laterals, inlcuding stops, but no [l]",
+      "6": "has laterals, but no stops and no [l]"
+    }
   },
   {
     "id": "SyllableStructure",

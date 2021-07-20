@@ -273,8 +273,7 @@ def has_uvular(language):
             return 2
         else:
             return 3
-    else:
-        return 4
+    return 4
 
 
 def has_glottalized(language):
@@ -289,6 +288,7 @@ def has_glottalized(language):
     - 5: has ejectives and implosives but no ejective resonants
     - 6: has ejectives and ejective resonants, but no implosives
     - 7: has implosives and ejective resonants but no ejective stops
+    - 8: has implosvies, ejective resonants, and ejective stops
     """
     inv = language.sound_inventory
     ejectives = [sound for sound in inv.consonants if
@@ -311,6 +311,7 @@ def has_glottalized(language):
         return 6
     elif implosives and resonants and not ejectives:
         return 7
+    return 8
 
 
 def has_laterals(language):
@@ -323,6 +324,7 @@ def has_laterals(language):
     - 3: has laterals, but no stops and no l
     - 4: has laterals, including l and stops
     - 5: has laterals, including stops, but no l
+    - 6: has laterals, but no stops, no l
     """
     inv = language.sound_inventory
     laterals = set([sound.obj.manner for sound in
@@ -337,6 +339,7 @@ def has_laterals(language):
         return 4
     elif ('stop' in laterals or "affricate" in laterals) and 'l' not in inv.sounds:
         return 5
+    return 6
 
 
 def has_engma(language):
@@ -403,6 +406,7 @@ def has_rounded_vowels(language):
         return 2
     elif high and not mid:
         return 3
+    return 4
 
 
 def syllable_structure(language):
