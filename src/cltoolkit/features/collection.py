@@ -3,34 +3,80 @@ Basic handler for feature collections.
 """
 import textwrap
 import importlib
+import collections
 
 import attr
 from pycldf.util import DictTuple
 from clldutils import jsonlib
 
-from cltoolkit import pkg_path
-
-__all__ = ['feature_data', 'Feature', 'FeatureCollection']
+__all__ = ['Feature', 'FeatureCollection']
 
 
-def feature_data():
-    return jsonlib.load(pkg_path / 'features' / 'features.json')
+def get_callable(s):
+    """
+    A "feature function" can be specified in 3 ways:
+    - as Python callable object
+    - as string of dot-separated names, where the part up to the last dot is taken as Python
+      module spec, and the last name as symbol to be looked up in this module
+    - as `dict` with keys `class`, `args`, `kwargs`, where `class` is interpreted as above, and
+      `args` and `kwargs` are passed into the imported class to initialize an instance, the
+      `__call__` method of which will be used as "feature function".
+    """
+    if callable(s):
+        return s
+    if isinstance(s, str):
+        comps = s.split('.')
+        return getattr(importlib.import_module('.'.join(comps[:-1])), comps[-1])
+    if isinstance(s, dict):
+        return get_callable(s['class'])(*s.get('args') or [], **s.get('kwargs') or {})
+    raise ValueError(s)
 
 
 @attr.s(repr=False)
 class Feature:
     id = attr.ib()
     name = attr.ib()
-    type = attr.ib()
-    module = attr.ib()
-    function = attr.ib()
-    note = attr.ib()
+    function = attr.ib(converter=get_callable)
+    type = attr.ib(default=None)
+    note = attr.ib(default=None)
     categories = attr.ib(default=None)
     requires = attr.ib(default=None)
 
+    def __attrs_post_init__(self):
+        if hasattr(self.function, 'categories'):
+            self.categories = self.function.categories
+        if hasattr(self.function, 'rtype'):
+            self.type = self.function.rtype
+        func = getattr(self.function, '__call__', self.function)
+        if hasattr(func, 'requires'):
+            self.requires = func.requires
+
+    def to_json(self):
+        def j(o):
+            if isinstance(o, (list, tuple)):
+                return [j(oo) for oo in o]
+            if hasattr(o, 'to_json'):
+                return o.to_json()
+            if callable(o):
+                comps = [o.__module__] if o.__module__ != 'builtins' else []
+                if type(o) == type(get_callable):
+                    comps.append(o.__name__)
+                else:
+                    comps.append(o.__class__.__name__)
+                res = '.'.join(comps)
+                if type(o) == type(get_callable):
+                    return res
+                return {'class': res}
+            return o
+        return collections.OrderedDict([
+            (f.name, j(getattr(self, f.name))) for f in attr.fields(self.__class__)])
+
+    @property
+    def doc(self):
+        return getattr(self.function, 'doc', None) or textwrap.dedent(self.function.__doc__ or '')
+
     def help(self):
-        if self.function.__doc__:
-            print(textwrap.dedent(self.function.__doc__))
+        print(self.doc)
 
     def __call__(self, param):
         return self.function(param)
@@ -39,22 +85,22 @@ class Feature:
         return "<Feature " + self.id + ">"
 
 
-class FeatureCollection:
-    def __init__(self, features):
-        self.features = DictTuple(features)
+class FeatureCollection(DictTuple):
+    """
+    A collection of `Feature` instances.
+    """
+    def dump(self, path):
+        """
+        Dump feature specifications as JSON file.
+        """
+        jsonlib.dump([f.to_json() for f in self], path, indent=4)
 
     @classmethod
-    def from_metadata(cls, path):
-        return cls.from_data(jsonlib.load(path))
-
-    @classmethod
-    def from_data(cls, data):
-        features = []
-
-        for vals in data:
-            vals["function"] = getattr(importlib.import_module(vals["module"]), vals["function"])
-            features += [Feature(**vals)]
-        return cls(features)
+    def load(cls, path):
+        """
+        Load feature specifications from a JSON file (e.g. as created with `FeatureCollection.dump`)
+        """
+        return cls([Feature(**f) for f in jsonlib.load(path)])
 
     def __call__(self, feature, language):
-        return self.features[feature](language)
+        return self[feature](language)

@@ -1,77 +1,24 @@
+import pytest
+
 from cltoolkit.wordlist import Wordlist
-from cltoolkit.features.lexicon import (
-        has_a_b_colexified,
-        has_a_in_b,
-        shares_substring)
+from cltoolkit.features.lexicon import Colexification, PartialColexification, SharedSubstring
 
 
-def test_colexification(repos, ds_features, clts):
+@pytest.mark.parametrize(
+    'func,res',
+    [
+        (Colexification("HAND", "ARM"), True),
+        (Colexification("FEMALE GOAT", "ARM", ablist="ARM OR HAND"), False),
+        (Colexification("FEMALE GOAT", "ARM"), False),
+        (Colexification("FEMALE GOAT", "MOUTH"), None),
+        (PartialColexification("WATER", "TEAR (OF EYE)"), True),
+        (PartialColexification("WATER", "EYE"), False),
+        (PartialColexification("WATER", "MOUTH"), None),
+        (SharedSubstring("FEMALE GOAT", "MALE GOAT"), True),
+        (SharedSubstring("FEMALE GOAT", "ARM"), False),
+        (SharedSubstring("FEMALE GOAT", "MOUTH"), None),
+    ]
+)
+def test_colexification(repos, ds_features, clts, func, res):
     wl = Wordlist([ds_features], clts.bipa)
-    language = wl.languages[0]
-
-    assert has_a_b_colexified(
-            language,
-            alist=["HAND"],
-            blist=["ARM"],
-            )
-    assert has_a_b_colexified(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["ARM"],
-            ablist=["ARM OR HAND"]
-            ) == False
-    
-    assert has_a_b_colexified(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["ARM"],
-            ) == False
-
-
-    assert has_a_b_colexified(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["ARM"],
-            ) == False
-
-    assert has_a_b_colexified(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["MOUTH"]
-            ) is None
-
-    assert has_a_in_b(
-            language,
-            alist=["WATER"],
-            blist=["TEAR (OF EYE)"]
-            )
-
-    assert has_a_in_b(
-            language,
-            alist=["WATER"],
-            blist=["EYE"]
-            ) == False
-
-    assert has_a_in_b(
-            language,
-            alist=["WATER"],
-            blist=["MOUTH"]
-            ) is None
-
-    assert shares_substring(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["MALE GOAT"]
-            )
-
-    assert shares_substring(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["ARM"]
-            ) == False
-
-    assert shares_substring(
-            language,
-            alist=["FEMALE GOAT"],
-            blist=["MOUTH"]
-            ) is None
+    assert func(wl.languages[0]) is res

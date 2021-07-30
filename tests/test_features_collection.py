@@ -1,34 +1,56 @@
-from cltoolkit import pkg_path
+import pytest
+
 from cltoolkit.wordlist import Wordlist
-from cltoolkit.features.collection import FeatureCollection, feature_data
+from cltoolkit.features import FEATURES, FeatureCollection, Feature
+from cltoolkit.features.lexicon import ConceptComparison
+from cltoolkit.features.phonology import StartsWithSound
 
 
-def test_FeatureCollection(ds_carvalhopurus, clts):
+def test_Feature(capsys):
+    with pytest.raises(ValueError):
+        _ = Feature(id=1, name='n', function=3)
+
+    class Func:
+        """computes stuff"""
+        def __call__(self, language):
+            return language
+
+    f = Feature(id="xy", name='n', function=Func())
+    assert f(5) == 5
+    assert f.to_json()['function'] == {'class': 'test_features_collection.Func'}
+    assert "computes stuff" in f.doc
+    f.help()
+    out, _ = capsys.readouterr()
+    assert "computes" in out
+    assert "xy" in str(f)
+
+
+def test_FeatureCollection(ds_carvalhopurus, clts, tmp_path):
     wl = Wordlist([ds_carvalhopurus], clts.bipa)
-    c = FeatureCollection.from_metadata(pkg_path / 'features' / 'features.json')
-    _ = c('ConsonantQualitySize', wl.languages['carvalhopurus-Apurina'])
-    assert repr(FeatureCollection.from_data(feature_data()).features['ConsonantQualitySize'])
+    _ = FEATURES('ConsonantQualitySize', wl.languages['carvalhopurus-Apurina'])
+    FEATURES.dump(tmp_path / 'test.json')
+    fc = FeatureCollection.load(tmp_path / 'test.json')
+    for s, o in zip(FEATURES, fc):
+        assert s.id == o.id and s.categories == o.categories
+    #assert all(s.id == o.id and s.categories == o.categories
+    #           for s, o in zip(FEATURES.features, fc.features))
 
 
 def test_concepticon(concepticon):
     valid_glosses = set([c.gloss for c in concepticon.conceptsets.values()])
-    c = FeatureCollection.from_metadata(pkg_path / 'features' / 'features.json')
-    for feature in c.features:
-        if hasattr(feature.function, "keywords"):
-            for key, value in feature.function.keywords.items():
-                if key in ["alist", "blist", "ablist", "concepts"]:
-                    for concept in value:
-                        if concept not in valid_glosses:
-                            raise ValueError("gloss {0} not in concepticon".format(concept))
+    for feature in FEATURES:
+        if isinstance(feature.function, (ConceptComparison, StartsWithSound)):
+            for key in ["alist", "blist", "ablist", "concepts"]:
+                value = getattr(feature.function, key, [])
+                for concept in value:
+                    if concept not in valid_glosses:  # pragma: no cover
+                        raise ValueError("gloss {0} not in concepticon".format(concept))
 
 
 def test_clts(clts):
-    c = FeatureCollection.from_metadata(pkg_path / 'features' / 'features.json')
-    for feature in c.features:
-        if hasattr(feature.function, "keywords"):
-            for key, value in feature.function.keywords.items():
-                if key in ["features"]:
-                    for featureset in value:
-                        for feature in featureset:
-                            if feature not in clts.bipa.feature_system:
-                                raise ValueError("feature value {0} not in clts".format(feature))
+    for feature in FEATURES:
+        if isinstance(feature.function, StartsWithSound):
+            for featureset in feature.function.features:
+                for feature in featureset:
+                    if feature not in clts.bipa.feature_system:  # pragma: no cover
+                        raise ValueError("feature value {0} not in clts".format(feature))

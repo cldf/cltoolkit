@@ -10,7 +10,7 @@ class Dataset(BaseDataset):
     dir = Path(__file__).parent
     id = "wangbcd"
 
-    def cmd_download(self, args):
+    def cmd_download(self, args):  # pragma: no cover
         self.raw_dir.download_and_unpack(
             "https://zenodo.org/record/16760/files/"
             "Network-perspectives-on-Chinese-dialect-history-1.zip",
@@ -21,7 +21,7 @@ class Dataset(BaseDataset):
 
         self.raw_dir.write("sources.bib", getEvoBibAsBibtex("Hamed2006", "List2015d"))
 
-    def cmd_makecldf(self, args):
+    def cmd_makecldf(self, args):  # pragma: no cover
         wl = lingpy.Wordlist(self.raw_dir.joinpath("chinese.tsv").as_posix())
         maxcogid = 0
 

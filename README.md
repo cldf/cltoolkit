@@ -1,5 +1,8 @@
 # CL Toolkit
 
+[![Build Status](https://github.com/cldf/cltoolkit/workflows/tests/badge.svg)](https://github.com/cldf/cltoolkit/actions?query=workflow%3Atests)
+[![PyPI](https://img.shields.io/pypi/v/cltoolkit.svg)](https://pypi.org/project/cltoolkit)
+
 Toolkit for processing Cross-Linguistic data.
 
 ## Data Structures in Wordlists

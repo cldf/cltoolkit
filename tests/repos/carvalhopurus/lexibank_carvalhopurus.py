@@ -29,7 +29,7 @@ class Dataset(BaseDataset):
             missing_data=[('-')]
             )
 
-    def cmd_makecldf(self, args):
+    def cmd_makecldf(self, args):  # pragma: no cover
         """
         Convert the raw data to a CLDF dataset.
         """
