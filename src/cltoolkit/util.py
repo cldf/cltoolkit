@@ -1,7 +1,6 @@
 """
 Utility functions for lexicore.
 """
-import inspect
 import pathlib
 import functools
 
@@ -9,17 +8,10 @@ from lingpy.sequence.sound_classes import syllabify
 from lingpy.basictypes import lists
 from pycldf import Dataset
 from pycldf.util import DictTuple as BaseDictTuple
-from pylexibank import Dataset as LexiSet
 
 __all__ = [
     'valid_tokens', 'identity', 'jaccard', 'iter_syllables',
     'DictTuple', 'NestedAttribute', 'MutatedDataValue', 'MutatedNestedDictValue']
-
-
-def dataset_from_module(mod):
-    for _, obj in inspect.getmembers(mod):
-        if inspect.isclass(obj) and issubclass(obj, LexiSet) and not obj.__subclasses__():
-            return Dataset.from_metadata(obj().cldf_dir / 'cldf-metadata.json')
 
 
 def valid_tokens(sounds):

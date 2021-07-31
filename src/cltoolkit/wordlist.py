@@ -1,7 +1,6 @@
 """
 Class for handling wordlist data.
 """
-import importlib
 import collections
 from typing import Optional
 
@@ -9,7 +8,7 @@ from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
 
-from cltoolkit.util import identity, lingpy_columns, valid_tokens, dataset_from_module, DictTuple
+from cltoolkit.util import identity, lingpy_columns, valid_tokens, DictTuple
 from cltoolkit import log
 from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound, Cognate
 
@@ -85,11 +84,6 @@ class Wordlist:
         for s in self.sounds:
             s.graphemes_in_source = DictTuple(s.graphemes_in_source.values())
             s.forms = DictTuple(s.forms.values())
-
-    @classmethod
-    def from_lexibank(cls, datasets, ts: TranscriptionSystem, **kw):
-        dsets = [dataset_from_module(importlib.import_module('lexibank_' + ds)) for ds in datasets]
-        return cls(dsets, ts, **kw)
 
     def _add_languages(self, dsid, dataset):
         """Append languages to the wordlist.

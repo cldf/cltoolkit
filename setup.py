@@ -20,11 +20,8 @@ setup(
     platforms='any',
     python_requires='>=3.5',
         install_requires=[
-        'pylexibank',
         'attrs>=18.2',
-        'cldfbench>=1.2.3',
         'clldutils>=3.5',
-        'cldfcatalog>=1.3',
         'csvw>=1.6',
         'pycldf',
         'uritemplate',
@@ -38,6 +35,7 @@ setup(
             'pytest-mock',
             'pytest-cov',
             'coverage',
+            'pyconcepticon',
         ],
     },
     classifiers=[

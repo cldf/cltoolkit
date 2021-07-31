@@ -10,10 +10,7 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
 
     with sys_path(repos / "carvalhopurus"):
         with sys_path(repos / "wangbcd"):
-            wl2 = Wordlist.from_lexibank(["carvalhopurus", "wangbcd"], clts.bipa)
             wl = Wordlist(datasets, clts.bipa)
-
-            assert wl2.height == wl.height
 
             apurina = wl.languages["carvalhopurus-Apurina"]
 
