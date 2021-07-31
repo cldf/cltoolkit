@@ -1,6 +1,7 @@
 """
 Basic handler for feature collections.
 """
+import typing
 import textwrap
 import importlib
 import collections
@@ -12,7 +13,7 @@ from clldutils import jsonlib
 __all__ = ['Feature', 'FeatureCollection']
 
 
-def get_callable(s):
+def get_callable(s: typing.Union[str, dict, typing.Callable]) -> typing.Callable:
     """
     A "feature function" can be specified in 3 ways:
     - as Python callable object
@@ -51,7 +52,7 @@ class Feature:
         if hasattr(func, 'requires'):
             self.requires = func.requires
 
-    def to_json(self):
+    def to_json(self) -> dict:
         def j(o):
             if isinstance(o, (list, tuple)):
                 return [j(oo) for oo in o]
@@ -72,7 +73,7 @@ class Feature:
             (f.name, j(getattr(self, f.name))) for f in attr.fields(self.__class__)])
 
     @property
-    def doc(self):
+    def doc(self) -> str:
         return getattr(self.function, 'doc', None) or textwrap.dedent(self.function.__doc__ or '')
 
     def help(self):

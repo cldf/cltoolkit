@@ -19,7 +19,6 @@ from .reqs import requires
 
 assert requires
 
-
 FEATURES = FeatureCollection(Feature(**f) for f in [
     {
         "id": "ConsonantQualitySize",

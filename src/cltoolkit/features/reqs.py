@@ -38,6 +38,15 @@ def concepts(language):
 
 
 def requires(*what):
+    """
+    Decorator to specify requirements of a feature callable.
+
+    .. code-block: python
+
+        @requires(segments)
+        def count_tokens(language):
+            return 5
+    """
     def decorator_requires(func):
         func.requires = what
 
