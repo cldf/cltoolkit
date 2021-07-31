@@ -53,7 +53,9 @@ class Feature:
             self.requires = func.requires
 
     def to_json(self) -> dict:
-        def j(o):
+        def j(o, field=None):
+            if field == 'type':
+                return getattr(o, '__name__', str(o))
             if isinstance(o, (list, tuple)):
                 return [j(oo) for oo in o]
             if hasattr(o, 'to_json'):
@@ -70,7 +72,7 @@ class Feature:
                 return {'class': res}
             return o
         return collections.OrderedDict([
-            (f.name, j(getattr(self, f.name))) for f in attr.fields(self.__class__)])
+            (f.name, j(getattr(self, f.name), field=f.name)) for f in attr.fields(self.__class__)])
 
     @property
     def doc(self) -> str:

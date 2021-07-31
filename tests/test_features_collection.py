@@ -3,7 +3,7 @@ import pytest
 from cltoolkit.wordlist import Wordlist
 from cltoolkit.features import FEATURES, FeatureCollection, Feature
 from cltoolkit.features.lexicon import ConceptComparison
-from cltoolkit.features.phonology import StartsWithSound
+from cltoolkit.features.phonology import StartsWithSound, InventoryQuery
 
 
 def test_Feature(capsys):
@@ -23,6 +23,7 @@ def test_Feature(capsys):
     out, _ = capsys.readouterr()
     assert "computes" in out
     assert "xy" in str(f)
+    assert Feature(id=1, name='x', function=InventoryQuery('v')).to_json()['type'] == 'int'
 
 
 def test_FeatureCollection(ds_carvalhopurus, clts, tmp_path):
