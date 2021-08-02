@@ -27,10 +27,10 @@ class CLCore:
         return "<" + self.__class__.__name__ + " " + self.id + ">"
 
 
-@attr.s(repr=False)
-class CLCoreWithForms(CLCore):
+@attr.s
+class WithForms:
     """
-    Base class to represent data in a wordlist that contains forms.
+    Mixin to represent data in a wordlist that contains forms.
     """
     forms = attr.ib(default=None)
 
@@ -43,26 +43,17 @@ class CLCoreWithForms(CLCore):
         return DictTuple([f for f in self.forms if f.segments])
 
 
-@attr.s(repr=False)
-class CLBase(CLCore):
+@attr.s
+class WithDataset:
     """
-    Base class to represent data in a wordlist from a specific dataset.
-    """
-    obj = attr.ib(default=None, repr=False)
-    dataset = attr.ib(default=None, repr=False)
-
-
-@attr.s(repr=False)
-class CLBaseWithForms(CLCoreWithForms):
-    """
-    Base class to represent data in a wordlist from a specific dataset with forms.
+    Mixin to represent data in a wordlist from a specific dataset.
     """
     obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)
-class Language(CLBaseWithForms):
+class Language(CLCore, WithForms, WithDataset):
     """
     Base class for handling languages.
 
@@ -90,7 +81,7 @@ class Language(CLBaseWithForms):
 
 
 @attr.s(repr=False, eq=False)
-class Sense(CLBaseWithForms):
+class Sense(CLCore, WithForms, WithDataset):
     """
     Concepts in source are the original concepts in the individual wordlists.
 
@@ -123,7 +114,7 @@ class Sense(CLBaseWithForms):
 
 
 @attr.s(repr=False, eq=False)
-class Concept(CLCoreWithForms):
+class Concept(CLCore, WithForms):
     """
     Base class for the concepts in a dataset.
 
@@ -169,7 +160,7 @@ class Concept(CLCoreWithForms):
 
 
 @attr.s(repr=False)
-class Form(CLBase):
+class Form(CLCore, WithDataset):
     """
     Base class for handling the form part of linguistic signs.
 
@@ -204,13 +195,13 @@ class Form(CLBase):
 
 
 @attr.s(repr=False)
-class Cognate(CLBase):
+class Cognate(CLCore, WithDataset):
     form = attr.ib(default=None, repr=False)
     contribution = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)
-class Grapheme(CLBaseWithForms):
+class Grapheme(CLCore, WithDataset, WithForms):
     grapheme = attr.ib(default=None)
     occs = attr.ib(default=None)
     language = attr.ib(default=None)
@@ -220,7 +211,7 @@ class Grapheme(CLBaseWithForms):
 
 
 @attr.s(repr=False, eq=False)
-class Sound(CLCoreWithForms):
+class Sound(CLCore, WithForms):
     """
     All sounds in a dataset.
     """

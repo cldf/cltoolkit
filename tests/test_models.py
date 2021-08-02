@@ -1,6 +1,6 @@
 from cltoolkit import Wordlist
 from cltoolkit.models import (
-        CLCore, CLCoreWithForms, CLBase, CLBaseWithForms,
+        CLCore, WithForms, WithDataset,
         Language, Sense, Form, Sound,
         Inventory)
 
@@ -12,20 +12,19 @@ def test_core_models(clts, ds_dummy):
     clc = CLCore(id="a", wordlist=wl, data={})
     assert clc.__repr__() == "<CLCore a>"
 
-    clcwf = CLCoreWithForms(id="a", wordlist=wl, data={}, forms=[wl.forms[0],
-        wl.forms[1]])
-    assert len(clcwf.bipa_forms) == 2
-    assert len(clcwf.segmented_forms) == 2
+    wf = WithForms(forms=[wl.forms[0], wl.forms[1]])
+    assert len(wf.bipa_forms) == 2
+    assert len(wf.segmented_forms) == 2
 
 
-    clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
-    assert repr(clb) == "<CLBase a>"
+    #clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
+    #assert repr(clb) == "<CLBase a>"
 
-    clbwf = CLBaseWithForms(id="a", wordlist=wl, data={}, obj=clc, dataset="a",
-            forms=[wl.forms[0],
-            wl.forms[1]])
-    assert len(clbwf.bipa_forms) == 2
-    assert len(clbwf.segmented_forms) == 2
+    #clbwf = CLBaseWithForms(id="a", wordlist=wl, data={}, obj=clc, dataset="a",
+    #        forms=[wl.forms[0],
+    #        wl.forms[1]])
+    #assert len(clbwf.bipa_forms) == 2
+    #assert len(clbwf.segmented_forms) == 2
 
     lng = Language(
             id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],
