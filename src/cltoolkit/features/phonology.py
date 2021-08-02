@@ -4,7 +4,7 @@ import textwrap
 import collections
 
 from cltoolkit.util import iter_syllables
-from .reqs import requires, inventory, segments
+from .reqs import requires, inventory, segments, inventory_with_occurrences
 from . import util
 
 
@@ -301,14 +301,16 @@ class HasLaterals(WithInventory):
         return 6
 
 
-class HasEngma(WithInventory):
+class HasEngma(util.FeatureFunction):
     categories = {
         1: "velar nasal occurs in syllable-initial position",
         2: "velar nasal occurs but not in syllable-initial position",
         3: "velar nasal is missing"
     }
 
-    def run(self, inv):
+    @requires(inventory_with_occurrences)
+    def __call__(self, language):
+        inv = language.sound_inventory
         consonants = [sound.obj.s for sound in inv.consonants]
         if 'ŋ' in consonants:
             for pos, fid in inv.sounds['ŋ'].occs:

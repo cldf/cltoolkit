@@ -1,6 +1,7 @@
 import functools
 
-__all__ = ['MissingRequirement', 'inventory', 'segments', 'concepts', 'requires']
+__all__ = ['MissingRequirement', 'inventory', 'segments', 'concepts', 'requires',
+           'inventory_with_occurrences']
 
 
 class MissingRequirement(ValueError):
@@ -15,6 +16,13 @@ def inventory(language):
         return bool(len(language.sound_inventory))
     except (AttributeError, TypeError):
         return False
+
+
+def inventory_with_occurrences(language):
+    """
+    Make sure a language has a precomputed sound inventory with occurrence lists per sound.
+    """
+    return inventory(language) and bool(len(language.sound_inventory.sounds[0].occs))
 
 
 def segments(language):

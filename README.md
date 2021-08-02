@@ -29,7 +29,8 @@ properties to link to reference catalogs, i.e.
 - link sound segments to CLTS B(road) IPA.
 
 `cltoolkit` objects exploit this extended comparability by distinguishing "senses" and "concepts" and "segments"
-and "bipa_segments" and providing convenient access to comparable subsets of objects in an aggregation.
+and "bipa_segments" and providing convenient access to comparable subsets of objects in an aggregation 
+(see [models.py](src/cltoolkit/models.py)).
 
 See [example.md](example.md) for a walk-through of the typical workflow with `cltoolkit`.
 
