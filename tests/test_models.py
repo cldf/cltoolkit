@@ -13,18 +13,12 @@ def test_core_models(clts, ds_dummy):
     assert clc.__repr__() == "<CLCore a>"
 
     wf = WithForms(forms=[wl.forms[0], wl.forms[1]])
-    assert len(wf.bipa_forms) == 2
+    assert len(wf.forms_with_sounds) == 2
     assert len(wf.segmented_forms) == 2
 
 
     #clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
     #assert repr(clb) == "<CLBase a>"
-
-    #clbwf = CLBaseWithForms(id="a", wordlist=wl, data={}, obj=clc, dataset="a",
-    #        forms=[wl.forms[0],
-    #        wl.forms[1]])
-    #assert len(clbwf.bipa_forms) == 2
-    #assert len(clbwf.segmented_forms) == 2
 
     lng = Language(
             id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],

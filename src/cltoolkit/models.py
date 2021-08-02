@@ -35,7 +35,7 @@ class WithForms:
     forms = attr.ib(default=None)
 
     @cached_property
-    def bipa_forms(self):
+    def forms_with_sounds(self):
         return DictTuple([f for f in self.forms if f.tokens])
 
     @cached_property

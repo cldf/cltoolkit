@@ -21,7 +21,7 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
             assert len(wl.languages["carvalhopurus-Yine"].segmented_forms) == 195
             assert len(wl.languages["carvalhopurus-Yine"].sound_inventory) == 29
             assert len(wl.languages["carvalhopurus-Apurina"].segmented_forms) == 128
-            assert len(wl.languages["carvalhopurus-Apurina"].bipa_forms) == 127
+            assert len(wl.languages["carvalhopurus-Apurina"].forms_with_sounds) == 127
             assert len(wl.languages["carvalhopurus-Apurina"].concepts) == 105
             assert len(wl.languages["carvalhopurus-Apurina"].forms) == 128
     
@@ -51,32 +51,3 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
     wl.load_cognates()
     lpwl = wl.as_lingpy(columns=lingpy_columns(cognates="default"))
     assert "cognacy" in lpwl.columns
-
-
-#
-#
-#wl = load_data()
-#print("HEIGHT", wl.height)
-#print("WIDTH ", wl.width)
-#print("LENGTH", len(wl))
-#print("")
-#table = []
-#coverage = wl.coverage()
-#for language in wl.languages:
-#    table += [(language.name, len(language.forms), len(language.concepts),
-#        len(language.segmented_forms), 
-#        len(language.bipa_forms),
-#        len(language.inventory),
-#        coverage[language.id]
-#        )]
-#print(tabulate(table,
-#        headers = [
-#            "language",
-#            "forms",
-#            "concepts",
-#            "segmented forms",
-#            "bipa forms",
-#            "inventory",
-#            "coverage"
-#            ]
-#        ))

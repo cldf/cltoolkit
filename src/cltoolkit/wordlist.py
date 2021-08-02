@@ -48,7 +48,7 @@ class Wordlist:
             self._add_senses(dsid, dataset)
             self._add_forms(dsid, dataset)
 
-        self.bipa_forms = DictTuple([f for f in self.forms.values() if f.tokens])
+        self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.tokens])
         self.segmented_forms = DictTuple([f for f in self.forms.values() if f.segments])
         log.info("loaded wordlist with {0} concepts and {1} languages".format(
             self.height, self.width))
@@ -329,7 +329,7 @@ class Wordlist:
     def length(self):
         return len(self)
 
-    def coverage(self, concepts="concepts", aspect="bipa_forms"):
+    def coverage(self, concepts="concepts", aspect="forms_with_sounds"):
         out = {}
         for language in self.languages:
             out[language.id] = 0

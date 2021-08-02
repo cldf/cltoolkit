@@ -369,7 +369,7 @@ class HasRoundedVowels(WithInventory):
         return 4
 
 
-def syllable_complexity(bipa_forms):
+def syllable_complexity(forms_with_sounds):
     """
     Compute the major syllabic patterns for a language.
 
@@ -384,7 +384,7 @@ def syllable_complexity(bipa_forms):
     """
 
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
-    for form in bipa_forms:
+    for form in forms_with_sounds:
         idx = 0
         sounds_in_form = [s for s in form.sounds if s.type != "marker"]
         for i, syllable in enumerate(iter_syllables(form)):
@@ -420,7 +420,7 @@ class WithSyllableComplexity(util.FeatureFunction):
 
     @requires(segments)
     def __call__(self, language):
-        return self.run(*syllable_complexity(language.bipa_forms))
+        return self.run(*syllable_complexity(language.forms_with_sounds))
 
 
 class SyllableStructure(WithSyllableComplexity):
