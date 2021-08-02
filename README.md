@@ -18,8 +18,8 @@ of these) will be processable with `cltoolkit` on reasonable hardware in minutes
 
 The main idea behind `cltoolkit` is making (aggregated) CLDF data easily amenable for computation
 of *linguistic features* in a general sense (e.g. typological features, etc.). This is done by
-- providing the data for processing code as Python objects,
-- providing [a framework](src/cltoolkit/__init__.py) that makes feature computation as simple as writing a Python 
+- providing the data for processing code [as Python objects](https://cltoolkit.readthedocs.io/en/latest/models.html),
+- providing [a framework](https://cltoolkit.readthedocs.io/en/latest/features.html) that makes feature computation as simple as writing a Python 
   function acting on a `cltoolkit.models.Language` object.
 
 In general, aggregated CLDF Wordlists provide limited (automated) comparability across datasets (e.g. one could
@@ -29,27 +29,9 @@ properties to link to reference catalogs, i.e.
 - link senses to Concepticon concepts,
 - link sound segments to CLTS B(road) IPA.
 
-`cltoolkit` objects exploit this extended comparability by distinguishing "senses" and "concepts" and "segments"
-and "bipa_segments" and providing convenient access to comparable subsets of objects in an aggregation 
+`cltoolkit` objects exploit this extended comparability by distinguishing "senses" and "concepts" and "graphemes"
+and "sounds" and providing convenient access to comparable subsets of objects in an aggregation 
 (see [models.py](src/cltoolkit/models.py)).
 
 See [example.md](example.md) for a walk-through of the typical workflow with `cltoolkit`.
 
-
-## Data Structures in Wordlists
-
-Lexical and phoneme inventory data is available in very different degrees of normalization. 
-As a result, we have to represent the degree by which a collection of CLDF datasets forming a wordlist 
-is comparable in a detailed class structure.
-
-This results in the following models, which we distinguish:
-
-
-name | description
---- | --- 
-[Sense](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Sense) | A sense description (concept in source) which does not need to be linked to the Concepticon.
-[Concept](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Concept) | A sense that has a valid link to a Concepticon concept set.
-[Form](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Form) | A form.
-[Language](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Sense) | An object representing the data of a language or variety.
-
-`DictTuple`s of these objects are available as attributes of a `Wordlist` instance.
