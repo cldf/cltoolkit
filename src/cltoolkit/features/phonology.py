@@ -88,7 +88,7 @@ class StartsWithSound(util.FeatureFunction):
             if concept in language.concepts:
                 for form in language.concepts[concept].forms:
                     has_forms = True
-                    if sound_match(form.sounds[0], self.features):
+                    if sound_match(form.sound_objects[0], self.features):
                         return True
         return False if has_forms else None
 
@@ -386,7 +386,7 @@ def syllable_complexity(forms_with_sounds):
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
     for form in forms_with_sounds:
         idx = 0
-        sounds_in_form = [s for s in form.sounds if s.type != "marker"]
+        sounds_in_form = [s for s in form.sound_objects if s.type != "marker"]
         for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
             sounds_in_syllable = []

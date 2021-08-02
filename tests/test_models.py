@@ -31,7 +31,7 @@ def test_core_models(clts, ds_dummy):
     assert wl.senses[0].__eq__(wl.senses[0]) == True
     assert wl.concepts[0].__repr__() == '<Concept all>'
 
-    assert len(wl.forms[0].sounds) == len(wl.forms[0].graphemes) == len(
+    assert len(wl.forms[0].sound_objects) == len(wl.forms[0].graphemes) == len(
             wl.forms[0].tokens)
     assert len(wl.sounds[0]) == 1
     assert wl.sounds[0].__eq__(wl.sounds[1]) == False
@@ -58,8 +58,8 @@ def test_core_models(clts, ds_dummy):
     assert form.__repr__() == '<Form b>'
     assert form.grapheme_objects[0].grapheme == "a"
 
-    assert form.sounds[0] != form.grapheme_objects[0]
-    assert str(form.grapheme_objects[0]) == str(form.sounds[0])
+    assert form.sound_objects[0] != form.grapheme_objects[0]
+    assert str(form.grapheme_objects[0]) == str(form.sound_objects[0])
     
 
 def test_inventory(clts):

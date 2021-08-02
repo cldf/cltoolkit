@@ -172,14 +172,16 @@ class Form(CLCore, WithDataset):
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
+    #: Sounds (graphemes recognized in the specified transcription system) in the segmented form:
     tokens = attr.ib(default=None, repr=False) # -> sounds
     value = MutatedDataValue("Value")
     form = MutatedDataValue("Form")
+    #: Graphemes in the segmented form:
     graphemes = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
     cognates = attr.ib(default=None, repr=False)
 
     @property
-    def sounds(self):
+    def sound_objects(self):
         if self.tokens:
             return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in
                     self.tokens]
