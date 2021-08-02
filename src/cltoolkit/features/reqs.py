@@ -22,7 +22,7 @@ def inventory_with_occurrences(language):
     """
     Make sure a language has a precomputed sound inventory with occurrence lists per sound.
     """
-    return inventory(language) and bool(len(language.sound_inventory.sounds[0].occs))
+    return inventory(language) and bool(len(language.sound_inventory.sounds[0].occurrences))
 
 
 def graphemes(language):

@@ -159,13 +159,13 @@ class Wordlist:
                             dataset=dsid,
                             wordlist=self,
                             obj=sound,
-                            occs=collections.OrderedDict(),
+                            occurrences=collections.OrderedDict(),
                             forms=collections.OrderedDict([(new_form.id, new_form)]))
                     self.graphemes[gid].forms[new_form.id] = new_form
                     try:
-                        self.graphemes[gid].occs[lid].append((i, new_form))
+                        self.graphemes[gid].occurrences[lid].append((i, new_form))
                     except KeyError:
-                        self.graphemes[gid].occs[lid] = [(i, new_form)]
+                        self.graphemes[gid].occurrences[lid] = [(i, new_form)]
                     if new_form.sounds:
                         sid = str(sound)
                         if sid not in self.sounds:
@@ -174,15 +174,15 @@ class Wordlist:
                                 graphemes_in_source=collections.OrderedDict(),
                                 grapheme=str(sound),
                                 obj=sound,
-                                occs=collections.OrderedDict(),
+                                occurrences=collections.OrderedDict(),
                                 forms=collections.OrderedDict([(new_form.id, new_form)]),
                                 id=sid)
                         self.sounds[sid].forms[new_form.id] = new_form
                         self.sounds[sid].graphemes_in_source[gid] = self.graphemes[gid]
                         try:
-                            self.sounds[sid].occs[lid].append((i, new_form))
+                            self.sounds[sid].occurrences[lid].append((i, new_form))
                         except KeyError:
-                            self.sounds[sid].occs[lid] = [(i, new_form)]
+                            self.sounds[sid].occurrences[lid] = [(i, new_form)]
             if cid and cid not in self.languages[lid].concepts:
                 self.languages[lid].concepts[cid] = Concept.from_concept(
                     self.concepts[cid],

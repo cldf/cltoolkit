@@ -313,7 +313,7 @@ class HasEngma(util.FeatureFunction):
         inv = language.sound_inventory
         consonants = [sound.obj.s for sound in inv.consonants]
         if 'ŋ' in consonants:
-            for pos, fid in inv.sounds['ŋ'].occs:
+            for pos, fid in inv.sounds['ŋ'].occurrences:
                 if pos == 0:
                     return 1
             return 2
