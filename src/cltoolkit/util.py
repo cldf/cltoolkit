@@ -10,11 +10,11 @@ from pycldf import Dataset
 from pycldf.util import DictTuple as BaseDictTuple
 
 __all__ = [
-    'valid_tokens', 'identity', 'jaccard', 'iter_syllables',
+    'valid_sounds', 'identity', 'jaccard', 'iter_syllables',
     'DictTuple', 'NestedAttribute', 'MutatedDataValue', 'MutatedNestedDictValue']
 
 
-def valid_tokens(sounds):
+def valid_sounds(sounds):
     """
     Make sure tokens conform to transcription system.
 
@@ -59,7 +59,7 @@ def iter_syllables(form):
     """
     Return the syllables of a given form with tokens.
     """
-    for morpheme in form.tokens.n:
+    for morpheme in form.sounds.n:
         for syllable in syllabify(morpheme, output='nested'):
             yield syllable
 
@@ -160,7 +160,7 @@ def lingpy_columns(**kw):
         (("sense", "name"), "concept_in_source"),
         (("form", "value"), "value"),
         (("form", "form"), "form"),
-        (("form", "tokens"), "tokens")]
+        (("form", "sounds"), "tokens")]
     if "cognates" in kw:
         base += [(("cognates", kw["cognates"]), "cognacy")]
 

@@ -5,7 +5,7 @@ from cltoolkit.util import (
     identity,
     jaccard,
     iter_syllables,
-    valid_tokens,
+    valid_sounds,
     DictTuple,
     datasets_by_id,
 )
@@ -29,11 +29,11 @@ def test_DictTuple():
     assert 5 in d
 
 
-def test_valid_tokens(clts):
+def test_valid_sounds(clts):
     sounds = [clts.bipa[x] for x in ["_", "+", "a:", "b", "+", "_", "+", "c", "_", "_"]]
-    assert valid_tokens(sounds)[0] == "aː"
-    assert valid_tokens([]) == []
-    assert valid_tokens([clts.bipa['a'], clts.bipa['_'], clts.bipa['b']]) == ['a', '+', 'b']
+    assert valid_sounds(sounds)[0] == "aː"
+    assert valid_sounds([]) == []
+    assert valid_sounds([clts.bipa['a'], clts.bipa['_'], clts.bipa['b']]) == ['a', '+', 'b']
 
 
 def test_identity():
@@ -46,5 +46,5 @@ def test_jaccard():
 
 
 def test_syllables():
-    form = Form(id="test", tokens=lists("t a k + t a k"))
+    form = Form(id="test", sounds=lists("t a k + t a k"))
     assert len(list(iter_syllables(form))) == 2

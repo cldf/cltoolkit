@@ -36,7 +36,7 @@ class WithForms:
 
     @cached_property
     def forms_with_sounds(self):
-        return DictTuple([f for f in self.forms if f.tokens])
+        return DictTuple([f for f in self.forms if f.sounds])
 
     @cached_property
     def forms_with_graphemes(self):
@@ -167,13 +167,13 @@ class Form(CLCore, WithDataset):
     :param concept: The concept (if any) expressed by the form.
     :param language: The language in which the form occurs.
     :param sense: The meaning expressed by the form.
-    :param tokens: The segmented strings defined by the B(road) IPA.
+    :param sounds: The segmented strings defined by the B(road) IPA.
     """
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
     #: Sounds (graphemes recognized in the specified transcription system) in the segmented form:
-    tokens = attr.ib(default=None, repr=False) # -> sounds
+    sounds = attr.ib(default=attr.Factory(list), repr=False)
     value = MutatedDataValue("Value")
     form = MutatedDataValue("Form")
     #: Graphemes in the segmented form:
@@ -182,15 +182,11 @@ class Form(CLCore, WithDataset):
 
     @property
     def sound_objects(self):
-        if self.tokens:
-            return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in
-                    self.tokens]
+        return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in self.sounds]
 
     @property
     def grapheme_objects(self):
-        if self.graphemes:
-            return [self.wordlist.graphemes[self.dataset + '-' + s] for s in
-                    self.graphemes]
+        return [self.wordlist.graphemes[self.dataset + '-' + s] for s in self.graphemes or []]
 
     def __repr__(self):
         return "<" + self.__class__.__name__ + " " + self.form + ">"

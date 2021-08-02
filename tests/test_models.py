@@ -32,7 +32,7 @@ def test_core_models(clts, ds_dummy):
     assert wl.concepts[0].__repr__() == '<Concept all>'
 
     assert len(wl.forms[0].sound_objects) == len(wl.forms[0].graphemes) == len(
-            wl.forms[0].tokens)
+            wl.forms[0].sounds)
     assert len(wl.sounds[0]) == 1
     assert wl.sounds[0].__eq__(wl.sounds[1]) == False
     assert wl.sounds[0].name == 'voiced bilabial nasal consonant'
@@ -53,8 +53,8 @@ def test_core_models(clts, ds_dummy):
     assert sense1 != sound
 
     form = Form(id="a", data={"Form": "b", "Segments": ["a", "p", "a"]},
-        tokens= ["a", "p", "a"],
-            wordlist=wl, dataset="dummy")
+        sounds= ["a", "p", "a"],
+        wordlist=wl, dataset="dummy")
     assert form.__repr__() == '<Form b>'
     assert form.grapheme_objects[0].grapheme == "a"
 

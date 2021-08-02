@@ -8,7 +8,7 @@ from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
 
-from cltoolkit.util import identity, lingpy_columns, valid_tokens, DictTuple
+from cltoolkit.util import identity, lingpy_columns, valid_sounds, DictTuple
 from cltoolkit import log
 from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound, Cognate
 
@@ -48,7 +48,7 @@ class Wordlist:
             self._add_senses(dsid, dataset)
             self._add_forms(dsid, dataset)
 
-        self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.tokens])
+        self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.sounds])
         self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.graphemes])
         log.info("loaded wordlist with {0} concepts and {1} languages".format(
             self.height, self.width))
@@ -149,7 +149,7 @@ class Wordlist:
             self.forms[new_form.id] = new_form
             sounds = [self.ts[s] for s in new_form.graphemes] if self.ts else None
             if sounds:
-                new_form.tokens = valid_tokens(sounds)
+                new_form.sounds = valid_sounds(sounds)
                 for i, (segment, sound) in enumerate(zip(new_form.graphemes, sounds)):
                     gid = idjoin(dsid, segment)
                     if gid not in self.graphemes:
@@ -166,7 +166,7 @@ class Wordlist:
                         self.graphemes[gid].occs[lid].append((i, new_form))
                     except KeyError:
                         self.graphemes[gid].occs[lid] = [(i, new_form)]
-                    if new_form.tokens:
+                    if new_form.sounds:
                         sid = str(sound)
                         if sid not in self.sounds:
                             self.sounds[sid] = Sound.from_grapheme(
