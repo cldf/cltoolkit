@@ -49,7 +49,7 @@ class Wordlist:
             self._add_forms(dsid, dataset)
 
         self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.tokens])
-        self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.segments])
+        self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.graphemes])
         log.info("loaded wordlist with {0} concepts and {1} languages".format(
             self.height, self.width))
 
@@ -147,10 +147,10 @@ class Wordlist:
                 wordlist=self
             )
             self.forms[new_form.id] = new_form
-            sounds = [self.ts[s] for s in new_form.segments] if self.ts else None
+            sounds = [self.ts[s] for s in new_form.graphemes] if self.ts else None
             if sounds:
                 new_form.tokens = valid_tokens(sounds)
-                for i, (segment, sound) in enumerate(zip(new_form.segments, sounds)):
+                for i, (segment, sound) in enumerate(zip(new_form.graphemes, sounds)):
                     gid = idjoin(dsid, segment)
                     if gid not in self.graphemes:
                         self.graphemes[gid] = Grapheme(

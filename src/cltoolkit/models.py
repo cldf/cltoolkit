@@ -40,7 +40,7 @@ class WithForms:
 
     @cached_property
     def forms_with_graphemes(self):
-        return DictTuple([f for f in self.forms if f.segments])
+        return DictTuple([f for f in self.forms if f.graphemes])
 
 
 @attr.s
@@ -172,10 +172,10 @@ class Form(CLCore, WithDataset):
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
-    tokens = attr.ib(default=None, repr=False)
+    tokens = attr.ib(default=None, repr=False) # -> sounds
     value = MutatedDataValue("Value")
     form = MutatedDataValue("Form")
-    segments = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
+    graphemes = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
     cognates = attr.ib(default=None, repr=False)
 
     @property
@@ -185,10 +185,10 @@ class Form(CLCore, WithDataset):
                     self.tokens]
 
     @property
-    def graphemes(self):
-        if self.segments:
+    def grapheme_objects(self):
+        if self.graphemes:
             return [self.wordlist.graphemes[self.dataset + '-' + s] for s in
-                    self.segments]
+                    self.graphemes]
 
     def __repr__(self):
         return "<" + self.__class__.__name__ + " " + self.form + ">"

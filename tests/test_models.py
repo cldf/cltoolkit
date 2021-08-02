@@ -25,13 +25,13 @@ def test_core_models(clts, ds_dummy):
             concepts=[], forms=[wl.forms[0], wl.forms[1]])
 
     inv = Inventory.from_list(
-        clts.bipa, *[s for s in wl.forms[0].segments] + [s for s in wl.forms[1].segments])
+        clts.bipa, *[s for s in wl.forms[0].graphemes] + [s for s in wl.forms[1].graphemes])
     assert len(lng.sound_inventory) == len(inv)
     assert wl.senses[0].__repr__() == "<Sense dummy-all>"
     assert wl.senses[0].__eq__(wl.senses[0]) == True
     assert wl.concepts[0].__repr__() == '<Concept all>'
 
-    assert len(wl.forms[0].sounds) == len(wl.forms[0].segments) == len(
+    assert len(wl.forms[0].sounds) == len(wl.forms[0].graphemes) == len(
             wl.forms[0].tokens)
     assert len(wl.sounds[0]) == 1
     assert wl.sounds[0].__eq__(wl.sounds[1]) == False
@@ -56,10 +56,10 @@ def test_core_models(clts, ds_dummy):
         tokens= ["a", "p", "a"],
             wordlist=wl, dataset="dummy")
     assert form.__repr__() == '<Form b>'
-    assert form.graphemes[0].grapheme == "a"
+    assert form.grapheme_objects[0].grapheme == "a"
 
-    assert form.sounds[0] != form.graphemes[0]
-    assert str(form.graphemes[0]) == str(form.sounds[0])
+    assert form.sounds[0] != form.grapheme_objects[0]
+    assert str(form.grapheme_objects[0]) == str(form.sounds[0])
     
 
 def test_inventory(clts):

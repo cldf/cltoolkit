@@ -33,7 +33,7 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
     
             lp2 = wl.as_lingpy(
                 language_filter=lambda x: len(x.concepts) > 100,
-                form_filter=lambda x: x.segments)
+                form_filter=lambda x: x.graphemes)
 
             for concept, forms in wl.iter_forms_by_concepts():
                 assert len(forms) == wl.width
@@ -43,7 +43,7 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
                 languages=[apurina.id],
             ):
                 assert concept.name == forms[0][0].concept.id.lower()
-                assert str(forms[0][0].segments) == "m a + n e"
+                assert str(forms[0][0].graphemes) == "m a + n e"
 
             assert wl.coverage(aspect="forms_with_graphemes")[apurina.id] == len(apurina.concepts)
     
