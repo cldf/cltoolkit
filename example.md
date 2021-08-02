@@ -35,7 +35,8 @@ Swahili: -6.5
 A `Feature` is computed for a language by calling the `Feature` instance, passing a `cltoolkit.models.Language`
 instance.
 
-`cltoolkit` provides a couple base classes for (sometimes parametrizable) derived feature implementations.
+`cltoolkit` provides a couple of base classes for (sometimes parametrizable) derived feature implementations
+(for [phonology](src/cltoolkit/features/phonology.py) and [lexicon](src/cltoolkit/features/lexicon.py)).
 E.g. we can compute basic properties if a language's phoneme inventory:
 ```python
 >>> from cltoolkit.features.phonology import InventoryQuery
@@ -59,8 +60,8 @@ cltoolkit.features.reqs.MissingRequirement: inventory
 
 Oops. Something went wrong. `cltoolkit.features.reqs.MissingRequirement` exceptions are used to signal
 that a feature implementation can not be applied to a particular `Language` object, because required
-properties are missing. Here, we have loaded a wordlist without passing a CLTS transcription system; thus
-`cltoolkit` could not compute CLTS-mapped phoneme inventories.
+properties are missing (see [reqs.py](src/cltoolkit/features/reqs.py)). Here, we have loaded a wordlist without 
+passing a CLTS transcription system; thus `cltoolkit` could not compute CLTS-mapped phoneme inventories.
 
 Let's fix this: We need to download the [CLTS data](https://github.com/cldf-clts/clts/releases/tag/v2.1.0), and 
 pass the `bipa` transcription system from an appropriately initialized `pyclts.CLTS` object when creating the wordlist:
