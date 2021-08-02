@@ -14,7 +14,7 @@ def test_core_models(clts, ds_dummy):
 
     wf = WithForms(forms=[wl.forms[0], wl.forms[1]])
     assert len(wf.forms_with_sounds) == 2
-    assert len(wf.segmented_forms) == 2
+    assert len(wf.forms_with_graphemes) == 2
 
 
     #clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
@@ -24,8 +24,8 @@ def test_core_models(clts, ds_dummy):
             id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],
             concepts=[], forms=[wl.forms[0], wl.forms[1]])
 
-    inv = Inventory.from_list(clts.bipa, *[s for s in
-        wl.forms[0].segments]+[s for s in wl.forms[1].segments])
+    inv = Inventory.from_list(
+        clts.bipa, *[s for s in wl.forms[0].segments] + [s for s in wl.forms[1].segments])
     assert len(lng.sound_inventory) == len(inv)
     assert wl.senses[0].__repr__() == "<Sense dummy-all>"
     assert wl.senses[0].__eq__(wl.senses[0]) == True

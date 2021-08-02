@@ -1,6 +1,6 @@
 import functools
 
-__all__ = ['MissingRequirement', 'inventory', 'segments', 'concepts', 'requires',
+__all__ = ['MissingRequirement', 'inventory', 'graphemes', 'concepts', 'requires',
            'inventory_with_occurrences']
 
 
@@ -25,12 +25,12 @@ def inventory_with_occurrences(language):
     return inventory(language) and bool(len(language.sound_inventory.sounds[0].occs))
 
 
-def segments(language):
+def graphemes(language):
     """
     Make sure a language has segmented forms.
     """
     try:
-        return bool(len(language.segmented_forms))
+        return bool(len(language.forms_with_graphemes))
     except (AttributeError, TypeError):
         return False
 

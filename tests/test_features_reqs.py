@@ -6,7 +6,7 @@ from cltoolkit.features.reqs import *
 
 
 def test_requires():
-    @requires(inventory, segments, concepts)
+    @requires(inventory, graphemes, concepts)
     def f(language):
         return True
 
@@ -19,6 +19,6 @@ def test_requires():
     assert 'inventory' not in str(e)
 
     with pytest.raises(MissingRequirement):
-        f(Namespace(sound_inventory=[1, 2], segmented_forms=[1, 2]))
+        f(Namespace(sound_inventory=[1, 2], forms_with_graphemes=[1, 2]))
 
-    assert f(Namespace(sound_inventory=[1, 2], segmented_forms=[1, 2], concepts=[1, 2]))
+    assert f(Namespace(sound_inventory=[1, 2], forms_with_graphemes=[1, 2], concepts=[1, 2]))

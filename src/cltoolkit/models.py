@@ -39,7 +39,7 @@ class WithForms:
         return DictTuple([f for f in self.forms if f.tokens])
 
     @cached_property
-    def segmented_forms(self):
+    def forms_with_graphemes(self):
         return DictTuple([f for f in self.forms if f.segments])
 
 

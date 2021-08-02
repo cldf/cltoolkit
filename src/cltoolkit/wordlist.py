@@ -49,7 +49,7 @@ class Wordlist:
             self._add_forms(dsid, dataset)
 
         self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.tokens])
-        self.segmented_forms = DictTuple([f for f in self.forms.values() if f.segments])
+        self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.segments])
         log.info("loaded wordlist with {0} concepts and {1} languages".format(
             self.height, self.width))
 

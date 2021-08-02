@@ -4,7 +4,7 @@ import textwrap
 import collections
 
 from cltoolkit.util import iter_syllables
-from .reqs import requires, inventory, segments, inventory_with_occurrences
+from .reqs import requires, inventory, graphemes, inventory_with_occurrences
 from . import util
 
 
@@ -81,7 +81,7 @@ class StartsWithSound(util.FeatureFunction):
             None: "missing data",
         }
 
-    @requires(segments)
+    @requires(graphemes)
     def __call__(self, language):
         has_forms = False
         for concept in self.concepts:
@@ -418,7 +418,7 @@ class WithSyllableComplexity(util.FeatureFunction):
     def run(self, preceding, following):
         raise NotImplementedError()  # pragma: no cover
 
-    @requires(segments)
+    @requires(graphemes)
     def __call__(self, language):
         return self.run(*syllable_complexity(language.forms_with_sounds))
 
