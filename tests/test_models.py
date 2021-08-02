@@ -1,6 +1,6 @@
 from cltoolkit import Wordlist
 from cltoolkit.models import (
-        CLCore, CLCoreWithForms, CLBase, CLBaseWithForms,
+        CLCore, WithForms, WithDataset,
         Language, Sense, Form, Sound,
         Inventory)
 
@@ -12,34 +12,27 @@ def test_core_models(clts, ds_dummy):
     clc = CLCore(id="a", wordlist=wl, data={})
     assert clc.__repr__() == "<CLCore a>"
 
-    clcwf = CLCoreWithForms(id="a", wordlist=wl, data={}, forms=[wl.forms[0],
-        wl.forms[1]])
-    assert len(clcwf.bipa_forms) == 2
-    assert len(clcwf.segmented_forms) == 2
+    wf = WithForms(forms=[wl.forms[0], wl.forms[1]])
+    assert len(wf.forms_with_sounds) == 2
+    assert len(wf.forms_with_graphemes) == 2
 
 
-    clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
-    assert repr(clb) == "<CLBase a>"
-
-    clbwf = CLBaseWithForms(id="a", wordlist=wl, data={}, obj=clc, dataset="a",
-            forms=[wl.forms[0],
-            wl.forms[1]])
-    assert len(clbwf.bipa_forms) == 2
-    assert len(clbwf.segmented_forms) == 2
+    #clb = CLBase(id="a", wordlist=wl, data={}, obj=clc, dataset="a")
+    #assert repr(clb) == "<CLBase a>"
 
     lng = Language(
             id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],
             concepts=[], forms=[wl.forms[0], wl.forms[1]])
 
-    inv = Inventory.from_list(clts.bipa, *[s for s in
-        wl.forms[0].segments]+[s for s in wl.forms[1].segments])
+    inv = Inventory.from_list(
+        clts.bipa, *[s for s in wl.forms[0].graphemes] + [s for s in wl.forms[1].graphemes])
     assert len(lng.sound_inventory) == len(inv)
     assert wl.senses[0].__repr__() == "<Sense dummy-all>"
     assert wl.senses[0].__eq__(wl.senses[0]) == True
     assert wl.concepts[0].__repr__() == '<Concept all>'
 
-    assert len(wl.forms[0].sounds) == len(wl.forms[0].segments) == len(
-            wl.forms[0].tokens)
+    assert len(wl.forms[0].sound_objects) == len(wl.forms[0].graphemes) == len(
+            wl.forms[0].sounds)
     assert len(wl.sounds[0]) == 1
     assert wl.sounds[0].__eq__(wl.sounds[1]) == False
     assert wl.sounds[0].name == 'voiced bilabial nasal consonant'
@@ -60,13 +53,13 @@ def test_core_models(clts, ds_dummy):
     assert sense1 != sound
 
     form = Form(id="a", data={"Form": "b", "Segments": ["a", "p", "a"]},
-        tokens= ["a", "p", "a"],
-            wordlist=wl, dataset="dummy")
+        sounds= ["a", "p", "a"],
+        wordlist=wl, dataset="dummy")
     assert form.__repr__() == '<Form b>'
-    assert form.graphemes[0].grapheme == "a"
+    assert form.grapheme_objects[0].grapheme == "a"
 
-    assert form.sounds[0] != form.graphemes[0]
-    assert str(form.graphemes[0]) == str(form.sounds[0])
+    assert form.sound_objects[0] != form.grapheme_objects[0]
+    assert str(form.grapheme_objects[0]) == str(form.sound_objects[0])
     
 
 def test_inventory(clts):

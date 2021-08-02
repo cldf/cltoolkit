@@ -21,6 +21,17 @@ of *linguistic features* in a general sense (e.g. typological features, etc.). T
 - providing [a framework](src/cltoolkit/__init__.py) that makes feature computation as simple as writing a Python 
   function acting on a `cltoolkit.models.Language` object.
 
+In general, aggregated CLDF Wordlists provide limited (automated) comparability across datasets (e.g. one could
+compare the number of words per language in each dataset). A lot more can be done when datasets use CLDF reference
+properties to link to reference catalogs, i.e.
+- link language varieties to Glottolog languoids,
+- link senses to Concepticon concepts,
+- link sound segments to CLTS B(road) IPA.
+
+`cltoolkit` objects exploit this extended comparability by distinguishing "senses" and "concepts" and "segments"
+and "bipa_segments" and providing convenient access to comparable subsets of objects in an aggregation 
+(see [models.py](src/cltoolkit/models.py)).
+
 See [example.md](example.md) for a walk-through of the typical workflow with `cltoolkit`.
 
 
@@ -33,10 +44,9 @@ is comparable in a detailed class structure.
 This results in the following models, which we distinguish:
 
 
-
-name | attributes | description
+name | description
 --- | --- | --- 
-`Sense` | `forms`, `segmented_forms`, `bipa_forms` | A sense description (concept in source) which does not need to be linked to the Concepticon.
+`Sense` | `forms`, `forms_with_graphemes`, `forms_with` | A sense description (concept in source) which does not need to be linked to the Concepticon.
 `SenseInLanguage` | `forms`, `segmented_forms`, `bipa_formes` | A sense description in an individual `Language` object, the `forms` will only be the forms of this very language. 
 `Concept` | `forms`, `segmented_formes`, `bipa_forms` | A sense that has a valid link to a Concepticon concept set. |
 `ConceptInLanguage` | `forms`, `segmented_forms`, `bipa_forms` | A sense with a valid link to a Concepticon concept set in an individual language.

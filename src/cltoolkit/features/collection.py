@@ -35,6 +35,11 @@ def get_callable(s: typing.Union[str, dict, typing.Callable]) -> typing.Callable
 
 @attr.s(repr=False)
 class Feature:
+    """
+    :ivar id: `str`
+    :ivar name: `str`
+    :ivar function: `callable`
+    """
     id = attr.ib()
     name = attr.ib()
     function = attr.ib(converter=get_callable)

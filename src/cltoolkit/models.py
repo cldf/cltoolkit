@@ -27,44 +27,39 @@ class CLCore:
         return "<" + self.__class__.__name__ + " " + self.id + ">"
 
 
-@attr.s(repr=False)
-class CLCoreWithForms(CLCore):
+@attr.s
+class WithForms:
     """
-    Base class to represent data in a wordlist that contains forms.
+    Mixin to represent data in a wordlist that contains forms.
     """
     forms = attr.ib(default=None)
 
     @cached_property
-    def bipa_forms(self):
-        return DictTuple([f for f in self.forms if f.tokens])
+    def forms_with_sounds(self):
+        return DictTuple([f for f in self.forms if f.sounds])
 
     @cached_property
-    def segmented_forms(self):
-        return DictTuple([f for f in self.forms if f.segments])
+    def forms_with_graphemes(self):
+        return DictTuple([f for f in self.forms if f.graphemes])
 
 
-@attr.s(repr=False)
-class CLBase(CLCore):
+@attr.s
+class WithDataset:
     """
-    Base class to represent data in a wordlist from a specific dataset.
-    """
-    obj = attr.ib(default=None, repr=False)
-    dataset = attr.ib(default=None, repr=False)
-
-
-@attr.s(repr=False)
-class CLBaseWithForms(CLCoreWithForms):
-    """
-    Base class to represent data in a wordlist from a specific dataset with forms.
+    Mixin to represent data in a wordlist from a specific dataset.
     """
     obj = attr.ib(default=None, repr=False)
     dataset = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)
-class Language(CLBaseWithForms):
+class Language(CLCore, WithForms, WithDataset):
     """
     Base class for handling languages.
+
+    :ivar senses: `DictTuple` of senses, i.e. glosses for forms.
+    :ivar concepts: `DictTuple` of senses with explicit Concepticon mapping.
+    :ivar glottocode: `str`, Glottocode for the language.
 
     .. note::
 
@@ -84,20 +79,23 @@ class Language(CLBaseWithForms):
     def sound_inventory(self):
         sounds = []
         for sound in self.wordlist.sounds:
-            if self.id in sound.occs:
+            if self.id in sound.occurrences:
                 sounds.append(Sound.from_sound(sound, language=self))
         return Inventory(language=self, ts=self.wordlist.ts, sounds=DictTuple(sounds))
 
 
 @attr.s(repr=False, eq=False)
-class Sense(CLBaseWithForms):
+class Sense(CLCore, WithForms, WithDataset):
     """
-    Concepts in source are the original concepts in the individual wordlists.
+    A sense description (concept in source) which does not need to be linked to the Concepticon.
+
+    :ivar language: :class:`Language` instance
+    :ivar name: `str`, the gloss
 
     .. note::
 
-       Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined
-       for all datasets.
+        Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined
+        for all datasets.
     """
     language = attr.ib(default=None)
     name = MutatedDataValue("Name")
@@ -123,9 +121,15 @@ class Sense(CLBaseWithForms):
 
 
 @attr.s(repr=False, eq=False)
-class Concept(CLCoreWithForms):
+class Concept(CLCore, WithForms):
     """
     Base class for the concepts in a dataset.
+
+    :ivar language: :class:`Language` instance
+    :ivar name: `str`, the gloss
+    :ivar senses: `iterable` of senses mapped to this concept
+    :ivar concepticon_id: `str` ID of the Concepticon concept set the concept is mapped to.
+    :ivar concepticon_gloss: `str` gloss of the Concepticon concept set the concept is mapped to.
 
     .. note::
 
@@ -169,50 +173,49 @@ class Concept(CLCoreWithForms):
 
 
 @attr.s(repr=False)
-class Form(CLBase):
+class Form(CLCore, WithDataset):
     """
     Base class for handling the form part of linguistic signs.
 
-    :param concept: The concept (if any) expressed by the form.
-    :param language: The language in which the form occurs.
-    :param sense: The meaning expressed by the form.
-    :param tokens: The segmented strings defined by the B(road) IPA.
+    :ivar concept: The concept (if any) expressed by the form.
+    :ivar language: The language in which the form occurs.
+    :ivar sense: The meaning expressed by the form.
+    :ivar sounds: The segmented strings defined by the B(road) IPA.
+    :ivar graphemes: The segmented graphemes (possibly not BIPA conform).
     """
     concept = attr.ib(default=None, repr=False)
     language = attr.ib(default=None, repr=False)
     sense = attr.ib(default=None, repr=False)
-    tokens = attr.ib(default=None, repr=False)
+    #: Sounds (graphemes recognized in the specified transcription system) in the segmented form:
+    sounds = attr.ib(default=attr.Factory(list), repr=False)
     value = MutatedDataValue("Value")
     form = MutatedDataValue("Form")
-    segments = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
+    #: Graphemes in the segmented form:
+    graphemes = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
     cognates = attr.ib(default=None, repr=False)
 
     @property
-    def sounds(self):
-        if self.tokens:
-            return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in
-                    self.tokens]
+    def sound_objects(self):
+        return [self.wordlist.sounds[str(self.wordlist.ts[t])] for t in self.sounds]
 
     @property
-    def graphemes(self):
-        if self.segments:
-            return [self.wordlist.graphemes[self.dataset + '-' + s] for s in
-                    self.segments]
+    def grapheme_objects(self):
+        return [self.wordlist.graphemes[self.dataset + '-' + s] for s in self.graphemes or []]
 
     def __repr__(self):
         return "<" + self.__class__.__name__ + " " + self.form + ">"
 
 
 @attr.s(repr=False)
-class Cognate(CLBase):
+class Cognate(CLCore, WithDataset):
     form = attr.ib(default=None, repr=False)
     contribution = attr.ib(default=None, repr=False)
 
 
 @attr.s(repr=False)
-class Grapheme(CLBaseWithForms):
+class Grapheme(CLCore, WithDataset, WithForms):
     grapheme = attr.ib(default=None)
-    occs = attr.ib(default=None)
+    occurrences = attr.ib(default=None)
     language = attr.ib(default=None)
 
     def __str__(self):
@@ -220,12 +223,12 @@ class Grapheme(CLBaseWithForms):
 
 
 @attr.s(repr=False, eq=False)
-class Sound(CLCoreWithForms):
+class Sound(CLCore, WithForms):
     """
     All sounds in a dataset.
     """
     grapheme = attr.ib(default=None)
-    occs = attr.ib(default=None)
+    occurrences = attr.ib(default=None)
     graphemes_in_source = attr.ib(default=None)
     language = attr.ib(default=None)
     obj = attr.ib(default=None)
@@ -236,20 +239,20 @@ class Sound(CLCoreWithForms):
 
     @classmethod
     def from_grapheme(
-            cls, grapheme_, grapheme=None, occs=None, forms=None,
+            cls, grapheme_, grapheme=None, occurrences=None, forms=None,
             id=None, graphemes_in_source=None, obj=None):
         return cls(
             id=id,
             grapheme=grapheme,
             wordlist=grapheme_.wordlist,
-            occs=occs,
+            occurrences=occurrences,
             data=obj.__dict__,
             graphemes_in_source=graphemes_in_source,
             forms=forms,
             obj=obj)
 
     def __len__(self):
-        return len(self.occs or [])
+        return len(self.occurrences or [])
 
     def __str__(self):
         return self.grapheme
@@ -281,7 +284,7 @@ class Sound(CLCoreWithForms):
             obj=sound.obj,
             wordlist=sound.wordlist,
             grapheme=sound.grapheme,
-            occs=sound.occs[language.id],
+            occurrences=sound.occurrences[language.id],
         )
 
 
@@ -358,7 +361,7 @@ class Inventory:
                     wordlist=wordlist,
                     grapheme=str(sound),
                     graphemes_in_source=[sound.grapheme],
-                    occs=[],
+                    occurrences=[],
                     data=sound.__dict__
                 )
         return cls(sounds=DictTuple(sounds.values()), ts=ts, language=language)

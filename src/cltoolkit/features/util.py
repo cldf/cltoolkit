@@ -12,6 +12,13 @@ def concept_label(concept_list, label=None):
 
 
 class FeatureFunction:
+    """
+    `FeatureFunction` instances may also define the following attributes which are recognized by
+    `Feature.to_json`:
+    - `rtype`
+    - `doc`
+    - `categories`
+    """
     def __init__(self, *args, **kw):
         self._args = args
         self._kwargs = kw

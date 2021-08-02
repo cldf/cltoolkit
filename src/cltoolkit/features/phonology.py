@@ -4,7 +4,7 @@ import textwrap
 import collections
 
 from cltoolkit.util import iter_syllables
-from .reqs import requires, inventory, segments
+from .reqs import requires, inventory, graphemes, inventory_with_occurrences
 from . import util
 
 
@@ -81,14 +81,14 @@ class StartsWithSound(util.FeatureFunction):
             None: "missing data",
         }
 
-    @requires(segments)
+    @requires(graphemes)
     def __call__(self, language):
         has_forms = False
         for concept in self.concepts:
             if concept in language.concepts:
                 for form in language.concepts[concept].forms:
                     has_forms = True
-                    if sound_match(form.sounds[0], self.features):
+                    if sound_match(form.sound_objects[0], self.features):
                         return True
         return False if has_forms else None
 
@@ -301,17 +301,19 @@ class HasLaterals(WithInventory):
         return 6
 
 
-class HasEngma(WithInventory):
+class HasEngma(util.FeatureFunction):
     categories = {
         1: "velar nasal occurs in syllable-initial position",
         2: "velar nasal occurs but not in syllable-initial position",
         3: "velar nasal is missing"
     }
 
-    def run(self, inv):
+    @requires(inventory_with_occurrences)
+    def __call__(self, language):
+        inv = language.sound_inventory
         consonants = [sound.obj.s for sound in inv.consonants]
         if 'ŋ' in consonants:
-            for pos, fid in inv.sounds['ŋ'].occs:
+            for pos, fid in inv.sounds['ŋ'].occurrences:
                 if pos == 0:
                     return 1
             return 2
@@ -367,7 +369,7 @@ class HasRoundedVowels(WithInventory):
         return 4
 
 
-def syllable_complexity(bipa_forms):
+def syllable_complexity(forms_with_sounds):
     """
     Compute the major syllabic patterns for a language.
 
@@ -382,9 +384,9 @@ def syllable_complexity(bipa_forms):
     """
 
     preceding, following = collections.defaultdict(list), collections.defaultdict(list)
-    for form in bipa_forms:
+    for form in forms_with_sounds:
         idx = 0
-        sounds_in_form = [s for s in form.sounds if s.type != "marker"]
+        sounds_in_form = [s for s in form.sound_objects if s.type != "marker"]
         for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
             sounds_in_syllable = []
@@ -416,9 +418,9 @@ class WithSyllableComplexity(util.FeatureFunction):
     def run(self, preceding, following):
         raise NotImplementedError()  # pragma: no cover
 
-    @requires(segments)
+    @requires(graphemes)
     def __call__(self, language):
-        return self.run(*syllable_complexity(language.bipa_forms))
+        return self.run(*syllable_complexity(language.forms_with_sounds))
 
 
 class SyllableStructure(WithSyllableComplexity):

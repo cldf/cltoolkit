@@ -8,7 +8,7 @@ from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
 
-from cltoolkit.util import identity, lingpy_columns, valid_tokens, DictTuple
+from cltoolkit.util import identity, lingpy_columns, valid_sounds, DictTuple
 from cltoolkit import log
 from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound, Cognate
 
@@ -48,8 +48,8 @@ class Wordlist:
             self._add_senses(dsid, dataset)
             self._add_forms(dsid, dataset)
 
-        self.bipa_forms = DictTuple([f for f in self.forms.values() if f.tokens])
-        self.segmented_forms = DictTuple([f for f in self.forms.values() if f.segments])
+        self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.sounds])
+        self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.graphemes])
         log.info("loaded wordlist with {0} concepts and {1} languages".format(
             self.height, self.width))
 
@@ -147,10 +147,10 @@ class Wordlist:
                 wordlist=self
             )
             self.forms[new_form.id] = new_form
-            sounds = [self.ts[s] for s in new_form.segments] if self.ts else None
+            sounds = [self.ts[s] for s in new_form.graphemes] if self.ts else None
             if sounds:
-                new_form.tokens = valid_tokens(sounds)
-                for i, (segment, sound) in enumerate(zip(new_form.segments, sounds)):
+                new_form.sounds = valid_sounds(sounds)
+                for i, (segment, sound) in enumerate(zip(new_form.graphemes, sounds)):
                     gid = idjoin(dsid, segment)
                     if gid not in self.graphemes:
                         self.graphemes[gid] = Grapheme(
@@ -159,14 +159,14 @@ class Wordlist:
                             dataset=dsid,
                             wordlist=self,
                             obj=sound,
-                            occs=collections.OrderedDict(),
+                            occurrences=collections.OrderedDict(),
                             forms=collections.OrderedDict([(new_form.id, new_form)]))
                     self.graphemes[gid].forms[new_form.id] = new_form
                     try:
-                        self.graphemes[gid].occs[lid].append((i, new_form))
+                        self.graphemes[gid].occurrences[lid].append((i, new_form))
                     except KeyError:
-                        self.graphemes[gid].occs[lid] = [(i, new_form)]
-                    if new_form.tokens:
+                        self.graphemes[gid].occurrences[lid] = [(i, new_form)]
+                    if new_form.sounds:
                         sid = str(sound)
                         if sid not in self.sounds:
                             self.sounds[sid] = Sound.from_grapheme(
@@ -174,15 +174,15 @@ class Wordlist:
                                 graphemes_in_source=collections.OrderedDict(),
                                 grapheme=str(sound),
                                 obj=sound,
-                                occs=collections.OrderedDict(),
+                                occurrences=collections.OrderedDict(),
                                 forms=collections.OrderedDict([(new_form.id, new_form)]),
                                 id=sid)
                         self.sounds[sid].forms[new_form.id] = new_form
                         self.sounds[sid].graphemes_in_source[gid] = self.graphemes[gid]
                         try:
-                            self.sounds[sid].occs[lid].append((i, new_form))
+                            self.sounds[sid].occurrences[lid].append((i, new_form))
                         except KeyError:
-                            self.sounds[sid].occs[lid] = [(i, new_form)]
+                            self.sounds[sid].occurrences[lid] = [(i, new_form)]
             if cid and cid not in self.languages[lid].concepts:
                 self.languages[lid].concepts[cid] = Concept.from_concept(
                     self.concepts[cid],
@@ -329,7 +329,7 @@ class Wordlist:
     def length(self):
         return len(self)
 
-    def coverage(self, concepts="concepts", aspect="bipa_forms"):
+    def coverage(self, concepts="concepts", aspect="forms_with_sounds"):
         out = {}
         for language in self.languages:
             out[language.id] = 0
