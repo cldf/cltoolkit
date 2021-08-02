@@ -11,6 +11,7 @@ Welcome to cltoolkit's documentation!
    :caption: Contents:
 
    models.rst
+   wordlist.rst
    features.rst
 
 

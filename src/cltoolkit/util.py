@@ -118,6 +118,10 @@ MutatedDataValue = functools.partial(MutatedNestedDictValue, 'data')
 
 
 class DictTuple(BaseDictTuple):
+    """
+    An object allowing access to items of a `tuple` as if it were a `dict` keyed with the `id`
+    attribute of the contained objects.
+    """
     def get(self, item, default=None):
         try:
             return self.__getitem__(item)

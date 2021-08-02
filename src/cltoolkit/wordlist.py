@@ -1,6 +1,3 @@
-"""
-Class for handling wordlist data.
-"""
 import collections
 from typing import Optional
 
@@ -25,6 +22,12 @@ class Wordlist:
        pycldf.Datasets.
     :param ts: A TranscriptionSystem (as provided  by pyclts), if you want to
        work with phonological features from CLTS.
+    :ivar languages: :class:`DictTuple`
+    :ivar senses: :class:`DictTuple`
+    :ivar concepts: :class:`DictTuple`
+    :ivar forms: :class:`DictTuple`
+    :ivar Wordlist.graphemes: :class:`DictTuple`
+    :ivar sounds: :class:`DictTuple`
     """
     def __init__(self,
                  datasets,

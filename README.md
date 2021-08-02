@@ -45,18 +45,10 @@ This results in the following models, which we distinguish:
 
 
 name | description
---- | --- | --- 
-`Sense` | `forms`, `forms_with_graphemes`, `forms_with` | A sense description (concept in source) which does not need to be linked to the Concepticon.
-`SenseInLanguage` | `forms`, `segmented_forms`, `bipa_formes` | A sense description in an individual `Language` object, the `forms` will only be the forms of this very language. 
-`Concept` | `forms`, `segmented_formes`, `bipa_forms` | A sense that has a valid link to a Concepticon concept set. |
-`ConceptInLanguage` | `forms`, `segmented_forms`, `bipa_forms` | A sense with a valid link to a Concepticon concept set in an individual language.
+--- | --- 
+[Sense](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Sense) | A sense description (concept in source) which does not need to be linked to the Concepticon.
+[Concept](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Concept) | A sense that has a valid link to a Concepticon concept set.
+[Form](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Form) | A form.
+[Language](https://cltoolkit.readthedocs.io/en/latest/models.html#cltoolkit.models.Sense) | An object representing the data of a language or variety.
 
-`Form` | `concept`, `conceptset`, `segments`, `bipa_segments`, `sounds` | an object that 
-Language | `forms`, `segmented_forms`, `bipa_forms`, `concepts`, `conceptsets` | A
-
-This results currently in the following `Wordlist` attributes:
-
-attribute | description 
---- | ---
-languages | a dict-list of language objects
-conceptsets | a dict-list of conceptsets, defined as 
+`DictTuple`s of these objects are available as attributes of a `Wordlist` instance.
