@@ -21,6 +21,16 @@ of *linguistic features* in a general sense (e.g. typological features, etc.). T
 - providing [a framework](src/cltoolkit/__init__.py) that makes feature computation as simple as writing a Python 
   function acting on a `cltoolkit.models.Language` object.
 
+In general, aggregated CLDF Wordlists provide limited (automated) comparability across datasets (e.g. one could
+compare the number of words per language in each dataset). A lot more can be done when datasets use CLDF reference
+properties to link to reference catalogs, i.e.
+- link language varieties to Glottolog languoids,
+- link senses to Concepticon concepts,
+- link sound segments to CLTS B(road) IPA.
+
+`cltoolkit` objects exploit this extended comparability by distinguishing "senses" and "concepts" and "segments"
+and "bipa_segments" and providing convenient access to comparable subsets of objects in an aggregation.
+
 See [example.md](example.md) for a walk-through of the typical workflow with `cltoolkit`.
 
 
