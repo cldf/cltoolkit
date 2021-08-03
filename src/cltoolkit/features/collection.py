@@ -1,6 +1,3 @@
-"""
-Basic handler for feature collections.
-"""
 import typing
 import textwrap
 import importlib
@@ -10,17 +7,18 @@ import attr
 from pycldf.util import DictTuple
 from clldutils import jsonlib
 
-__all__ = ['Feature', 'FeatureCollection']
+__all__ = ['Feature', 'FeatureCollection', 'get_callable']
 
 
 def get_callable(s: typing.Union[str, dict, typing.Callable]) -> typing.Callable:
     """
     A "feature function" can be specified in 3 ways:
+
     - as Python callable object
-    - as string of dot-separated names, where the part up to the last dot is taken as Python
+    - as string of dot-separated names, where the part up to the last dot is taken as Python \
       module spec, and the last name as symbol to be looked up in this module
-    - as `dict` with keys `class`, `args`, `kwargs`, where `class` is interpreted as above, and
-      `args` and `kwargs` are passed into the imported class to initialize an instance, the
+    - as `dict` with keys `class`, `args`, `kwargs`, where `class` is interpreted as above, and \
+      `args` and `kwargs` are passed into the imported class to initialize an instance, the \
       `__call__` method of which will be used as "feature function".
     """
     if callable(s):
@@ -39,6 +37,8 @@ class Feature:
     :ivar id: `str`
     :ivar name: `str`
     :ivar function: `callable`
+
+    .. seealso:: :func:`get_callable`
     """
     id = attr.ib()
     name = attr.ib()

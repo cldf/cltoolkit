@@ -1,12 +1,13 @@
 # Example of working with `cltoolkit`
 
 In this example we'll use `cltoolkit` to compute linguistic features from lexical data from the
-[WOLD dataset](https://github.com/lexibank/wold).
+[WOLD dataset](https://github.com/lexibank/wold) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5139859.svg)](https://doi.org/10.5281/zenodo.5139859).
 
 
 ## Loading CLDF Wordlists
 
-`cltoolkit` provides an abstration layer to access (collections of) `pycdlf.Wordlist`, thus we load data
+`cltoolkit` provides an abstraction layer to access (collections of) `pycdlf.Wordlist`, thus we load data
 as follows:
 ```python
 >>> from cltoolkit import Wordlist
@@ -17,9 +18,11 @@ loading forms for wold: 100%|██████████| 64289/64289 [00:01<
 <cltoolkit.wordlist.Wordlist object at 0x7fa8de7504f0>
 ```
 
+
 ## `cltoolkit.features.Feature`
 
-A `cltoolkit.features.Feature` bundles basic metadata with a [Python callable](https://docs.python.org/3/library/functions.html#callable)
+A [cltoolkit.features.Feature](https://cltoolkit.readthedocs.io/en/latest/features.html#cltoolkit.features.collection.Feature) 
+bundles basic metadata with a [Python callable](https://docs.python.org/3/library/functions.html#callable)
 implementing the feature computation. In the simplest case this could be a `lambda` (i.e. an ad-hoc function)
 as shown below:
 
@@ -27,7 +30,7 @@ as shown below:
 >>> from cltoolkit.features import Feature
 >>> latitude = Feature(id="lat", name="Geographic Latitude", function=lambda l: l.latitude)
 >>> for lang in wl.languages:
-    ...     print('{}: {}'.format(lang.name, latitude(lang)))
+...     print('{}: {}'.format(lang.name, latitude(lang)))
 ...     break
 ...
 Swahili: -6.5

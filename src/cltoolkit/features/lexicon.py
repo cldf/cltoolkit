@@ -1,5 +1,7 @@
-"""Miscellaneous features for lexical data.
 """
+Miscellaneous features for lexical data.
+"""
+import typing
 from itertools import product
 
 from . import util
@@ -7,7 +9,21 @@ from .reqs import requires, concepts
 
 
 class ConceptComparison(util.FeatureFunction):
-    def __init__(self, alist, blist, ablist=None, alabel=None, blabel=None):
+    """
+    Virtual base class for features comparing lexical data via concepts.
+    """
+    def __init__(self,
+                 alist: typing.List[str],
+                 blist: typing.List[str],
+                 ablist: typing.Optional[typing.List[str]] = None,
+                 alabel: typing.Optional[str] = None,
+                 blabel: typing.Optional[str] = None):
+        """
+        :param alist: List of Concepticon conceptset glosses specifying a (broad) concept.
+        :param blist: List of Concepticon conceptset glosses specifying another (broad) concept.
+        :param alabel: Label to refer to the concept specified with `alist`.
+        :param alabel: Label to refer to the concept specified with `blist`.
+        """
         util.FeatureFunction.__init__(
             self, alist, blist, ablist=ablist, alabel=alabel, blabel=blabel)
         self.alist = [alist] if isinstance(alist, str) else alist
@@ -32,8 +48,13 @@ class ConceptComparison(util.FeatureFunction):
 
 
 class Colexification(ConceptComparison):
+    """
+    Computes if two concepts are expressed with the same form in a language (i.e. if they are
+    colexified).
+    """
     def __init__(self, *args, **kw):
         ConceptComparison.__init__(self, *args, **kw)
+        self.rtype = bool
         self.categories.update({
             True: "colexifies {} and {}".format(self.alabel, self.blabel),
             False: "does not colexify {} and {}".format(self.alabel, self.blabel),
@@ -47,6 +68,10 @@ class Colexification(ConceptComparison):
 
 
 class PartialColexification(ConceptComparison):
+    """
+    Computes if two concepts are partially colexified, i.e. if a form for the first concept is
+    contained in a form for the second concept.
+    """
     def __init__(self, *args, **kw):
         ConceptComparison.__init__(self, *args, **kw)
         self.categories.update({
@@ -65,6 +90,14 @@ class PartialColexification(ConceptComparison):
 
 
 class SharedSubstring(ConceptComparison):
+    """
+    Computes if forms for the two concepts share a substring (of length >= 3).
+
+    .. note:
+
+        The substring is computed based on the from value, i.e. using whatever transcription
+        is provided. It does not operate on graphemes of a segmented form.
+    """
     def __init__(self, *args, **kw):
         ConceptComparison.__init__(self, *args, **kw)
         self.categories.update({

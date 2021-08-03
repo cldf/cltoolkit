@@ -1,7 +1,8 @@
-"""Miscellaneous features collected in typological databases.
+"""Miscellaneous phonological features found in typological databases.
 """
 import textwrap
 import collections
+import typing
 
 from cltoolkit.util import iter_syllables
 from .reqs import requires, inventory, graphemes, inventory_with_occurrences
@@ -24,6 +25,13 @@ class WithInventory(util.FeatureFunction):
 
 
 class InventoryQuery(WithInventory):
+    """
+    Compute the length/sizte of some attribute of a sound inventory.
+
+    .. code-block:: python
+
+        number_of_consonants = InventoryQuery('consonants')
+    """
     def __init__(self, attr):
         super().__init__(attr)
         self.attr = attr
@@ -35,6 +43,13 @@ class InventoryQuery(WithInventory):
 
 
 class YesNoQuery(WithInventory):
+    """
+    Compute whether an inventory has some property.
+
+    .. code-block:: python
+
+        has_tones = YesNoQuery('tones')
+    """
     def __init__(self, attr):
         super().__init__(attr)
         self.attr = attr
@@ -46,6 +61,9 @@ class YesNoQuery(WithInventory):
 
 
 class Ratio(WithInventory):
+    """
+    Computes the ratio between sizes of two properties of an inventory.
+    """
     def __init__(self, attr1, attr2):
         super().__init__(attr1, attr2)
         self.attr1 = attr1
@@ -61,12 +79,27 @@ class StartsWithSound(util.FeatureFunction):
     """
     Check if a language has a form for {} starting with {}.
 
-    Note:
-    The test can be used to account for certain cases of sound symbolism, or
-    geographic / areal trends in languages to have word forms for certain
-    concepts starting in certain words.
+    .. note::
+
+        Parametrized instances of this class can be used to check for certain cases of sound
+        symbolism, or geographic / areal trends in languages to have word forms for certain
+        concepts starting in certain words.
+
+    .. seealso:: :func:`sound_match`
+
+    .. code-block:: python
+
+        mother_with_m = StartsWithSound(["MOTHER"], [["bilabial", "nasal"]], sound_label='[m]')
     """
-    def __init__(self, concepts, features, concept_label=None, sound_label=None):
+    def __init__(self,
+                 concepts: typing.List[str],
+                 features: typing.List[typing.List[str]],
+                 concept_label: typing.Optional[str] = None,
+                 sound_label: typing.Optional[str] = None):
+        """
+        :param concepts: List of Concepticon conceptset glosses specifying a (broad) concept.
+        :param features: List of lists of phonological features to check initial sounds against.
+        """
         super().__init__(concepts, features, concept_label=concept_label, sound_label=sound_label)
         self.concepts = concepts
         self.features = features
@@ -97,11 +130,12 @@ def sound_match(sound, features):
     """
     Match a sound by a subset of features.
 
-    Note:
-    The major idea of this function is to allow for the convenient matching of
-    some sounds by defining them in terms of a part of their features alone.
-    E.g., [m] and its variants can be defined as ["bilabial", "nasal"], since
-    we do not care about the rest of the features.
+    .. note::
+
+        The major idea of this function is to allow for the convenient matching of
+        some sounds by defining them in terms of a part of their features alone.
+        E.g., [m] and its variants can be defined as ["bilabial", "nasal"], since
+        we do not care about the rest of the features.
     """
     for feature in features:
         if not set(feature).difference(sound.featureset):
@@ -163,7 +197,7 @@ def is_lateral(sound):
 
 class PlosiveFricativeVoicing(WithInventory):
     """
-    WALS Feature 4A, check for voiced and unvoiced sounds
+    .. seealso:: `WALS 4A - Voicing in Plosives and Fricatives <https://wals.info/feature/4A>`_
     """
     categories = {
         1: "no voicing contrast",
@@ -188,6 +222,9 @@ class PlosiveFricativeVoicing(WithInventory):
 
 
 class HasPtk(WithInventory):
+    """
+    .. seealso:: `WALS 5A - Voicing and Gaps in Plosive Systems <https://wals.info/feature/5A>`_
+    """
     doc = "WALS Feature 5A, presence of certain sounds."
     categories = {
         1: "no p and no g in the inventory",
@@ -214,7 +251,7 @@ class HasPtk(WithInventory):
 
 class HasUvular(WithInventory):
     """
-    WALS Feature 6A, check for uvular sounds.
+    .. seealso:: `WALS 6A - Uvular Consonants <https://wals.info/feature/6A>`_
     """
     categories = {
         1: "no uvulars",
@@ -236,7 +273,7 @@ class HasUvular(WithInventory):
 
 class HasGlottalized(WithInventory):
     """
-    WALS Feature 7A, check for glottalized or implosive consonants.
+    .. seealso:: `WALS 7A - Glottalized Consonants <https://wals.info/feature/7A>`_
     """
     categories = {
         1: "no ejectives, no implosives",
@@ -275,7 +312,7 @@ class HasGlottalized(WithInventory):
 
 class HasLaterals(WithInventory):
     """
-    WALS Feature 8A, check for lateral sounds.
+    .. seealso:: `WALS 8A - Lateral Consonants <https://wals.info/feature/8A>`_
     """
     categories = {
         1: "no laterals",
@@ -302,6 +339,9 @@ class HasLaterals(WithInventory):
 
 
 class HasEngma(util.FeatureFunction):
+    """
+    .. seealso:: `WALS 9A - The Velar Nasal <https://wals.info/feature/9A>`_
+    """
     categories = {
         1: "velar nasal occurs in syllable-initial position",
         2: "velar nasal occurs but not in syllable-initial position",
@@ -323,6 +363,10 @@ class HasEngma(util.FeatureFunction):
 class HasSoundsWithFeature(WithInventory):
     """
     Does the inventory contain at least one {}.
+
+    .. code-block:: python
+
+        prenasalized_consonants = phonology.HasSoundsWithFeature("consonants", [["pre-nasalized"]])
     """
     def __init__(self, attr, features):
         super().__init__(attr, features)
@@ -345,6 +389,9 @@ class HasSoundsWithFeature(WithInventory):
 
 
 class HasRoundedVowels(WithInventory):
+    """
+    .. seealso:: `WALS 11A - Front Rounded Vowels <https://wals.info/feature/11A>`_
+    """
     categories = {
         1: "no high and no mid vowels",
         2: "high and mid vowels",
@@ -425,7 +472,10 @@ class WithSyllableComplexity(util.FeatureFunction):
 
 class SyllableStructure(WithSyllableComplexity):
     """
-    WALS Feature 12A, check for syllable complexity.
+    .. seealso::
+
+        - :func:`syllable_complexity`
+        - `WALS 12A - Syllable Structure <https://wals.info/feature/12A>`_
     """
     categories = {
         1: "simple syllable structure (only CV attested)",
@@ -449,7 +499,10 @@ class SyllableStructure(WithSyllableComplexity):
 
 class SyllableOnset(WithSyllableComplexity):
     """
-    Check for syllable complexity onset (based on APICS 118).
+    .. seealso::
+
+        - :func:`syllable_complexity`
+        - `APiCS 118 - Syllable onsets <https://apics-online.info/parameters/118>`_
     """
     categories = {
         1: "simple syllable onset (only CV attested)",
@@ -470,7 +523,10 @@ class SyllableOnset(WithSyllableComplexity):
 
 class SyllableOffset(WithSyllableComplexity):
     """
-    Check for syllable complexity offset (based on APICS 119).
+    .. seealso::
+
+        - :func:`syllable_complexity`
+        - `APiCS 119 - Syllable codas <https://apics-online.info/parameters/119>`_
     """
     categories = {
         1: "simple syllable offset (only CV attested)",
@@ -501,6 +557,9 @@ class SyllableOffset(WithSyllableComplexity):
 
 
 class LacksCommonConsonants(WithInventory):
+    """
+    .. seealso:: `WALS 18A - Absence of Common Consonants <https://wals.info/feature/18A>`_
+    """
     categories = {
         1: "bilabials and fricatives and nasals occur",
         2: "bilabials do not occur, fricatives and nasals occur",
@@ -532,7 +591,7 @@ class LacksCommonConsonants(WithInventory):
 
 class HasUncommonConsonants(WithInventory):
     """
-    WALS Feature 19A, check for presence of uncommon consonants.
+    .. seealso:: `WALS 19A - Presence of Uncommon Consonants <https://wals.info/feature/19A>`_
     """
     categories = {
         1: "no clicsk and no dental fricatives and no labiovelars and no pharyngeals",

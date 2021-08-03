@@ -1,3 +1,11 @@
+"""
+Features may have different requirements regarding the kind of data needed to perform the
+computation. These requirements can be expressed (and enforced) by decorating the callable
+(function or method) using the :func:`cltoolkit.features.requires` decorator, parametrized with
+the appropriate callables from the `cltoolkit.features.reqs` module - or any other callable
+accepting a :class:`cltoolkit.models.Language` instance as argument, returning `True` if the
+requirement is met.
+"""
 import functools
 
 __all__ = ['MissingRequirement', 'inventory', 'graphemes', 'concepts', 'requires',
@@ -5,7 +13,10 @@ __all__ = ['MissingRequirement', 'inventory', 'graphemes', 'concepts', 'requires
 
 
 class MissingRequirement(ValueError):
-    pass
+    """
+    Exception raised by :func:`requires` (before calling the decorated function) when a
+    requirement is not met
+    """
 
 
 def inventory(language):
@@ -27,7 +38,7 @@ def inventory_with_occurrences(language):
 
 def graphemes(language):
     """
-    Make sure a language has segmented forms.
+    Make sure a language has segmented forms, i.e. lists of graphemes for each form.
     """
     try:
         return bool(len(language.forms_with_graphemes))
@@ -49,9 +60,9 @@ def requires(*what):
     """
     Decorator to specify requirements of a feature callable.
 
-    .. code-block: python
+    .. code-block:: python
 
-        @requires(segments)
+        @requires(graphemes)
         def count_tokens(language):
             return 5
     """

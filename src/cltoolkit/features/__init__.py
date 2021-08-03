@@ -1,16 +1,11 @@
 """
 A feature is some aspect of language, e.g. the size of its phoneme inventory.
 
-In `cltoolkit`, a `Feature` is an object bundling some metadata with a python callable accepting
-a `cltoolkit.models.Language` instance as its sole argument, and returning the value computed for
-this language.
+In `cltoolkit`, a :class:`Feature` is an object bundling some metadata with a python callable
+accepting a :class:`cltoolkit.models.Language` instance as its sole argument, and returning the
+value computed for this language.
 
-Features may have different requirements regarding the kind of data needed to perform the
-computation. These requirements can be expressed (and enforced) by decorating the callable
-(function or method) using the `cltoolkit.features.requires` decorator, parametrized with
-the appropriate callables from the `cltoolkit.features.reqs` module - or any other callable
-accepting a `cltoolkit.models.Language` instance as argument, returning `True` if the requirement
-is met.
+A :class:`FeatureCollection` of predefined features is available in :data:`FEATURES`.
 """
 from .collection import FeatureCollection, Feature
 from . import phonology
@@ -19,6 +14,7 @@ from .reqs import requires
 
 assert requires
 
+#: Predefined lexical and phonological features.
 FEATURES = FeatureCollection(Feature(**f) for f in [
     {
         "id": "ConsonantQualitySize",

@@ -12,6 +12,13 @@
   flake8 src
   ```
 
+- Make sure the docs render:
+  ```shell
+  cd docs
+  make clean html
+  cd ..
+  ```
+
 - Update the version number, by removing the trailing `.dev0` in:
   - `setup.py`
   - `src/cltoolkit/__init__.py`
