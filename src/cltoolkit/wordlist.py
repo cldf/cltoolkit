@@ -1,6 +1,7 @@
+import typing
 import collections
-from typing import Optional
 
+import pycldf
 from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
@@ -18,10 +19,11 @@ class Wordlist:
     """
     A collection of one or more lexibank datasets, aligned by concept.
 
-    :param datasets: The datasets you want to load, provided as list of
-       pycldf.Datasets.
+    :param datasets: The datasets you want to load, provided as list of \
+    `pycldf.Dataset`s.
     :param ts: A TranscriptionSystem (as provided  by pyclts), if you want to
        work with phonological features from CLTS.
+    :ivar datasets:
     :ivar languages: :class:`DictTuple`
     :ivar senses: :class:`DictTuple`
     :ivar concepts: :class:`DictTuple`
@@ -30,9 +32,10 @@ class Wordlist:
     :ivar sounds: :class:`DictTuple`
     """
     def __init__(self,
-                 datasets,
-                 ts: Optional[TranscriptionSystem] = None,
-                 concept_id_factory=lambda x: x["Concepticon_Gloss"]):
+                 datasets: typing.List[pycldf.Dataset],
+                 ts: typing.Optional[TranscriptionSystem] = None,
+                 concept_id_factory: typing.Callable[[dict], str] =
+                 lambda x: x["Concepticon_Gloss"]):
         self.datasets = DictTuple(datasets, key=lambda x: x.metadata_dict["rdf:ID"])
         self.ts = ts
         self.concept_id_factory = concept_id_factory
