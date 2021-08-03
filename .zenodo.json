@@ -1,5 +1,5 @@
 {
-    "title": "CLToolKit. A Python Library for the Processing of Cross-Linguistic Data",
+    "title": "CL Toolkit. A Python Library for the Processing of Cross-Linguistic Data",
     "creators": [
         {
             "name": "Johann-Mattis List"
@@ -8,7 +8,7 @@
             "name": "Robert Forkel"
         }
     ],
-    "description": "<p>Cite the library as:</p>\n\n<blockquote>\n<p>List, Johann-Mattis and Forkel, Robert (2021): CLToolKit. A Python Library for the Processing of Cross-Linguistic Data. Version 0.1. Leipzig: Max Planck Institute for Evolutionary Anthropology. URL: https://pypi.org/project/cltoolkit/</p>\n</blockquote>",
+    "description": "<p>Cite the library as:</p>\n\n<blockquote>\n<p>List, Johann-Mattis and Forkel, Robert (2021): CL Toolkit. A Python Library for the Processing of Cross-Linguistic Data. Version 0.1. Leipzig: Max Planck Institute for Evolutionary Anthropology. URL: https://pypi.org/project/cltoolkit/</p>\n</blockquote>",
     "access_right": "open",
     "keywords": [
         "linguistics",

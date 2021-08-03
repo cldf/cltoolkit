@@ -1,11 +1,12 @@
-# CL Toolkit
+# CL ToolKit
 
 [![Build Status](https://github.com/cldf/cltoolkit/workflows/tests/badge.svg)](https://github.com/cldf/cltoolkit/actions?query=workflow%3Atests)
 [![Documentation Status](https://readthedocs.org/projects/cltoolkit/badge/?version=latest)](https://cltoolkit.readthedocs.io/en/latest/?badge=latest)
 [![PyPI](https://img.shields.io/pypi/v/cltoolkit.svg)](https://pypi.org/project/cltoolkit)
 
-Toolkit for processing Cross-Linguistic data.
+A Python Library for the Processing of Cross-Linguistic Data.
 
+By Johann-Mattis List and Robert Forkel.
 
 ## Overview
 
