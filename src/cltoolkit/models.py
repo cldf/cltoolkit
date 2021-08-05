@@ -287,37 +287,28 @@ class Sound(CLCore, WithForms):
             occurrences=sound.occurrences[language.id],
         )
 
+    def consonant_or_cluster_attr(self, attribute):
+        if isinstance(self.obj, Consonant):
+            return getattr(self.obj, attribute)
+        if isinstance(self.obj, Cluster):
+            return getattr(self.obj.from_sound, attribute)
+        raise AttributeError(attribute)
+
     @property
     def manner(self):
-        if isinstance(self.obj, Consonant):
-            return self.obj.manner
-        if isinstance(self.obj, Cluster):
-            return self.obj.from_sound.manner
-        raise AttributeError('manner')
+        return self.consonant_or_cluster_attr('manner')
 
     @property
     def place(self):
-        if isinstance(self.obj, Consonant):
-            return self.obj.place
-        if isinstance(self.obj, Cluster):
-            return self.obj.from_sound.place
-        raise AttributeError('place')
+        return self.consonant_or_cluster_attr('place')
 
     @property
     def ejection(self):
-        if isinstance(self.obj, Consonant):
-            return self.obj.ejection
-        if isinstance(self.obj, Cluster):
-            return self.obj.from_sound.ejection
-        raise AttributeError('ejection')
+        return self.consonant_or_cluster_attr('ejection')
 
     @property
     def airstream(self):
-        if isinstance(self.obj, Consonant):
-            return self.obj.airstream
-        if isinstance(self.obj, Cluster):
-            return self.obj.from_sound.airstream
-        raise AttributeError('airstream')
+        return self.consonant_or_cluster_attr('airstream')
 
 
 class GetSubInventoryByType:
