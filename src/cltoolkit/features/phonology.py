@@ -159,21 +159,21 @@ def is_voiced(sound):
 
 def is_glide(sound):
     """Check if sound is a glide or a liquid."""
-    return sound.obj.manner in {"trill", "approximant", "tap"}
+    return sound.manner in {"trill", "approximant", "tap"}
 
 
 def is_implosive(sound):
     """
     This groups stops and affricates into a group of sounds.
     """
-    return sound.obj.manner in {"implosive"}
+    return sound.manner in {"implosive"}
 
 
 def stop_like(sound):
     """
     This groups stops and affricates into a group of sounds.
     """
-    return sound.obj.manner in {"stop", "affricate"}
+    return sound.manner in {"stop", "affricate"}
 
 
 def is_uvular(sound):
@@ -188,11 +188,11 @@ def is_ejective(sound):
 
 
 def is_nasal(sound):
-    return sound.obj.manner == "nasal"
+    return sound.manner == "nasal"
 
 
 def is_lateral(sound):
-    return sound.obj.airstream == "lateral"
+    return sound.airstream == "lateral"
 
 
 class PlosiveFricativeVoicing(WithInventory):
@@ -208,8 +208,8 @@ class PlosiveFricativeVoicing(WithInventory):
 
     def run(self, inv):
         voiced = {
-            sound.obj.manner for sound in inv.consonants if
-            sound.obj.manner in ['stop', 'fricative'] and is_voiced(sound)  # noqa: W504
+            sound.manner for sound in inv.consonants if
+            sound.manner in ['stop', 'fricative'] and is_voiced(sound)  # noqa: W504
         }
         if not voiced:
             return 1
@@ -261,7 +261,7 @@ class HasUvular(WithInventory):
     }
 
     def run(self, inv):
-        uvulars = set([sound.obj.manner for sound in inv.consonants if is_uvular(sound)])
+        uvulars = set([sound.manner for sound in inv.consonants if is_uvular(sound)])
         if len(uvulars) == 0:
             return 1
         if len(uvulars) == 1:
@@ -434,7 +434,13 @@ def syllable_complexity(forms_with_sounds):
     for form in forms_with_sounds:
         idx = 0
         sounds_in_form = [s for s in form.sound_objects if s.type != "marker"]
-        for i, syllable in enumerate(iter_syllables(form)):
+        try:
+            syllables = list(iter_syllables(form))
+        except ValueError:
+            print(form)
+            continue
+            raise ValueError(form)
+        for i, syllable in enumerate(syllables):
             sounds, count = [], 0
             sounds_in_syllable = []
             for token in syllable:

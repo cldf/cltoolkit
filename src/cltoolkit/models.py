@@ -9,7 +9,7 @@ import attr
 import lingpy
 from clldutils.misc import lazyproperty as cached_property
 import pyclts
-from pyclts.models import Sound as CLTSSound, Symbol
+from pyclts.models import Sound as CLTSSound, Symbol, Cluster, Consonant
 
 from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
 
@@ -286,6 +286,38 @@ class Sound(CLCore, WithForms):
             grapheme=sound.grapheme,
             occurrences=sound.occurrences[language.id],
         )
+
+    @property
+    def manner(self):
+        if isinstance(self.obj, Consonant):
+            return self.obj.manner
+        if isinstance(self.obj, Cluster):
+            return self.obj.from_sound.manner
+        raise AttributeError('manner')
+
+    @property
+    def place(self):
+        if isinstance(self.obj, Consonant):
+            return self.obj.place
+        if isinstance(self.obj, Cluster):
+            return self.obj.from_sound.place
+        raise AttributeError('place')
+
+    @property
+    def ejection(self):
+        if isinstance(self.obj, Consonant):
+            return self.obj.ejection
+        if isinstance(self.obj, Cluster):
+            return self.obj.from_sound.ejection
+        raise AttributeError('ejection')
+
+    @property
+    def airstream(self):
+        if isinstance(self.obj, Consonant):
+            return self.obj.airstream
+        if isinstance(self.obj, Cluster):
+            return self.obj.from_sound.airstream
+        raise AttributeError('airstream')
 
 
 class GetSubInventoryByType:
