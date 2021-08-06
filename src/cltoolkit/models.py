@@ -192,7 +192,7 @@ class Form(CLCore, WithDataset):
     form = MutatedDataValue("Form")
     #: Graphemes in the segmented form:
     graphemes = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
-    cognates = attr.ib(default=None, repr=False)
+    cognates = attr.ib(default=attr.Factory(dict), repr=False)
 
     @property
     def sound_objects(self):

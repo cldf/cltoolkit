@@ -6,6 +6,7 @@ the appropriate callables from the `cltoolkit.features.reqs` module - or any oth
 accepting a :class:`cltoolkit.models.Language` instance as argument, returning `True` if the
 requirement is met.
 """
+import logging
 import functools
 
 __all__ = ['MissingRequirement', 'inventory', 'graphemes', 'concepts', 'requires',
@@ -75,6 +76,12 @@ def requires(*what):
             status = [(req.__name__, req(language)) for req in what]
             if not all([s[1] for s in status]):
                 raise MissingRequirement(' '.join(s[0] for s in status if not s[1]))
-            return func(*args)
+            try:
+                return func(*args)
+            except:  # noqa: E722
+                log = logging.getLogger('cltoolkit')
+                log.debug('dataset: {}; language: {}'.format(
+                    getattr(language, 'dataset'), language))
+                raise
         return wrapper_requires
     return decorator_requires

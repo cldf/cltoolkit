@@ -1,3 +1,5 @@
+import pytest
+
 from cltoolkit import Wordlist
 from cltoolkit.models import (
         CLCore, WithForms, WithDataset,
@@ -38,6 +40,14 @@ def test_core_models(clts, ds_dummy):
     assert wl.sounds[0].name == 'voiced bilabial nasal consonant'
     assert wl.sounds[0].__repr__() == '<Sound m>'
     assert wl.sounds[0].__str__() == wl.sounds[0].grapheme
+
+    cluster = Sound(id='x', obj=clts.bipa['tt'])
+    assert cluster.ejection is None
+    assert cluster.manner == 'stop'
+    assert cluster.place == 'alveolar'
+
+    with pytest.raises(AttributeError):
+        _ = Sound(id='x', obj=clts.bipa['a']).manner
 
     assert round(wl.sounds[0].similarity(wl.sounds[2]), 2) == 0.33
     sound = Sound(id="a", grapheme="+", wordlist=wl, obj=clts.bipa["+"], data={"name": "dummy sound", "type": "marker", "featureset": frozenset(["f"])})

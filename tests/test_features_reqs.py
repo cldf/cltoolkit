@@ -1,3 +1,4 @@
+import logging
 from argparse import Namespace
 
 import pytest
@@ -5,7 +6,7 @@ import pytest
 from cltoolkit.features.reqs import *
 
 
-def test_requires():
+def test_requires(caplog):
     @requires(inventory, graphemes, concepts)
     def f(language):
         return True
@@ -22,3 +23,12 @@ def test_requires():
         f(Namespace(sound_inventory=[1, 2], forms_with_graphemes=[1, 2]))
 
     assert f(Namespace(sound_inventory=[1, 2], forms_with_graphemes=[1, 2], concepts=[1, 2]))
+
+    @requires()
+    def f(language):
+        raise ValueError()
+
+    with caplog.at_level(logging.DEBUG):
+        with pytest.raises(ValueError):
+            f(Namespace(dataset='xyz'))
+    assert 'xyz' in caplog.records[-1].message

@@ -238,10 +238,7 @@ class Wordlist:
                     form=self.forms[form_id],
                     contribution=cog.data.get("contribution", "default")
                 )
-                try:
-                    self.forms[form_id].cognates[cogset.contribution] = cogset
-                except:
-                    self.forms[form_id].cognates = {cogset.contribution: cogset}
+                self.forms[form_id].cognates[cogset.contribution] = cogset
                 self.cognates[cogset.id] = cogset
         self.cognates = DictTuple(self.cognates.values())
 

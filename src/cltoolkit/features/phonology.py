@@ -434,13 +434,7 @@ def syllable_complexity(forms_with_sounds):
     for form in forms_with_sounds:
         idx = 0
         sounds_in_form = [s for s in form.sound_objects if s.type != "marker"]
-        try:
-            syllables = list(iter_syllables(form))
-        except ValueError:
-            print(form)
-            continue
-            raise ValueError(form)
-        for i, syllable in enumerate(syllables):
+        for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
             sounds_in_syllable = []
             for token in syllable:
