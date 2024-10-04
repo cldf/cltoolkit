@@ -438,8 +438,9 @@ def syllable_complexity(forms_with_sounds):
             sounds, count = [], 0
             sounds_in_syllable = []
             for token in syllable:
-                sounds_in_syllable += [sounds_in_form[idx]]
-                idx += 1
+                if form.sound_objects[idx].type != "marker":
+                    sounds_in_syllable += [sounds_in_form[idx]]
+                    idx += 1
             for sound in sounds_in_syllable:
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
                         'syllabic' not in sound.obj.featureset:
