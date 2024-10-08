@@ -1,4 +1,3 @@
-from pyclts import CLTS
 from lingpy.basictypes import lists
 from collections import defaultdict
 from cltoolkit.util import iter_syllables
@@ -52,17 +51,12 @@ def syllable_complexity(forms_with_sounds):
 
 
 class Sound:
-
     def __init__(self, sound):
         self.obj = sound
         self.type = sound.type
 
-    def __repr__(self):
-        return str(self.obj)
-
 
 class FormWithSounds:
-
     def __init__(self, seq, ts):
         self.sounds = lists(seq)
         self.sound_objects = [Sound(ts[s]) for s in self.sounds]
@@ -75,14 +69,16 @@ class FormWithSounds:
         return str(self.sounds)
 
 
-forms = [
-        "t a t a t",
-        "t a t + t a t",
-        "t a t + t a ∼ k"
-        ]
+def test_features(clts):
+    forms = [
+            "t a t a t",
+            "t a t + t a t",
+            "t a t + t a ∼ k"
+            ]
 
-ts = CLTS().bipa
+    ts = clts.bipa
+    fws = [FormWithSounds(f, ts) for f in forms]
+    p, f = syllable_complexity(fws)
 
-fws = [FormWithSounds(f, ts) for f in forms]
-
-p, f = syllable_complexity(fws)
+    assert list(p[1][-1][0].__iter__()) == list(iter(lists(forms[-1])))
+    assert p[1][-1][0].__repr__() == forms[-1]
