@@ -1,4 +1,5 @@
 import typing
+import functools
 import collections
 
 import pycldf
@@ -6,13 +7,13 @@ from pyclts import TranscriptionSystem
 import lingpy
 from tqdm import tqdm as progressbar
 
-from cltoolkit.util import identity, lingpy_columns, valid_sounds, DictTuple
+from cltoolkit.util import identity, lingpy_columns, valid_sounds, DictTuple, idjoin
 from cltoolkit import log
 from cltoolkit.models import Language, Concept, Grapheme, Form, Sense, Sound, Cognate
 
 
-def idjoin(*comps):
-    return '-'.join(comps)
+def get_dsid(ds):
+    return ds.metadata_dict["rdf:ID"]
 
 
 class Wordlist:
@@ -36,7 +37,6 @@ class Wordlist:
                  ts: typing.Optional[TranscriptionSystem] = None,
                  concept_id_factory: typing.Callable[[dict], str] =
                  lambda x: x["Concepticon_Gloss"]):
-        self.datasets = DictTuple(datasets, key=lambda x: x.metadata_dict["rdf:ID"])
         self.ts = ts
         self.concept_id_factory = concept_id_factory
 
@@ -48,7 +48,8 @@ class Wordlist:
         self.graphemes = collections.OrderedDict()
         self.sounds = collections.OrderedDict()
 
-        for dsid, dataset in self.datasets.items():
+        for dataset in datasets:
+            dsid = get_dsid(dataset)
             log.info("loading {0}".format(dsid))
             self._add_languages(dsid, dataset)
             self._add_senses(dsid, dataset)
@@ -95,17 +96,8 @@ class Wordlist:
         """Append languages to the wordlist.
         """
         for language in dataset.objects("LanguageTable"):
-            language_id = idjoin(dsid, language.id)
-            self.languages[language_id] = Language(
-                id=language_id,
-                wordlist=self,
-                data=language.data,
-                obj=language,
-                dataset=dsid,
-                forms=collections.OrderedDict(),
-                senses=collections.OrderedDict(),
-                concepts=collections.OrderedDict(),
-            )
+            lg = Language.from_obj(self, dsid, language)
+            self.languages[lg.id] = lg
 
     def _add_senses(self, dsid, dataset):
         """Append senses (concepts) to the wordlist."""
@@ -115,21 +107,23 @@ class Wordlist:
                 id=idjoin(dsid, concept.id),
                 wordlist=self,
                 dataset=dsid,
-                data=concept.data,
-                forms=collections.OrderedDict(),
+                name=concept.data.get('Name'),
             )
             if concept_id and concept_id not in self.concepts:
-                new_concept = Concept.from_sense(
-                    new_sense,
+                new_concept = Concept(
                     id=concept_id,
                     name=concept_id.lower(),
-                    forms=collections.OrderedDict(),
-                    senses=collections.OrderedDict(),
+                    concepticon_id=concept.data.get("Concepticon_ID", ""),
+                    concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
                 )
                 self.concepts[new_concept.id] = new_concept
             if concept_id:
                 self.concepts[concept_id].senses[new_sense.id] = new_sense
             self.senses[new_sense.id] = new_sense
+
+    @functools.lru_cache(maxsize=10000)
+    def ts_lookup(self, s):
+        return self.ts[s]
 
     def _add_forms(self, dsid, dataset):
         """Add forms to the dataset."""
@@ -146,14 +140,14 @@ class Wordlist:
                 concept=self.concepts[cid] if cid else None,
                 language=self.languages[lid],
                 sense=self.senses[pid],
-                obj=form,
-                data=form.data,
+                form=form.data['Form'],
+                value=form.data.get('Value'),
+                graphemes=lingpy.basictypes.lists(form.data['Segments']),
                 dataset=dsid,
-                cognates={},
                 wordlist=self
             )
             self.forms[new_form.id] = new_form
-            sounds = [self.ts[s] for s in new_form.graphemes] if self.ts else None
+            sounds = [self.ts_lookup(s) for s in new_form.graphemes] if self.ts else None
             if sounds:
                 new_form.sounds = valid_sounds(sounds)
                 for i, (segment, sound) in enumerate(zip(new_form.graphemes, sounds)):
@@ -164,7 +158,7 @@ class Wordlist:
                             grapheme=segment,
                             dataset=dsid,
                             wordlist=self,
-                            obj=sound,
+                            sound=sound,
                             occurrences=collections.OrderedDict(),
                             forms=collections.OrderedDict([(new_form.id, new_form)]))
                     self.graphemes[gid].forms[new_form.id] = new_form
@@ -190,11 +184,7 @@ class Wordlist:
                         except KeyError:
                             self.sounds[sid].occurrences[lid] = [(i, new_form)]
             if cid and cid not in self.languages[lid].concepts:
-                self.languages[lid].concepts[cid] = Concept.from_concept(
-                    self.concepts[cid],
-                    senses=collections.OrderedDict(),
-                    forms=collections.OrderedDict(),
-                )
+                self.languages[lid].concepts[cid] = Concept.from_concept(self.concepts[cid])
 
             if cid:
                 self.languages[lid].concepts[cid].forms[new_form.id] = new_form
@@ -204,7 +194,7 @@ class Wordlist:
 
             if pid not in self.languages[lid].senses:
                 self.languages[lid].senses[pid] = Sense.from_sense(
-                    self.senses[pid], self.languages[lid], collections.OrderedDict())
+                    self.senses[pid], self.languages[lid])
             self.languages[lid].senses[pid].forms[new_form.id] = new_form
             self.languages[lid].forms[new_form.id] = new_form
             self.senses[pid].forms[new_form.id] = new_form
@@ -212,9 +202,10 @@ class Wordlist:
     def __len__(self):
         return len(self.forms)
 
-    def load_cognates(self):
+    def load_cognates(self, datasets: typing.List[pycldf.Dataset]):
         self.cognates = collections.OrderedDict()
-        for dsid, dataset in self.datasets.items():
+        for dataset in datasets:
+            dsid = get_dsid(dataset)
             self._add_cognates(dsid, dataset)
         # TODO not sure this is the best way to handle this but loading this
         # multiple times seems also not useful
@@ -232,9 +223,7 @@ class Wordlist:
                 cogset = Cognate(
                     id=idjoin(dsid, cog.cldf.cognatesetReference),
                     wordlist=self,
-                    obj=cog.cldf,
                     dataset=dsid,
-                    data=cog.data,
                     form=self.forms[form_id],
                     contribution=cog.data.get("contribution", "default")
                 )

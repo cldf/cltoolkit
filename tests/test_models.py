@@ -19,7 +19,7 @@ def test_core_models(clts, ds_dummy):
     datasets = [ds_dummy]
     wl = Wordlist(datasets, clts.bipa)
 
-    clc = CLCore(id="a", wordlist=wl, data={})
+    clc = CLCore(id="a", wordlist=wl)
     assert clc.__repr__() == "<CLCore a>"
 
     wf = WithForms(forms=[wl.forms[0], wl.forms[1]])
@@ -31,7 +31,7 @@ def test_core_models(clts, ds_dummy):
     #assert repr(clb) == "<CLBase a>"
 
     lng = Language(
-            id="dummy-Anyi", wordlist=wl, data=wl.languages[0].data, senses=[],
+            id="dummy-Anyi", wordlist=wl, senses=[],
             concepts=[], forms=[wl.forms[0], wl.forms[1]])
 
     inv = Inventory.from_list(
@@ -58,21 +58,21 @@ def test_core_models(clts, ds_dummy):
         _ = Sound(id='x', obj=clts.bipa['a']).manner
 
     assert round(wl.sounds[0].similarity(wl.sounds[2]), 2) == 0.33
-    sound = Sound(id="a", grapheme="+", wordlist=wl, obj=clts.bipa["+"], data={"name": "dummy sound", "type": "marker", "featureset": frozenset(["f"])})
-    soundB = Sound(id="Z", grapheme="Z", wordlist=wl, obj=clts.bipa["Z"], data={"name": "dummy sound", "type": "marker", "featureset": frozenset(["f"])})
+    sound = Sound(id="a", grapheme="+", wordlist=wl, obj=clts.bipa["+"])
+    soundB = Sound(id="Z", grapheme="Z", wordlist=wl, obj=clts.bipa["Z"])
     assert soundB.similarity(sound) == 0
 
     assert sound.similarity(wl.sounds[0]) == 0.0
     assert sound.similarity(sound) == 1
 
-    sense1 = Sense(id="a", data={"name": "bbb"})
-    sense2 = Sense(id="b", data={"name": "ccc"})
+    sense1 = Sense(id="a")
+    sense2 = Sense(id="b")
     assert sense1 == sense2
     assert sense1 != sound
 
-    form = Form(id="a", data={"Form": "b", "Segments": ["a", "p", "a"]},
-        sounds= ["a", "p", "a"],
-        wordlist=wl, dataset="dummy")
+    form = Form(
+        id="a", form="b", graphemes=["a", "p", "a"], sounds=["a", "p", "a"], wordlist=wl,
+        dataset="dummy")
     assert form.__repr__() == '<Form b>'
     assert form.grapheme_objects[0].grapheme == "a"
 

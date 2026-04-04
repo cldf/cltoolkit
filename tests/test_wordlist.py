@@ -48,6 +48,6 @@ def test_Wordlist(repos, ds_carvalhopurus, ds_wangbcd, clts):
             assert wl.coverage(aspect="forms_with_graphemes")[apurina.id] == len(apurina.concepts)
     
     wl = Wordlist([datasets[0]], clts.bipa)
-    wl.load_cognates()
+    wl.load_cognates([datasets[0]])
     lpwl = wl.as_lingpy(columns=lingpy_columns(cognates="default"))
     assert "cognacy" in lpwl.columns

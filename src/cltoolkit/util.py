@@ -10,9 +10,13 @@ from lingpy.sequence.sound_classes import syllabify
 from lingpy.basictypes import lists
 from pycldf import Dataset
 
-__all__ = ['valid_sounds', 'identity', 'jaccard', 'iter_syllables', 'DictTuple']
+__all__ = ['valid_sounds', 'identity', 'jaccard', 'iter_syllables', 'DictTuple', 'idjoin']
 
 T = TypeVar('T')
+
+
+def idjoin(*comps):
+    return '-'.join(comps)
 
 
 def valid_sounds(sounds) -> list[str]:
@@ -95,9 +99,6 @@ class DictTuple(tuple[T]):
 
     def __contains__(self, item):
         return (getattr(item, 'id', item) in self._index) or (super().__contains__(item))
-
-    def items(self):
-        yield from self._index.items()
 
 
 def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json', base_dir="."):

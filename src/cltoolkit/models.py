@@ -1,7 +1,7 @@
 """
 Basic models.
 """
-from typing import Optional, TYPE_CHECKING, Any, Union
+from typing import Optional, TYPE_CHECKING, Union
 import functools
 import statistics
 import collections
@@ -12,10 +12,9 @@ import lingpy
 from lingpy.basictypes import lists
 import pyclts
 from pyclts.models import Sound as CLTSSound, Cluster, Consonant
-from pycldf import Dataset
-from pycldf.orm import Object
+from pycldf.orm import Language as PycldfLanguage
 
-from cltoolkit.util import DictTuple, jaccard
+from cltoolkit.util import DictTuple, jaccard, idjoin
 
 if TYPE_CHECKING:
     from .wordlist import Wordlist
@@ -33,7 +32,6 @@ class CLCore:
     """
     id: Optional[str] = None
     wordlist: Optional['Wordlist'] = None
-    data: dict[str, Any] = dataclasses.field(default_factory=dict)
 
     def __repr__(self):
         return "<" + self.__class__.__name__ + " " + self.id + ">"
@@ -44,7 +42,7 @@ class WithForms:
     """
     Mixin to represent data in a wordlist that contains forms.
     """
-    forms: DictTuple['Form'] = dataclasses.field(default_factory=DictTuple)
+    forms: DictTuple['Form'] = dataclasses.field(default_factory=collections.OrderedDict)
 
     @functools.cached_property
     def forms_with_sounds(self):
@@ -56,16 +54,7 @@ class WithForms:
 
 
 @dataclasses.dataclass
-class WithDataset:
-    """
-    Mixin to represent data in a wordlist from a specific dataset.
-    """
-    obj: Optional[Object] = dataclasses.field(repr=False, default=None)
-    dataset: Dataset = dataclasses.field(repr=False, default=None)
-
-
-@dataclasses.dataclass
-class Language(CLCore, WithForms, WithDataset):
+class Language(CLCore, WithForms):
     """
     Base class for handling languages.
 
@@ -77,36 +66,34 @@ class Language(CLCore, WithForms, WithDataset):
 
        A language variety is defined for a specific dataset only.
     """
-    senses: Optional[DictTuple['Sense']] = None
-    concepts: Optional[DictTuple['Concept']] = None
+    dataset: str = dataclasses.field(repr=False, default_factory=collections.OrderedDict)
+    senses: Optional[DictTuple['Sense']] = dataclasses.field(
+        default_factory=collections.OrderedDict)
+    concepts: Optional[DictTuple['Concept']] = dataclasses.field(
+        default_factory=collections.OrderedDict)
+    glottocode: Optional[str] = None
+    name: Optional[str] = None
+    macroarea: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    family: Optional[str] = None
+    subgroup: Optional[str] = None
 
-    @property
-    def glottocode(self):
-        return self.obj.cldf.glottocode
-
-    @property
-    def name(self):
-        return self.obj.cldf.name
-
-    @property
-    def macroarea(self):
-        return self.obj.cldf.macroarea
-
-    @property
-    def latitude(self):
-        return self.obj.cldf.latitude
-
-    @property
-    def longitude(self):
-        return self.obj.cldf.longitude
-
-    @property
-    def family(self):
-        return self.obj.data.get('Family')
-
-    @property
-    def subgroup(self):
-        return self.obj.data.get('SubGroup')
+    @classmethod
+    def from_obj(cls, wl, dsid, language: PycldfLanguage):
+        idjoin(dsid, language.id)
+        return cls(
+            id=idjoin(dsid, language.id),
+            wordlist=wl,
+            name=language.cldf.name,
+            glottocode=language.cldf.glottocode,
+            macroarea=language.cldf.macroarea,
+            latitude=language.cldf.latitude,
+            longitude=language.cldf.longitude,
+            family=language.data.get('Family'),
+            subgroup=language.data.get('SubGroup'),
+            dataset=dsid,
+        )
 
     @functools.cached_property
     def sound_inventory(self) -> 'Inventory':
@@ -122,7 +109,7 @@ class Language(CLCore, WithForms, WithDataset):
 
 
 @dataclasses.dataclass(repr=False, eq=False)
-class Sense(CLCore, WithForms, WithDataset):
+class Sense(CLCore, WithForms):
     """
     A sense description (concept in source) which does not need to be linked to the Concepticon.
 
@@ -134,11 +121,9 @@ class Sense(CLCore, WithForms, WithDataset):
         Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined
         for all datasets.
     """
+    dataset: str = dataclasses.field(repr=False, default=None)
     language: Optional[Language] = None
-
-    @property
-    def name(self):
-        return self.data.get('Name')
+    name: Optional[str] = None
 
     def __repr__(self):
         return '<Sense ' + self.id + '>'
@@ -149,12 +134,10 @@ class Sense(CLCore, WithForms, WithDataset):
         return False
 
     @classmethod
-    def from_sense(cls, sense: 'Sense', language: 'Language', forms):
+    def from_sense(cls, sense: 'Sense', language: 'Language'):
         return cls(
             id=sense.id,
-            data=sense.data,
-            obj=sense.obj,
-            forms=forms,
+            name=sense.name,
             dataset=sense.dataset,
             wordlist=sense.wordlist,
             language=language)
@@ -181,31 +164,19 @@ class Concept(CLCore, WithForms):
 
     """
     language: Optional[Language] = None
-    senses: Optional[DictTuple[Sense]] = None
+    senses: Optional[DictTuple[Sense]] = dataclasses.field(
+        default_factory=collections.OrderedDict)
     name: Optional[str] = None
     concepticon_id: Optional[str] = None
     concepticon_gloss: Optional[str] = None
 
     @classmethod
-    def from_sense(cls, concept, id=None, name=None, forms=None, senses=None):
-        return cls(
-            name=name,
-            id=id,
-            concepticon_id=concept.data.get("Concepticon_ID", ""),
-            concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
-            forms=forms,
-            senses=senses
-        )
-
-    @classmethod
-    def from_concept(cls, concept: 'Concept', forms=None, senses=None):
+    def from_concept(cls, concept: 'Concept'):
         return cls(
             id=concept.id,
             name=concept.name,
             concepticon_id=concept.concepticon_id,
             concepticon_gloss=concept.concepticon_gloss,
-            senses=senses,
-            forms=forms,
         )
 
     def __repr__(self):
@@ -213,7 +184,7 @@ class Concept(CLCore, WithForms):
 
 
 @dataclasses.dataclass(repr=False)
-class Form(CLCore, WithDataset):
+class Form(CLCore):
     """
     Base class for handling the form part of linguistic signs.
 
@@ -223,25 +194,16 @@ class Form(CLCore, WithDataset):
     :ivar sounds: The segmented strings defined by the B(road) IPA.
     :ivar graphemes: The segmented graphemes (possibly not BIPA conform).
     """
+    dataset: str = dataclasses.field(repr=False, default=None)
     concept: Optional[Concept] = dataclasses.field(default=None, repr=False)
     language: Optional[Language] = dataclasses.field(default=None, repr=False)
     sense: Optional[Sense] = dataclasses.field(default=None, repr=False)
     #: Sounds (graphemes recognized in the specified transcription system) in the segmented form:
     sounds: lists = dataclasses.field(default_factory=lambda: lists([]), repr=False)
     cognates: Optional[DictTuple['Cognate']] = dataclasses.field(default_factory=dict, repr=False)
-
-    @property
-    def value(self):
-        return self.data['Value']
-
-    @property
-    def form(self):
-        return self.data['Form']
-
-    @functools.cached_property
-    def graphemes(self):
-        #: Graphemes in the segmented form:
-        return lingpy.basictypes.lists(self.data['Segments'])
+    value: Optional[str] = None
+    form: Optional[str] = None
+    graphemes: lingpy.basictypes.lists = dataclasses.field(default_factory=list)
 
     @property
     def sound_objects(self):
@@ -256,16 +218,19 @@ class Form(CLCore, WithDataset):
 
 
 @dataclasses.dataclass(repr=False)
-class Cognate(CLCore, WithDataset):
+class Cognate(CLCore):
+    dataset: str = dataclasses.field(repr=False, default=None)
     form: Optional[Form] = dataclasses.field(default=None, repr=False)
     contribution: Optional[str] = dataclasses.field(default=None, repr=False)
 
 
 @dataclasses.dataclass(repr=False)
-class Grapheme(CLCore, WithDataset, WithForms):
+class Grapheme(CLCore, WithForms):
+    dataset: str = dataclasses.field(repr=False, default=None)
     grapheme: Optional[str] = None
     occurrences: OccurrencesDictType = dataclasses.field(default_factory=collections.OrderedDict)
     language: Optional[Language] = None
+    sound: Optional[CLTSSound] = None
 
     def __str__(self):
         return self.grapheme
@@ -276,7 +241,7 @@ class Sound(CLCore, WithForms):
     """
     All sounds in a dataset.
     """
-    grapheme: Optional[Grapheme] = None
+    grapheme: Optional[str] = None
     occurrences: OccurrencesDictType = dataclasses.field(default_factory=collections.OrderedDict)
     graphemes_in_source: Optional[str] = None
     language: Optional[Language] = None
@@ -311,7 +276,7 @@ class Sound(CLCore, WithForms):
             grapheme=grapheme,
             wordlist=grapheme_.wordlist,
             occurrences=occurrences,
-            data=obj.__dict__,
+            #data=obj.__dict__,
             graphemes_in_source=graphemes_in_source,
             forms=forms,
             obj=obj)
@@ -344,7 +309,6 @@ class Sound(CLCore, WithForms):
         return cls(
             id=str(sound),
             language=language,
-            data=sound.data,
             obj=sound.obj,
             wordlist=sound.wordlist,
             grapheme=sound.grapheme,
@@ -445,7 +409,6 @@ class Inventory:
                         grapheme=str(sound),
                         graphemes_in_source=[sound.grapheme],
                         occurrences=[],
-                        data=sound.__dict__
                     )
         sounds = list(new.values())
 
