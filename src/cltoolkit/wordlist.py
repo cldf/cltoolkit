@@ -224,7 +224,7 @@ class Wordlist:
         Add cognate sets for the data that has been loaded.
         """
         for cog in progressbar(
-                dataset.objects("CognateTable"), desc="loading cognates for {0}".format(dsid)):
+                dataset.objects("CognateTable"), desc=f"loading cognates for {dsid}"):
             # note that the cognateset Reference can be None, this needs to be
             # caught up here
             if cog.cldf.cognatesetReference:
@@ -242,6 +242,23 @@ class Wordlist:
                 self.cognates[cogset.id] = cogset
         self.cognates = DictTuple(self.cognates.values())
 
+    @staticmethod
+    def _iter_form_cols(form, columns):
+        for (obj, att), name in columns:
+            if obj == "form":
+                yield getattr(form, att)
+            elif obj == "language":
+                yield getattr(form.language, att)
+            elif obj == "cognates":
+                # we need to check if a cognate set exists for the
+                # reference, if not, we provide a fake-cognate object
+                # with an ID that is empty
+                yield form.cognates.get(att, Cognate(id="")).id
+            elif obj == "concept":
+                yield getattr(form.concept, att) if form.concept else ''
+            elif obj == "sense":
+                yield getattr(form.sense, att)
+
     def as_lingpy(
             self,
             language_filter=identity,
@@ -249,33 +266,14 @@ class Wordlist:
             form_filter=identity,
             columns=None,
     ):
-        transform = lingpy.Wordlist
         columns = columns or lingpy_columns()
         D = {0: [x[1] for x in columns]}
         idx = 1
         for form in self.forms:
             if form_filter(form) and language_filter(form.language) and sense_filter(form.sense):
-                row = []
-                for (obj, att), name in columns:
-                    if obj == "form":
-                        row += [getattr(form, att)]
-                    elif obj == "language":
-                        row += [getattr(form.language, att)]
-                    elif obj == "cognates":
-                        # we need to check if a cognate set exists for the
-                        # reference, if not, we provide a fake-cognate object
-                        # with an ID that is empty
-                        row += [form.cognates.get(att, Cognate(id="")).id]
-                    elif obj == "concept":
-                        if form.concept:
-                            row += [getattr(form.concept, att)]
-                        else:
-                            row += ['']
-                    elif obj == "sense":
-                        row += [getattr(form.sense, att)]
-                D[idx] = row
+                D[idx] = list(self._iter_form_cols(form, columns))
                 idx += 1
-        return transform(D)
+        return lingpy.Wordlist(D)
 
     def iter_forms_by_concepts(
             self,
@@ -301,8 +299,7 @@ class Wordlist:
           provided this exists.
 
         """
-        flatten = identity if not flat else \
-            lambda x: [item for sublist in x for item in sublist]
+        flatten = identity if not flat else lambda x: [item for sublist in x for item in sublist]
         transform = identity if not aspect else lambda x: getattr(x, aspect)
         concepts = [self.concepts[c] for c in concepts] if concepts else self.concepts
         languages = [self.languages[i] for i in languages] if languages else self.languages
@@ -321,15 +318,15 @@ class Wordlist:
                 yield concept, flatten(out)
 
     @property
-    def height(self):
+    def height(self) -> int:
         return len(self.concepts)
 
     @property
-    def width(self):
+    def width(self) -> int:
         return len(self.languages)
 
     @property
-    def length(self):
+    def length(self) -> int:
         return len(self)
 
     def coverage(self, concepts="concepts", aspect="forms_with_sounds"):

@@ -353,7 +353,7 @@ class HasEngma(util.FeatureFunction):
         inv = language.sound_inventory
         consonants = [sound.obj.s for sound in inv.consonants]
         if 'ŋ' in consonants:
-            for pos, fid in inv.sounds['ŋ'].occurrences:
+            for pos, fid in inv.sounds['ŋ'].loccurrences:
                 if pos == 0:
                     return 1
             return 2
@@ -438,9 +438,9 @@ def syllable_complexity(forms_with_sounds):
         for i, syllable in enumerate(iter_syllables(form)):
             sounds, count = [], 0
             sounds_in_syllable = []
-            for token in syllable:
+            for _ in syllable:
                 sounds_in_syllable += [sounds_in_form[idx]]
-                idx +=  1
+                idx += 1
             for sound in sounds_in_syllable:
                 if sound.type not in ['vowel', 'diphthong', 'tone', 'marker'] and \
                         'syllabic' not in sound.obj.featureset:

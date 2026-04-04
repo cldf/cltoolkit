@@ -1,58 +1,70 @@
 """
 Basic models.
 """
-import typing
+from typing import Optional, TYPE_CHECKING, Any, Union
+import functools
 import statistics
 import collections
+from collections.abc import Iterable
+import dataclasses
 
-import attr
 import lingpy
-from clldutils.misc import lazyproperty as cached_property
+from lingpy.basictypes import lists
 import pyclts
-from pyclts.models import Sound as CLTSSound, Symbol, Cluster, Consonant
+from pyclts.models import Sound as CLTSSound, Cluster, Consonant
+from pycldf import Dataset
+from pycldf.orm import Object
 
-from cltoolkit.util import NestedAttribute, DictTuple, jaccard, MutatedDataValue
+from cltoolkit.util import DictTuple, jaccard
+
+if TYPE_CHECKING:
+    from .wordlist import Wordlist
+
+LanguageIdType = str
+OccurrencesType = list[tuple[int, 'Form']]
+OccurrencesDictType = collections.OrderedDict[LanguageIdType, OccurrencesType]
+INVALID_SOUND_TYPES = ["marker", "unknownsound"]
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass
 class CLCore:
     """
     Base class to represent data in a wordlist.
     """
-    id = attr.ib()
-    wordlist = attr.ib(default=None)
-    data = attr.ib(default=None)
+    id: Optional[str] = None
+    wordlist: Optional['Wordlist'] = None
+    data: dict[str, Any] = dataclasses.field(default_factory=dict)
 
     def __repr__(self):
         return "<" + self.__class__.__name__ + " " + self.id + ">"
 
 
-@attr.s
+@dataclasses.dataclass
 class WithForms:
     """
     Mixin to represent data in a wordlist that contains forms.
     """
-    forms = attr.ib(default=None)
+    forms: DictTuple['Form'] = dataclasses.field(default_factory=DictTuple)
 
-    @cached_property
+    @functools.cached_property
     def forms_with_sounds(self):
-        return DictTuple([f for f in self.forms if f.sounds])
+        return DictTuple(f for f in self.forms if f.sounds)
 
-    @cached_property
+    @functools.cached_property
     def forms_with_graphemes(self):
-        return DictTuple([f for f in self.forms if f.graphemes])
+        return DictTuple(f for f in self.forms if f.graphemes)
 
 
-@attr.s
+@dataclasses.dataclass
 class WithDataset:
     """
     Mixin to represent data in a wordlist from a specific dataset.
     """
-    obj = attr.ib(default=None, repr=False)
-    dataset = attr.ib(default=None, repr=False)
+    obj: Optional[Object] = dataclasses.field(repr=False, default=None)
+    dataset: Dataset = dataclasses.field(repr=False, default=None)
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass
 class Language(CLCore, WithForms, WithDataset):
     """
     Base class for handling languages.
@@ -65,26 +77,51 @@ class Language(CLCore, WithForms, WithDataset):
 
        A language variety is defined for a specific dataset only.
     """
-    senses = attr.ib(default=None)
-    concepts = attr.ib(default=None)
-    glottocode = MutatedDataValue("Glottocode")
-    name = MutatedDataValue("Name")
-    macroarea = MutatedDataValue("Macroarea")
-    latitude = MutatedDataValue("Latitude")
-    longitude = MutatedDataValue("Longitude")
-    family = MutatedDataValue("Family")
-    subgroup = MutatedDataValue("SubGroup")
+    senses: Optional[DictTuple['Sense']] = None
+    concepts: Optional[DictTuple['Concept']] = None
 
-    @cached_property
-    def sound_inventory(self):
-        sounds = []
-        for sound in self.wordlist.sounds:
+    @property
+    def glottocode(self):
+        return self.obj.cldf.glottocode
+
+    @property
+    def name(self):
+        return self.obj.cldf.name
+
+    @property
+    def macroarea(self):
+        return self.obj.cldf.macroarea
+
+    @property
+    def latitude(self):
+        return self.obj.cldf.latitude
+
+    @property
+    def longitude(self):
+        return self.obj.cldf.longitude
+
+    @property
+    def family(self):
+        return self.obj.data.get('Family')
+
+    @property
+    def subgroup(self):
+        return self.obj.data.get('SubGroup')
+
+    @functools.cached_property
+    def sound_inventory(self) -> 'Inventory':
+        sounds: list[Sound] = []
+        for sound in self.wordlist.sounds:  # Sound instances
             if self.id in sound.occurrences:
                 sounds.append(Sound.from_sound(sound, language=self))
-        return Inventory(language=self, ts=self.wordlist.ts, sounds=DictTuple(sounds))
+
+        return Inventory.from_list(
+            language=self,
+            ts=self.wordlist.ts,
+            sounds=sounds)
 
 
-@attr.s(repr=False, eq=False)
+@dataclasses.dataclass(repr=False, eq=False)
 class Sense(CLCore, WithForms, WithDataset):
     """
     A sense description (concept in source) which does not need to be linked to the Concepticon.
@@ -97,8 +134,11 @@ class Sense(CLCore, WithForms, WithDataset):
         Unlike senses in a wordlist, which are dataset-specific, concepts in a wordlist are defined
         for all datasets.
     """
-    language = attr.ib(default=None)
-    name = MutatedDataValue("Name")
+    language: Optional[Language] = None
+
+    @property
+    def name(self):
+        return self.data.get('Name')
 
     def __repr__(self):
         return '<Sense ' + self.id + '>'
@@ -109,7 +149,7 @@ class Sense(CLCore, WithForms, WithDataset):
         return False
 
     @classmethod
-    def from_sense(cls, sense, language, forms):
+    def from_sense(cls, sense: 'Sense', language: 'Language', forms):
         return cls(
             id=sense.id,
             data=sense.data,
@@ -120,7 +160,7 @@ class Sense(CLCore, WithForms, WithDataset):
             language=language)
 
 
-@attr.s(repr=False, eq=False)
+@dataclasses.dataclass(repr=False, eq=False)
 class Concept(CLCore, WithForms):
     """
     Base class for the concepts in a dataset.
@@ -140,11 +180,11 @@ class Concept(CLCore, WithForms):
        occur in different datasets.
 
     """
-    language = attr.ib(default=None)
-    senses = attr.ib(default=None)
-    name = attr.ib(default=None)
-    concepticon_id = attr.ib(default=None)
-    concepticon_gloss = attr.ib(default=None)
+    language: Optional[Language] = None
+    senses: Optional[DictTuple[Sense]] = None
+    name: Optional[str] = None
+    concepticon_id: Optional[str] = None
+    concepticon_gloss: Optional[str] = None
 
     @classmethod
     def from_sense(cls, concept, id=None, name=None, forms=None, senses=None):
@@ -158,7 +198,7 @@ class Concept(CLCore, WithForms):
         )
 
     @classmethod
-    def from_concept(cls, concept, forms=None, senses=None):
+    def from_concept(cls, concept: 'Concept', forms=None, senses=None):
         return cls(
             id=concept.id,
             name=concept.name,
@@ -169,10 +209,10 @@ class Concept(CLCore, WithForms):
         )
 
     def __repr__(self):
-        return "<Concept " + self.name + ">"
+        return f"<Concept {self.name}>"
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass(repr=False)
 class Form(CLCore, WithDataset):
     """
     Base class for handling the form part of linguistic signs.
@@ -183,16 +223,25 @@ class Form(CLCore, WithDataset):
     :ivar sounds: The segmented strings defined by the B(road) IPA.
     :ivar graphemes: The segmented graphemes (possibly not BIPA conform).
     """
-    concept = attr.ib(default=None, repr=False)
-    language = attr.ib(default=None, repr=False)
-    sense = attr.ib(default=None, repr=False)
+    concept: Optional[Concept] = dataclasses.field(default=None, repr=False)
+    language: Optional[Language] = dataclasses.field(default=None, repr=False)
+    sense: Optional[Sense] = dataclasses.field(default=None, repr=False)
     #: Sounds (graphemes recognized in the specified transcription system) in the segmented form:
-    sounds = attr.ib(default=attr.Factory(list), repr=False)
-    value = MutatedDataValue("Value")
-    form = MutatedDataValue("Form")
-    #: Graphemes in the segmented form:
-    graphemes = MutatedDataValue("Segments", transform=lingpy.basictypes.lists)
-    cognates = attr.ib(default=attr.Factory(dict), repr=False)
+    sounds: lists = dataclasses.field(default_factory=lambda: lists([]), repr=False)
+    cognates: Optional[DictTuple['Cognate']] = dataclasses.field(default_factory=dict, repr=False)
+
+    @property
+    def value(self):
+        return self.data['Value']
+
+    @property
+    def form(self):
+        return self.data['Form']
+
+    @functools.cached_property
+    def graphemes(self):
+        #: Graphemes in the segmented form:
+        return lingpy.basictypes.lists(self.data['Segments'])
 
     @property
     def sound_objects(self):
@@ -206,36 +255,52 @@ class Form(CLCore, WithDataset):
         return "<" + self.__class__.__name__ + " " + self.form + ">"
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass(repr=False)
 class Cognate(CLCore, WithDataset):
-    form = attr.ib(default=None, repr=False)
-    contribution = attr.ib(default=None, repr=False)
+    form: Optional[Form] = dataclasses.field(default=None, repr=False)
+    contribution: Optional[str] = dataclasses.field(default=None, repr=False)
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass(repr=False)
 class Grapheme(CLCore, WithDataset, WithForms):
-    grapheme = attr.ib(default=None)
-    occurrences = attr.ib(default=None)
-    language = attr.ib(default=None)
+    grapheme: Optional[str] = None
+    occurrences: OccurrencesDictType = dataclasses.field(default_factory=collections.OrderedDict)
+    language: Optional[Language] = None
 
     def __str__(self):
         return self.grapheme
 
 
-@attr.s(repr=False, eq=False)
+@dataclasses.dataclass(repr=False, eq=False)
 class Sound(CLCore, WithForms):
     """
     All sounds in a dataset.
     """
-    grapheme = attr.ib(default=None)
-    occurrences = attr.ib(default=None)
-    graphemes_in_source = attr.ib(default=None)
-    language = attr.ib(default=None)
-    obj = attr.ib(default=None)
+    grapheme: Optional[Grapheme] = None
+    occurrences: OccurrencesDictType = dataclasses.field(default_factory=collections.OrderedDict)
+    graphemes_in_source: Optional[str] = None
+    language: Optional[Language] = None
+    obj: Optional[CLTSSound] = None
 
-    type = NestedAttribute("obj", "type")
-    name = NestedAttribute("obj", "name")
-    featureset = NestedAttribute("obj", "featureset")
+    @property
+    def loccurrences(self) -> OccurrencesType:
+        if self.language:
+            return self.occurrences[self.language.id]
+        if len(self.occurrences) == 1:  # pragma: no cover
+            return list(self.occurrences.values())[0]
+        return []  # pragma: no cover
+
+    @property
+    def type(self):
+        return self.obj.type
+
+    @property
+    def name(self):
+        return self.obj.name
+
+    @property
+    def featureset(self):
+        return self.obj.featureset
 
     @classmethod
     def from_grapheme(
@@ -263,13 +328,12 @@ class Sound(CLCore, WithForms):
         return False
 
     def __repr__(self):
-        return "<" + self.__class__.__name__ + " " + self.grapheme + ">"
+        return f"<{self.__class__.__name__} {self.grapheme}>"
 
     def similarity(self, other):
-        if self.type not in ["marker", "unknownsound"] and \
-                other.type not in ["marker", "unknownsound"]:
+        if self.type not in INVALID_SOUND_TYPES and other.type not in INVALID_SOUND_TYPES:
             return self.obj.similarity(other.obj)
-        elif self.type in ["marker", "unknownsound"] and other.type in ["marker", "unknownsound"]:
+        if self.type in INVALID_SOUND_TYPES and other.type in INVALID_SOUND_TYPES:
             if self == other:
                 return 1
             return 0
@@ -284,7 +348,7 @@ class Sound(CLCore, WithForms):
             obj=sound.obj,
             wordlist=sound.wordlist,
             grapheme=sound.grapheme,
-            occurrences=sound.occurrences[language.id],
+            occurrences=collections.OrderedDict([(language.id, sound.occurrences[language.id])]),
         )
 
     def consonant_or_cluster_attr(self, attribute):
@@ -311,83 +375,110 @@ class Sound(CLCore, WithForms):
         return self.consonant_or_cluster_attr('airstream')
 
 
-class GetSubInventoryByType:
-    def __init__(self, types):
-        def select_sounds(inventory):
-            return DictTuple([v for v in inventory if v.type in types])
-        self.select_sounds = select_sounds
-
-    def __get__(self, obj, objtype=None):
-        return self.select_sounds(obj.sounds)
+PhonemeDictType = DictTuple
 
 
-class GetSubInventoryByProperty(GetSubInventoryByType):
-    def __init__(self, types, properties):
-        GetSubInventoryByType.__init__(self, types)
-        self.properties = properties
-
-    def __get__(self, obj, objtype=None):
-        out = []
-        sounds = self.select_sounds(obj.sounds)
-        sound_set = set([sound.grapheme for sound in sounds])
-        for v in sounds:
-            stripped = obj.ts.features.get(
-                frozenset([s for s in v.featureset if s not in self.properties])
-            )
-            if str(stripped) != str(v) and str(stripped) not in sound_set:
-                out += [v]
-            elif str(stripped) == str(v):
-                out += [v]
-        return DictTuple(out)
+def _subinventory_by_type(sounds: Iterable[Sound], types: list[str]) -> PhonemeDictType:
+    return DictTuple(v for v in sounds if v.obj.type in types)
 
 
-@attr.s
+def _subinventory_by_ignored_features(
+        sounds: Iterable[Sound],
+        types: list[str],
+        features_to_sound: dict[frozenset[str], Sound],
+        properties: list[str],
+) -> PhonemeDictType:
+    out = collections.OrderedDict()
+    strsounds = map(str, sounds)
+    for v in _subinventory_by_type(sounds, types):
+        stripped = features_to_sound.get(
+            frozenset(s for s in v.featureset if s not in properties))
+        if str(stripped) != str(v) and str(stripped) not in strsounds:
+            out[v.id] = v
+        elif str(stripped) == str(v):
+            out[v.id] = v
+    return DictTuple(out.values())
+
+
+@dataclasses.dataclass
 class Inventory:
-    language = attr.ib(default=None)
-    sounds = attr.ib(default=None, repr=False)
-    ts = attr.ib(default=None, repr=False)
+    language: Optional[str]
+    ts: Optional = dataclasses.field(repr=False)
 
-    consonants = GetSubInventoryByType(["consonant"])
-    consonants_by_quality = GetSubInventoryByProperty(
-        ["consonant"], ["long", "ultra-long", "mid-long", "ultra-short"]
-    )
-    consonant_sounds = GetSubInventoryByType(["consonant", "cluster"])
-    vowels = GetSubInventoryByType(["vowel"])
-    vowels_by_quality = GetSubInventoryByProperty(
-        ["vowel"], ["long", "ultra-long", "mid-long", "ultra-short"]
-    )
-    vowel_sounds = GetSubInventoryByType(["vowel", "diphthong"])
-    segments = GetSubInventoryByType(["consonant", "vowel", "cluster", "diphthong"])
-    tones = GetSubInventoryByType(["tone"])
-    markers = GetSubInventoryByType(["marker"])
-    clusters = GetSubInventoryByType(["cluster"])
-    diphthongs = GetSubInventoryByType(["diphthong"])
-    unknownsounds = GetSubInventoryByType(["unknownsound"])
+    sounds: PhonemeDictType = dataclasses.field(repr=False)
+    consonants: PhonemeDictType = dataclasses.field(repr=False)
+    # Consonants, ignoring differences just in length.
+    consonants_by_quality: PhonemeDictType = dataclasses.field(repr=False)
+    consonant_sounds: PhonemeDictType = dataclasses.field(repr=False)
+    vowels: PhonemeDictType = dataclasses.field(repr=False)
+    # Vowels, ignoring differences just in length.
+    vowels_by_quality: PhonemeDictType = dataclasses.field(repr=False)
+    vowel_sounds: PhonemeDictType = dataclasses.field(repr=False)
+    segments: PhonemeDictType = dataclasses.field(repr=False)
+    tones: PhonemeDictType = dataclasses.field(repr=False)
+    markers: PhonemeDictType = dataclasses.field(repr=False)
+    clusters: PhonemeDictType = dataclasses.field(repr=False)
+    diphthongs: PhonemeDictType = dataclasses.field(repr=False)
+    unknownsounds: PhonemeDictType = dataclasses.field(repr=False)
 
     @classmethod
     def from_list(
             cls,
             ts: pyclts.TranscriptionSystem,
-            *list_of_sounds: typing.Union[CLTSSound, Symbol, str],
+            sounds: list[Union[Sound, str]],
             language=None,
             wordlist=None,
     ):
-        sounds = collections.OrderedDict()
-        for itm in list_of_sounds:
-            sound = ts[itm]
-            try:
-                sounds[str(sound)].graphemes_in_source.append(itm)
-            except KeyError:
-                sounds[str(sound)] = Sound(
-                    id=str(sound),
-                    obj=sound,
-                    wordlist=wordlist,
-                    grapheme=str(sound),
-                    graphemes_in_source=[sound.grapheme],
-                    occurrences=[],
-                    data=sound.__dict__
-                )
-        return cls(sounds=DictTuple(sounds.values()), ts=ts, language=language)
+        new = collections.OrderedDict()
+        for sound in sounds:
+            if isinstance(sound, Sound):
+                new[sound.id] = sound
+            else:  # Initialization from lists of str is used in tests.
+                sound = ts[sound]
+                try:
+                    new[str(sound)].graphemes_in_source.append(sound)
+                except KeyError:
+                    new[str(sound)] = Sound(
+                        id=str(sound),
+                        obj=sound,
+                        wordlist=wordlist,
+                        grapheme=str(sound),
+                        graphemes_in_source=[sound.grapheme],
+                        occurrences=[],
+                        data=sound.__dict__
+                    )
+        sounds = list(new.values())
+
+        kw = dict(  # pylint: disable=R1735
+            consonants=_subinventory_by_type(sounds, ["consonant"]),
+            # Consonants, ignoring differences just in length.
+            consonants_by_quality=_subinventory_by_ignored_features(
+                sounds,
+                ["consonant"],
+                ts.features,
+                ["long", "ultra-long", "mid-long", "ultra-short"]),
+            consonant_sounds=_subinventory_by_type(sounds, ["consonant", "cluster"]),
+            vowels=_subinventory_by_type(sounds, ["vowel"]),
+            # Vowels, ignoring differences just in length.
+            vowels_by_quality=_subinventory_by_ignored_features(
+                sounds,
+                ["vowel"],
+                ts.features,
+                ["long", "ultra-long", "mid-long", "ultra-short"]),
+            vowel_sounds=_subinventory_by_type(sounds, ["vowel", "diphthong"]),
+            segments=_subinventory_by_type(
+                sounds, ["consonant", "vowel", "cluster", "diphthong"]),
+            tones=_subinventory_by_type(sounds, ["tone"]),
+            markers=_subinventory_by_type(sounds, ["marker"]),
+            clusters=_subinventory_by_type(sounds, ["cluster"]),
+            diphthongs=_subinventory_by_type(sounds, ["diphthong"]),
+            unknownsounds=_subinventory_by_type(sounds, ["unknownsound"]),
+        )
+        return cls(
+            sounds=DictTuple(sounds),
+            ts=ts,
+            language=language,
+            **kw)
 
     def __len__(self):
         return len(self.sounds)

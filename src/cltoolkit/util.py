@@ -3,20 +3,19 @@ Utility functions for lexicore.
 """
 import pathlib
 import operator
-import functools
-from typing import Callable, Any
+from typing import Callable, Any, TypeVar
 from collections.abc import Hashable
 
 from lingpy.sequence.sound_classes import syllabify
 from lingpy.basictypes import lists
 from pycldf import Dataset
 
-__all__ = [
-    'valid_sounds', 'identity', 'jaccard', 'iter_syllables',
-    'DictTuple', 'NestedAttribute', 'MutatedDataValue', 'MutatedNestedDictValue']
+__all__ = ['valid_sounds', 'identity', 'jaccard', 'iter_syllables', 'DictTuple']
+
+T = TypeVar('T')
 
 
-def valid_sounds(sounds):
+def valid_sounds(sounds) -> list[str]:
     """
     Make sure tokens conform to transcription system.
 
@@ -49,7 +48,7 @@ def identity(x):
     return x
 
 
-def jaccard(a, b):
+def jaccard(a: set, b: set) -> float:
     """
     Returns the Jaccard distance between two sets.
     """
@@ -66,68 +65,15 @@ def iter_syllables(form):
             yield syllable
 
 
-class NestedAttribute:
-    """
-    A descriptor implementing a nested attribute getter.
-
-    Used to implement Facade-pattern-style access to complex attribute data.
-
-    .. code-block:: python
-
-        >>> class C:
-        ...     a = 'ABC'
-        ...     b = NestedAttribute('a', 'lower')
-        ...
-        >>> C().b()
-        'abc'
-
-    .. seealso:: https://en.wikipedia.org/wiki/Facade_pattern
-    """
-    def __init__(self, outer_attribute, inner_attribute):
-        self._outer = outer_attribute
-        self._inner = inner_attribute
-
-    def __get__(self, obj, objtype=None):
-        return getattr(getattr(obj, self._outer), self._inner, None)
-
-
-class MutatedNestedDictValue:
-    """
-    Descriptor to retrieve a mutated value of a nested `dict`.
-
-    Used to implement Facade-pattern-style access to complex attribute data.
-
-    .. code-block:: python
-
-        >>> class C:
-        ...     a = {'x': 5}
-        ...     b = MutatedNestedDictValue('a', 'x', transform=lambda x: x + 5)
-        ...
-        >>> C().b
-        10
-
-    .. seealso:: https://en.wikipedia.org/wiki/Facade_pattern
-    """
-    def __init__(self, attribute, key, transform=identity):
-        self.transform = transform
-        self.attr, self.key = attribute, key
-
-    def __get__(self, obj, objtype=None):
-        return self.transform(getattr(obj, self.attr).get(self.key, None))
-
-
-MutatedDataValue = functools.partial(MutatedNestedDictValue, 'data')
-
-
-class DictTuple(tuple):
+class DictTuple(tuple[T]):
     """
     An object allowing access to items of a `tuple` as if it were a `dict` keyed with the `id`
     attribute of the contained objects.
     """
-    def __new__(cls, items, **kw):
-        return super().__new__(cls, tuple(items))
+    def __new__(cls, items=None, **kw):
+        return super().__new__(cls, tuple(items or []))
 
-    def __init__(self, _, key: Callable[[Any], Hashable] = operator.attrgetter('id')):
+    def __init__(self, _=None, key: Callable[[Any], Hashable] = operator.attrgetter('id')):
         """
         If `key` does not return unique values for all items, you may pass `multi=True` to
         retrieve `list`s of matching items for `l[key]`.

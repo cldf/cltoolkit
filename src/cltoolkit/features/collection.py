@@ -1,16 +1,21 @@
-import typing
+import json
+from typing import Callable, Union, Optional, TYPE_CHECKING
+import pathlib
 import textwrap
 import importlib
 import collections
+import dataclasses
 
-import attr
 from pycldf.util import DictTuple
-from clldutils import jsonlib
+
+if TYPE_CHECKING:
+    from ..models import Language
+
 
 __all__ = ['Feature', 'FeatureCollection', 'get_callable']
 
 
-def get_callable(s: typing.Union[str, dict, typing.Callable]) -> typing.Callable:
+def get_callable(s: Union[str, dict, Callable]) -> Callable:
     """
     A "feature function" can be specified in 3 ways:
 
@@ -31,7 +36,7 @@ def get_callable(s: typing.Union[str, dict, typing.Callable]) -> typing.Callable
     raise ValueError(s)
 
 
-@attr.s(repr=False)
+@dataclasses.dataclass(repr=False)
 class Feature:
     """
     :ivar id: `str`
@@ -40,18 +45,19 @@ class Feature:
 
     .. seealso:: :func:`get_callable`
     """
-    id = attr.ib()
-    name = attr.ib()
-    function = attr.ib(converter=get_callable)
-    type = attr.ib(default=None)
-    note = attr.ib(default=None)
-    categories = attr.ib(default=None)
-    requires = attr.ib(default=None)
+    id: str
+    name: str
+    function: Callable
+    type: Optional[type] = None
+    note: Optional[str] = None
+    categories: dict[Union[int, bool, None], str] = dataclasses.field(default_factory=dict)
+    requires: Optional[tuple[Callable[['Language'], bool]]] = None
 
-    def __attrs_post_init__(self):
-        if hasattr(self.function, 'categories'):
+    def __post_init__(self):
+        self.function = get_callable(self.function)
+        if getattr(self.function, 'categories', None):
             self.categories = self.function.categories
-        if hasattr(self.function, 'rtype'):
+        if getattr(self.function, 'rtype', None):
             self.type = self.function.rtype
         func = getattr(self.function, '__call__', self.function)
         if hasattr(func, 'requires'):
@@ -77,7 +83,8 @@ class Feature:
                 return {'class': res}
             return o
         return collections.OrderedDict([
-            (f.name, j(getattr(self, f.name), field=f.name)) for f in attr.fields(self.__class__)])
+            (f.name, j(getattr(self, f.name), field=f.name))
+            for f in dataclasses.fields(self.__class__)])
 
     @property
     def doc(self) -> str:
@@ -101,14 +108,16 @@ class FeatureCollection(DictTuple):
         """
         Dump feature specifications as JSON file.
         """
-        jsonlib.dump([f.to_json() for f in self], path, indent=4)
+        with pathlib.Path(path).open('w', encoding='utf-8') as fp:
+            return json.dump([f.to_json() for f in self], fp, indent=4)
 
     @classmethod
     def load(cls, path):
         """
         Load feature specifications from a JSON file (e.g. as created with `FeatureCollection.dump`)
         """
-        return cls([Feature(**f) for f in jsonlib.load(path)])
+        with pathlib.Path(path).open(encoding='utf-8') as fp:
+            return cls([Feature(**f) for f in json.load(fp)])
 
     def __call__(self, feature, language):
         return self[feature](language)

@@ -1,10 +1,18 @@
 import pytest
 
 from cltoolkit import Wordlist
-from cltoolkit.models import (
-        CLCore, WithForms, WithDataset,
-        Language, Sense, Form, Sound,
-        Inventory)
+from cltoolkit.models import CLCore, WithForms, Language, Sense, Form, Sound, Inventory
+
+
+def test_Language(wl_carvalhopurus):
+    lang = wl_carvalhopurus.languages[0]
+    assert lang.glottocode
+    assert lang.latitude
+    assert lang.longitude
+    assert lang.macroarea
+    assert lang.name
+    assert lang.family
+    assert lang.subgroup is None
 
 
 def test_core_models(clts, ds_dummy):
@@ -27,7 +35,7 @@ def test_core_models(clts, ds_dummy):
             concepts=[], forms=[wl.forms[0], wl.forms[1]])
 
     inv = Inventory.from_list(
-        clts.bipa, *[s for s in wl.forms[0].graphemes] + [s for s in wl.forms[1].graphemes])
+        clts.bipa, [s for s in wl.forms[0].graphemes] + [s for s in wl.forms[1].graphemes])
     assert len(lng.sound_inventory) == len(inv)
     assert wl.senses[0].__repr__() == "<Sense dummy-all>"
     assert wl.senses[0].__eq__(wl.senses[0]) == True
@@ -73,23 +81,23 @@ def test_core_models(clts, ds_dummy):
     
 
 def test_inventory(clts):
-    invA = Inventory.from_list(clts.bipa, "a", "u", "p", "k")
-    invB = Inventory.from_list(clts.bipa, "a", "u", "b", "g")
-    invC = Inventory.from_list(clts.bipa, "aː", "a", "u:", "b")
+    invA = Inventory.from_list(clts.bipa, ["a", "u", "p", "k"])
+    invB = Inventory.from_list(clts.bipa, ["a", "u", "b", "g"])
+    invC = Inventory.from_list(clts.bipa, ["aː", "a", "u:", "b"])
     assert len(invC.vowels_by_quality) == 2
 
     assert round(invA.strict_similarity(invB), 2) == 0.33
     assert invA.strict_similarity(invB, aspects=["vowels"]) == 1
     assert invA.approximate_similarity(invB) > 0.33
-    assert Inventory.from_list(clts.bipa, "A", "u").approximate_similarity(invB) > 0.1
+    assert Inventory.from_list(clts.bipa, ["A", "u"]).approximate_similarity(invB) > 0.1
     assert invA.sounds['a'].__eq__(invB.sounds['a']) == True
-    assert Inventory.from_list(clts.bipa).strict_similarity(Inventory.from_list(clts.bipa)) == 0
-    assert Inventory.from_list(clts.bipa).approximate_similarity(Inventory.from_list(clts.bipa)) == 0
-    assert Inventory.from_list(clts.bipa, "p", "t", "k", "a", "e", "u").approximate_similarity(
-            Inventory.from_list(clts.bipa, "a", "e", "u"), aspects=["consonants",
+    assert Inventory.from_list(clts.bipa, []).strict_similarity(Inventory.from_list(clts.bipa, [])) == 0
+    assert Inventory.from_list(clts.bipa, []).approximate_similarity(Inventory.from_list(clts.bipa, [])) == 0
+    assert Inventory.from_list(clts.bipa, ["p", "t", "k", "a", "e", "u"]).approximate_similarity(
+            Inventory.from_list(clts.bipa, ["a", "e", "u"]), aspects=["consonants",
                 "vowels"]) == 0.5
-    assert Inventory.from_list(clts.bipa, "p", "t", "k", ).approximate_similarity(
-            Inventory.from_list(clts.bipa, "a", "e", "u"), aspects=["consonants",
+    assert Inventory.from_list(clts.bipa, ["p", "t", "k"]).approximate_similarity(
+            Inventory.from_list(clts.bipa, ["a", "e", "u"]), aspects=["consonants",
                 "vowels"]) == 0.0
 
     for sound in invA:

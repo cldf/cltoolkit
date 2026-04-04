@@ -75,8 +75,8 @@ class PartialColexification(ConceptComparison):
     def __init__(self, *args, **kw):
         ConceptComparison.__init__(self, *args, **kw)
         self.categories.update({
-            True: "{} partially colexified in {}".format(self.alabel, self.blabel),
-            False: "{} not partially colexified in {}".format(self.alabel, self.blabel),
+            True: f"{self.alabel} partially colexified in {self.blabel}",
+            False: f"{self.alabel} not partially colexified in {self.blabel}",
         })
 
     def run(self, aforms, bforms, abforms):

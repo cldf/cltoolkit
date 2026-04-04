@@ -80,8 +80,7 @@ def requires(*what):
                 return func(*args)
             except:  # noqa: E722
                 log = logging.getLogger('cltoolkit')
-                log.debug('dataset: {}; language: {}'.format(
-                    getattr(language, 'dataset'), language))
+                log.debug('dataset: %s; language: %s', getattr(language, 'dataset'), language)
                 raise
         return wrapper_requires
     return decorator_requires

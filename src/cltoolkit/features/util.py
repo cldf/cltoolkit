@@ -1,3 +1,4 @@
+from typing import Union, Optional
 import collections
 
 __all__ = ['concept_label']
@@ -22,6 +23,8 @@ class FeatureFunction:
     def __init__(self, *args, **kw):
         self._args = args
         self._kwargs = kw
+        self.categories: dict[Union[bool, int, None], str] = {}
+        self.rtype: Optional[type] = None
 
     def to_json(self):
         data = collections.OrderedDict()

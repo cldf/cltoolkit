@@ -33,6 +33,12 @@ def ds_carvalhopurus(repos):
 
 
 @pytest.fixture
+def wl_carvalhopurus(ds_carvalhopurus, clts):
+    from cltoolkit import Wordlist
+    return Wordlist([ds_carvalhopurus], clts.bipa)
+
+
+@pytest.fixture
 def ds_features(repos):
     return Dataset.from_metadata(repos / "features" / "cldf" / "cldf-metadata.json")
 

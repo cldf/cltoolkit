@@ -88,7 +88,7 @@ def test_properties(clts):
 )
 def test_features(clts, func, inv, res):
     language = Language(id="dummy")
-    language.sound_inventory = Inventory.from_list(clts.bipa, *inv.split())
+    language.sound_inventory = Inventory.from_list(clts.bipa, inv.split())
     if isinstance(res, float):
         assert pytest.approx(res) == func(language)
     else:
