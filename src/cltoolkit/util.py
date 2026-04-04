@@ -2,12 +2,14 @@
 Utility functions for lexicore.
 """
 import pathlib
+import operator
 import functools
+from typing import Callable, Any
+from collections.abc import Hashable
 
 from lingpy.sequence.sound_classes import syllabify
 from lingpy.basictypes import lists
 from pycldf import Dataset
-from pycldf.util import DictTuple as BaseDictTuple
 
 __all__ = [
     'valid_sounds', 'identity', 'jaccard', 'iter_syllables',
@@ -117,11 +119,21 @@ class MutatedNestedDictValue:
 MutatedDataValue = functools.partial(MutatedNestedDictValue, 'data')
 
 
-class DictTuple(BaseDictTuple):
+class DictTuple(tuple):
     """
     An object allowing access to items of a `tuple` as if it were a `dict` keyed with the `id`
     attribute of the contained objects.
     """
+    def __new__(cls, items, **kw):
+        return super().__new__(cls, tuple(items))
+
+    def __init__(self, _, key: Callable[[Any], Hashable] = operator.attrgetter('id')):
+        """
+        If `key` does not return unique values for all items, you may pass `multi=True` to
+        retrieve `list`s of matching items for `l[key]`.
+        """
+        self._index = {key(o): o for o in self}
+
     def get(self, item, default=None):
         try:
             return self.__getitem__(item)
@@ -130,16 +142,16 @@ class DictTuple(BaseDictTuple):
 
     def __getitem__(self, item):
         if not isinstance(item, (int, slice)):
-            if item not in self._d:
-                raise KeyError(item)
-        return super(DictTuple, self).__getitem__(item)
+            return self._index[getattr(item, 'id', item)]
+        if item in self._index:
+            return self._index[item]
+        return super().__getitem__(item)
 
     def __contains__(self, item):
-        return getattr(item, 'id', item) in self._d
+        return (getattr(item, 'id', item) in self._index) or (super().__contains__(item))
 
     def items(self):
-        for k, v in self._d.items():
-            yield k, self[v[0]]
+        yield from self._index.items()
 
 
 def datasets_by_id(*ids, path='*/*/cldf/cldf-metadata.json', base_dir="."):

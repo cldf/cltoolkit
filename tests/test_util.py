@@ -27,6 +27,7 @@ def test_DictTuple():
     d = DictTuple([C()])
     assert C() in d
     assert 5 in d
+    assert d[5] == d[C()]
 
 
 def test_valid_sounds(clts):
