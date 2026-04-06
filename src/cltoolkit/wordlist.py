@@ -1,6 +1,7 @@
 import typing
 import functools
 import collections
+from collections.abc import Iterator
 
 import pycldf
 from pyclts import TranscriptionSystem
@@ -32,11 +33,12 @@ class Wordlist:
     :ivar Wordlist.graphemes: :class:`DictTuple`
     :ivar sounds: :class:`DictTuple`
     """
-    def __init__(self,
-                 datasets: typing.List[pycldf.Dataset],
-                 ts: typing.Optional[TranscriptionSystem] = None,
-                 concept_id_factory: typing.Callable[[dict], str] =
-                 lambda x: x["Concepticon_Gloss"]):
+    def __init__(
+            self,
+            datasets: Iterator[pycldf.Dataset],
+            ts: typing.Optional[TranscriptionSystem] = None,
+            concept_id_factory: typing.Callable[[dict], str] = lambda x: x["Concepticon_Gloss"]
+    ):
         self.ts = ts
         self.concept_id_factory = concept_id_factory
 
@@ -52,8 +54,8 @@ class Wordlist:
             dsid = get_dsid(dataset)
             log.info("loading {0}".format(dsid))
             self._add_languages(dsid, dataset)
-            self._add_senses(dsid, dataset)
-            self._add_forms(dsid, dataset)
+            params = self._add_senses(dsid, dataset)
+            self._add_forms(dsid, dataset, params)
 
         self.forms_with_sounds = DictTuple([f for f in self.forms.values() if f.sounds])
         self.forms_with_graphemes = DictTuple([f for f in self.forms.values() if f.graphemes])
@@ -95,54 +97,59 @@ class Wordlist:
     def _add_languages(self, dsid, dataset):
         """Append languages to the wordlist.
         """
-        for language in dataset.objects("LanguageTable"):
-            lg = Language.from_obj(self, dsid, language)
+        for language in dataset.iter_rows(
+                "LanguageTable", 'id', 'name', 'glottocode', 'macroarea', 'latitude', 'longitude'):
+            lg = Language.from_row(self, dsid, language)
             self.languages[lg.id] = lg
 
     def _add_senses(self, dsid, dataset):
         """Append senses (concepts) to the wordlist."""
-        for concept in dataset.objects("ParameterTable"):
-            concept_id = self.concept_id_factory(concept.data)
+        params = {}
+        for concept in dataset.iter_rows("ParameterTable", 'id'):
+            params[concept['id']] = concept
+            concept_id = self.concept_id_factory(concept)
             new_sense = Sense(
-                id=idjoin(dsid, concept.id),
+                id=idjoin(dsid, concept['id']),
                 wordlist=self,
                 dataset=dsid,
-                name=concept.data.get('Name'),
+                name=concept.get('Name'),
             )
             if concept_id and concept_id not in self.concepts:
                 new_concept = Concept(
                     id=concept_id,
                     name=concept_id.lower(),
-                    concepticon_id=concept.data.get("Concepticon_ID", ""),
-                    concepticon_gloss=concept.data.get("Concepticon_Gloss", ""),
+                    concepticon_id=concept.get("Concepticon_ID", ""),
+                    concepticon_gloss=concept.get("Concepticon_Gloss", ""),
                 )
                 self.concepts[new_concept.id] = new_concept
             if concept_id:
                 self.concepts[concept_id].senses[new_sense.id] = new_sense
             self.senses[new_sense.id] = new_sense
+        return params
 
     @functools.lru_cache(maxsize=10000)
     def ts_lookup(self, s):
         return self.ts[s]
 
-    def _add_forms(self, dsid, dataset):
+    def _add_forms(self, dsid, dataset, params):
         """Add forms to the dataset."""
         for form in progressbar(
-                dataset.objects("FormTable"), desc="loading forms for {0}".format(dsid)):
+                dataset.iter_rows("FormTable", 'id', 'languageReference', 'parameterReference'),
+                desc=f"loading forms for {dsid}"):
             lid, cid, pid, fid = (
-                idjoin(dsid, form.cldf.languageReference),
-                self.concept_id_factory(form.parameter.data),
-                idjoin(dsid, form.parameter.id),
-                idjoin(dsid, form.id)
+                idjoin(dsid, form['languageReference']),
+                self.concept_id_factory(params[form['parameterReference']]),
+                idjoin(dsid, params[form['parameterReference']]['id']),
+                idjoin(dsid, form['id'])
             )
             new_form = Form(
                 id=fid,
                 concept=self.concepts[cid] if cid else None,
                 language=self.languages[lid],
                 sense=self.senses[pid],
-                form=form.data['Form'],
-                value=form.data.get('Value'),
-                graphemes=lingpy.basictypes.lists(form.data['Segments']),
+                form=form['Form'],
+                value=form.get('Value'),
+                graphemes=lingpy.basictypes.lists(form['Segments']),
                 dataset=dsid,
                 wordlist=self
             )

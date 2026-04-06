@@ -73,12 +73,12 @@ class Feature:
                 return o.to_json()
             if callable(o):
                 comps = [o.__module__] if o.__module__ != 'builtins' else []
-                if type(o) == type(get_callable):
+                if type(o) == type(get_callable):  # noqa: E721
                     comps.append(o.__name__)
                 else:
                     comps.append(o.__class__.__name__)
                 res = '.'.join(comps)
-                if type(o) == type(get_callable):
+                if type(o) == type(get_callable):  # noqa: E721
                     return res
                 return {'class': res}
             return o

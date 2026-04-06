@@ -12,7 +12,6 @@ import lingpy
 from lingpy.basictypes import lists
 import pyclts
 from pyclts.models import Sound as CLTSSound, Cluster, Consonant
-from pycldf.orm import Language as PycldfLanguage
 
 from cltoolkit.util import DictTuple, jaccard, idjoin
 
@@ -80,18 +79,18 @@ class Language(CLCore, WithForms):
     subgroup: Optional[str] = None
 
     @classmethod
-    def from_obj(cls, wl, dsid, language: PycldfLanguage):
-        idjoin(dsid, language.id)
+    def from_row(cls, wl, dsid, language):
+        lid = idjoin(dsid, language['id'])
         return cls(
-            id=idjoin(dsid, language.id),
+            id=lid,
             wordlist=wl,
-            name=language.cldf.name,
-            glottocode=language.cldf.glottocode,
-            macroarea=language.cldf.macroarea,
-            latitude=language.cldf.latitude,
-            longitude=language.cldf.longitude,
-            family=language.data.get('Family'),
-            subgroup=language.data.get('SubGroup'),
+            name=language['name'],
+            glottocode=language['glottocode'],
+            macroarea=language['macroarea'],
+            latitude=language['latitude'],
+            longitude=language['longitude'],
+            family=language.get('Family'),
+            subgroup=language.get('SubGroup'),
             dataset=dsid,
         )
 
@@ -276,7 +275,6 @@ class Sound(CLCore, WithForms):
             grapheme=grapheme,
             wordlist=grapheme_.wordlist,
             occurrences=occurrences,
-            #data=obj.__dict__,
             graphemes_in_source=graphemes_in_source,
             forms=forms,
             obj=obj)
