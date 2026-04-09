@@ -97,8 +97,11 @@ class Wordlist:
     def _add_languages(self, dsid, dataset):
         """Append languages to the wordlist.
         """
-        for language in dataset.iter_rows(
-                "LanguageTable", 'id', 'name', 'glottocode', 'macroarea', 'latitude', 'longitude'):
+        cols = ['id', 'name']
+        for col in ['glottocode', 'macroarea', 'latitude', 'longitude']:
+            if ('LanguageTable', col) in dataset:
+                cols.append(col)
+        for language in dataset.iter_rows("LanguageTable", *cols):
             lg = Language.from_row(self, dsid, language)
             self.languages[lg.id] = lg
 
